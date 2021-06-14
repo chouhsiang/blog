@@ -6,14 +6,27 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - name: Checkout
+        uses: actions/checkout@v1
       - name: Cache node modules
         uses: actions/cache@v1
         with:
           path: node_modules
           key: ${{runner.OS}}-${{hashFiles('**/package-lock.json')}}
-      - uses: yrpang/github-actions-hexo@v1.3
-        with:
-          deploykey: ${{secrets.DEPLOY_KEY}}
-          username: Sean Chou
-          email: champagne0906@gmail.com
+      - name: Init SSH
+        run: |
+          mkdir -p ~/.ssh/
+          echo "${{secrets.DEPLOY_KEY}}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          git config --global user.name "Sean Chou"
+          git config --global user.email "champagne0906@gmail.com"
+      - name: Install package
+        run: |
+          npm install
+      - name: Install hexo
+        run: |
+          npm install -g hexo-cli
+      - name: Build & Deploy
+        run: |
+          hexo deploy -g
