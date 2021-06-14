@@ -26,4 +26,5 @@ jobs:
           npm install
       - name: Build & Deploy
         run: |
+          touch db.json
           npx hexo deploy -g
