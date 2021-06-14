@@ -5,6 +5,7 @@ tags:
 categories: Mobile App
 toc: true
 ---
+<!-- md mermaid.md -->
 <style>
 .fa-times {
   color: red;
@@ -12,14 +13,7 @@ toc: true
 .fa-check {
   color: green;
 }
-.mermaid .label{
-  font-size: 0.85rem;
-}
-.mermaid {
-  background: transparent;
-}
 </style>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.10.2/mermaid.min.js"></script>
 
 覺得手機上各種廣告很惱人嗎？今天我們來研究一下 iOS 上那些擋廣告 App 的原理，並看看要怎麼選擇
 

@@ -64,3 +64,6 @@ deploy:
   type: git
   repo: git@github.com:chouhsiang/chouhsiang.github.io.git
   branch: master
+include_markdown:
+  dir: source/_template
+  verbose : true
