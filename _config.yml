@@ -1,4 +1,4 @@
-title: Sean Chou's Blog
+title: 周詳的部落格
 subtitle: ''
 description: ''
 keywords: null
@@ -6,7 +6,7 @@ author: Sean Chou
 language: zh-TW
 timezone: ''
 url: https://chouhsiang.github.io
-permalink: ':year/:month/:day/:title/'
+permalink: ':title/'
 permalink_defaults: null
 pretty_urls:
   trailing_index: true
@@ -28,7 +28,7 @@ external_link:
   exclude: ''
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true
 relative_link: false
 future: true
 highlight:
