@@ -15,3 +15,5 @@ jobs:
       - uses: yrpang/github-actions-hexo@v1.3
         with:
           deploykey: ${{secrets.DEPLOY_KEY}}
+          username: Sean Chou
+          email: champagne0906@gmail.com
