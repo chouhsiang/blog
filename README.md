@@ -1,6 +1,6 @@
 # 周詳程式筆記
 
-個人技術部落格，以 [Astro Paper](https://github.com/satnaing/astro-paper) 建置。
+以 [Fuwari](https://github.com/saicaca/fuwari) 建置。
 
 網址：**https://chouhsiang.github.io/blog/**
 
@@ -10,41 +10,23 @@
 npm install
 npm run dev      # http://localhost:4321/blog/
 npm run build
-npm run preview  # http://localhost:4321/blog/
+npm run preview
 ```
 
 ## 設定
 
-編輯 `astro-paper.config.ts`。
+- `src/config.ts` — 網站名稱、導覽、個人資料
+- `astro.config.mjs` — `site`、`base`（GitHub Pages 路徑）
 
 ## 新增文章
 
-在 `src/content/posts/` 建立 `.md` 檔案，參考 `welcome.md`。
-
-```md
----
-title: 文章標題
-description: 摘要
-pubDatetime: 2025-05-29
-tags:
-  - javascript
----
+```bash
+npm run new-post my-post
 ```
 
-草稿：`draft: true`
+或參考 `src/content/posts/welcome.md` 手動建立。
 
-## 部署到 GitHub Pages
+## 部署
 
-使用 repo **`chouhsiang/blog`**，網址為 `https://chouhsiang.github.io/blog/`。
-
-### 1. 啟用 GitHub Pages
-
-1. 推送程式到 `main` 分支
-2. 到 repo **Settings → Pages**
-3. **Build and deployment → Source** 選 **GitHub Actions**
-
-### 2. 自動部署
-
-推送到 `main` 會觸發 `.github/workflows/deploy.yml`，建置完成後網站即會更新。
-
-也可在 GitHub **Actions** 分頁手動執行 **Deploy to GitHub Pages**。
+推送到 `main`，GitHub Actions 自動部署。  
+repo **Settings → Pages → Source** 選 **GitHub Actions**。

@@ -1,17 +1,7 @@
-# build
 dist/
 .astro/
-
-# dependencies
 node_modules/
-
-# env
+.DS_Store
 .env
 .env.production
-
-# OS / editor
-.DS_Store
-.idea/
-
-# logs
 *.log
