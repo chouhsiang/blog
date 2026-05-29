@@ -1,7 +1,17 @@
-.DS_Store
-Thumbs.db
-db.json
-*.log
+# build
+dist/
+.astro/
+
+# dependencies
 node_modules/
-public/
-.deploy*/
+
+# env
+.env
+.env.production
+
+# OS / editor
+.DS_Store
+.idea/
+
+# logs
+*.log

@@ -1,0 +1,36 @@
+{
+  "name": "chouhsiang-blog",
+  "type": "module",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^5.0.6",
+    "@astrojs/rss": "^4.0.18",
+    "@astrojs/sitemap": "^3.7.2",
+    "@tailwindcss/vite": "^4.3.0",
+    "astro": "^6.3.3",
+    "dayjs": "^1.11.20",
+    "lodash.kebabcase": "^4.1.1",
+    "remark-collapse": "^0.1.2",
+    "remark-toc": "^9.0.0",
+    "sharp": "^0.34.5",
+    "slugify": "^1.6.9",
+    "tailwindcss": "^4.3.0"
+  },
+  "overrides": {
+    "vite": "^7.0.0"
+  },
+  "devDependencies": {
+    "@shikijs/transformers": "^4.0.2",
+    "@tailwindcss/typography": "^0.5.19",
+    "@types/lodash.kebabcase": "^4.1.9",
+    "typescript": "^6.0.3"
+  }
+}
