@@ -46,14 +46,24 @@ export const navBarConfig: NavBarConfig = {
 };
 
 export const profileConfig: ProfileConfig = {
-	avatar: "assets/images/demo-avatar.png",
-	name: "周詳",
-	bio: "周詳的程式開發筆記與學習心得。",
+	avatar: "assets/images/avatar.jpg",
+	name: "周詳 Sean Chou",
+	bio: "零曜科技 執行長 hchou@zeroflare.tw",
 	links: [
 		{
 			name: "GitHub",
 			icon: "fa6-brands:github",
 			url: "https://github.com/chouhsiang",
+		},
+		{
+			name: "Facebook",
+			icon: "fa6-brands:facebook",
+			url: "https://www.facebook.com/chouhsiang.tw",
+		},
+		{
+			name: "Email",
+			icon: "fa6-solid:envelope",
+			url: "mailto:hchou@zeroflare.tw",
 		},
 	],
 };
