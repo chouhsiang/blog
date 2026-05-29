@@ -12,8 +12,8 @@ export const siteConfig: SiteConfig = {
 	subtitle: "程式筆記",
 	lang: "zh_TW",
 	themeColor: {
-		hue: 220,
-		fixed: false,
+		hue: 0,
+		fixed: true,
 	},
 	banner: {
 		enable: false,
