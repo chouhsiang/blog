@@ -150,10 +150,6 @@ const bannerOffset =
 
 		<link rel="alternate" type="application/rss+xml" title={profileConfig.name} href={`${Astro.site}rss.xml`}/>
 
-		<!-- Cloudflare Web Analytics -->
-		<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "4e94c374c43f4ff2a3aee7bbb38e6211"}'></script>
-		<!-- End Cloudflare Web Analytics -->
-
 	</head>
 	<body class=" min-h-screen transition " class:list={[{"lg:is-home": isHomePage, "enable-banner": enableBanner}]}
 		  data-overlayscrollbars-initialize
