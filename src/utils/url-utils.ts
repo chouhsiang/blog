@@ -18,6 +18,7 @@ CVE: "/cve/",
 證照: "/certificate/",
 "NIST 零信任文件": "/nist-zerotrust/",
 	"Cloudflare 入門": "/cloudflare-basic/",
+	"Azure AD 入門": "/azuread-basic/",
 };
 
 export function getCategoryPageUrl(category: string): string | null {

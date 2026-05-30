@@ -27,6 +27,7 @@ npm run dev:tina
 - CVE：`#/collections/cve`
 - NIST 零信任：`#/collections/nistZerotrust`
 - Cloudflare 入門：`#/collections/cloudflareBasic`
+- Azure AD 入門：`#/collections/azureadBasic`
 - 一般文章：`#/collections/post`
 
 Local mode 直接寫入 `src/content/`，不需 Tina Cloud。`/admin` 僅本機開發可用，不會部署到正式站。

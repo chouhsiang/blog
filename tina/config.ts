@@ -92,7 +92,7 @@ export default defineConfig({
 				path: "src/content/posts",
 				format: "md",
 				match: {
-					exclude: "**/{speech,certificate,cve,nist-zerotrust,cloudflare-basic}/**",
+					exclude: "**/{speech,certificate,cve,nist-zerotrust,cloudflare-basic,azuread-basic}/**",
 				},
 				fields: postFields,
 			},
@@ -128,6 +128,13 @@ export default defineConfig({
 				name: "cloudflareBasic",
 				label: "Cloudflare 入門",
 				path: "src/content/posts/cloudflare-basic",
+				format: "md",
+				fields: postFields,
+			},
+			{
+				name: "azureadBasic",
+				label: "Azure AD 入門",
+				path: "src/content/posts/azuread-basic",
 				format: "md",
 				fields: postFields,
 			},

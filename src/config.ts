@@ -47,6 +47,10 @@ export const navBarConfig: NavBarConfig = {
 					name: "Cloudflare 入門",
 					url: "/cloudflare-basic/",
 				},
+				{
+					name: "Azure AD 入門",
+					url: "/azuread-basic/",
+				},
 			],
 		},
 		{
