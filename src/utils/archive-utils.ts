@@ -67,8 +67,24 @@ export function filterArchivePosts(
 	return filtered;
 }
 
-export function groupPostsByYear(posts: ArchivePost[]): ArchiveGroup[] {
-	const grouped = posts.reduce(
+export type ArchiveSortOrder = "desc" | "asc";
+
+export function sortArchivePosts(
+	posts: ArchivePost[],
+	order: ArchiveSortOrder = "desc",
+): ArchivePost[] {
+	return [...posts].sort((a, b) => {
+		const dateA = parsePublishedDate(a.data.published).getTime();
+		const dateB = parsePublishedDate(b.data.published).getTime();
+		return order === "desc" ? dateB - dateA : dateA - dateB;
+	});
+}
+
+export function groupPostsByYear(
+	posts: ArchivePost[],
+	order: ArchiveSortOrder = "desc",
+): ArchiveGroup[] {
+	const grouped = sortArchivePosts(posts, order).reduce(
 		(acc, post) => {
 			const year = getPublishedYear(post.data.published);
 			if (!acc[year]) {
@@ -85,5 +101,5 @@ export function groupPostsByYear(posts: ArchivePost[]): ArchiveGroup[] {
 			year: Number.parseInt(yearStr, 10),
 			posts: grouped[Number.parseInt(yearStr, 10)],
 		}))
-		.sort((a, b) => b.year - a.year);
+		.sort((a, b) => (order === "desc" ? b.year - a.year : a.year - b.year));
 }

@@ -1,5 +1,5 @@
 ---
-import ArchiveTimeline from "@components/ArchiveTimeline.astro";
+import ArchiveTimelinePanel from "@components/ArchiveTimelinePanel.svelte";
 import MainGridLayout from "@layouts/MainGridLayout.astro";
 import { filterArchivePosts } from "@utils/archive-utils";
 import { getSortedPostsList } from "../utils/content-utils";
@@ -13,5 +13,5 @@ const description =
 ---
 
 <MainGridLayout title="CVE" description={description}>
-	<ArchiveTimeline posts={cvePosts} showTags={false} heading="CVE" />
+	<ArchiveTimelinePanel posts={cvePosts} showTags={false} heading="CVE" client:load />
 </MainGridLayout>

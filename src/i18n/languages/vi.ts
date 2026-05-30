@@ -23,6 +23,8 @@ export const vi: Translation = {
 	[Key.minutesCount]: "phút đọc",
 	[Key.postCount]: "bài viết",
 	[Key.postsCount]: "bài viết",
+	[Key.sortNewestFirst]: "Newest first",
+	[Key.sortOldestFirst]: "Oldest first",
 
 	[Key.themeColor]: "Màu giao diện",
 

@@ -37,18 +37,26 @@ export const navBarConfig: NavBarConfig = {
 		LinkPreset.Home,
 		LinkPreset.Archive,
 		{
-			name: "演講",
-			url: "/speech/",
+			name: "關於",
+			children: [
+				{
+					name: "關於我",
+					url: "/about/",
+				},
+				{
+					name: "演講",
+					url: "/speech/",
+				},
+				{
+					name: "證照",
+					url: "/certificate/",
+				},
+				{
+					name: "CVE",
+					url: "/cve/",
+				},
+			],
 		},
-		{
-			name: "證照",
-			url: "/certificate/",
-		},
-		{
-			name: "CVE",
-			url: "/cve/",
-		},
-		LinkPreset.About,
 	],
 };
 

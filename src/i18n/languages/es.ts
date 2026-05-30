@@ -23,6 +23,8 @@ export const es: Translation = {
 	[Key.minutesCount]: "minutos",
 	[Key.postCount]: "publicación",
 	[Key.postsCount]: "publicaciones",
+	[Key.sortNewestFirst]: "Newest first",
+	[Key.sortOldestFirst]: "Oldest first",
 
 	[Key.themeColor]: "Color del tema",
 

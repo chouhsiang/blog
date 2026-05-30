@@ -23,6 +23,8 @@ export const th: Translation = {
 	[Key.minutesCount]: "นาที",
 	[Key.postCount]: "โพสต์",
 	[Key.postsCount]: "โพสต์",
+	[Key.sortNewestFirst]: "Newest first",
+	[Key.sortOldestFirst]: "Oldest first",
 
 	[Key.themeColor]: "สีของธีม",
 

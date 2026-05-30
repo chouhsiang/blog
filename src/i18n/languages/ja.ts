@@ -23,6 +23,8 @@ export const ja: Translation = {
 	[Key.minutesCount]: "分",
 	[Key.postCount]: "件の投稿",
 	[Key.postsCount]: "件の投稿",
+	[Key.sortNewestFirst]: "新しい順",
+	[Key.sortOldestFirst]: "古い順",
 
 	[Key.themeColor]: "テーマカラー",
 
