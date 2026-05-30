@@ -1,0 +1,69 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>[Day6] SSL/TLS 續 — 30 天入門 Cloudflare</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">[Day6] SSL/TLS 續 — 30 天入門 Cloudflare</h1>
+</header>
+<section data-field="body" class="e-content">
+<section name="a96e" class="section section--body section--first"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="e2b1" id="e2b1" class="graf graf--h3 graf--leading graf--title">[Day6] SSL/TLS 續 — 30 天入門 Cloudflare</h3><figure name="57ac" id="57ac" class="graf graf--figure graf-after--h3"><img class="graf-image" data-image-id="1*qPmx3bs5FNdUithRJOyY0g.png" data-width="1920" data-height="1080" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*qPmx3bs5FNdUithRJOyY0g.png"></figure><p name="0dfa" id="0dfa" class="graf graf--p graf-after--figure">延續<a href="https://chouhsiang.medium.com/30%E5%A4%A9%E6%90%9E%E6%87%82cloudflare-5-ssl-tls-c4e322aa1d4f" data-href="https://chouhsiang.medium.com/30%E5%A4%A9%E6%90%9E%E6%87%82cloudflare-5-ssl-tls-c4e322aa1d4f" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">上篇</a>內容，接著來說明用戶端憑證、原始伺服器憑證。在我們的伺服器會放原始的伺服器憑證，如果要在原始伺服器確認來源是否來自Cloudflare，可以檢查 Cloudflare 的用戶端憑證，如下圖所示。</p><figure name="4d3b" id="4d3b" class="graf graf--figure graf-after--p graf--trailing"><img class="graf-image" data-image-id="1*kVMsTgHN4_mLwQVP5jayRQ.png" data-width="2078" data-height="924" src="https://cdn-images-1.medium.com/max/800/1*kVMsTgHN4_mLwQVP5jayRQ.png"></figure></div></div></section><section name="e472" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="9927" id="9927" class="graf graf--h4 graf--leading">原始伺服器憑證</h4><p name="0965" id="0965" class="graf graf--p graf-after--h4">我們可以在「原始伺服器憑證」的後台產生憑證，並放到伺服器上。該憑證是免費的，可以選擇加密演算法並針對 Domain 進行簽發，憑證有效期限最長可達 15 年。</p><p name="69d5" id="69d5" class="graf graf--p graf-after--p">但其實我們在 SSL 模式選擇「完整」模式的時候，並不會檢查憑證是否過期或是否為合法根憑證，所以其實拿任何一張可以加解密的憑證、自簽憑證都可以當作原始伺服器憑證。更多關於原始伺服器憑證的說明可以參考<a href="https://developers.cloudflare.com/ssl/origin-configuration/" data-href="https://developers.cloudflare.com/ssl/origin-configuration/" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">官方文件</a>。</p><figure name="653a" id="653a" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*E6uX1yZxTZC-QbmoOT1j8w.png" data-width="2144" data-height="922" src="https://cdn-images-1.medium.com/max/800/1*E6uX1yZxTZC-QbmoOT1j8w.png"></figure><figure name="5377" id="5377" class="graf graf--figure graf-after--figure graf--trailing"><img class="graf-image" data-image-id="1*nzN6OfoObT6ckB6Aozjxrg.png" data-width="2200" data-height="1236" src="https://cdn-images-1.medium.com/max/800/1*nzN6OfoObT6ckB6Aozjxrg.png"></figure></div></div></section><section name="2e08" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="81e2" id="81e2" class="graf graf--h4 graf--leading">用戶端憑證</h4><p name="2e6f" id="2e6f" class="graf graf--p graf-after--h4">使用者可以確認伺服器憑證是否為合法，但伺服器該如何確認使用者是否為合法來源？這就需要用到用戶端憑證。我們可以在 Cloudflare Dashboard 產生用戶端憑證，並讓我們的伺服器進行驗證，這個功能比較少用到，因為檢查用戶端憑證不是必須的，更多用戶端憑證資訊請參考<a href="https://developers.cloudflare.com/ssl/client-certificates/" data-href="https://developers.cloudflare.com/ssl/client-certificates/" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">官方文件</a>。</p><figure name="4cde" id="4cde" class="graf graf--figure graf-after--p graf--trailing"><img class="graf-image" data-image-id="1*096s-M4dClZ1V0KAOk8wmw.png" data-width="2170" data-height="1060" src="https://cdn-images-1.medium.com/max/800/1*096s-M4dClZ1V0KAOk8wmw.png"></figure></div></div></section><section name="ff6c" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="de8f" id="de8f" class="graf graf--h4 graf--leading">認證的原點提取</h4><p name="0523" id="0523" class="graf graf--p graf-after--h4">認證的原點提取 (Authenticated Origin Pulls) 在原始伺服器設定底下，可讓您使用 TLS 用戶端憑證，以加密方式驗證傳送至原始伺服器的要求是否來自於 Cloudflare。這可防止用戶端將要求略過 Cloudflare 所提供的安全措施 (例如 IP 及 Web 應用程式防火牆、記錄及加密) 而直接傳送至原始伺服器。更多說明請閱讀<a href="https://developers.cloudflare.com/ssl/origin-configuration/authenticated-origin-pull/" data-href="https://developers.cloudflare.com/ssl/origin-configuration/authenticated-origin-pull/" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">官方文件</a>。</p><figure name="11ac" id="11ac" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*Oc25UKjgXHNXmCkf6PxUhg.png" data-width="2110" data-height="418" src="https://cdn-images-1.medium.com/max/800/1*Oc25UKjgXHNXmCkf6PxUhg.png"></figure><p name="7aee" id="7aee" class="graf graf--p graf-after--figure graf--trailing">當有不法份子知道你的伺服器實際 IP 時，可以將 IP 設定 DNS 到他的網域，就能繞過在 Cloudflare 上的設定，我們的後端則需要新增檢查原始伺服器憑證的機制，確保來源是我們核准的 Cloudflare 節點。網路上也有其他<a href="https://www.petefreitag.com/item/927.cfm" data-href="https://www.petefreitag.com/item/927.cfm" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">教學</a>用在 NGINX 或 Apache 上。</p></div></div></section><section name="b9e7" class="section section--body section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="294b" id="294b" class="graf graf--h4 graf--leading">結語</h4><p name="64d4" id="64d4" class="graf graf--p graf-after--h4">我們可以在 Cloudflare Dashboard 管理我們各種憑證，來確保我們伺服器是安全的，由於 Cloudflare 使用公有網路而非私人網路，我們需要了解到有哪些防護手法可以阻止別人存取我們的伺服器，之後也會說明原始伺服器防護的手法。</p><p name="40a5" id="40a5" class="graf graf--p graf-after--p"><strong class="markup--strong markup--p-strong">▶ 閱讀更多本系列文：</strong><a href="https://medium.com/chouhsiang/cloudflare-30-days/home" data-href="https://medium.com/chouhsiang/cloudflare-30-days/home" class="markup--anchor markup--p-anchor" target="_blank"><strong class="markup--strong markup--p-strong">30 天入門 Cloudflare</strong></a></p><p name="cd59" id="cd59" class="graf graf--p graf-after--p graf--trailing"><strong class="markup--strong markup--p-strong">▶ 下一篇：</strong><a href="https://medium.com/chouhsiang/30%E5%A4%A9%E6%90%9E%E6%87%82cloudflare-7-cache-e561b02fbe56?source=collection_category---4------6-----------------------" data-href="https://medium.com/chouhsiang/30%E5%A4%A9%E6%90%9E%E6%87%82cloudflare-7-cache-e561b02fbe56?source=collection_category---4------6-----------------------" class="markup--anchor markup--p-anchor" target="_blank">[Day7] Cache — 30 天入門 Cloudflare</a></p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@chouhsiang" class="p-author h-card">周詳  Sean Chou</a> on <a href="https://medium.com/p/36071d194b65"><time class="dt-published" datetime="2023-05-01T06:32:24.685Z">May 1, 2023</time></a>.</p><p><a href="https://medium.com/@chouhsiang/30%E5%A4%A9%E6%90%9E%E6%87%82cloudflare-6-ssl-tls%E7%BA%8C-36071d194b65" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 29, 2026.</p></footer></article></body></html>

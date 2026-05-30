@@ -1,0 +1,69 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>將靜態網站部署到IPFS區塊鏈上</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">將靜態網站部署到IPFS區塊鏈上</h1>
+</header>
+<section data-field="body" class="e-content">
+<section name="ba02" class="section section--body section--first"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="f538" id="f538" class="graf graf--h3 graf--leading graf--title">將靜態網站部署到IPFS區塊鏈上</h3><p name="f301" id="f301" class="graf graf--p graf-after--h3">你知道嗎？只需要一個網域與設定2筆DNS紀錄就能夠將網站架設在IPFS區塊鏈上，星際檔案系統（InterPlanetary File System，縮寫為IPFS）是一個旨在實現檔案的分散式儲存、共享和持久化的網路傳輸協定。它是一種內容可定址的對等超媒體分發協定。在IPFS網路中的節點構成一個分散式檔案系統。</p><p name="77f2" id="77f2" class="graf graf--p graf-after--p">相較於傳統中心化的伺服器，IPFS將伺服器的資料分散在鏈上，資料得以永久保存。IPFS也不再依賴主幹網路，下載更快，更安全與開放。</p><figure name="554b" id="554b" class="graf graf--figure graf-after--p graf--trailing"><img class="graf-image" data-image-id="0*LDu00eS0p6Lq2_bh.png" data-width="2000" data-height="1041" src="https://cdn-images-1.medium.com/max/800/0*LDu00eS0p6Lq2_bh.png"><figcaption class="imageCaption">From <a href="https://blog.ipfs.io/2022-06-09-practical-explainer-ipfs-gateways-1/" data-href="https://blog.ipfs.io/2022-06-09-practical-explainer-ipfs-gateways-1/" class="markup--anchor markup--figure-anchor" rel="nofollow noopener noopener noopener" target="_blank">https://blog.ipfs.io/2022-06-09-practical-explainer-ipfs-gateways-1/</a></figcaption></figure></div></div></section><section name="daf8" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="de90" id="de90" class="graf graf--h4 graf--leading">上傳網站到IPFS</h4><p name="a8bb" id="a8bb" class="graf graf--p graf-after--h4">除了IPFS官方的工具能夠上傳檔案到鏈上，也可以透過<a href="https://www.pinata.cloud/" data-href="https://www.pinata.cloud/" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Pinata</a>在瀏覽器操作，註冊登入後就能夠上傳檔案或資料夾。靜態網站上傳時候就點選資料夾，上傳後會產生一個CID，這就是我們要用的。CID使用<em class="markup--em markup--p-em">QmQrXZ4iXdEKQMiQT6GRg2Wy3vxb9exR25sYdaqoHwWWuR</em>為範例。</p><figure name="5cd2" id="5cd2" class="graf graf--figure graf-after--p graf--trailing"><img class="graf-image" data-image-id="1*9UOo748tAJD7F8L1XUBsjw.png" data-width="1218" data-height="435" src="https://cdn-images-1.medium.com/max/800/1*9UOo748tAJD7F8L1XUBsjw.png"><figcaption class="imageCaption">Pinata Dashboard</figcaption></figure></div></div></section><section name="d6db" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="ce64" id="ce64" class="graf graf--h4 graf--leading">選擇IPFS Public Gateway</h4><p name="d879" id="d879" class="graf graf--p graf-after--h4">我們會需要一個IPFS Gateway來瀏覽我們的網站，Gateway會透過反向代理來讀取IPFS上的檔案。</p><figure name="999e" id="999e" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="0*SWt97IboflfGrxHl.png" data-width="2000" data-height="657" src="https://cdn-images-1.medium.com/max/800/0*SWt97IboflfGrxHl.png"><figcaption class="imageCaption">From <a href="https://docs.ipfs.io/concepts/ipfs-gateway/" data-href="https://docs.ipfs.io/concepts/ipfs-gateway/" class="markup--anchor markup--figure-anchor" rel="nofollow noopener noopener noopener" target="_blank">https://docs.ipfs.io/concepts/ipfs-gateway/</a></figcaption></figure><p name="746c" id="746c" class="graf graf--p graf-after--figure">我們可以透過<a href="https://ipfs.github.io/public-gateway-checker/" data-href="https://ipfs.github.io/public-gateway-checker/" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Public Gateway清單</a>來看看哪一個比較快，我建議使用Cloudflare的Gateway，全球節點多速度也快。也可以順便解決SSL憑證的問題。</p><figure name="5679" id="5679" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*jfLHBr_S6oY1zfjAXwWZCQ.png" data-width="1412" data-height="806" src="https://cdn-images-1.medium.com/max/800/1*jfLHBr_S6oY1zfjAXwWZCQ.png"><figcaption class="imageCaption">IPFS Public Gateway List</figcaption></figure><p name="b8d8" id="b8d8" class="graf graf--p graf-after--figure">Cloudflare提供兩個Public Gateway：<strong class="markup--strong markup--p-strong">cloudflare-ipfs.com</strong>、<strong class="markup--strong markup--p-strong">cf-ipfs.com。</strong>那要怎麼使用呢？其實很簡單，只需要將上面的CID填入網址上就可以。</p><p name="3b08" id="3b08" class="graf graf--p graf-after--p">Cloudflare兩個網域差別在於<strong class="markup--strong markup--p-strong">cf-ipfs.com</strong>會跳轉到一個前面包含hash的網域，讓網頁服務在root，避免網頁前端因為有subpath而產生錯誤。也可以嘗試看看使用列表中的其他Gateway瀏覽你的網站。更多Cloudflare IPFS相關資料可以參考<a href="https://developers.cloudflare.com/web3/ipfs-gateway/" data-href="https://developers.cloudflare.com/web3/ipfs-gateway/" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">這裡</a>。</p><blockquote name="db2c" id="db2c" class="graf graf--blockquote graf-after--p">https://cloudflare-ipfs.com/ipfs/&lt;CID&gt;</blockquote><blockquote name="7a7b" id="7a7b" class="graf graf--blockquote graf-after--blockquote graf--trailing">https://cf-ipfs.com/ipfs/&lt;CID&gt;</blockquote></div></div></section><section name="c3d0" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="3ca8" id="3ca8" class="graf graf--h4 graf--leading">設定DNS TXT紀錄</h4><p name="264b" id="264b" class="graf graf--p graf-after--h4">目前已經可以將網站上傳並瀏覽了，但是每次更新網站，都必須重新上傳整包，CID也不一樣了，如果手上有個網域，就可以上個TXT紀錄產生永久路徑。</p><p name="f2d1" id="f2d1" class="graf graf--p graf-after--p">以下圖為例我們希望使用<strong class="markup--strong markup--p-strong">www.twcanhelp.me</strong>作為網站的網域，我們要設定以下DNS配置，以下以Cloudflare畫面為例。選擇新增TXT，名稱填入你想用網域，內容填上CID。</p><blockquote name="608e" id="608e" class="graf graf--blockquote graf-after--p">類型：TXT</blockquote><blockquote name="a56c" id="a56c" class="graf graf--blockquote graf-after--blockquote">名稱：_dnslink.&lt;NAME&gt;</blockquote><blockquote name="7bd2" id="7bd2" class="graf graf--blockquote graf-after--blockquote">內容：dnslink=/ipfs/&lt;CID&gt;</blockquote><figure name="2ceb" id="2ceb" class="graf graf--figure graf-after--blockquote"><img class="graf-image" data-image-id="1*iTCnhPBwUgi2jsZ1K8aitg.png" data-width="1259" data-height="374" src="https://cdn-images-1.medium.com/max/800/1*iTCnhPBwUgi2jsZ1K8aitg.png"></figure><p name="c52e" id="c52e" class="graf graf--p graf-after--figure">設定完只要到<a href="https://cloudflare-ipfs.com/ipns/www.twcanhelp.me" data-href="https://cloudflare-ipfs.com/ipns/www.twcanhelp.me" class="markup--anchor markup--p-anchor" rel="nofollow noopener noopener noopener noopener" target="_blank">https://cloudflare-ipfs.com/ipns/www.twcanhelp.me</a>就能夠瀏覽。注意網址的差別ipfs後面帶CID，ipns後面帶DOMAIN。</p><blockquote name="10b1" id="10b1" class="graf graf--blockquote graf-after--p">https://cloudflare-ipfs.com/<strong class="markup--strong markup--blockquote-strong">ipns</strong>/&lt;DOMAIN&gt;</blockquote><blockquote name="f7ae" id="f7ae" class="graf graf--blockquote graf-after--blockquote">https://cf-ipfs.com/<strong class="markup--strong markup--blockquote-strong">ipns</strong>/&lt;DOMAIN&gt;</blockquote><p name="54f3" id="54f3" class="graf graf--p graf-after--blockquote">除了在TXT放CID外，也可以放別人的DOMAIN，就可以把別人的網站Fork過來。我們知道ipfs.io官網就有上IPFS，那我們就可以設定TXT到ipfs.io。<a href="https://cloudflare-ipfs.com/ipns/www.twcanhelp.me" data-href="https://cloudflare-ipfs.com/ipns/www.twcanhelp.me" class="markup--anchor markup--p-anchor" rel="nofollow noopener" target="_blank">https://cloudflare-ipfs.com/ipns/ipfs.twcanhelp.me</a>就可以連到IPFS官網。</p><figure name="9f11" id="9f11" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*_nCTX2A7FNHvyKYd3aCIEg.png" data-width="1263" data-height="371" src="https://cdn-images-1.medium.com/max/800/1*_nCTX2A7FNHvyKYd3aCIEg.png"></figure><blockquote name="2119" id="2119" class="graf graf--blockquote graf-after--figure">類型：TXT</blockquote><blockquote name="e5bb" id="e5bb" class="graf graf--blockquote graf-after--blockquote">名稱：_dnslink.&lt;NAME&gt;</blockquote><blockquote name="4e41" id="4e41" class="graf graf--blockquote graf-after--blockquote graf--trailing">內容：dnslink=/ipns/&lt;DOMAIN&gt;</blockquote></div></div></section><section name="15c3" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="d2b5" id="d2b5" class="graf graf--h4 graf--leading">設定DNS CNAME紀錄</h4><p name="b5ac" id="b5ac" class="graf graf--p graf-after--h4">這時候你會發現雖然用cloudflare-ipfs.com可以瀏覽網站，但www.twcanhelp.me卻沒辦法瀏覽，因為我們還沒設定CNAME目標，目標要設為Public Gateway。DNS設定如下：</p><blockquote name="4b8c" id="4b8c" class="graf graf--blockquote graf-after--p">類型：CNAME</blockquote><blockquote name="5672" id="5672" class="graf graf--blockquote graf-after--blockquote">名稱：&lt;NAME&gt;</blockquote><blockquote name="36e2" id="36e2" class="graf graf--blockquote graf-after--blockquote">目標：cloudflare-ipfs.com</blockquote><figure name="d48b" id="d48b" class="graf graf--figure graf-after--blockquote"><img class="graf-image" data-image-id="1*CMVWH39ri-fZsHE2Hg_AFA.png" data-width="1256" data-height="234" src="https://cdn-images-1.medium.com/max/800/1*CMVWH39ri-fZsHE2Hg_AFA.png"></figure><p name="2704" id="2704" class="graf graf--p graf-after--figure">設定完網站就能正常瀏覽了，這時候你會發現，Cloudflare會限制這個CNAME不能過proxy。</p><figure name="0f6f" id="0f6f" class="graf graf--figure graf-after--p graf--trailing"><img class="graf-image" data-image-id="1*njI9q2rojSBgN-5KoTYnYA.png" data-width="1302" data-height="166" src="https://cdn-images-1.medium.com/max/800/1*njI9q2rojSBgN-5KoTYnYA.png"></figure></div></div></section><section name="a8b3" class="section section--body section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="f0c3" id="f0c3" class="graf graf--h4 graf--leading">結論</h4><p name="307b" id="307b" class="graf graf--p graf-after--h4 graf--trailing">透過IPFS我們就完全不需要架設靜態網站的伺服器，只需要將網站上傳後設定DNS就能夠使用。此外，需要設定TXT紀錄才能在Public Gateway的網址上使用Domain。若要使用自己的網域，還需要額外設定CNAME指到Public Gateway。除了Public Gateway外，還有付費的Private Gateway可以選擇，下一篇再做介紹。</p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@chouhsiang" class="p-author h-card">周詳  Sean Chou</a> on <a href="https://medium.com/p/759a4262a91f"><time class="dt-published" datetime="2022-07-18T14:23:01.716Z">July 18, 2022</time></a>.</p><p><a href="https://medium.com/@chouhsiang/%E5%B0%87%E9%9D%9C%E6%85%8B%E7%B6%B2%E7%AB%99%E9%83%A8%E7%BD%B2%E5%88%B0ipfs%E5%8D%80%E5%A1%8A%E9%8F%88%E4%B8%8A-759a4262a91f" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 29, 2026.</p></footer></article></body></html>

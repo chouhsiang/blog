@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Azure DevOps 部署到 GKE (2) — GKE Service &amp; Ingress</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Azure DevOps 部署到 GKE (2) — GKE Service &amp; Ingress</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+上一篇我們簡單的做了一個部署，但將Kubernetes服務暴露到外部網路有兩個方式，本篇將說明以下幾種訪問服務的情境
+</section>
+<section data-field="body" class="e-content">
+<section name="a501" class="section section--body section--first"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="5388" id="5388" class="graf graf--h3 graf--leading graf--title">Azure DevOps 部署到 GKE (2) — Load Balancer VS Ingress</h3><p name="4fa2" id="4fa2" class="graf graf--p graf-after--h3">上一篇我們簡單的做了一個部署，但將Kubernetes服務暴露到外部網路有兩個方式，本篇將說明以下幾種訪問服務的情境</p><ol class="postList"><li name="8e7b" id="8e7b" class="graf graf--li graf-after--p">內部網路</li><li name="0061" id="0061" class="graf graf--li graf-after--li">外部網路：使用Load Balancer</li><li name="e222" id="e222" class="graf graf--li graf-after--li graf--trailing">外部網路：使用Ingress</li></ol></div></div></section><section name="5d6d" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="5869" id="5869" class="graf graf--h4 graf--leading">1. 內部網路</h4><p name="d751" id="d751" class="graf graf--p graf-after--h4"><a href="https://kubernetes.io/docs/concepts/workloads/pods/" data-href="https://kubernetes.io/docs/concepts/workloads/pods/" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Pod</a>為K8s的最小單位，其中會有一個或多個Container，但不同服務的Pod該如何互相訪問，Container的名稱與IP都是不固定的，這時候就需要<a href="https://kubernetes.io/docs/concepts/services-networking/service/" data-href="https://kubernetes.io/docs/concepts/services-networking/service/" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Service</a>，可以把Service想像成是一個Load balance，底層使用iptable或ipvs來分配流量，並將流量分配到Pod的container上。</p><p name="e0d1" id="e0d1" class="graf graf--p graf-after--p">如下圖所示，有兩個服務A與B，如果A的其中一個Pod想訪問B服務，就要連線到Service B，由Service B分配流量到Pod B，此時我們用到的Service type為ClusterIP。</p><figure name="0f59" id="0f59" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*LgBeAS0M8dctbMe_jZIBOA.png" data-width="1312" data-height="686" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*LgBeAS0M8dctbMe_jZIBOA.png"></figure><p name="7fb3" id="7fb3" class="graf graf--p graf-after--figure">上一篇講到GKE部署的功能，其中的服務類型中的叢集IP就是指ClusterIP，選擇叢集IP就會將服務公開於叢集中的內部IP。</p><figure name="285d" id="285d" class="graf graf--figure graf-after--p graf--trailing"><img class="graf-image" data-image-id="1*99lfyxvvTUpgp0GICJAG_A.png" data-width="1614" data-height="1352" src="https://cdn-images-1.medium.com/max/800/1*99lfyxvvTUpgp0GICJAG_A.png"></figure></div></div></section><section name="b75f" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="06ac" id="06ac" class="graf graf--h4 graf--leading">2. 外部網路：使用Load Balancer</h4><p name="4059" id="4059" class="graf graf--p graf-after--h4">使用ClusterIP就只能限Kubernetes內部訪問，若是要暴露到外網，其中一個方法就是用Load Balancer，當我們將Service type設為<code class="markup--code markup--p-code"><a href="https://kubernetes.io/docs/concepts/services-networking/service/#loadbalancer" data-href="https://kubernetes.io/docs/concepts/services-networking/service/#loadbalancer" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">LoadBalancer</a></code>，K8s就會去自動跟雲端Load Balancer請求一個Public IP，上一篇文部署就是使用Load Balancer，可以在kubectl看到相關資訊。</p><figure name="8465" id="8465" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*hV_3Rg0N4LNC6ZBSSQoUxQ.png" data-width="1318" data-height="124" src="https://cdn-images-1.medium.com/max/800/1*hV_3Rg0N4LNC6ZBSSQoUxQ.png"></figure><p name="1dad" id="1dad" class="graf graf--p graf-after--figure">架構會如下圖，使用者會先訪問Cloud Load Balancer，他會將流量導入Kubernetes Cluster。</p><figure name="15db" id="15db" class="graf graf--figure graf-after--p graf--trailing"><img class="graf-image" data-image-id="1*OK9zkV-xwfpIEsQWgI1rwg.png" data-width="1648" data-height="1026" src="https://cdn-images-1.medium.com/max/800/1*OK9zkV-xwfpIEsQWgI1rwg.png"></figure></div></div></section><section name="e821" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="33b0" id="33b0" class="graf graf--h4 graf--leading">3. 外部網路：使用Ingress</h4><p name="aa43" id="aa43" class="graf graf--p graf-after--h4"><a href="https://kubernetes.io/docs/concepts/services-networking/ingress/" data-href="https://kubernetes.io/docs/concepts/services-networking/ingress/" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Ingress</a>與Load Balancer差別在於，Load Balancer是將Layer4的網路流量都往K8s丟；而Ingress可以解析Layer 7的https，可以在ingress設定SSL憑證與route。</p><p name="c49a" id="c49a" class="graf graf--p graf-after--p">開始來建立一個Ingress，同<code class="markup--code markup--p-code">1.內部網路</code>的步驟，先建立一個叢集IP的工作負載，到Service與Ingress勾選筆服務，選擇「建立Ingress」。</p><figure name="af78" id="af78" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*3VjAG3VnCNefcyzClPep5Q.png" data-width="2248" data-height="762" src="https://cdn-images-1.medium.com/max/800/1*3VjAG3VnCNefcyzClPep5Q.png"></figure><p name="c783" id="c783" class="graf graf--p graf-after--figure">近來之後長這樣，選擇下一步</p><figure name="894d" id="894d" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*gMKppyHnVGrXUhuJWJWyew.png" data-width="2370" data-height="1250" src="https://cdn-images-1.medium.com/max/800/1*gMKppyHnVGrXUhuJWJWyew.png"></figure><p name="1379" id="1379" class="graf graf--p graf-after--figure">第二步可以設定不同了path到不同的Service，我們先用測試網域<code class="markup--code markup--p-code">nginx.twcanhelp.me</code>連線到nginx Service。</p><figure name="4d71" id="4d71" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*ooGdbiJK1ZJXXTIpP74SMA.png" data-width="2370" data-height="1290" src="https://cdn-images-1.medium.com/max/800/1*ooGdbiJK1ZJXXTIpP74SMA.png"></figure><p name="58bf" id="58bf" class="graf graf--p graf-after--figure">第三步可以上傳SSL憑證，這邊也可以選擇由Google幫忙簽憑證，類似Let’s Encrypt的服務，不過簽憑證需要點時間才會生效。</p><figure name="39cf" id="39cf" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*4BWWI0GbSAASD5_8viNTsw.png" data-width="2380" data-height="1258" src="https://cdn-images-1.medium.com/max/800/1*4BWWI0GbSAASD5_8viNTsw.png"></figure><p name="6dba" id="6dba" class="graf graf--p graf-after--figure">建立完成後，就看到一筆Ingress設定，點進去找到IP位址，接著就到DNS上把<code class="markup--code markup--p-code">nginx.twcanhelp.me</code>的A Record設到該IP就完成了。要注意的是，如果要用Google簽的憑證，CDN(如cloudflare)的DNS就不能開proxy；要開CDN proxy，則應設定CDN提供的SSL憑證到ingress。</p><figure name="c463" id="c463" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*fKmdbMWBA7BO-DRhrNq3dw.png" data-width="2408" data-height="1394" src="https://cdn-images-1.medium.com/max/800/1*fKmdbMWBA7BO-DRhrNq3dw.png"></figure><p name="3e59" id="3e59" class="graf graf--p graf-after--figure">一樣也可以透過kubectl指令找到Ingress設定。</p><figure name="c5b7" id="c5b7" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*l6QNnsWwvy5kOZyMCoJ0YQ.png" data-width="1100" data-height="128" src="https://cdn-images-1.medium.com/max/800/1*l6QNnsWwvy5kOZyMCoJ0YQ.png"></figure><p name="8fab" id="8fab" class="graf graf--p graf-after--figure">Ingress的架構如下圖，在Kubernetes內通常會有Ingress Controller來做負載平衡與反向代理，通常可以選擇用NGINX或HAProxy來做，而GKE則是Google實作的Ingress。</p><figure name="22d9" id="22d9" class="graf graf--figure graf-after--p graf--trailing"><img class="graf-image" data-image-id="1*t-TWVT5wM1lSabvOXnLoVg.png" data-width="1560" data-height="1050" src="https://cdn-images-1.medium.com/max/800/1*t-TWVT5wM1lSabvOXnLoVg.png"></figure></div></div></section><section name="904f" class="section section--body section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="0177" id="0177" class="graf graf--h4 graf--leading">結語</h4><p name="0803" id="0803" class="graf graf--p graf-after--h4 graf--trailing">Load Balancer與Ingress兩種方法，我會更建議使用Ingress，原因如下：使用Load Balancer無法判斷網域為何，可能導致網站被其他網域挾持，透過Ingress檢查L7的virtual host可以避免這問題；此外SSL憑證在ingress統一管理也比較方便。我們學會了如何在GCP後台部署應用，下一篇將學習如何透過kubectl來部署應用。</p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@chouhsiang" class="p-author h-card">周詳  Sean Chou</a> on <a href="https://medium.com/p/99bfc79884ad"><time class="dt-published" datetime="2023-03-26T07:34:27.678Z">March 26, 2023</time></a>.</p><p><a href="https://medium.com/@chouhsiang/azure-devops-%E9%83%A8%E7%BD%B2%E5%88%B0-gke-2-gke-service-ingress-99bfc79884ad" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 29, 2026.</p></footer></article></body></html>

@@ -3,16 +3,8 @@ import { onMount } from "svelte";
 
 import I18nKey from "../i18n/i18nKey";
 import { i18n } from "../i18n/translation";
+import { formatArchiveDate, getPublishedYear } from "@utils/archive-utils";
 import { getPostUrlBySlug } from "../utils/url-utils";
-
-export let tags: string[];
-export let categories: string[];
-export let sortedPosts: Post[] = [];
-
-const params = new URLSearchParams(window.location.search);
-tags = params.has("tag") ? params.getAll("tag") : [];
-categories = params.has("category") ? params.getAll("category") : [];
-const uncategorized = params.get("uncategorized");
 
 interface Post {
 	slug: string;
@@ -20,7 +12,7 @@ interface Post {
 		title: string;
 		tags: string[];
 		category?: string;
-		published: Date;
+		published: Date | string;
 	};
 }
 
@@ -29,20 +21,25 @@ interface Group {
 	posts: Post[];
 }
 
-let groups: Group[] = [];
+let { sortedPosts = [] }: { sortedPosts?: Post[] } = $props();
 
-function formatDate(date: Date) {
-	const month = (date.getMonth() + 1).toString().padStart(2, "0");
-	const day = date.getDate().toString().padStart(2, "0");
-	return `${month}-${day}`;
+let groups = $state<Group[]>([]);
+
+function formatDate(date: Date | string) {
+	return formatArchiveDate(date);
 }
 
 function formatTag(tagList: string[]) {
 	return tagList.map((t) => `#${t}`).join(" ");
 }
 
-onMount(async () => {
-	let filteredPosts: Post[] = sortedPosts;
+onMount(() => {
+	const params = new URLSearchParams(window.location.search);
+	const tags = params.getAll("tag");
+	const categories = params.getAll("category");
+	const uncategorized = params.has("uncategorized");
+
+	let filteredPosts = sortedPosts;
 
 	if (tags.length > 0) {
 		filteredPosts = filteredPosts.filter(
@@ -64,7 +61,7 @@ onMount(async () => {
 
 	const grouped = filteredPosts.reduce(
 		(acc, post) => {
-			const year = post.data.published.getFullYear();
+			const year = getPublishedYear(post.data.published);
 			if (!acc[year]) {
 				acc[year] = [];
 			}
@@ -74,19 +71,17 @@ onMount(async () => {
 		{} as Record<number, Post[]>,
 	);
 
-	const groupedPostsArray = Object.keys(grouped).map((yearStr) => ({
-		year: Number.parseInt(yearStr, 10),
-		posts: grouped[Number.parseInt(yearStr, 10)],
-	}));
-
-	groupedPostsArray.sort((a, b) => b.year - a.year);
-
-	groups = groupedPostsArray;
+	groups = Object.keys(grouped)
+		.map((yearStr) => ({
+			year: Number.parseInt(yearStr, 10),
+			posts: grouped[Number.parseInt(yearStr, 10)],
+		}))
+		.sort((a, b) => b.year - a.year);
 });
 </script>
 
 <div class="card-base px-8 py-6">
-    {#each groups as group}
+    {#each groups as group (group.year)}
         <div>
             <div class="flex flex-row w-full items-center h-[3.75rem]">
                 <div class="w-[15%] md:w-[10%] transition text-2xl font-bold text-right text-75">
@@ -103,19 +98,17 @@ onMount(async () => {
                 </div>
             </div>
 
-            {#each group.posts as post}
+            {#each group.posts as post (post.slug)}
                 <a
                         href={getPostUrlBySlug(post.slug)}
                         aria-label={post.data.title}
                         class="group btn-plain !block h-10 w-full rounded-lg hover:text-[initial]"
                 >
                     <div class="flex flex-row justify-start items-center h-full">
-                        <!-- date -->
                         <div class="w-[15%] md:w-[10%] transition text-sm text-right text-50">
                             {formatDate(post.data.published)}
                         </div>
 
-                        <!-- dot and line -->
                         <div class="w-[15%] md:w-[10%] relative dash-line h-full flex items-center">
                             <div
                                     class="transition-all mx-auto w-1 h-1 rounded group-hover:h-5
@@ -127,7 +120,6 @@ onMount(async () => {
                             ></div>
                         </div>
 
-                        <!-- post title -->
                         <div
                                 class="w-[70%] md:max-w-[65%] md:w-[65%] text-left font-bold
                      group-hover:translate-x-1 transition-all group-hover:text-[var(--primary)]
@@ -136,7 +128,6 @@ onMount(async () => {
                             {post.data.title}
                         </div>
 
-                        <!-- tag list -->
                         <div
                                 class="hidden md:block md:w-[15%] text-left text-sm transition
                      whitespace-nowrap overflow-ellipsis overflow-hidden text-30"

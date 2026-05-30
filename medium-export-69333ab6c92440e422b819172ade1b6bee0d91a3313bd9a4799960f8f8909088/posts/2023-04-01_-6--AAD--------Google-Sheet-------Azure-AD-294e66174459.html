@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>#6 將AAD使用者清單匯到 Google Sheet — 簡單入門Azure AD</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">#6 將AAD使用者清單匯到 Google Sheet — 簡單入門Azure AD</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+雖然Azure AD有後台可以查看使用者資料，但載入滿慢的，有些隱藏欄位也顯示不出來，本篇會說明如何定時將Azure AD的使用者清單匯入到Google Sheet上進行管理。
+</section>
+<section data-field="body" class="e-content">
+<section name="18b9" class="section section--body section--first"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="762a" id="762a" class="graf graf--h3 graf--leading graf--title">#6 將AAD使用者清單匯到 Google Sheet — 簡單入門Azure AD</h3><figure name="b3ec" id="b3ec" class="graf graf--figure graf-after--h3"><img class="graf-image" data-image-id="1*e2-a5cl9PW1nRly4v-oOYg.png" data-width="2560" data-height="1440" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*e2-a5cl9PW1nRly4v-oOYg.png"></figure><p name="6a19" id="6a19" class="graf graf--p graf-after--figure graf--trailing">雖然Azure AD有後台可以查看使用者資料，但載入滿慢的，有些隱藏欄位也顯示不出來，本篇會說明如何定時將Azure AD的使用者清單匯入到Google Sheet上進行管理。</p></div></div></section><section name="8dea" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="b7c4" id="b7c4" class="graf graf--h4 graf--leading">構想</h4><p name="df8d" id="df8d" class="graf graf--p graf-after--h4 graf--trailing">身為一個AD管理員，我希望可以知道每位使用者的建立日期、密碼修改日期、帳號是否啟用等資訊，因此我們想辦法將Azure AD的這些資料匯入到Google Sheet上。</p></div></div></section><section name="7563" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="5c60" id="5c60" class="graf graf--h4 graf--leading">開通Azure AD權限</h4><p name="754b" id="754b" class="graf graf--p graf-after--h4 graf--trailing">同<a href="https://chouhsiang.medium.com/%E9%96%8B%E7%99%BC%E4%BB%8B%E6%8E%A5azure-ad-2-%E4%BD%BF%E7%94%A8%E8%80%85%E6%B8%85%E5%96%AE-b3d29ec5f7b5" data-href="https://chouhsiang.medium.com/%E9%96%8B%E7%99%BC%E4%BB%8B%E6%8E%A5azure-ad-2-%E4%BD%BF%E7%94%A8%E8%80%85%E6%B8%85%E5%96%AE-b3d29ec5f7b5" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">上一篇</a>作法，我們需要在Azure後台註冊一個應用程式，並給予讀取所有使用者的權限<code class="markup--code markup--p-code">User.Read.All</code>，然後申請一組Secret。</p></div></div></section><section name="f59c" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="b309" id="b309" class="graf graf--h4 graf--leading">Google Sheet</h4><p name="f95c" id="f95c" class="graf graf--p graf-after--h4">我們先建立一個Google Sheet，並點選擴充功能的Apps Script。</p><figure name="684f" id="684f" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*KA7cMCCCYFDPUD0pT0A45w.png" data-width="1822" data-height="858" src="https://cdn-images-1.medium.com/max/800/1*KA7cMCCCYFDPUD0pT0A45w.png"></figure><p name="3de8" id="3de8" class="graf graf--p graf-after--figure">貼上以下程式碼，並輸入相關資訊與使用者欄位。選擇update function，按一下執行，就會開始到Azure AD取得使用者資料填入Google Sheet。使用者有哪些欄位可以用請看<a href="https://learn.microsoft.com/zh-tw/graph/api/resources/user?view=graph-rest-1.0#properties" data-href="https://learn.microsoft.com/zh-tw/graph/api/resources/user?view=graph-rest-1.0#properties" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">微軟文件</a>。</p><figure name="9082" id="9082" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*KSgtTBztBKzDnmI91Zo1kg.png" data-width="1948" data-height="1020" src="https://cdn-images-1.medium.com/max/800/1*KSgtTBztBKzDnmI91Zo1kg.png"></figure><pre data-code-block-mode="1" spellcheck="false" data-code-block-lang="javascript" name="f718" id="f718" class="graf graf--pre graf-after--figure graf--preV2"><span class="pre--content"><span class="hljs-keyword">var</span> tenant_id = <span class="hljs-string">&#x27;&lt;目錄識別碼&gt;&#x27;</span>;<br /><span class="hljs-keyword">var</span> client_id = <span class="hljs-string">&#x27;&lt;應用程式識別碼&gt;&#x27;</span>;<br /><span class="hljs-keyword">var</span> client_secret = <span class="hljs-string">&#x27;&lt;用戶端密碼&gt;&#x27;</span>;<br /><span class="hljs-keyword">var</span> sheet_name = <span class="hljs-string">&#x27;&lt;工作表名稱&gt;&#x27;</span>;<br /><span class="hljs-comment">// 要讀取的使用者欄位</span><br /><span class="hljs-keyword">var</span> cols = {<br />  <span class="hljs-string">&#x27;displayName&#x27;</span>: <span class="hljs-string">&#x27;姓名&#x27;</span>,<br />  <span class="hljs-string">&#x27;userPrincipalName&#x27;</span>: <span class="hljs-string">&#x27;信箱&#x27;</span>,<br />  <span class="hljs-string">&#x27;lastPasswordChangeDateTime&#x27;</span>: <span class="hljs-string">&#x27;密碼修改日&#x27;</span>,<br />  <span class="hljs-string">&#x27;createdDateTime&#x27;</span>: <span class="hljs-string">&#x27;帳號建立日&#x27;</span>,<br />  <span class="hljs-string">&#x27;accountEnabled&#x27;</span>: <span class="hljs-string">&#x27;帳號啟用&#x27;</span><br />};<br /><br /><span class="hljs-keyword">function</span> <span class="hljs-title function_">onOpen</span>(<span class="hljs-params"></span>) {<br />  <span class="hljs-keyword">var</span> ui = <span class="hljs-title class_">SpreadsheetApp</span>.<span class="hljs-title function_">getUi</span>();<br />  ui.<span class="hljs-title function_">createMenu</span>(<span class="hljs-string">&#x27;功能&#x27;</span>)<br />    .<span class="hljs-title function_">addItem</span>(<span class="hljs-string">&#x27;更新清單&#x27;</span>, <span class="hljs-string">&#x27;update&#x27;</span>)<br />    .<span class="hljs-title function_">addToUi</span>();<br />}<br /><br /><span class="hljs-keyword">function</span> <span class="hljs-title function_">update</span>(<span class="hljs-params"></span>) {<br />  <span class="hljs-comment">// 取得AAD token</span><br />  <span class="hljs-keyword">var</span> url = <span class="hljs-string">`https://login.microsoftonline.com/<span class="hljs-subst">${tenant_id}</span>/oauth2/v2.0/token`</span>;<br />  <span class="hljs-keyword">var</span> options = {<br />    <span class="hljs-attr">method</span>: <span class="hljs-string">&#x27;POST&#x27;</span>,<br />    <span class="hljs-attr">payload</span>: {<br />      <span class="hljs-attr">client_id</span>: client_id,<br />      <span class="hljs-attr">client_secret</span>: client_secret,<br />      <span class="hljs-attr">scope</span>: <span class="hljs-string">&#x27;https://graph.microsoft.com/.default&#x27;</span>,<br />      <span class="hljs-attr">grant_type</span>: <span class="hljs-string">&#x27;client_credentials&#x27;</span>,<br />    }<br />  }<br />  <span class="hljs-keyword">var</span> response = <span class="hljs-title class_">UrlFetchApp</span>.<span class="hljs-title function_">fetch</span>(url, options);<br />  <span class="hljs-keyword">var</span> token = <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">parse</span>(response.<span class="hljs-title function_">getContentText</span>())[<span class="hljs-string">&quot;access_token&quot;</span>];<br /><br />  <span class="hljs-comment">// 讀取AAD使用者清單</span><br />  <span class="hljs-keyword">var</span> url = <span class="hljs-string">&#x27;https://graph.microsoft.com/v1.0/users?$select=&#x27;</span> + <span class="hljs-title class_">Object</span>.<span class="hljs-title function_">keys</span>(cols).<span class="hljs-title function_">join</span>(<span class="hljs-string">&#x27;,&#x27;</span>) + <span class="hljs-string">&#x27;&amp;$top=999&#x27;</span>;<br />  <span class="hljs-keyword">var</span> options = {<br />    <span class="hljs-attr">method</span>: <span class="hljs-string">&#x27;GET&#x27;</span>,<br />    <span class="hljs-attr">headers</span>: { <span class="hljs-title class_">Authorization</span>: <span class="hljs-string">&#x27;Bearer &#x27;</span> + token }<br />  }<br />  <span class="hljs-keyword">var</span> response = <span class="hljs-title class_">UrlFetchApp</span>.<span class="hljs-title function_">fetch</span>(url, options);<br />  <span class="hljs-keyword">var</span> items = <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">parse</span>(response.<span class="hljs-title function_">getContentText</span>())[<span class="hljs-string">&quot;value&quot;</span>];<br /><br />  <span class="hljs-comment">// 寫入Google Sheet</span><br />  <span class="hljs-keyword">var</span> ss = <span class="hljs-title class_">SpreadsheetApp</span>.<span class="hljs-title function_">getActiveSpreadsheet</span>();<br />  <span class="hljs-keyword">var</span> s = ss.<span class="hljs-title function_">getSheetByName</span>(sheet_name);<br />  s.<span class="hljs-title function_">getRange</span>(<span class="hljs-string">&#x27;A:Z&#x27;</span>).<span class="hljs-title function_">clearContent</span>();<br />  s.<span class="hljs-title function_">appendRow</span>(<span class="hljs-title class_">Object</span>.<span class="hljs-title function_">values</span>(cols));<br />  items.<span class="hljs-title function_">forEach</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params">item</span>) {<br />    <span class="hljs-keyword">var</span> result = [];<br />    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> i <span class="hljs-keyword">of</span> <span class="hljs-title class_">Object</span>.<span class="hljs-title function_">keys</span>(cols)) {<br />      result.<span class="hljs-title function_">push</span>(item[i]);<br />    }<br />    s.<span class="hljs-title function_">appendRow</span>(result);<br />  });<br />}</span></pre><p name="2fd1" id="2fd1" class="graf graf--p graf-after--pre">另外在上面有個onOpen的function，會在Google Sheet上新增一個功能的分類，按下「更新清單」就能夠更新。</p><figure name="e652" id="e652" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*KiJP8Wq2yucR-j4xwd6fUA.png" data-width="1628" data-height="272" src="https://cdn-images-1.medium.com/max/800/1*KiJP8Wq2yucR-j4xwd6fUA.png"></figure><p name="20bc" id="20bc" class="graf graf--p graf-after--figure">這樣就可以在Google Sheet查看到使用者資料了</p><figure name="3fae" id="3fae" class="graf graf--figure graf-after--p graf--trailing"><img class="graf-image" data-image-id="1*dU97VxaCxnxRcGp1VMKXmA.png" data-width="1542" data-height="756" src="https://cdn-images-1.medium.com/max/800/1*dU97VxaCxnxRcGp1VMKXmA.png"></figure></div></div></section><section name="66c8" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="9cbf" id="9cbf" class="graf graf--h4 graf--leading">定時更新</h4><p name="bb53" id="bb53" class="graf graf--p graf-after--h4">我希望每天可以自動更新這個表單，我們在Apps Script頁面點選觸發條件，右下角新增觸發條件。</p><figure name="dd27" id="dd27" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*jFaLBfWVeiIMS4SbOTYByA.png" data-width="1472" data-height="700" src="https://cdn-images-1.medium.com/max/800/1*jFaLBfWVeiIMS4SbOTYByA.png"></figure><p name="67df" id="67df" class="graf graf--p graf-after--figure">填入以下資訊，就可以每天自動更新了。</p><figure name="ae34" id="ae34" class="graf graf--figure graf-after--p graf--trailing"><img class="graf-image" data-image-id="1*zQ-c1ghc85XgrpDzYAIIfQ.png" data-width="2172" data-height="1562" src="https://cdn-images-1.medium.com/max/800/1*zQ-c1ghc85XgrpDzYAIIfQ.png"></figure></div></div></section><section name="eafa" class="section section--body section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="e86d" id="e86d" class="graf graf--h4 graf--leading">結語</h4><p name="5255" id="5255" class="graf graf--p graf-after--h4 graf--trailing">Google Sheet整合Google Apps Script，可以玩出很多有趣的應用，之後可以再來說名更多功能。</p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@chouhsiang" class="p-author h-card">周詳  Sean Chou</a> on <a href="https://medium.com/p/294e66174459"><time class="dt-published" datetime="2023-04-01T16:14:09.350Z">April 1, 2023</time></a>.</p><p><a href="https://medium.com/@chouhsiang/%E9%96%8B%E7%99%BC%E4%BB%8B%E6%8E%A5azure-ad-3-%E4%BD%BF%E7%94%A8%E8%80%85%E6%B8%85%E5%96%AE%E5%8C%AF%E5%88%B0-google-sheet-294e66174459" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 29, 2026.</p></footer></article></body></html>

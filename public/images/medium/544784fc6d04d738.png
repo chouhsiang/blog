@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="tw">
+<head>
+<meta charset=utf-8>
+<meta http-equiv=X-UA-Compatible content="IE=edge">
+<meta name=viewport content="width=device-width, initial-scale=1">
+<title>亞洲市場郵件安全領導品牌 | Openfind 網擎資訊</title>
+<meta property=og:title content="亞洲市場郵件安全領導品牌 | Openfind 網擎資訊">
+<meta property=og:type content=website>
+<meta property=og:site_name content="Openfind 網擎資訊">
+<meta property=og:image content=https://www.openfind.com.tw/taiwan/images/seo/openfind.gif>
+<meta property=og:url content=http://www.openfind.com.tw/taiwan/>
+<meta property=og:description content="網擎資訊始終致力於電子郵件與搜尋引擎兩大核心技術，提供包括軟體產品之電子郵件系統、郵件防護、郵件歸檔管理與稽核加密，到線上雲端服務之個人電子信箱與企業郵件代管服務。">
+<meta name=Description content="網擎資訊始終致力於電子郵件與搜尋引擎兩大核心技術，提供包括軟體產品之電子郵件系統、郵件防護、郵件歸檔管理與稽核加密，到線上雲端服務之個人電子信箱與企業郵件代管服務。">
+<meta name=KeyWords content="內容感知, 郵件防護, 郵件加密, 郵件稽核, 郵件加密, 郵件過濾, 郵件備份, 社交工程,  內容過濾, 機密外洩, 訊息保全, 機敏個資攔截, 台銀標, 郵件稽核, 雲端服務, 雲端郵件, Mail2000, MailAudit, MailBase, MailGates, OES, P-Marker, SecuShare, MailCloud">
+<link rel="shortcut icon" type=image/x-icon href=https://www.openfind.com.tw/taiwan/images/openfind_ico.ico>
+<link href=css/bootstrap.min.css rel=stylesheet>
+<!--[if lt IE 9]><script src=assets/js/ie8-responsive-file-warning.js></script><![endif]-->
+<!-- <script src=assets/js/ie-emulation-modes-warning.js></script>
+ --><!--[if lt IE 9]>
+<script src=js/html5shiv/3.7.2/html5shiv.min.js></script>
+<script src=js/respond.js/1.4.2/respond.min.js></script>
+<![endif]-->
+<link href=css/navbar_menu.css rel=stylesheet>
+<!-- <link href=css/silder_ad.css rel=stylesheet>
+ --><link href=css/index_content_box.css rel=stylesheet>
+<link href=css/content.css rel=stylesheet>
+<link href=css/content_bt.css rel=stylesheet>
+<link href=css/hr.css rel=stylesheet>
+<link href=css/index_product_bt.css rel=stylesheet>
+<link href=css/footer.css rel=stylesheet>
+<link href=css/font-awesome.min.css rel=stylesheet>
+<link href=css/gotop.css rel=stylesheet>
+<link rel="preload" as="image" href="images/bMm.jpg" />
+<link rel="stylesheet" href="css/flexslider.css" type="text/css"/>
+<link rel="stylesheet" href="css/unslider.css?g=240418">
+<!-- <script type=text/javascript charset=utf-8 src=http://animate.adobe.com/runtime/5.0.1/edge.5.0.1.min.js></script>
+<style>.edgeLoad-EDGE-101506476{visibility:hidden}</style>
+<script>AdobeEdge.loadComposition("ad","EDGE-101506476",{scaleToFit:"width",centerStage:"horizontal",minW:"0",maxW:"undefined",width:"1920px",height:"550px"},{style:{"${symbolSelector}":{isStage:"true",rect:["undefined","undefined","1920px","550px"]}},dom:[{rect:["916","231","88px","88px","auto","auto"],id:"preloader5",fill:["rgba(0,0,0,0)","images/preloader5.gif","0px","0px"],type:"image",tag:"img"}]},{dom:{}});</script> -->
+<style>
+    .flexslider.loading {
+      visibility: hidden;
+      height: 0;
+      overflow: hidden;
+    }
+
+    .flexslider {
+      min-height: 350px;
+      position: relative;
+      overflow: hidden;
+    }
+
+
+</style>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-21631567-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NKK6STF');</script>
+<!-- End Google Tag Manager -->
+</head>
+<body>
+<script src="js/header_navbar.js?g=230424"></script>
+<!-- script language="JavaScript" type="text/JavaScript" src="/js/autocomplete.js"></script-->
+    <div class="ad_xl " role=listbox>
+      <div id="container" class="cf">
+        <div id="main" role="main">
+          <section class="slider"">
+            <div class="flexslider loading">
+              <ul class="slides">
+                 <li class="banner_Mm" style="background-image: url('images/bMm.jpg');" onclick="window.open('https://www.openfind.com.tw/R/banner8_n')">
+                    <h2 style="color:#ffec07; font-weight: normal;">Google 及 Yahoo 全新 3 大寄件規範</h2>
+                    <p class=text-center><a class="bt" href="https://www.openfind.com.tw/R/banner8_n" role="button" target="_blank">與我們聯絡了解更多案例 &raquo;</a></p>
+                </li>                     
+                <li class="banner_OS" style="background-image: url('images/bOS.jpg');" onclick="window.open('https://www.openfind.com.tw/R/banner1_n')">
+                    <h2 class="text_OS" style="color:#ffc200;">告別 Symantec ! <small style="color:white; font-weight:normal;">尋找永恆不變的安全感?</small></h2>
+                    <p class=text-center><a class="bt" href="https://www.openfind.com.tw/R/banner1_n" role="button" target="_blank">了解更多 &raquo;</a></p>
+                </li>
+                <li class="banner_MCloud" style="background-image: url('images/bMac.png');" onclick="window.open('https://www.openfind.com.tw/R/banner2_n')">
+                    <p class="">數位轉型首選，導入商務等級的生成式 AI 應用輕鬆又安全</p>
+                    <h2 class="text_MCloud">MailCloud With Ciao 企業智慧溝通更高效</h2>
+                    <p class=text-center><a class="bt" href="https://www.openfind.com.tw/R/banner2_n" role="button" target="_blank">了解更多 AI 輔助功能 &raquo;</a></p>
+                </li>
+                <li onclick="location.href='https://www.openfind.com.tw/R/banner3_n';" class="banner_M2k">
+                    <p class="text_Mb">數位辦公新時代</p>
+                    <h2>打造兼顧效率與安全的工作環境</h2>
+                    <p class=text-center><a class="bt" href="https://www.openfind.com.tw/R/banner3_n" role="button">Mail2000 V8 上市 
+          全新體驗
+ &raquo;</a></p>
+                </li>
+                <li onclick="window.open('https://www.openfind.com.tw/R/banner9_n')" class="banner_MM">
+                    <h2>不同即時通訊軟體，檔案互傳沒問題！</h2>
+                    <p class=text-center><a class="bt" href="https://www.openfind.com.tw/R/banner9_n" role="button">了解更多 &raquo;</a></p>
+                </li>
+
+                <li onclick="location.href='https://www.openfind.com.tw/R/banner4_n';" class="banner_Mo">
+                    <h2><span class="text_Mo" style="font-weight: normal;">企業專屬</span> DLP 資料外洩防護</h2>
+                    <p class=text-center><a class="bt" href="https://www.openfind.com.tw/R/banner4_n" role="button">如何防範 &raquo;</a></p>
+                </li>
+                <li onclick="location.href='https://www.openfind.com.tw/R/banner5_n';" class="banner_Mb">
+                    <p>MailBase 智慧郵件管理！</p>
+                    <h2 style="line-height:1.4em;" class="text_Mb">再也不用撈信比對內容，AI 幫你秒懂重點</h2>
+                    <p class=text-center><a class="bt" href="https://www.openfind.com.tw/R/banner5_n" role="button">了解更多 &raquo;</a></p>
+                </li>
+                <li onclick="location.href='https://www.openfind.com.tw/R/banner6_n';" class="banner_Mg">
+                    <p>台灣每月面對 3,000 萬次網路攻擊</p>
+                    <h2 class="text_Mg">你需要最佳 BEC、APT 解決方案</h2>
+                    <p class=text-center><a class="bt" href="https://www.openfind.com.tw/R/banner6_n" role="button">方案內容 &raquo;</a></p>
+                </li>
+                <li onclick="window.open('https://www.openfind.com.tw/R/banner7_n')" class="banner_Ss">
+                    <p>符合 ISO 27001 認證 安全分享、隨時存取</p>
+                    <h2 class="text_Aep">傳送機密資料不可或缺的三大防護</h2>
+                    <p class=text-center><a class="bt" href="https://www.openfind.com.tw/R/banner7_n" role="button" target="_blank">免費體驗 &raquo;</a></p>
+                </li>
+        
+              </ul>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+<div class="container">
+  <div class="row">
+    		  			<div class="col-md-3 col-sm-6 col-xs-6" style="height:300px;">
+				<div class="card">
+					<a href="markettrend_detail.php?news_id=24849" target="_blank" style="text-decoration: none;">
+					<figure class="news">
+						<div style="overflow:hidden">
+                          <img width="100%" height="100%" src="https://www.openfind.com.tw/taiwan/webadmin/images/property/202605epaper.jpg">
+                        </div>
+						<figcaption>從資安治理的思維轉型，看見供應鏈安全的韌性挑戰</figcaption>
+					</figure> 
+					<p>在外部環境變動加劇，資安風險已不再僅僅是 IT 部門的技術問題，而是攸關企業存續與競爭力的營運風險，企業要如何容應對韌性挑戰…</p>
+					</a>
+				</div>
+        	</div>
+							  			<div class="col-md-3 col-sm-6 col-xs-6" style="height:300px;">
+				<div class="card">
+					<a href="markettrend_detail.php?news_id=24848" target="_blank" style="text-decoration: none;">
+					<figure class="news">
+						<div style="overflow:hidden">
+                          <img width="100%" height="100%" src="https://www.openfind.com.tw/taiwan/webadmin/images/property/202604epaper.jpg">
+                        </div>
+						<figcaption>方向不對，智慧白費！辦公室 AI 用得巧，溝通更明快</figcaption>
+					</figure> 
+					<p>對於朝九晚五的上班族來說，辦公室 AI 的價值在於「減少苦功磨耗」，有效利用 AI 資源可避免自己的精神與體力在細瑣事務逐步消耗…</p>
+					</a>
+				</div>
+        	</div>
+							  			<div class="col-md-3 col-sm-6 col-xs-6" style="height:300px;">
+				<div class="card">
+					<a href="markettrend_detail.php?news_id=24847" target="_blank" style="text-decoration: none;">
+					<figure class="news">
+						<div style="overflow:hidden">
+                          <img width="100%" height="100%" src="https://www.openfind.com.tw/taiwan/webadmin/images/property/202603epaper.jpg">
+                        </div>
+						<figcaption>科技製造業如何在合規框架下導入 MailBase 生成式 AI</figcaption>
+					</figure> 
+					<p>科技製造業運用生成式 AI 時，如何在既有合規與治理基礎之上妥善發展，應用本地 LLM 與軟體系統整合，大幅提升關鍵流程的效率…</p>
+					</a>
+				</div>
+        	</div>
+							  			<div class="col-md-3 col-sm-6 col-xs-6" style="height:300px;">
+				<div class="card">
+					<a href="markettrend_detail.php?news_id=24846" target="_blank" style="text-decoration: none;">
+					<figure class="news">
+						<div style="overflow:hidden">
+                          <img width="100%" height="100%" src="https://www.openfind.com.tw/taiwan/webadmin/images/property/202602epaper.jpg">
+                        </div>
+						<figcaption>歡喜躍東證，以 AI、法遵、自動化驅動成長</figcaption>
+					</figure> 
+					<p>2025 年再創高峰，日本代理上市！Openfind 推出 Ciao AI 應用，推動智慧辦公與資料活化，強化資安與雲端轉型，掌握 2026 成長驅動…</p>
+					</a>
+				</div>
+        	</div>
+					  </div>
+</div>
+
+    <div class=container>
+      <div class="row featured-boxes">
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+              <div class="featured-box featured-box-primary">
+                  <div class=box-content>
+                      <h3>最新消息 <small>Hot News</small></h3>
+                                                                              <hr class=index_news>
+                              <div class="media index_news_list">
+                                  <div class=media-left><img class=media-object src=images/index_icon02-1.png alt></div>
+                                  <div class=media-body>
+                                      <a href=news_detail.php?news_id=10359>Openfind 2026 年農曆春節期間維護公告</a>
+                                  </div>
+                              </div>
+                                                                                                             <hr class=index_news>
+                              <div class="media index_news_list">
+                                  <div class=media-left><img class=media-object src=images/index_icon02-2.png alt></div>
+                                  <div class=media-body>
+                                      <a href=news_detail.php?news_id=10358>網擎雲端 25 週年！持續榮獲政府共契採購品質肯定，「巧」助用戶迎向 AI 智慧雲</a>
+                                  </div>
+                              </div>
+                                                                                                             <hr class=index_news>
+                              <div class="media index_news_list">
+                                  <div class=media-left><img class=media-object src=images/index_icon02-3.png alt></div>
+                                  <div class=media-body>
+                                      <a href=news_detail.php?news_id=10357>AI 落地企業實務，網擎資訊協助客戶效率與安全雙升級</a>
+                                  </div>
+                              </div>
+                                                                                                             <hr class=index_news>
+                              <div class="media index_news_list">
+                                  <div class=media-left><img class=media-object src=images/index_icon02-4.png alt></div>
+                                  <div class=media-body>
+                                      <a href=news_detail.php?news_id=10355>Openfind 榮獲 SGS IT Awards 資安治理卓越獎，落實雲端資安與隱私保護</a>
+                                  </div>
+                              </div>
+                                                                                                             <hr class=index_news>
+                              <div class="media index_news_list">
+                                  <div class=media-left><img class=media-object src=images/index_icon02-5.png alt></div>
+                                  <div class=media-body>
+                                      <a href=news_detail.php?news_id=10354>台灣軟體再登日本資本市場！網擎合作夥伴成功掛牌東京證交所</a>
+                                  </div>
+                              </div>
+                                                                            <hr class="short invisible">
+                       <p class=temp_align><a class="bt temp_mid_bt" href=news.php role=button>瞭解更多 &raquo;</a></p>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+              <div class="featured-box featured-box-tertiary">
+                  <div class=box-content>
+                      <h3>行銷動態 <small>Marketing Events</small></h3>
+                                                                              <hr class=index_events>
+                              <div class="media index_events_list">
+                                  <div class=media-left><img class=media-object src=images/index_icon01-1.png alt></div>
+                                  <div class=media-body>
+                                      <a href=activity_detail.php?news_id=7025>Openfind 於 03/13 舉辦 2026 第一場全產品教育訓練活動</a>
+                                  </div>
+                              </div>
+                                                                                                                        <hr class=index_events>
+                              <div class="media index_events_list">
+                                  <div class=media-left><img class=media-object src=images/index_icon01-2.png alt></div>
+                                  <div class=media-body>
+                                      <a href=activity_detail.php?news_id=7024>Openfind 於 11/21 舉辦 2025 第四場全產品教育訓練活動</a>
+                                  </div>
+                              </div>
+                                                                                                                        <hr class=index_events>
+                              <div class="media index_events_list">
+                                  <div class=media-left><img class=media-object src=images/index_icon01-3.png alt></div>
+                                  <div class=media-body>
+                                      <a href=activity_detail.php?news_id=7023>數發部蒞臨網擎資訊進行年度資安訪視行程</a>
+                                  </div>
+                              </div>
+                                                                                                                        <hr class=index_events>
+                              <div class="media index_events_list">
+                                  <div class=media-left><img class=media-object src=images/index_icon01-4.png alt></div>
+                                  <div class=media-body>
+                                      <a href=activity_detail.php?news_id=7022>網擎資訊協助台中 FUTURO 足球隊挺進亞足聯盃八強賽</a>
+                                  </div>
+                              </div>
+                                                                                                                        <hr class=index_events>
+                              <div class="media index_events_list">
+                                  <div class=media-left><img class=media-object src=images/index_icon01-5.png alt></div>
+                                  <div class=media-body>
+                                      <a href=activity_detail.php?news_id=7021>Openfind 於 9/12 舉辦 2025 第三場全產品教育訓練活動</a>
+                                  </div>
+                              </div>
+                                                                                                      <hr class="short invisible">
+                                      <p class=temp_align><a class="bt temp_mid_bt" href=activity.php role=button>瞭解更多 &raquo;</a></p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      <div class="case_bg" style="background-color:#eeeeee; margin-top:30px;">
+        <div class="container">
+          <div class="row" id="cases">
+              <h2 style="border-left: #fbc02d 8px solid; padding: 8px; padding-left: 15px;">Openfind 成功案例</h2>
+              <section>
+                <div class="col-md-3 col-sm-4 col-xs-6">
+                   <a href="casestudy.php?id=10195"><img src="images/customer_04.jpg" alt="關貿網路" title="關貿網路"></a>
+                </div>     
+                <div class="col-md-3 col-sm-4 col-xs-6">
+                  <a href="casestudy.php?id=10135"><img src="images/customer_01.jpg" alt="五福旅遊" title="五福旅遊"></a>
+                </div>
+                <div class="col-md-3 col-sm-4 col-xs-6">
+                   <a href="casestudy.php?id=4885"><img src="images/customer_02.jpg" alt="漢堡王" title="漢堡王"></a>
+                </div>
+                <div class="col-md-3 col-sm-4 col-xs-6">
+                   <a href="casestudy.php?id=10259"><img src="images/customer_03.jpg" alt="味王" title="味王"></a>
+                </div>
+                <div class="col-md-3 col-sm-4 col-xs-6">
+                   <a href="casestudy.php?id=10247"><img src="images/customer_05.jpg" alt="長春石化" title="長春石化"></a>
+                </div>
+                <div class="col-md-3 col-sm-4 col-xs-6">
+                   <a href="casestudy.php?id=2252"><img src="images/customer_06.jpg" alt="合勤科技" title="合勤科技"></a>
+                </div>
+                <div class="col-md-3 col-sm-4 col-xs-6">
+                   <a href="casestudy.php?id=2001"><img src="images/customer_07.jpg" alt="中興工程" title="中興工程"></a>
+                </div>
+                <div class="col-md-3 col-sm-4 col-xs-6">
+                   <a href="casestudy.php?id=2497"><img src="images/customer_08.jpg" alt="花蓮縣政府" title="花蓮縣政府"></a>
+                </div>
+            </section>
+            <h2 class="text-center"><a class="bt temp_mid_bt" href=casestudy.php role=button style="margin-top:30px;">更多成功案例 &raquo;</a></h2>
+          </div>
+        </div>
+      </div>
+
+<script src=js/footer.js></script>
+<script src=js/jquery/1.11.2/jquery.min.js></script>
+<script src=js/bootstrap.min.js></script>
+<!-- <script src=assets/js/vendor/holder.js></script> -->
+<script src=css/assets/js/ie10-viewport-bug-workaround.js></script>
+<script src=js/carousel.js></script>
+<script src=js/jquery.isotope.min.js></script>
+<script src=js/fancybox/jquery.fancybox.pack.js></script>
+<script src=js/wow.js></script>
+<script src=js/wow.new.js></script>
+<script src=js/functions.js></script>
+<script src=js/gotop.js></script>
+<script src=js/jquery.autohiding.navbar.js></script>
+<script src=js/navbar.hiding.js></script>
+
+<!-- FlexSlider -->
+<script defer src="js/jquery.flexslider.js"></script>
+<script defer src="js/index-banner.js"></script>
+<script>
+    $(document).ready(function () {
+      $('.flexslider').flexslider({
+        animation: "slide",
+        start: function () {
+          $('.flexslider').removeClass('loading');
+        }
+      });
+    });
+  </script>
+ 
+<!-- Optional FlexSlider Additions -->
+<script src="js/jquery.easing.js"></script>
+<script src="js/jquery.mousewheel.js"></script>
+</body>
+</html>

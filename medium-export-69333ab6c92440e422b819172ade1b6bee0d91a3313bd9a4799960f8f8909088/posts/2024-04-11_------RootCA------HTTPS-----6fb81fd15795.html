@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>為什麼安裝 RootCA 可以解開 HTTPS 封包？</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">為什麼安裝 RootCA 可以解開 HTTPS 封包？</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+HTTPS（Hypertext Transfer Protocol Secure）是一種透過 TLS/SSL…
+</section>
+<section data-field="body" class="e-content">
+<section name="b33d" class="section section--body section--first"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="f6f0" id="f6f0" class="graf graf--h3 graf--leading graf--title">為什麼安裝 RootCA 可以解開 HTTPS 封包？</h3><figure name="128e" id="128e" class="graf graf--figure graf-after--h3"><img class="graf-image" data-image-id="0*k8bJK5YPrgO9PAvH.png" data-width="800" data-height="400" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/0*k8bJK5YPrgO9PAvH.png"></figure><p name="5436" id="5436" class="graf graf--p graf-after--figure">HTTPS（Hypertext Transfer Protocol Secure）是一種透過 TLS/SSL 加密保護資料傳輸的通訊協議，用於在網際網路上安全地傳輸資訊。它確保了使用者與網站之間的通信是加密的，防止敏感資訊被攔截或竊取，同時提供身份驗證，確保用戶正與目標網站進行通信，從而保護用戶的隱私和資訊安全。</p><p name="9b63" id="9b63" class="graf graf--p graf-after--p graf--trailing">而市面上很多抓包工具，如：<a href="https://www.charlesproxy.com/" data-href="https://www.charlesproxy.com/" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Charles Web Debugger Proxy</a>、<a href="https://www.cloudflare.com/zh-tw/zero-trust/products/gateway/" data-href="https://www.cloudflare.com/zh-tw/zero-trust/products/gateway/" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Cloudflare Gateway</a>、<a href="https://apps.apple.com/tw/app/stream/id1312141691" data-href="https://apps.apple.com/tw/app/stream/id1312141691" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Stream</a>，只要安裝 RootCA 後就可以解開 HTTPS 封包，查看封包的 header 與 body，這是怎麼回事？是否代表 HTTPS 不安全，有機會被攔截或竊取？</p></div></div></section><section name="df2b" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="e2e7" id="e2e7" class="graf graf--h3 graf--leading">HTTPS 握手</h3><p name="9747" id="9747" class="graf graf--p graf-after--h3">當用戶端發送 HTTPS 請求時，它會與伺服器進行 SSL/TLS 握手，這是一個初始化安全連接的過程。握手過程如下：</p><ol class="postList"><li name="0a72" id="0a72" class="graf graf--li graf-after--p">用戶端 Hello：用戶端向伺服器發送一個 Client Hello 訊息，其中包含有關其支援的 SSL/TLS 版本和加密演算法的資訊。</li><li name="9674" id="9674" class="graf graf--li graf-after--li">伺服器 Hello：伺服器回應 Client Hello 訊息，並向客戶端發送一個Server Hello 消息，其中包含所選擇的 SSL/TLS 版本和加密演算法，以及伺服器的憑證。</li><li name="37a9" id="37a9" class="graf graf--li graf-after--li">驗證憑證：用戶端驗證伺服器的憑證是否有效。這包括檢查憑證的有效性，以及確定它是否由可信的憑證授權機構（CA）簽署。</li><li name="9079" id="9079" class="graf graf--li graf-after--li">金鑰交換：如果憑證驗證成功，用戶端將使用憑證中的<strong class="markup--strong markup--li-strong">公鑰</strong>來加密一個對稱金鑰，並將其發送給伺服器。</li><li name="424e" id="424e" class="graf graf--li graf-after--li">完成握手：伺服器使用其<strong class="markup--strong markup--li-strong">私鑰</strong>解密用戶端發送的對稱金鑰。現在，客戶端和伺服器都擁有了相同的對稱金鑰，並且可以使用它來加密和解密後續的通訊。</li></ol><p name="eb73" id="eb73" class="graf graf--p graf-after--li graf--trailing">完成握手後，用戶端和伺服器之間的資料傳輸將使用對稱金鑰進行加密和解密，從而確保通訊的保密性和完整性。</p></div></div></section><section name="85b9" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="6279" id="6279" class="graf graf--h3 graf--leading">抓包原理</h3><p name="13be" id="13be" class="graf graf--p graf-after--h3">簡單來說就是，用戶端用公鑰加密，伺服器端用私鑰解密。如果要能夠解開 HTTPS 封包，一定要先有私鑰才能解密。</p><p name="c1a3" id="c1a3" class="graf graf--p graf-after--p graf--trailing">通常這些抓包軟體需要先在本地安裝 RootCA，然後透過本地或雲端的 VPN / Proxy 連線，讓網路流量經過程式，該程式會把所有 HTTPS 的憑證都換成自己的憑證與私鑰，就可以解開封包內容。若本地未安裝 RootCA，瀏覽器會因為認不得憑證，而在瀏覽器判斷不安全。</p></div></div></section><section name="421e" class="section section--body section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="964b" id="964b" class="graf graf--h3 graf--leading">根憑證原理</h3><p name="a4e5" id="a4e5" class="graf graf--p graf-after--h3">安裝根憑證（Root CA）可以解開 HTTPS 封包，是因為根憑證是整個數位憑證驗證體系的頂級信任機構。在 HTTPS 通訊中，伺服器會向客戶端發送一份數位憑證，其中包含了伺服器的公鑰以及一些其他資訊，用於驗證伺服器的身份和確保通訊的安全性。而數位憑證本身是由一系列數位簽名構成的。</p><p name="1476" id="1476" class="graf graf--p graf-after--p">數位簽名是由憑證頒發機構（CA）用其私鑰對憑證中的資訊進行加密得到的。要驗證數位憑證的有效性，客戶端需要使用相應的 CA 的公鑰對數位簽名進行解密，並驗證簽名的有效性，以確保憑證的真實性和完整性。</p><p name="de72" id="de72" class="graf graf--p graf-after--p">如果客戶端信任了根憑證，那麼它就會信任由這個根憑證簽發的所有子憑證，因為數位憑證的信任鏈是依賴於根憑證的信任的。這意味著，如果伺服器的數位憑證可以通過根憑證驗證，那麼客戶端就可以相信伺服器的身份，從而安全地建立 HTTPS 連接，解密和處理伺服器發送的資料。</p><p name="751f" id="751f" class="graf graf--p graf-after--p graf--trailing">因此，安裝根憑證可以解開 HTTPS 封包，是因為它為客戶端提供了信任的根基，使客戶端能夠驗證伺服器發送的數位憑證的有效性，並安全地與伺服器建立加密通訊。</p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@chouhsiang" class="p-author h-card">周詳  Sean Chou</a> on <a href="https://medium.com/p/6fb81fd15795"><time class="dt-published" datetime="2024-04-11T02:46:31.845Z">April 11, 2024</time></a>.</p><p><a href="https://medium.com/@chouhsiang/%E7%82%BA%E4%BB%80%E9%BA%BC%E5%AE%89%E8%A3%9D-rootca-%E5%8F%AF%E4%BB%A5%E8%A7%A3%E9%96%8B-https-%E5%B0%81%E5%8C%85-6fb81fd15795" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 29, 2026.</p></footer></article></body></html>

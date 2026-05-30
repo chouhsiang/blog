@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>[背景知識] ASN.1 | 自然人憑證開發筆記</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">[背景知識] ASN.1 | 自然人憑證開發筆記</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+首頁 &gt; 系列文 &gt; 自然人憑證開發筆記
+</section>
+<section data-field="body" class="e-content">
+<section name="cad5" class="section section--body section--first"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="d481" id="d481" class="graf graf--h3 graf--leading graf--title">[背景知識] ASN.1 | 自然人憑證開發筆記</h3><p name="28d5" id="28d5" class="graf graf--p graf-after--h3"><a href="https://medium.com/chouhsiang" data-href="https://medium.com/chouhsiang" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank"><strong class="markup--strong markup--p-strong">首頁</strong></a><strong class="markup--strong markup--p-strong"> &gt; </strong><a href="https://medium.com/chouhsiang/series/home" data-href="https://medium.com/chouhsiang/series/home" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank"><strong class="markup--strong markup--p-strong">系列文</strong></a><strong class="markup--strong markup--p-strong"> &gt; </strong><a href="https://medium.com/chouhsiang/%E6%B7%B1%E5%85%A5%E6%B7%BA%E5%87%BA%E8%87%AA%E7%84%B6%E4%BA%BA%E6%86%91%E8%AD%89-5b0c9188419c" data-href="https://medium.com/chouhsiang/%E6%B7%B1%E5%85%A5%E6%B7%BA%E5%87%BA%E8%87%AA%E7%84%B6%E4%BA%BA%E6%86%91%E8%AD%89-5b0c9188419c" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank"><strong class="markup--strong markup--p-strong">自然人憑證開發</strong>筆記</a></p><figure name="9ac6" id="9ac6" class="graf graf--figure graf-after--p graf--trailing"><img class="graf-image" data-image-id="0*n0VjkHnQsw4WGGSm.png" data-width="1260" data-height="709" src="https://cdn-images-1.medium.com/max/800/0*n0VjkHnQsw4WGGSm.png"></figure></div></div></section><section name="c7c9" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="06bd" id="06bd" class="graf graf--h3 graf--leading">ASN.1</h3><p name="99bb" id="99bb" class="graf graf--p graf-after--h3">ASN.1（Abstract Syntax Notation One）是一種用於定義和描述結構化資料的標準。它提供了一種獨立於具體實現和編程語言的方式，以描述和表示資料的結構。ASN.1 的主要目的是提供一套統一的標準，以便不同系統和應用程式之間能夠共同理解和交換結構化的資料。</p><p name="ea1e" id="ea1e" class="graf graf--p graf-after--p">ASN.1 定義了一種抽象語法，用於描述資料的結構，包括資料的類型、值範圍、結構和命名。這種描述是獨立於具體實現和編程語言的，使得不同系統可以根據 ASN.1 描述來理解和處理資料，實現資料的交換和互通。</p><p name="89c9" id="89c9" class="graf graf--p graf-after--p">ASN.1 通常與編碼規則一同使用，例如 BER（Basic Encoding Rules）和 DER（Distinguished Encoding Rules），這些規則用於將結構化的資料編碼成二進制格式，以便在網路中傳輸或儲存到檔案中。</p><p name="23df" id="23df" class="graf graf--p graf-after--p graf--trailing">在數位通訊、安全協定（例如 TLS、SSL）、憑證（例如 X.509 憑證）、電子郵件（例如 S/MIME）等領域中，ASN.1 被廣泛應用。</p></div></div></section><section name="7b62" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="b947" id="b947" class="graf graf--h3 graf--leading">ASN.1 結構</h3><p name="5379" id="5379" class="graf graf--p graf-after--h3">ASN.1 定義了一種用於描述資料結構的抽象語法，這種語法基於組合基本數據類型以及它們的結構，形成更複雜的資料結構。以下是 ASN.1 的主要結構元素：</p><ul class="postList"><li name="d065" id="d065" class="graf graf--li graf-after--p">模組（Module）： ASN.1 的描述開始於一個模組，模組可以包含多個類型定義和值定義。</li><li name="ecb2" id="ecb2" class="graf graf--li graf-after--li">類型定義（Type Definition）： 類型定義描述了資料的結構和類型。它可以是基本類型，如整數或字串，也可以是結構化的，如序列、集合等。</li><li name="1019" id="1019" class="graf graf--li graf-after--li">值定義（Value Definition）： 值定義用於給定一個類型定義的具體值，用於實例化 ASN.1 中的資料。</li></ul><p name="fcc3" id="fcc3" class="graf graf--p graf-after--li">結構範例如下</p><pre data-code-block-mode="1" spellcheck="false" data-code-block-lang="go" name="1d5e" id="1d5e" class="graf graf--pre graf-after--p graf--trailing graf--preV2"><span class="pre--content">FooProtocol DEFINITIONS ::= BEGIN<br /><br />    FooQuestion ::= SEQUENCE {<br />        trackingNumber INTEGER,<br />        question       IA5String<br />    }<br /><br />    FooAnswer ::= SEQUENCE {<br />        questionNumber INTEGER,<br />        answer         BOOLEAN<br />    }<br /><br />END</span></pre></div></div></section><section name="b0e8" class="section section--body section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="dc76" id="dc76" class="graf graf--h3 graf--leading">ASN.1 JavaScript decoder</h3><figure name="c018" id="c018" class="graf graf--figure graf-after--h3"><img class="graf-image" data-image-id="1*dAqATsm-lFTOjXdD3Yijnw.png" data-width="2186" data-height="1298" src="https://cdn-images-1.medium.com/max/800/1*dAqATsm-lFTOjXdD3Yijnw.png"></figure><p name="2eb8" id="2eb8" class="graf graf--p graf-after--figure graf--trailing">不管是憑證、公鑰、私鑰、PKCS7，都是 ASN.1 格式，可以透過線上的 <a href="https://lapo.it/asn1js/" data-href="https://lapo.it/asn1js/" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">ASN.1 JavaScript decoder</a> 來進行解碼，並觀察其中的結構。</p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@chouhsiang" class="p-author h-card">周詳  Sean Chou</a> on <a href="https://medium.com/p/e011d1dc4cf0"><time class="dt-published" datetime="2024-01-29T09:42:44.723Z">January 29, 2024</time></a>.</p><p><a href="https://medium.com/@chouhsiang/%E8%83%8C%E6%99%AF%E7%9F%A5%E8%AD%98-asn-1-%E6%B7%B1%E5%85%A5%E6%B7%BA%E5%87%BA%E8%87%AA%E7%84%B6%E4%BA%BA%E6%86%91%E8%AD%89-e011d1dc4cf0" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 29, 2026.</p></footer></article></body></html>

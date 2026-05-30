@@ -1,0 +1,69 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>[Day30] 安全防護 — 30 天入門 Cloudflare</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">[Day30] 安全防護 — 30 天入門 Cloudflare</h1>
+</header>
+<section data-field="body" class="e-content">
+<section name="8e7c" class="section section--body section--first"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="444a" id="444a" class="graf graf--h3 graf--leading graf--title"><a href="https://medium.com/chouhsiang/30%E5%A4%A9%E6%90%9E%E6%87%82cloudflare-30-abc%E5%AE%89%E5%85%A8%E9%98%B2%E8%AD%B7-20d65ed6d154" data-href="https://medium.com/chouhsiang/30%E5%A4%A9%E6%90%9E%E6%87%82cloudflare-30-abc%E5%AE%89%E5%85%A8%E9%98%B2%E8%AD%B7-20d65ed6d154" class="markup--anchor markup--h3-anchor" target="_blank"><strong class="markup--strong markup--h3-strong">[Day30] 安全防護 — 30 天入門 Cloudflare</strong></a></h3><figure name="8706" id="8706" class="graf graf--figure graf-after--h3"><img class="graf-image" data-image-id="1*qPmx3bs5FNdUithRJOyY0g.png" data-width="1920" data-height="1080" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*qPmx3bs5FNdUithRJOyY0g.png"></figure><p name="49cf" id="49cf" class="graf graf--p graf-after--figure graf--trailing">最後一篇來講最重要安全防護的機制，由於 Cloudflare 與我們主機都是走 Internet，可能會導致某些設定被繞過的情況，本篇來說明如何透過調整 Server Side 的設定，提升整體的防護，以防止 CDN 與 Access 被繞過。</p></div></div></section><section name="33b6" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="d368" id="d368" class="graf graf--h4 graf--leading">1. 防止他人盜取 Cloudflare 與原始伺服器間的網路封包</h4><p name="d6eb" id="d6eb" class="graf graf--p graf-after--h4">Cloudflare SSL 設定若選擇彈性模式，則會導致 Cloudflare 與原始伺服器間未加密，可能導致網路流量被盜取。</p><p name="fb1c" id="fb1c" class="graf graf--p graf-after--p">解決方法為，SSL 設定建議為「完整」或以上，使用更安全的連線。</p><figure name="4d3c" id="4d3c" class="graf graf--figure graf-after--p graf--trailing"><img class="graf-image" data-image-id="1*YW8jn4VlkLbkqCEQWn1SjA.png" data-width="2150" data-height="836" src="https://cdn-images-1.medium.com/max/800/1*YW8jn4VlkLbkqCEQWn1SjA.png"></figure></div></div></section><section name="07b9" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="f39e" id="f39e" class="graf graf--h4 graf--leading">2. 防止他人直接訪問伺服器 IP</h4><p name="95f8" id="95f8" class="graf graf--p graf-after--h4">如下圖所示，雖然目標 domain DNS 解析出來會是 Cloudflare IP，無法取得實際的 IP，但若有人知道實際的 IP，就可以訪問伺服器。</p><p name="dea6" id="dea6" class="graf graf--p graf-after--p">解決方法為，建議在伺服器上增加防火牆規則，只允許 Cloudflare 過來的連線，Cloudflare IP 範圍<a href="https://www.cloudflare.com/zh-tw/ips/" data-href="https://www.cloudflare.com/zh-tw/ips/" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">參考官方文件</a>。</p><figure name="8305" id="8305" class="graf graf--figure graf-after--p graf--trailing"><img class="graf-image" data-image-id="1*vwldIskgNHvbx7rvsmcI5w.png" data-width="1728" data-height="406" src="https://cdn-images-1.medium.com/max/800/1*vwldIskgNHvbx7rvsmcI5w.png"></figure></div></div></section><section name="614a" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="1cec" id="1cec" class="graf graf--h4 graf--leading">3. 防止他人將網站綁到自己的網域</h4><p name="b631" id="b631" class="graf graf--p graf-after--h4">上一步我們已經限制流量只能從 Cloudflare 過來，但若是有其他 Cloudflare 使用者，將伺服器 IP 綁到他的網域，就可以透過他的網域來瀏覽網站。</p><p name="059f" id="059f" class="graf graf--p graf-after--p">解決方法為，建議在伺服器上增加 http Layer 7 的 Virtual host 檢查，避免其他網域也能造訪服務。</p><figure name="b79e" id="b79e" class="graf graf--figure graf-after--p graf--trailing"><img class="graf-image" data-image-id="1*Cyk--O-CA7WhCB5YMZRtag.png" data-width="1732" data-height="468" src="https://cdn-images-1.medium.com/max/800/1*Cyk--O-CA7WhCB5YMZRtag.png"></figure></div></div></section><section name="9c55" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="927e" id="927e" class="graf graf--h4 graf--leading">4. 使用 Tunnel，防止他人透過 Spectrum 繞過 Access</h4><p name="7f90" id="7f90" class="graf graf--p graf-after--h4"><a href="https://medium.com/chouhsiang/30%E5%A4%A9%E6%90%9E%E6%87%82cloudflare-11-spectrum-d22e08095ebc" data-href="https://medium.com/chouhsiang/30%E5%A4%A9%E6%90%9E%E6%87%82cloudflare-11-spectrum-d22e08095ebc" class="markup--anchor markup--p-anchor" target="_blank">Spectrum</a> 是 Cloudflare 提供的 L4 DDoS 防護服務，可以保護 server port 的網路流量，他也是作為 L4 的反向代理。而我們可以透過 Cloudflare Access 保護我們的服務，但若駭客知道我們伺服器的 IP，可以將 IP 加入 Spectrum，並搭配修改本機 host file，就可以繞過 Cloudflare Access 造訪服務。</p><p name="565a" id="565a" class="graf graf--p graf-after--p">解決方法為，使用 Cloudflare Access 時要搭配 <a href="https://medium.com/chouhsiang/30%E5%A4%A9%E6%90%9E%E6%87%82cloudflare-27-tunnel-444675c48625" data-href="https://medium.com/chouhsiang/30%E5%A4%A9%E6%90%9E%E6%87%82cloudflare-27-tunnel-444675c48625" class="markup--anchor markup--p-anchor" target="_blank">Cloudflare Tunnel</a>，避免伺服器有 Public IP。Tunnel 設定可參考<a href="https://chouhsiang.medium.com/%E6%B2%92%E6%9C%89public-ip%E4%B9%9F%E8%83%BD%E6%9E%B6%E7%AB%99-2-cloudflare-tunnel-197a4b88bd78" data-href="https://chouhsiang.medium.com/%E6%B2%92%E6%9C%89public-ip%E4%B9%9F%E8%83%BD%E6%9E%B6%E7%AB%99-2-cloudflare-tunnel-197a4b88bd78" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">這篇</a>。</p><figure name="abb6" id="abb6" class="graf graf--figure graf-after--p graf--trailing"><img class="graf-image" data-image-id="1*IYrdm_1Xy0g3hxSA4bq7SQ.png" data-width="1904" data-height="580" src="https://cdn-images-1.medium.com/max/800/1*IYrdm_1Xy0g3hxSA4bq7SQ.png"></figure></div></div></section><section name="ddf4" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="c861" id="c861" class="graf graf--h4 graf--leading">5. 使用認證的原點提取，防止他人透過 Spectrum 繞過 Access</h4><p name="a81e" id="a81e" class="graf graf--p graf-after--h4 graf--trailing">同上述攻擊手法，也可以使用 Cloudflare SSL/TLS 中的認證的原點提取，可以避免未驗證的 Client 存取後端伺服器，參考<a href="https://medium.com/@chouhsiang/cloudflare-cdn-access-%E7%B9%9E%E9%81%8E%E8%88%87%E9%98%B2%E8%AD%B7-c6687f850943" data-href="https://medium.com/@chouhsiang/cloudflare-cdn-access-%E7%B9%9E%E9%81%8E%E8%88%87%E9%98%B2%E8%AD%B7-c6687f850943" class="markup--anchor markup--p-anchor" target="_blank">前文</a>。</p></div></div></section><section name="16ed" class="section section--body section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="013c" id="013c" class="graf graf--h4 graf--leading">結語</h4><p name="d1da" id="d1da" class="graf graf--p graf-after--h4">由於 Cloudflare 與伺服器之間是走 Internet，所以可能導致漏洞與攻擊，透過以上幾種做法，可以增加 Cloudflare 與伺服器的安全性。</p><p name="1aea" id="1aea" class="graf graf--p graf-after--p">感謝你看完本系列文，透過 30 天理解了 Cloudflare 有哪些服務，之後會再推出一系列更進階使用 Cloudflare 的文章。</p><p name="62a6" id="62a6" class="graf graf--p graf-after--p graf--trailing"><strong class="markup--strong markup--p-strong">▶ 閱讀更多本系列文：</strong><a href="https://medium.com/chouhsiang/cloudflare-30-days/home" data-href="https://medium.com/chouhsiang/cloudflare-30-days/home" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank"><strong class="markup--strong markup--p-strong">30 天入門 Cloudflare</strong></a></p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@chouhsiang" class="p-author h-card">周詳  Sean Chou</a> on <a href="https://medium.com/p/20d65ed6d154"><time class="dt-published" datetime="2023-05-03T06:43:28.018Z">May 3, 2023</time></a>.</p><p><a href="https://medium.com/@chouhsiang/30%E5%A4%A9%E6%90%9E%E6%87%82cloudflare-30-abc%E5%AE%89%E5%85%A8%E9%98%B2%E8%AD%B7-20d65ed6d154" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 29, 2026.</p></footer></article></body></html>

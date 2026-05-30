@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>[背景知識] 公鑰密碼學標準 PKCS | 自然人憑證開發筆記</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">[背景知識] 公鑰密碼學標準 PKCS | 自然人憑證開發筆記</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+首頁 &gt; 系列文 &gt; 自然人憑證開發筆記
+</section>
+<section data-field="body" class="e-content">
+<section name="e516" class="section section--body section--first"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="8af0" id="8af0" class="graf graf--h3 graf--leading graf--title">[背景知識] 公鑰密碼學標準 PKCS | 自然人憑證開發筆記</h3><p name="2c6a" id="2c6a" class="graf graf--p graf-after--h3"><a href="https://medium.com/chouhsiang" data-href="https://medium.com/chouhsiang" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank"><strong class="markup--strong markup--p-strong">首頁</strong></a><strong class="markup--strong markup--p-strong"> &gt; </strong><a href="https://medium.com/chouhsiang/series/home" data-href="https://medium.com/chouhsiang/series/home" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank"><strong class="markup--strong markup--p-strong">系列文</strong></a><strong class="markup--strong markup--p-strong"> &gt; </strong><a href="https://medium.com/chouhsiang/%E6%B7%B1%E5%85%A5%E6%B7%BA%E5%87%BA%E8%87%AA%E7%84%B6%E4%BA%BA%E6%86%91%E8%AD%89-5b0c9188419c" data-href="https://medium.com/chouhsiang/%E6%B7%B1%E5%85%A5%E6%B7%BA%E5%87%BA%E8%87%AA%E7%84%B6%E4%BA%BA%E6%86%91%E8%AD%89-5b0c9188419c" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank"><strong class="markup--strong markup--p-strong">自然人憑證開發</strong>筆記</a></p><figure name="4392" id="4392" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="0*URJ5XVGPyhH2EXmy.png" data-width="1260" data-height="709" src="https://cdn-images-1.medium.com/max/800/0*URJ5XVGPyhH2EXmy.png"></figure><p name="27c9" id="27c9" class="graf graf--p graf-after--figure graf--trailing">自然人憑證的數位簽章、加解密的結果都是基於 PKCS 標準，本篇來介紹一下什麼是 PKCS。</p></div></div></section><section name="b648" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="8714" id="8714" class="graf graf--h3 graf--leading">公鑰密碼學標準 PKCS</h3><p name="b3ca" id="b3ca" class="graf graf--p graf-after--h3">PKCS 是指Public Key Cryptography Standards，是一系列的公開金鑰密碼學標準。這些標準由 RSA 實驗室（RSA Laboratories）制定，用於推動公開金鑰密碼學的發展和應用。以下是一些常見的 PKCS 標準：</p><ul class="postList"><li name="1da8" id="1da8" class="graf graf--li graf-after--p">PKCS #1: RSA Cryptography Standard:<br>定義了 RSA 加密和數位簽章的標準。這包括 RSA 公開金鑰加密和簽名的格式，以及相應的數學運算。</li><li name="e9a2" id="e9a2" class="graf graf--li graf-after--li">PKCS #7: Cryptographic Message Syntax (CMS):<br>定義了一種通用的語法，用於表示加密和簽章的資料，包括數位簽章、數位信封（encrypted message），以及簽章的格式。</li><li name="3e87" id="3e87" class="graf graf--li graf-after--li">PKCS #8: Private-Key Information Syntax Standard:<br>定義了私鑰的語法，用於表示和交換私鑰資訊。通常用於將私鑰存儲在檔案中或通過網路進行私鑰的交換。</li><li name="915b" id="915b" class="graf graf--li graf-after--li">PKCS #10: Certification Request Syntax Standard:<br>定義了一種語法，用於向證書授權機構（Certificate Authority，CA）提交證書請求。這是用戶向 CA 請求數字憑證的標準格式。</li><li name="a818" id="a818" class="graf graf--li graf-after--li">PKCS #11: Cryptographic Token Interface (Cryptoki):<br>定義了通用的 API 介面，用於訪問硬體安全模塊（Hardware Security Module，HSM）和其他加密標記設備。這使應用程式能夠與硬體安全設備進行互動，並利用其安全功能。</li><li name="c20f" id="c20f" class="graf graf--li graf-after--li">PKCS #12: Personal Information Exchange Syntax Standard:<br>定義了一種語法，用於將密鑰、證書和相關資訊封裝成一個單一的檔案，通常使用 PFX 或 P12 擴展名。這種格式通常用於在應用之間安全地交換私鑰和憑證。</li></ul><p name="907f" id="907f" class="graf graf--p graf-after--li">這些標準為公開金鑰密碼學的不同方面提供了統一的規範，有助於確保不同系統和應用程式之間的互操作性。它們為實現安全通訊和數位簽章等應用提供了基礎。</p><p name="6d23" id="6d23" class="graf graf--p graf-after--p graf--trailing">而自然人憑證在做數位簽章、加解密支援了 PKCS #1、PCKS #7，接著來比較兩者。</p></div></div></section><section name="cc86" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="780d" id="780d" class="graf graf--h3 graf--leading">PKCS #1</h3><ul class="postList"><li name="cb13" id="cb13" class="graf graf--li graf-after--h3">主要用途：<br>數位簽章和加密： PKCS #1 主要用於 RSA 密碼學，包括數位簽章和加密。它定義了 RSA 的數位簽章生成和驗證、以及資料的加密和解密方法。</li><li name="148d" id="148d" class="graf graf--li graf-after--li">填充方案：<br>PKCS #1 v1.5 和 OAEP： PKCS #1 定義了填充方案，如 PKCS #1 v1.5 和 OAEP，用於確保 RSA 加密和數位簽章的安全性。這些填充方案影響資料的安全性和保密性。</li><li name="9d14" id="9d14" class="graf graf--li graf-after--li graf--trailing">密鑰長度：<br>彈性的密鑰長度： PKCS #1 允許使用不同的 RSA 密鑰長度，以應對安全性和性能的需求。</li></ul></div></div></section><section name="7f0b" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="728d" id="728d" class="graf graf--h3 graf--leading">PKCS #7</h3><ul class="postList"><li name="992e" id="992e" class="graf graf--li graf-after--h3">主要用途：<br>數位簽章和訊息語法： PKCS #7 主要用於訊息語法，定義了一個通用的語法，用於表示和簽名/加密訊息。它通常用於創建加密和簽名的資料結構，如數位信封。</li><li name="dd31" id="dd31" class="graf graf--li graf-after--li">數位簽章和數位信封：<br>PKCS #7 中的簽章和信封： PKCS #7 可以包含數位簽章和數位信封。簽章用於確保資料的完整性和真實性，而信封則用於將資料加密以保護其保密性。</li><li name="8931" id="8931" class="graf graf--li graf-after--li graf--trailing">廣泛應用：<br>加密通訊和數位信封： PKCS #7 常用於加密通訊和數位信封，特別是在公開金鑰基礎結構（PKI）環境中，以確保通訊的機密性和完整性。</li></ul></div></div></section><section name="cce6" class="section section--body section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="0130" id="0130" class="graf graf--h3 graf--leading">結語</h3><p name="92e0" id="92e0" class="graf graf--p graf-after--h3">PKCS #1 和 PKCS #7 有不同的焦點和應用範疇。PKCS #1 主要用於 RSA 加密和數位簽章，而 PKCS #7 主要用於創建和處理數位簽章、數位信封等資料結構，以實現資料的安全通訊。後續會針對兩個標準做簽章與加密的範例。</p><p name="0e33" id="0e33" class="graf graf--p graf-after--p graf--trailing"><strong class="markup--strong markup--p-strong">▶ 閱讀更多：</strong><a href="https://medium.com/chouhsiang/citizen-digital-certificate/home" data-href="https://medium.com/chouhsiang/citizen-digital-certificate/home" class="markup--anchor markup--p-anchor" target="_blank"><strong class="markup--strong markup--p-strong">深入淺出自然人憑證</strong></a></p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@chouhsiang" class="p-author h-card">周詳  Sean Chou</a> on <a href="https://medium.com/p/f9d3e43ecaa1"><time class="dt-published" datetime="2024-01-07T15:38:40.329Z">January 7, 2024</time></a>.</p><p><a href="https://medium.com/@chouhsiang/%E4%BB%8B%E7%B4%B9%E7%AF%87-1-5-pkcs-%E4%BB%8B%E7%B4%B9-%E6%B7%B1%E5%85%A5%E6%B7%BA%E5%87%BA%E8%87%AA%E7%84%B6%E4%BA%BA%E6%86%91%E8%AD%89-f9d3e43ecaa1" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 29, 2026.</p></footer></article></body></html>

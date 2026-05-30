@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>以 Google Apps Script 做 API，將 Google Sheets 作為資料庫</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">以 Google Apps Script 做 API，將 Google Sheets 作為資料庫</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+如果你有一份 Google Sheets 想讓其他前端專案、LINE Bot、或第三方服務可以即時存取資料，但又不想架設伺服器或資料庫，其實只需要一個 Google 帳號和 Apps Script，你就能打造一個簡單的 API，把試算表當作輕量級資料庫使用！
+</section>
+<section data-field="body" class="e-content">
+<section name="c1b3" class="section section--body section--first"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="3875" id="3875" class="graf graf--h3 graf--leading graf--title">以 Google Apps Script 做 API，將 Google Sheets 作為資料庫</h3><p name="0775" id="0775" class="graf graf--p graf-after--h3 graf--trailing">如果你有一份 Google Sheets 想讓其他前端專案、LINE Bot、或第三方服務可以即時存取資料，但又不想架設伺服器或資料庫，其實只需要一個 Google 帳號和 Apps Script，你就能打造一個簡單的 API，把試算表當作輕量級資料庫使用！</p></div></div></section><section name="0967" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="1f38" id="1f38" class="graf graf--h3 graf--leading">範例</h3><p name="496c" id="496c" class="graf graf--p graf-after--h3">以下做一個簡單的範例，我將網站部署在 Github Pages 上，前端使用 <a href="https://datatables.net/" data-href="https://datatables.net/" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Datatables</a> 來呈現資料，將 Google Sheets 作為資料庫，後端使用 Google Apps Script 來做 API。</p><ul class="postList"><li name="6b7c" id="6b7c" class="graf graf--li graf-after--p"><a href="https://chouhsiang.github.io/google-apps-script-example/datatables-from-google-sheets/" data-href="https://chouhsiang.github.io/google-apps-script-example/datatables-from-google-sheets/" class="markup--anchor markup--li-anchor" rel="noopener" target="_blank">範例網站</a></li><li name="4fa6" id="4fa6" class="graf graf--li graf-after--li"><a href="https://github.com/chouhsiang/google-apps-script-example/blob/main/datatables-from-google-sheets/index.html" data-href="https://github.com/chouhsiang/google-apps-script-example/blob/main/datatables-from-google-sheets/index.html" class="markup--anchor markup--li-anchor" rel="noopener" target="_blank">前端原始碼</a></li><li name="6a48" id="6a48" class="graf graf--li graf-after--li"><a href="https://github.com/chouhsiang/google-apps-script-example/blob/main/datatables-from-google-sheets/Code.gs" data-href="https://github.com/chouhsiang/google-apps-script-example/blob/main/datatables-from-google-sheets/Code.gs" class="markup--anchor markup--li-anchor" rel="noopener" target="_blank">Google Apps Script 後端原始碼</a></li><li name="694f" id="694f" class="graf graf--li graf-after--li"><a href="https://docs.google.com/spreadsheets/d/1gn_V9SHwYw0xRIIvwAwisIv3r-Uo9QEoccQnqRswwww/edit?gid=0#gid=0" data-href="https://docs.google.com/spreadsheets/d/1gn_V9SHwYw0xRIIvwAwisIv3r-Uo9QEoccQnqRswwww/edit?gid=0#gid=0" class="markup--anchor markup--li-anchor" rel="noopener" target="_blank">Google Sheets 資料庫</a></li></ul><figure name="fe6f" id="fe6f" class="graf graf--figure graf-after--li graf--trailing"><img class="graf-image" data-image-id="1*SsNJzBnivnCm6qkRn53p1w.png" data-width="1428" data-height="732" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*SsNJzBnivnCm6qkRn53p1w.png"><figcaption class="imageCaption">範例網站</figcaption></figure></div></div></section><section name="b281" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="64c1" id="64c1" class="graf graf--h3 graf--leading">資料庫：Google Sheets</h3><p name="315a" id="315a" class="graf graf--p graf-after--h3">如下圖所示，以使用者表單為例，建立兩個欄位：Name、Email</p><figure name="cf70" id="cf70" class="graf graf--figure graf-after--p graf--trailing"><img class="graf-image" data-image-id="1*Fg_oWwqh2z0AQdTOoTg10A.png" data-width="1118" data-height="670" src="https://cdn-images-1.medium.com/max/800/1*Fg_oWwqh2z0AQdTOoTg10A.png"><figcaption class="imageCaption">Google Sheets 資料庫</figcaption></figure></div></div></section><section name="48a3" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="5d61" id="5d61" class="graf graf--h3 graf--leading">後端：Google Apps Script</h3><p name="8d6b" id="8d6b" class="graf graf--p graf-after--h3">在 Google Sheets 選擇「擴充工具」「Apps Script」，將下面程式進行部署。</p><p name="0192" id="0192" class="graf graf--p graf-after--p">其中 OnlyCurrentDoc 限定程式只會使用該 Google Sheets 的資料。讀取 User 資料表，將所有資料讀取出來，去除第一行表頭，轉成 JSON。</p><pre data-code-block-mode="1" spellcheck="false" data-code-block-lang="javascript" name="0290" id="0290" class="graf graf--pre graf-after--p graf--preV2"><span class="pre--content"><span class="hljs-comment">/**<span class="hljs-doctag">@OnlyCurrentDoc</span>*/</span><br /><br /><span class="hljs-keyword">function</span> <span class="hljs-title function_">doGet</span>(<span class="hljs-params">e</span>) {<br />  <span class="hljs-keyword">const</span> sheet = <span class="hljs-title class_">SpreadsheetApp</span>.<span class="hljs-title function_">getActiveSpreadsheet</span>().<span class="hljs-title function_">getSheetByName</span>(<span class="hljs-string">&quot;User&quot;</span>);<br />  <span class="hljs-keyword">const</span> data = sheet.<span class="hljs-title function_">getDataRange</span>().<span class="hljs-title function_">getValues</span>().<span class="hljs-title function_">slice</span>(<span class="hljs-number">1</span>);<br />  <span class="hljs-keyword">return</span> <span class="hljs-title class_">ContentService</span>.<span class="hljs-title function_">createTextOutput</span>(<span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">stringify</span>(data)).<span class="hljs-title function_">setMimeType</span>(<br />    <span class="hljs-title class_">ContentService</span>.<span class="hljs-property">MimeType</span>.<span class="hljs-property">JSON</span><br />  );<br />}</span></pre><p name="8dac" id="8dac" class="graf graf--p graf-after--pre"><a href="https://script.google.com/macros/s/AKfycbzrVcYvRfKQGQWo4_brvwuN_LfJqErvYaGJnkSLBmwSPlcQ2spBUfCBvIg_MGHlk9qeFw/exec" data-href="https://script.google.com/macros/s/AKfycbzrVcYvRfKQGQWo4_brvwuN_LfJqErvYaGJnkSLBmwSPlcQ2spBUfCBvIg_MGHlk9qeFw/exec" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">範例 API</a> 可以查看結果，結果如下，會是一個二維陣列。</p><pre data-code-block-mode="1" spellcheck="false" data-code-block-lang="perl" name="cb57" id="cb57" class="graf graf--pre graf-after--p graf--trailing graf--preV2"><span class="pre--content">[<br />  [<br />    <span class="hljs-string">&quot;John&quot;</span>,<br />    <span class="hljs-string">&quot;test@example.com&quot;</span><br />  ],<br />  [<br />    <span class="hljs-string">&quot;Eric&quot;</span>,<br />    <span class="hljs-string">&quot;eric@example.com&quot;</span><br />  ],<br />  [<br />    <span class="hljs-string">&quot;Jojo&quot;</span>,<br />    <span class="hljs-string">&quot;jo@gov.tw&quot;</span><br />  ],<br />  [<br />    <span class="hljs-string">&quot;Damn&quot;</span>,<br />    <span class="hljs-string">&quot;abc@yahoo.com&quot;</span><br />  ]<br />]</span></pre></div></div></section><section name="35c4" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="63fd" id="63fd" class="graf graf--h3 graf--leading">前端：Datatables</h3><p name="ebc8" id="ebc8" class="graf graf--p graf-after--h3">在前端使用 Datatables 套件，將資料呈現出來。透過 Datables 的 Ajax 功能來載入 Googles Apps Script 做的 API 資料。</p><pre data-code-block-mode="1" spellcheck="false" data-code-block-lang="xml" name="9b6a" id="9b6a" class="graf graf--pre graf-after--p graf--trailing graf--preV2"><span class="pre--content"><span class="hljs-tag">&lt;<span class="hljs-name">table</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;userTable&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;display&quot;</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">thead</span>&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br />      <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Name<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><br />      <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Email<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><br />    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br />  <span class="hljs-tag">&lt;/<span class="hljs-name">thead</span>&gt;</span><br /><span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span><br /><br /><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"><br />  $(<span class="hljs-string">&quot;#userTable&quot;</span>).<span class="hljs-title class_">DataTable</span>({<br />    <span class="hljs-attr">ajax</span>: {<br />      <span class="hljs-attr">url</span>: <span class="hljs-string">&quot;https://script.google.com/macros/s/AKfycbzrVcYvRfKQGQWo4_brvwuN_LfJqErvYaGJnkSLBmwSPlcQ2spBUfCBvIg_MGHlk9qeFw/exec&quot;</span>,<br />      <span class="hljs-attr">dataSrc</span>: <span class="hljs-string">&quot;&quot;</span>,<br />    },<br />  });<br /></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span></pre></div></div></section><section name="b225" class="section section--body section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="3e6d" id="3e6d" class="graf graf--h3 graf--leading">結語</h3><p name="c21e" id="c21e" class="graf graf--p graf-after--h3 graf--trailing">透過以上操作就可以簡單的將 Google Sheets 作為資料庫，呈現在網站上。不過還是有一些缺點的，Google Apps Script 對於運算時間有限制，每天只能加總運算 90 分鐘，每次運算不能超過 6 分鐘，詳見 <a href="https://developers.google.com/apps-script/guides/services/quotas?hl=zh-tw" data-href="https://developers.google.com/apps-script/guides/services/quotas?hl=zh-tw" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Google 官方文件</a>。</p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@chouhsiang" class="p-author h-card">周詳  Sean Chou</a> on <a href="https://medium.com/p/ba58d82486ac"><time class="dt-published" datetime="2025-05-25T13:17:52.899Z">May 25, 2025</time></a>.</p><p><a href="https://medium.com/@chouhsiang/%E4%BB%A5-google-apps-script-%E5%81%9A-api-%E5%B0%87-google-sheets-%E4%BD%9C%E7%82%BA%E8%B3%87%E6%96%99%E5%BA%AB-ba58d82486ac" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 29, 2026.</p></footer></article></body></html>

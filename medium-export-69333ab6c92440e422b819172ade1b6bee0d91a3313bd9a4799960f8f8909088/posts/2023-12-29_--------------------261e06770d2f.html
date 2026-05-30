@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>自然人憑證介紹 | 自然人憑證開發筆記</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">自然人憑證介紹 | 自然人憑證開發筆記</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+首頁 &gt; 系列文 &gt; 自然人憑證開發筆記
+</section>
+<section data-field="body" class="e-content">
+<section name="d1c9" class="section section--body section--first"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="6acf" id="6acf" class="graf graf--h3 graf--leading graf--title">自然人憑證介紹 | 自然人憑證開發筆記</h3><p name="49a6" id="49a6" class="graf graf--p graf-after--h3"><a href="https://medium.com/chouhsiang" data-href="https://medium.com/chouhsiang" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank"><strong class="markup--strong markup--p-strong">首頁</strong></a><strong class="markup--strong markup--p-strong"> &gt; </strong><a href="https://medium.com/chouhsiang/series/home" data-href="https://medium.com/chouhsiang/series/home" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank"><strong class="markup--strong markup--p-strong">系列文</strong></a><strong class="markup--strong markup--p-strong"> &gt; </strong><a href="https://medium.com/chouhsiang/%E6%B7%B1%E5%85%A5%E6%B7%BA%E5%87%BA%E8%87%AA%E7%84%B6%E4%BA%BA%E6%86%91%E8%AD%89-5b0c9188419c" data-href="https://medium.com/chouhsiang/%E6%B7%B1%E5%85%A5%E6%B7%BA%E5%87%BA%E8%87%AA%E7%84%B6%E4%BA%BA%E6%86%91%E8%AD%89-5b0c9188419c" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank"><strong class="markup--strong markup--p-strong">自然人憑證開發</strong>筆記</a></p><figure name="a3d3" id="a3d3" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="0*fyEFG5hFeTUO8i5J.png" data-width="1260" data-height="709" src="https://cdn-images-1.medium.com/max/800/0*fyEFG5hFeTUO8i5J.png"></figure><figure name="23ea" id="23ea" class="graf graf--figure graf-after--figure"><img class="graf-image" data-image-id="0*EVOR2EwaR6r2IA9G.png" data-width="568" data-height="357" src="https://cdn-images-1.medium.com/max/800/0*EVOR2EwaR6r2IA9G.png"></figure><p name="a637" id="a637" class="graf graf--p graf-after--figure graf--trailing">在政府單位工作三年了，其中也接觸了不少系統，許多對民眾的網站也都支援了自然人憑證驗證，可以用於報稅、填表單、註冊等功能，對於如何開發介接自然人憑證也研究的有點心得，接下來就會花幾篇來介紹關於自然人憑證使用的知識。</p></div></div></section><section name="9477" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="07c7" id="07c7" class="graf graf--h4 graf--leading">身分驗證機制</h4><p name="75ac" id="75ac" class="graf graf--p graf-after--h4">談自然人憑證前，我們先來談系統需求，政府有各種大大小小的網站，每個網站都會有自己的會員清單，需要另外建立帳號密碼，但對民眾來說要記住每個網站的帳號密碼是件很繁瑣的事情，而且安全性也較低。為了統一身分驗證的使用者體驗，只要網站能跟我的卡片驗證，卡片又代表我個人，那我就可以用卡片來登入網站。如下圖人事服務網可以透過自然人憑證、健保卡、行動自然人憑證等驗證機制。</p><figure name="f132" id="f132" class="graf graf--figure graf-after--p graf--trailing"><img class="graf-image" data-image-id="0*8qTfl6qd0beEkVdf" data-width="2000" data-height="1211" src="https://cdn-images-1.medium.com/max/800/0*8qTfl6qd0beEkVdf"><figcaption class="imageCaption"><a href="https://ecpa.dgpa.gov.tw/" data-href="https://ecpa.dgpa.gov.tw/" class="markup--anchor markup--figure-anchor" rel="noopener" target="_blank">https://ecpa.dgpa.gov.tw/</a></figcaption></figure></div></div></section><section name="200f" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="1129" id="1129" class="graf graf--h4 graf--leading">自然人憑證</h4><p name="f612" id="f612" class="graf graf--p graf-after--h4">關於自然人憑證的介紹，可以參考<a href="https://moica.nat.gov.tw/other/what.html" data-href="https://moica.nat.gov.tw/other/what.html" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">內政部憑證管理中心</a>的資料。文中提到為民服務系統數位化遇到的問題，包含身分確認與資料加密等。自然人憑證裡面存放著透過非對稱加密產生的憑證，當中包含了公鑰與私鑰，私鑰存放在卡片內，是無法匯出的。經由憑證可以進行數位簽章、資料加密、身分證別等功能。</p><p name="21cb" id="21cb" class="graf graf--p graf-after--p graf--trailing">申請方式為，任何自然人都可以到戶政事務所申辦，包含外國人也可以，有效期限為5年，可展期3年，共計最長8年。</p></div></div></section><section name="dead" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="ec55" id="ec55" class="graf graf--h4 graf--leading">數位簽章與資料加密</h4><figure name="cda8" id="cda8" class="graf graf--figure graf-after--h4"><img class="graf-image" data-image-id="1*9KBDcFR-WTGKnj4b4wKdUg.png" data-width="1027" data-height="436" src="https://cdn-images-1.medium.com/max/800/1*9KBDcFR-WTGKnj4b4wKdUg.png"></figure><p name="075e" id="075e" class="graf graf--p graf-after--figure">自然人憑證內存了兩組公私鑰，一組用於數位簽章，一組用於資料加密。且數位簽章的公私鑰無法用於資料加密，反之亦然。接下來簡單介紹兩者的差別。</p><p name="a2b9" id="a2b9" class="graf graf--p graf-after--p">數位簽章用於電子文件上的簽名，確保檔案的完整性和不可否認性，是為了確認資料在傳遞的過程中不被竄改。原理如上圖所示，我們將要被簽章的資料稱為原文，將原文透過自然人憑證卡的私鑰進行加密，會產生一組密文。要驗證資料是否被竄改，則要將密文透過公鑰進行解密，並與原文比較就知道是否遭到修改。</p><p name="96fd" id="96fd" class="graf graf--p graf-after--p graf--trailing">資料加密則是為了確保資料內容只有透過自然人憑證解密才能讀取，方法為將原文透過自然人憑證卡的公鑰進行加密，需要讀取內容，則需要透過自然人憑證卡的私鑰進行解密才能查看。</p></div></div></section><section name="3058" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="1b82" id="1b82" class="graf graf--h4 graf--leading">身分驗證</h4><p name="7145" id="7145" class="graf graf--p graf-after--h4 graf--trailing">身分驗證的原理是透過數位簽章來完成的，通常網站會先有個註冊流程，註冊的時候會將數位簽章的公鑰綁定到帳號上，並儲存在伺服器上。當使用者鑰進行登入驗證的時候，會從網站後端產生一組原文，給前端進行數位簽章產生密文，再將密文丟回到後端伺服器。當伺服器透過公鑰將密文解開與原文相同時，就代表是使用同一組公私鑰進行簽章，則驗證通過。</p></div></div></section><section name="ea6d" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="109a" id="109a" class="graf graf--h4 graf--leading">其他政府憑證</h4><figure name="a3a3" id="a3a3" class="graf graf--figure graf-after--h4"><img class="graf-image" data-image-id="0*pDY5ipTTbno-an8N" data-width="2000" data-height="1197" src="https://cdn-images-1.medium.com/max/800/0*pDY5ipTTbno-an8N"></figure><p name="3035" id="3035" class="graf graf--p graf-after--figure graf--trailing">我國除了有自然人憑證以外，還有其他功能的憑證，可以到<a href="https://grca.nat.gov.tw/index2.html" data-href="https://grca.nat.gov.tw/index2.html" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">GPKI</a>網站看看。各個部會的憑證管理機關也會發放憑證，如經濟部工商憑證、組織及團體憑證、醫事憑證等等。</p></div></div></section><section name="c8c6" class="section section--body section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="8a4c" id="8a4c" class="graf graf--h4 graf--leading">結語</h4><p name="f655" id="f655" class="graf graf--p graf-after--h4">本篇簡單的說明了自然人憑證的功能與用法，接下來就會針對開發介接並提供範例。</p><p name="8b1b" id="8b1b" class="graf graf--p graf-after--p graf--trailing"><strong class="markup--strong markup--p-strong">▶ 閱讀更多：</strong><a href="https://medium.com/chouhsiang/citizen-digital-certificate/home" data-href="https://medium.com/chouhsiang/citizen-digital-certificate/home" class="markup--anchor markup--p-anchor" target="_blank"><strong class="markup--strong markup--p-strong">深入淺出自然人憑證</strong></a></p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@chouhsiang" class="p-author h-card">周詳  Sean Chou</a> on <a href="https://medium.com/p/261e06770d2f"><time class="dt-published" datetime="2023-12-29T07:41:22.095Z">December 29, 2023</time></a>.</p><p><a href="https://medium.com/@chouhsiang/%E8%87%AA%E7%84%B6%E4%BA%BA%E6%86%91%E8%AD%89%E7%B3%BB%E5%88%97-1-%E8%87%AA%E7%84%B6%E4%BA%BA%E6%86%91%E8%AD%89%E4%BB%8B%E7%B4%B9-261e06770d2f" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 29, 2026.</p></footer></article></body></html>

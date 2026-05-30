@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Google Workspace 整合 AD, Entra ID 的方法</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Google Workspace 整合 AD, Entra ID 的方法</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+我們公司是使用 Google Workspace 作為雲端辦公工具，那身為 IT 就要來研究如何整合目前的登入機制，大部分企業在身份驗證應該都是使用 AD 或是 LDAP，而有些公司可能會使用 SSO，如 Entra ID (舊稱 Azure AD)、Okta…
+</section>
+<section data-field="body" class="e-content">
+<section name="2bb3" class="section section--body section--first"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="532d" id="532d" class="graf graf--h3 graf--leading graf--title">Google Workspace 整合 AD, Entra ID 的方法</h3><figure name="1e1a" id="1e1a" class="graf graf--figure graf-after--h3"><img class="graf-image" data-image-id="1*RxcXfwhkNMfGrwnBT3LoHw.png" data-width="2636" data-height="1204" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*RxcXfwhkNMfGrwnBT3LoHw.png"><figcaption class="imageCaption">Google Workspace</figcaption></figure><p name="4b05" id="4b05" class="graf graf--p graf-after--figure graf--trailing">我們公司是使用 Google Workspace 作為雲端辦公工具，那身為 IT 就要來研究如何整合目前的登入機制，大部分企業在身份驗證應該都是使用 AD 或是 LDAP，而有些公司可能會使用 SSO，如 Entra ID (舊稱 Azure AD)、Okta 等。如果企業組織也是使用 Google Cloud 作為雲端運算，那整合驗證就很重要，本篇將說明如何整合身份驗證機制到 Google Workspace。</p></div></div></section><section name="2b29" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="fe6c" id="fe6c" class="graf graf--h3 graf--leading">概念</h3><p name="e0cd" id="e0cd" class="graf graf--p graf-after--h3">Google Workspace 在整合第三方帳號系統上，分為兩個部分：</p><ol class="postList"><li name="66bb" id="66bb" class="graf graf--li graf-after--p">同步帳號清單</li><li name="d6f2" id="d6f2" class="graf graf--li graf-after--li">身份驗證機制</li></ol><p name="c4d3" id="c4d3" class="graf graf--p graf-after--li graf--trailing">需要先在 Google Workspace 有帳號，才能進行登入，所以我們需要先將帳號同步過去，身份驗證機制則是可以選擇同步密碼或是 SSO。</p></div></div></section><section name="2519" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="cc7e" id="cc7e" class="graf graf--h3 graf--leading">整合 AD / LDAP</h3><h4 name="70b2" id="70b2" class="graf graf--h4 graf-after--h3">一、同步帳號清單</h4><p name="4e02" id="4e02" class="graf graf--p graf-after--h4">我們要將 AD / LDAP 帳號清單同步到 Google Workspace 上，可以透過官方工具 <a href="https://tools.google.com/dlpage/dirsync/" data-href="https://tools.google.com/dlpage/dirsync/" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Google Cloud Directory Sync (GCDS)</a>。需要在 AD 主機上安裝此軟體，就會定時同步帳號資訊到 Google Workspace 上。GCDS 支援 Windows 與 Linux 版本。其他資訊參考<a href="https://support.google.com/cloudidentity/answer/106368" data-href="https://support.google.com/cloudidentity/answer/106368" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">官方文件</a>。</p><h4 name="3d07" id="3d07" class="graf graf--h4 graf-after--p">二、身份驗證機制</h4><p name="9b37" id="9b37" class="graf graf--p graf-after--h4">我們可以將 AD 密碼同步到 Google Workspace 上，如果不同步密碼，在 Google Workspace 也可以用獨立的密碼登入帳號。</p><p name="8cd4" id="8cd4" class="graf graf--p graf-after--p graf--trailing">同步密碼我們會需要用到 <a href="https://support.google.com/a/answer/2611859?hl=zh-Hant" data-href="https://support.google.com/a/answer/2611859?hl=zh-Hant" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Sync passwords</a> 這個工具，而且只支援 AD，根據<a href="https://support.google.com/a/answer/2920764" data-href="https://support.google.com/a/answer/2920764" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">官方文件</a>說明，安裝軟體後，使用者修改了密碼會自動同步到 Google Workspace 上，所以目前的密碼是不會被同步的。</p></div></div></section><section name="b890" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="1c61" id="1c61" class="graf graf--h3 graf--leading">整合 Entra ID</h3><p name="d036" id="d036" class="graf graf--p graf-after--h3">基於安全考量，我們應該考慮使用 SSO 來做身份驗證，透過 <a href="https://learn.microsoft.com/zh-tw/entra/identity/hybrid/cloud-sync/what-is-cloud-sync" data-href="https://learn.microsoft.com/zh-tw/entra/identity/hybrid/cloud-sync/what-is-cloud-sync" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Microsoft Entra Cloud Sync</a> 可以將 AD 帳號同步到 Entra ID，且支援密碼同步與密碼回寫。密碼回寫支援在線上修改密碼並回寫到地端 AD。</p><h4 name="1cb8" id="1cb8" class="graf graf--h4 graf-after--p">一、同步帳號清單</h4><p name="6d80" id="6d80" class="graf graf--p graf-after--h4">在 Azure AD 後台的企業應用程式中，建立 Google Workspace 應用，按照<a href="https://cloud.google.com/architecture/identity/federating-gcp-with-azure-ad-configuring-provisioning-and-single-sign-on" data-href="https://cloud.google.com/architecture/identity/federating-gcp-with-azure-ad-configuring-provisioning-and-single-sign-on" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">官方文件</a>設定，將要同步的欄位進行對照，每 40 分鐘 Azure 會同步到 Google Workspace 上。</p><figure name="602e" id="602e" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*qj1el16m-D94t2PClmJp2w.png" data-width="2432" data-height="1368" src="https://cdn-images-1.medium.com/max/800/1*qj1el16m-D94t2PClmJp2w.png"></figure><h4 name="29e8" id="29e8" class="graf graf--h4 graf-after--figure">二、身份驗證機制</h4><p name="871a" id="871a" class="graf graf--p graf-after--h4">我們可以將 Google Workspace 設定 SSO 到 Azure 驗證，如果不做 SSO，在 Google Workspace 也可以用獨立的密碼登入帳號。</p><p name="43eb" id="43eb" class="graf graf--p graf-after--p">串接方法參考<a href="https://cloud.google.com/architecture/identity/federating-gcp-with-azure-ad-configuring-provisioning-and-single-sign-on" data-href="https://cloud.google.com/architecture/identity/federating-gcp-with-azure-ad-configuring-provisioning-and-single-sign-on" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">官方文件</a>，使用 SAML 進行串接，要注意的是憑證過期要記得 renew。設定完成，當登入 Google 帳號就會跳轉到微軟驗證畫面。</p><figure name="a57a" id="a57a" class="graf graf--figure graf-after--p graf--trailing"><img class="graf-image" data-image-id="1*s-sFbOnfQ3To3UHXvjMAvA.png" data-width="2784" data-height="1566" src="https://cdn-images-1.medium.com/max/800/1*s-sFbOnfQ3To3UHXvjMAvA.png"></figure></div></div></section><section name="c5b1" class="section section--body section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="6e4c" id="6e4c" class="graf graf--h3 graf--leading">結語</h3><p name="73db" id="73db" class="graf graf--p graf-after--h3 graf--trailing">基於安全考量，我們應該使用 SSO 進行介接，在 SSO 後台統一進行身份驗證、信任推斷等機制，能更有效的稽核與保護帳號安全。</p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@chouhsiang" class="p-author h-card">周詳  Sean Chou</a> on <a href="https://medium.com/p/16cc7b54b986"><time class="dt-published" datetime="2024-05-19T02:45:01.088Z">May 19, 2024</time></a>.</p><p><a href="https://medium.com/@chouhsiang/google-workspace-%E6%95%B4%E5%90%88-ad-entra-id-%E7%9A%84%E6%96%B9%E6%B3%95-16cc7b54b986" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 29, 2026.</p></footer></article></body></html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>解決Cloudflare WARP無法連線LINE、Signal</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">解決Cloudflare WARP無法連線LINE、Signal</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+WARP是Cloudflare推出的VPN服務，最大的優點是免費而且不限流不限速，對於企業來說，能更整合Cloudflare Zero Trust中的Gateway，就能監控設備的出口的網路流量，並在後台可以查看到DNS、Network、HTTP的Log。
+</section>
+<section data-field="body" class="e-content">
+<section name="2520" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="bca1" id="bca1" class="graf graf--h3 graf--leading graf--title">解決Cloudflare WARP無法連線LINE、Signal</h3><p name="e475" id="e475" class="graf graf--p graf-after--h3">WARP是Cloudflare推出的VPN服務，最大的優點是免費而且不限流不限速，對於企業來說，能更整合Cloudflare Zero Trust中的Gateway，就能監控設備的出口的網路流量，並在後台可以查看到DNS、Network、HTTP的Log。</p><p name="2b2e" id="2b2e" class="graf graf--p graf-after--p">最近研究的過程遇到一個問題，當我開啟WARP的時候LINE跟Signal就無法連線，主要原因是，WARP會解密HTTPS封包，記錄內容後，再Proxy到後端伺服器。這部分會導致LINE與Signal連線的問題，我之前的文章也有提到，LINE的API不支援HTTP/2，導致送到後端API都壞掉了。</p><p name="fc8a" id="fc8a" class="graf graf--p graf-after--p">要解決這問題就得把這些服務的網域加入白名單，讓白名單的網域不要過WARP。</p><h4 name="921f" id="921f" class="graf graf--h4 graf-after--p">透過Logs找到網域</h4><figure name="4aca" id="4aca" class="graf graf--figure graf-after--h4"><img class="graf-image" data-image-id="1*DeGaubj3ItqjNae1DJYNCw.png" data-width="2166" data-height="1260" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*DeGaubj3ItqjNae1DJYNCw.png"></figure><p name="e3f9" id="e3f9" class="graf graf--p graf-after--figure">我<a href="https://medium.com/@chouhsiang/%E6%95%99%E5%AD%B8-%E6%95%99%E4%BD%A0%E5%A6%82%E4%BD%95%E6%9E%B6%E8%A8%ADline%E7%B6%B2%E9%A0%81%E7%89%88-17723ec5db06" data-href="https://medium.com/@chouhsiang/%E6%95%99%E5%AD%B8-%E6%95%99%E4%BD%A0%E5%A6%82%E4%BD%95%E6%9E%B6%E8%A8%ADline%E7%B6%B2%E9%A0%81%E7%89%88-17723ec5db06" class="markup--anchor markup--p-anchor" target="_blank">前篇</a>研究過LINE會用到三個API，看起來LINE直接封鎖了Cloudflare過去的流量，三個API都死了。其中包含<em class="markup--em markup--p-em">gwz.line.naver.jp</em>、<em class="markup--em markup--p-em">stickershop.line-scdn.net、obs.line-apps.com，</em>那就把以上幾個加入白名單。另外，Signal用到<em class="markup--em markup--p-em">chat.signal.org</em>。</p><h4 name="1921" id="1921" class="graf graf--h4 graf-after--p">加入白名單</h4><p name="c279" id="c279" class="graf graf--p graf-after--h4">到Zero Trust後台，Settings / Network / Firewall / Split Tunnels</p><figure name="46e2" id="46e2" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*kJ5agpZwxDHRc8JxmSQkjg.png" data-width="2530" data-height="1540" src="https://cdn-images-1.medium.com/max/800/1*kJ5agpZwxDHRc8JxmSQkjg.png"></figure><p name="aff4" id="aff4" class="graf graf--p graf-after--figure">新增剛剛上面幾個domain</p><blockquote name="d215" id="d215" class="graf graf--blockquote graf-after--p">*.line.naver.jp</blockquote><blockquote name="e415" id="e415" class="graf graf--blockquote graf-after--blockquote">*.line-apps.com</blockquote><blockquote name="eb4d" id="eb4d" class="graf graf--blockquote graf-after--blockquote">*.line-scdn.net</blockquote><blockquote name="d553" id="d553" class="graf graf--blockquote graf-after--blockquote">*.signal.org</blockquote><figure name="a7a3" id="a7a3" class="graf graf--figure graf-after--blockquote"><img class="graf-image" data-image-id="1*GzyKcO7PQSvlua-wJ84NJQ.png" data-width="2860" data-height="1502" src="https://cdn-images-1.medium.com/max/800/1*GzyKcO7PQSvlua-wJ84NJQ.png"></figure><p name="5105" id="5105" class="graf graf--p graf-after--figure graf--trailing">這樣LINE跟Signal就能正常使用了。</p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@chouhsiang" class="p-author h-card">周詳  Sean Chou</a> on <a href="https://medium.com/p/e58221a9c4f3"><time class="dt-published" datetime="2022-12-16T09:50:27.618Z">December 16, 2022</time></a>.</p><p><a href="https://medium.com/@chouhsiang/%E8%A7%A3%E6%B1%BAcloudflare-warp%E7%84%A1%E6%B3%95%E9%80%A3%E7%B7%9Aline-signal-e58221a9c4f3" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 29, 2026.</p></footer></article></body></html>

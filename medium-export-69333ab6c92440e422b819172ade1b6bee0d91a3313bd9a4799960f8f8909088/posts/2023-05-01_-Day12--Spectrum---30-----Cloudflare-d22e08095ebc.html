@@ -1,0 +1,69 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>[Day12] Spectrum — 30 天入門 Cloudflare</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">[Day12] Spectrum — 30 天入門 Cloudflare</h1>
+</header>
+<section data-field="body" class="e-content">
+<section name="f7c4" class="section section--body section--first"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="d97f" id="d97f" class="graf graf--h3 graf--leading graf--title">[Day12] Spectrum — 30 天入門 Cloudflare</h3><figure name="15ae" id="15ae" class="graf graf--figure graf-after--h3"><img class="graf-image" data-image-id="1*qPmx3bs5FNdUithRJOyY0g.png" data-width="1920" data-height="1080" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*qPmx3bs5FNdUithRJOyY0g.png"></figure><p name="17b4" id="17b4" class="graf graf--p graf-after--figure">我們前面講到各種反向代理、防護都是針對 HTTP，要做 HTTP 以外的流量管理與防護就要透過 Spectrum，而 Spectrum 是需要額外付費的功能。</p><p name="f8f4" id="f8f4" class="graf graf--p graf-after--p">Spectrum 是一個網路安全服務，可以保護您的網路資源不受 DDoS、TCP SYN Flood、UDP Flood、ICMP Flood 和其他類型的攻擊。它通過將您的網路資源與 Cloudflare 的全球內容傳遞網路 (CDN) 相結合，為您的應用程式提供強大的防護和可用性。</p><p name="d8a0" id="d8a0" class="graf graf--p graf-after--p graf--trailing">Spectrum 可以支援 TCP、UDP、SSH 和 RDP 等多種協議，您可以使用它來保護 Web、遊戲、郵件和其他服務。可以用於如SMTP、IMAP、POP、LDAP、DNS 等對外 TCP 服務的防護。</p></div></div></section><section name="465e" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="cdb2" id="cdb2" class="graf graf--h4 graf--leading">計價</h4><p name="5684" id="5684" class="graf graf--p graf-after--h4">根據官網資訊 Pro 與 Business 可以針對流量去加購，但僅限於 SSH、Minecraft、RDP，要使用在其他 TCP、UDP 則需要使用 Enterprise 方案。</p><figure name="7fce" id="7fce" class="graf graf--figure graf-after--p graf--trailing"><img class="graf-image" data-image-id="1*7_2zBE2ybTDMeas6VcoUtQ.png" data-width="2336" data-height="880" src="https://cdn-images-1.medium.com/max/800/1*7_2zBE2ybTDMeas6VcoUtQ.png"></figure></div></div></section><section name="84e5" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="a6eb" id="a6eb" class="graf graf--h4 graf--leading">設定</h4><p name="3335" id="3335" class="graf graf--p graf-after--h4">在新增 Spectrum 的時候，可以選擇應用程式類型，並輸入目標網域與伺服器的 IP 與 Port 就完成了。</p><figure name="815b" id="815b" class="graf graf--figure graf-after--p graf--trailing"><img class="graf-image" data-image-id="1*i5oV7_vWCzOlJYiKAMJ1_Q.png" data-width="1892" data-height="1598" src="https://cdn-images-1.medium.com/max/800/1*i5oV7_vWCzOlJYiKAMJ1_Q.png"></figure></div></div></section><section name="25cd" class="section section--body section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="8a75" id="8a75" class="graf graf--h4 graf--leading">結語</h4><p name="0466" id="0466" class="graf graf--p graf-after--h4">Cloudflare Spectrum 是一個強大的網路安全服務，可以為您的網路資源提供全面的保護和加速。它可以防止 DDoS 攻擊、定製安全策略、利用全球 CDN 加速網路資源，並提供詳盡的數據分析，以幫助您保護服務。如果您的網路資源經常遭受攻擊，或者您需要一個可靠的方法來保護和加速您的應用程式，那麼 Cloudflare Spectrum 是一個值得考慮的選擇。</p><p name="f948" id="f948" class="graf graf--p graf-after--p"><strong class="markup--strong markup--p-strong">▶ 閱讀更多本系列文：</strong><a href="https://medium.com/chouhsiang/cloudflare-30-days/home" data-href="https://medium.com/chouhsiang/cloudflare-30-days/home" class="markup--anchor markup--p-anchor" target="_blank"><strong class="markup--strong markup--p-strong">30 天入門 Cloudflare</strong></a></p><p name="88bc" id="88bc" class="graf graf--p graf-after--p graf--trailing"><strong class="markup--strong markup--p-strong">▶ 下一篇：</strong><a href="https://medium.com/chouhsiang/30%E5%A4%A9%E6%90%9E%E6%87%82cloudflare-13-waiting-room-10b66eb110f" data-href="https://medium.com/chouhsiang/30%E5%A4%A9%E6%90%9E%E6%87%82cloudflare-13-waiting-room-10b66eb110f" class="markup--anchor markup--p-anchor" target="_blank"><strong class="markup--strong markup--p-strong">[Day13] Waiting Room — 30 天入門 Cloudflare</strong></a></p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@chouhsiang" class="p-author h-card">周詳  Sean Chou</a> on <a href="https://medium.com/p/d22e08095ebc"><time class="dt-published" datetime="2023-05-01T10:02:14.263Z">May 1, 2023</time></a>.</p><p><a href="https://medium.com/@chouhsiang/30%E5%A4%A9%E6%90%9E%E6%87%82cloudflare-11-spectrum-d22e08095ebc" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 29, 2026.</p></footer></article></body></html>

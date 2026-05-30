@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>#5 透過Graph API取得AAD使用者清單 — 簡單入門Azure AD</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">#5 透過Graph API取得AAD使用者清單 — 簡單入門Azure AD</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+微軟提供的Microsoft Graph API可以存取各種使用者資料，本篇將說明如何透過API取得Azure AD組織使用者清單。
+</section>
+<section data-field="body" class="e-content">
+<section name="21ba" class="section section--body section--first"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="5499" id="5499" class="graf graf--h3 graf--leading graf--title">#5 透過Graph API取得AAD使用者清單 — 簡單入門Azure AD</h3><figure name="e95e" id="e95e" class="graf graf--figure graf-after--h3"><img class="graf-image" data-image-id="1*e2-a5cl9PW1nRly4v-oOYg.png" data-width="2560" data-height="1440" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*e2-a5cl9PW1nRly4v-oOYg.png"></figure><p name="624c" id="624c" class="graf graf--p graf-after--figure graf--trailing">微軟提供的Microsoft Graph API可以存取各種使用者資料，本篇將說明如何透過API取得Azure AD組織使用者清單。</p></div></div></section><section name="a611" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="e30c" id="e30c" class="graf graf--h4 graf--leading">建立應用程式</h4><p name="447a" id="447a" class="graf graf--p graf-after--h4"><a href="https://medium.com/@chouhsiang/%E9%96%8B%E7%99%BC%E4%BB%8B%E6%8E%A5azure-ad-1-sso-86d90cdba13" data-href="https://medium.com/@chouhsiang/%E9%96%8B%E7%99%BC%E4%BB%8B%E6%8E%A5azure-ad-1-sso-86d90cdba13" class="markup--anchor markup--p-anchor" target="_blank">承上篇</a>，我們需要再Azure AD後台建立一個應用程式，並記起來應用程式識別碼、目錄識別碼。</p><p name="1cfc" id="1cfc" class="graf graf--p graf-after--p">接下來要新增讀取權限，到API權限，選擇新增權限</p><figure name="eb92" id="eb92" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*IlxjVeAUcUDThPEjoRkt2g.png" data-width="1150" data-height="597" src="https://cdn-images-1.medium.com/max/800/1*IlxjVeAUcUDThPEjoRkt2g.png"></figure><p name="a4b9" id="a4b9" class="graf graf--p graf-after--figure">選擇 Microsofy Graph</p><figure name="86fa" id="86fa" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*-_txRXbjaQ-riRtBOjUmXQ.png" data-width="1010" data-height="418" src="https://cdn-images-1.medium.com/max/800/1*-_txRXbjaQ-riRtBOjUmXQ.png"></figure><p name="cd51" id="cd51" class="graf graf--p graf-after--figure">選擇應用程式權限，打勾User.Read.All</p><figure name="fedf" id="fedf" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*uLnPYglMmswlGyaDHR2xKA.png" data-width="1046" data-height="276" src="https://cdn-images-1.medium.com/max/800/1*uLnPYglMmswlGyaDHR2xKA.png"></figure><figure name="e2be" id="e2be" class="graf graf--figure graf-after--figure"><img class="graf-image" data-image-id="1*o6cD8_t-ncqiGAyh70m2dg.png" data-width="1032" data-height="327" src="https://cdn-images-1.medium.com/max/800/1*o6cD8_t-ncqiGAyh70m2dg.png"></figure><p name="3efa" id="3efa" class="graf graf--p graf-after--figure">點選代表管理員同意</p><figure name="2a4a" id="2a4a" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*3Asoxr-fPJ_lTRMhYhQpEQ.png" data-width="1295" data-height="323" src="https://cdn-images-1.medium.com/max/800/1*3Asoxr-fPJ_lTRMhYhQpEQ.png"></figure><p name="0a52" id="0a52" class="graf graf--p graf-after--figure">接下來點選”憑證及秘密”，新增用戶端密碼，產生一組Secret，把產生的值記下來。</p><figure name="c128" id="c128" class="graf graf--figure graf-after--p graf--trailing"><img class="graf-image" data-image-id="0*gTSLb7mIOqiJ3wd9.png" data-width="1400" data-height="578" src="https://cdn-images-1.medium.com/max/800/0*gTSLb7mIOqiJ3wd9.png"></figure></div></div></section><section name="088b" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="e744" id="e744" class="graf graf--h4 graf--leading">撰寫後端</h4><p name="c09a" id="c09a" class="graf graf--p graf-after--h4">我們一樣用Cloudflare Worker練習，進入到首頁的時候顯示使用者清單。</p><pre data-code-block-mode="1" spellcheck="false" data-code-block-lang="javascript" name="c3c4" id="c3c4" class="graf graf--pre graf-after--p graf--preV2"><span class="pre--content"><span class="hljs-keyword">const</span> tenant_id = <span class="hljs-string">&#x27;&lt;目錄識別碼&gt;&#x27;</span>;<br /><span class="hljs-keyword">const</span> client_id = <span class="hljs-string">&#x27;&lt;應用程式識別碼&gt;&#x27;</span>;<br /><span class="hljs-keyword">const</span> client_secret = <span class="hljs-string">&#x27;&lt;用戶端密碼&gt;&#x27;</span>;<br /><br /><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {<br />  <span class="hljs-keyword">async</span> <span class="hljs-title function_">fetch</span>(<span class="hljs-params">request, env</span>) {<br />    <span class="hljs-keyword">return</span> <span class="hljs-keyword">await</span> <span class="hljs-title function_">home</span>(request);<br />  }<br />}<br /><br /><span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">home</span>(<span class="hljs-params">request</span>) {<br />  <span class="hljs-keyword">var</span> url = <span class="hljs-string">`https://login.microsoftonline.com/<span class="hljs-subst">${tenant_id}</span>/oauth2/v2.0/token`</span>;<br />  <span class="hljs-keyword">const</span> { searchParams } = <span class="hljs-keyword">new</span> <span class="hljs-title function_">URL</span>(request.<span class="hljs-property">url</span>);<br />  <span class="hljs-keyword">let</span> code = searchParams.<span class="hljs-title function_">get</span>(<span class="hljs-string">&#x27;code&#x27;</span>);<br />  <span class="hljs-keyword">var</span> options = {<br />    <span class="hljs-attr">method</span>: <span class="hljs-string">&#x27;POST&#x27;</span>,<br />    <span class="hljs-attr">headers</span>: {<br />      <span class="hljs-string">&#x27;content-type&#x27;</span>: <span class="hljs-string">&#x27;application/x-www-form-urlencoded&#x27;</span>,<br />    },<br />    <span class="hljs-attr">body</span>: <span class="hljs-keyword">new</span> <span class="hljs-title class_">URLSearchParams</span>({<br />      <span class="hljs-attr">client_id</span>: client_id, <br />      <span class="hljs-attr">client_secret</span>: client_secret,<br />      <span class="hljs-attr">scope</span>: <span class="hljs-string">&#x27;https://graph.microsoft.com/.default&#x27;</span>,<br />      <span class="hljs-attr">grant_type</span>: <span class="hljs-string">&#x27;client_credentials&#x27;</span><br />    }).<span class="hljs-title function_">toString</span>()<br />  };<br />  <span class="hljs-keyword">var</span> response =  <span class="hljs-keyword">await</span> <span class="hljs-title function_">fetch</span>(url, options);<br />  <span class="hljs-keyword">var</span> results = <span class="hljs-keyword">await</span> response.<span class="hljs-title function_">json</span>();<br /><br />  <span class="hljs-keyword">var</span> token = results[<span class="hljs-string">&quot;access_token&quot;</span>];<br />  url = <span class="hljs-string">`https://graph.microsoft.com/v1.0/users?$top=999&amp;$filter=accountEnabled eq true`</span>;<br />  options = {<br />    <span class="hljs-attr">method</span>: <span class="hljs-string">&#x27;GET&#x27;</span>,<br />    <span class="hljs-attr">headers</span>: {<br />      <span class="hljs-string">&#x27;Authorization&#x27;</span>: <span class="hljs-string">&#x27;Bearer &#x27;</span> + token,<br />      <span class="hljs-string">&#x27;content-type&#x27;</span>: <span class="hljs-string">&#x27;application/json&#x27;</span><br />    },<br />  };<br />  response =  <span class="hljs-keyword">await</span> <span class="hljs-title function_">fetch</span>(url, options);<br />  results = <span class="hljs-keyword">await</span> response.<span class="hljs-title function_">text</span>();<br /><br />  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Response</span>(results);<br />}</span></pre><p name="67ef" id="67ef" class="graf graf--p graf-after--pre">這樣就可以取得所有使用者資料了，微軟使用者API最多取得999筆資料，我就先取得最多，並加上我只回傳啟用中的使用者accountEnabled = true。</p><figure name="0c10" id="0c10" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*OpaZBKduSnX8QS6ibjvqUg.png" data-width="1099" data-height="297" src="https://cdn-images-1.medium.com/max/800/1*OpaZBKduSnX8QS6ibjvqUg.png"></figure><p name="9920" id="9920" class="graf graf--p graf-after--figure">更多說明請看<a href="https://learn.microsoft.com/zh-tw/graph/api/user-get?view=graph-rest-1.0&amp;tabs=http" data-href="https://learn.microsoft.com/zh-tw/graph/api/user-get?view=graph-rest-1.0&amp;tabs=http" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">微軟文件</a>，也可以到<a href="https://developer.microsoft.com/en-us/graph/graph-explorer" data-href="https://developer.microsoft.com/en-us/graph/graph-explorer" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Graph Explorer</a>，線上練習一下微軟API如何使用。</p><figure name="fe4c" id="fe4c" class="graf graf--figure graf-after--p graf--trailing"><img class="graf-image" data-image-id="1*qcc4-s9t8m2YGTJZs9DACQ.png" data-width="1342" data-height="837" src="https://cdn-images-1.medium.com/max/800/1*qcc4-s9t8m2YGTJZs9DACQ.png"></figure></div></div></section><section name="a9da" class="section section--body section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="4978" id="4978" class="graf graf--h4 graf--leading">結語</h4><p name="805f" id="805f" class="graf graf--p graf-after--h4 graf--trailing">透過這樣我們就能取得所有使用者資訊，後台應用程式也可以定時去更新資料。</p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@chouhsiang" class="p-author h-card">周詳  Sean Chou</a> on <a href="https://medium.com/p/b3d29ec5f7b5"><time class="dt-published" datetime="2023-03-28T08:16:47.196Z">March 28, 2023</time></a>.</p><p><a href="https://medium.com/@chouhsiang/%E9%96%8B%E7%99%BC%E4%BB%8B%E6%8E%A5azure-ad-2-%E4%BD%BF%E7%94%A8%E8%80%85%E6%B8%85%E5%96%AE-b3d29ec5f7b5" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 29, 2026.</p></footer></article></body></html>

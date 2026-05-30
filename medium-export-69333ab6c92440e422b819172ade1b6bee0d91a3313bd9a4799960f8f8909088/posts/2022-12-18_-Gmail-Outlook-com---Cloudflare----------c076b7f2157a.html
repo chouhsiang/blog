@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>以Gmail、Outlook.com來收發Cloudflare電子郵件路由的信件</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">以Gmail、Outlook.com來收發Cloudflare電子郵件路由的信件</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+Cloudflare在這幾年推出了電子郵件路由的工能，可以建立您網域的自訂電子郵件地址，並將傳入的電子郵件路由至您偏好的信箱，最重要的是他是免費的！我們購買網域後，除了可以選擇Gandi或Godaddy提供的電子郵件外，也可以試試看Cloudflare電子郵件路由。
+</section>
+<section data-field="body" class="e-content">
+<section name="277a" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="a8c6" id="a8c6" class="graf graf--h3 graf--leading graf--title">以Gmail、Outlook.com來收發Cloudflare電子郵件路由的信件</h3><p name="8548" id="8548" class="graf graf--p graf-after--h3">Cloudflare在這幾年推出了電子郵件路由的工能，可以建立您網域的自訂電子郵件地址，並將傳入的電子郵件路由至您偏好的信箱，最重要的是他是免費的！我們購買網域後，除了可以選擇Gandi或Godaddy提供的電子郵件外，也可以試試看Cloudflare電子郵件路由。</p><h4 name="318b" id="318b" class="graf graf--h4 graf-after--p">設定Cloudflare</h4><p name="8b52" id="8b52" class="graf graf--p graf-after--h4">跟其他坊間的電子郵件服務不同，Cloudflare只提供電子郵件的路由，意思是說他只會幫你轉信到指定的信箱帳號，他不提供信箱登入的驗證、不提供收件夾、也不能寄信，僅僅是個路由。</p><p name="cddb" id="cddb" class="graf graf--p graf-after--p">首先先到Cloudflare電子郵件路由的頁面依照他的流程設定好DNS紀錄，再來設定轉信的目標，過程中需要驗證目標信箱。設定完成後，就可以收到信件了。</p><figure name="4db8" id="4db8" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*TgfiLROnBcv7Ky3spgsM1w.png" data-width="2370" data-height="1544" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*TgfiLROnBcv7Ky3spgsM1w.png"></figure><figure name="373c" id="373c" class="graf graf--figure graf-after--figure"><img class="graf-image" data-image-id="1*7ZktUJlVrVmR4gPAY7eKSQ.png" data-width="2606" data-height="1344" src="https://cdn-images-1.medium.com/max/800/1*7ZktUJlVrVmR4gPAY7eKSQ.png"></figure><h4 name="bbaa" id="bbaa" class="graf graf--h4 graf-after--figure">以Gmail寄信</h4><p name="2e32" id="2e32" class="graf graf--p graf-after--h4">雖然Cloudflare無法提供寄信的功能，但我們還是可以用奇怪的做法來達成，以下以Gmail為例。</p><p name="3a9a" id="3a9a" class="graf graf--p graf-after--p">先設定好一個信箱轉寄到Gmail，再來我們會需要設定一組Gmail的應用程式密碼。在Google帳戶管理中的安全性，綁定兩步驟驗證後，可以新增應用程式密碼。</p><figure name="6f09" id="6f09" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*_KfQDd1I-G_kMxPO0lSKGA.png" data-width="2348" data-height="840" src="https://cdn-images-1.medium.com/max/800/1*_KfQDd1I-G_kMxPO0lSKGA.png"></figure><p name="645d" id="645d" class="graf graf--p graf-after--figure">再來到Gmail的設定，到 帳戶和匯入 / 選擇寄件地址 / 新增另外一個電子郵件地址。</p><figure name="6d6d" id="6d6d" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*AsMYIB67DZxTJfoQQSBJjA.png" data-width="2084" data-height="844" src="https://cdn-images-1.medium.com/max/800/1*AsMYIB67DZxTJfoQQSBJjA.png"></figure><p name="4aa0" id="4aa0" class="graf graf--p graf-after--figure">接著會跳到這個視窗，名稱輸入要顯示的名稱，電子郵件地址輸入Cloudflare上剛剛設定的信箱。</p><figure name="9ca1" id="9ca1" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*tL3XQC-Gv16x4yBDizXsWQ.png" data-width="982" data-height="530" src="https://cdn-images-1.medium.com/max/800/1*tL3XQC-Gv16x4yBDizXsWQ.png"></figure><p name="98d9" id="98d9" class="graf graf--p graf-after--figure">這邊SMTP伺服器輸入smtp.gmail.com，使用者名稱輸入你的gmail，密碼輸入剛剛上面產生的應用程式密碼，系統就會寄一封確認信，開通後就完成了。</p><figure name="55cf" id="55cf" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*M_DnBz_hHDLJrvyfXDKqMg.png" data-width="1106" data-height="662" src="https://cdn-images-1.medium.com/max/800/1*M_DnBz_hHDLJrvyfXDKqMg.png"></figure><p name="5e42" id="5e42" class="graf graf--p graf-after--figure">這樣在寫信的時候就可以選擇Cloudflare上的信箱寄信。</p><figure name="0f8d" id="0f8d" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*T_yQgzj6qG4lBkOBuR4ieg.png" data-width="1200" data-height="640" src="https://cdn-images-1.medium.com/max/800/1*T_yQgzj6qG4lBkOBuR4ieg.png"></figure><h4 name="8e5c" id="8e5c" class="graf graf--h4 graf-after--figure">以Outlook.com寄信</h4><p name="e377" id="e377" class="graf graf--p graf-after--h4">用Outlook.com寄信就更簡單了，因為不需要產生一組應用程式密碼。先到微軟中的<a href="https://account.live.com/names/manage" data-href="https://account.live.com/names/manage" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank"><strong class="markup--strong markup--p-strong">管理您登入 Microsoft 的方法</strong></a>，新增完再做郵件驗證就完成了。</p><figure name="a751" id="a751" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*o7ttSa0KG8qPazAY3G4VoA.png" data-width="1271" data-height="685" src="https://cdn-images-1.medium.com/max/800/1*o7ttSa0KG8qPazAY3G4VoA.png"></figure><p name="5a76" id="5a76" class="graf graf--p graf-after--figure">寫信的時候就可以切換使用者</p><figure name="9b88" id="9b88" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*6HAO0X3d0IoKjiYSfYnb7w.png" data-width="868" data-height="536" src="https://cdn-images-1.medium.com/max/800/1*6HAO0X3d0IoKjiYSfYnb7w.png"></figure><h4 name="87c2" id="87c2" class="graf graf--h4 graf-after--figure">總結</h4><p name="034a" id="034a" class="graf graf--p graf-after--h4 graf--trailing">Cloudflare電子郵件路由是個方便輕巧的服務，也由於不提供Mail伺服器，寄信就有點麻煩，用了以上方法寄信其實還是從Gmail寄出，只是把寄件者換成Cloudflare上的信箱，當查看信件的header的時候就會看到他是從哪個Gmail帳號寄出。</p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@chouhsiang" class="p-author h-card">周詳  Sean Chou</a> on <a href="https://medium.com/p/c076b7f2157a"><time class="dt-published" datetime="2022-12-18T15:38:45.647Z">December 18, 2022</time></a>.</p><p><a href="https://medium.com/@chouhsiang/%E6%95%99%E4%BD%A0%E7%94%A8cloudflare%E9%9B%BB%E5%AD%90%E9%83%B5%E4%BB%B6%E8%B7%AF%E7%94%B1-c076b7f2157a" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 29, 2026.</p></footer></article></body></html>

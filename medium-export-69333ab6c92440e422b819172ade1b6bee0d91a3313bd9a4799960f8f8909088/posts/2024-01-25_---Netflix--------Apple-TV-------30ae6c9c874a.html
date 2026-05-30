@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>解決 Netflix 截圖、投影到 Apple TV 黑畫面問題</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">解決 Netflix 截圖、投影到 Apple TV 黑畫面問題</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+我自己是喜歡用 Macbook 用瀏覽器播放 Netflix，並投影到 Apple TV 上來看，除了可以加速播放影片，還可以使用 Netflix 的其他瀏覽器套件。但問題是當投影的時候，畫面會整個黑的，這該如何解決？
+</section>
+<section data-field="body" class="e-content">
+<section name="0cfa" class="section section--body section--first"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="f20f" id="f20f" class="graf graf--h3 graf--leading graf--title">解決 Netflix 截圖、投影到 Apple TV 黑畫面問題</h3><p name="a7ab" id="a7ab" class="graf graf--p graf-after--h3 graf--trailing">我自己是喜歡用 Macbook 用瀏覽器播放 Netflix，並投影到 Apple TV 上來看，除了可以加速播放影片，還可以使用 Netflix 的其他瀏覽器套件。但問題是當投影的時候，畫面會整個黑的，這該如何解決？</p></div></div></section><section name="47ca" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="9f6c" id="9f6c" class="graf graf--h3 graf--leading">黑畫面原因</h3><p name="068b" id="068b" class="graf graf--p graf-after--h3">會黑畫面原因，就要講到 DRM（數位版權管理）。DRM是一種技術，旨在防止未經授權的複製和分發數位內容。當您在使用 Netflix 等串流服務時，DRM 被用來保護內容，以確保它不會被非法複製或盜用。</p><p name="1ddd" id="1ddd" class="graf graf--p graf-after--p"><a href="https://help.netflix.com/zh-tw/node/6662" data-href="https://help.netflix.com/zh-tw/node/6662" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Netflix 官網</a>有說明他是用高畫質數位內容保護（HDCP，High-Bandwidth Digital Content Protection），需確保所有相關的設備，包括您的 MacBook 和 Apple TV，都支援 HDCP。HDCP 是一種防止未經授權的高畫質內容複製的協定。如果其中一個設備不支援 HDCP，可能會導致黑畫面問題。</p><figure name="ec8e" id="ec8e" class="graf graf--figure graf-after--p graf--trailing"><img class="graf-image" data-image-id="1*LlP_byU5WQF3vs5hyLp_0g.png" data-width="1590" data-height="708" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*LlP_byU5WQF3vs5hyLp_0g.png"></figure></div></div></section><section name="8ad8" class="section section--body section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="f7cf" id="f7cf" class="graf graf--h3 graf--leading">解決黑畫面</h3><p name="2908" id="2908" class="graf graf--p graf-after--h3">解決方法在瀏覽器設定中<strong class="markup--strong markup--p-strong">關閉</strong>「在可用時使用硬體加速」。</p><p name="8a1f" id="8a1f" class="graf graf--p graf-after--p">在瀏覽器中的「使用硬體加速」設定通常是指利用電腦的硬體資源（如顯示卡 GPU）來加速瀏覽器的繪圖和影片播放等功能。啟用硬體加速可以提高網頁和多媒體內容的流暢度，尤其是對於複雜的網頁或高解析度的影片。而 DRM 是透過 GPU 進行運算，把他關掉就不會變黑畫面了。</p><p name="59b2" id="59b2" class="graf graf--p graf-after--p">Chrome、Chromium based 的 Edge、Brave、Opera 都可以這樣設定。關閉「在可用時使用硬體加速」可能會導致使用 GPU 網站異常，如 Figma。建議投影時用另外一個不常用的瀏覽器就好。</p><figure name="c3b3" id="c3b3" class="graf graf--figure graf-after--p graf--trailing"><img class="graf-image" data-image-id="1*B7muva3UhRqWkCzAVpyfyw.png" data-width="2116" data-height="1032" src="https://cdn-images-1.medium.com/max/800/1*B7muva3UhRqWkCzAVpyfyw.png"></figure></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@chouhsiang" class="p-author h-card">周詳  Sean Chou</a> on <a href="https://medium.com/p/30ae6c9c874a"><time class="dt-published" datetime="2024-01-25T04:02:51.073Z">January 25, 2024</time></a>.</p><p><a href="https://medium.com/@chouhsiang/%E8%A7%A3%E6%B1%BA-netflix-%E6%88%AA%E5%9C%96-%E6%8A%95%E5%BD%B1%E5%88%B0-apple-tv-%E9%BB%91%E7%95%AB%E9%9D%A2%E5%95%8F%E9%A1%8C-30ae6c9c874a" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 29, 2026.</p></footer></article></body></html>

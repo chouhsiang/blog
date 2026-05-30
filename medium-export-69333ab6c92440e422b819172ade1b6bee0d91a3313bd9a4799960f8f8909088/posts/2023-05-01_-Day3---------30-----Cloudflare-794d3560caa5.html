@@ -1,0 +1,69 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>[Day3] 網域設定 — 30 天入門 Cloudflare</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">[Day3] 網域設定 — 30 天入門 Cloudflare</h1>
+</header>
+<section data-field="body" class="e-content">
+<section name="9de7" class="section section--body section--first"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="a84b" id="a84b" class="graf graf--h3 graf--leading graf--title">[Day3] 網域設定 — 30 天入門 Cloudflare</h3><figure name="4079" id="4079" class="graf graf--figure graf-after--h3"><img class="graf-image" data-image-id="1*qPmx3bs5FNdUithRJOyY0g.png" data-width="1920" data-height="1080" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*qPmx3bs5FNdUithRJOyY0g.png"></figure><p name="cad4" id="cad4" class="graf graf--p graf-after--figure graf--trailing">本文會說明如何將自己的網域註冊到 Cloudflare 上，並開始使用 Cloudflare。首先需要將您的域名設定到 Cloudflare 上。以下是一些簡單的步驟，可以幫助您完成這項任務。</p></div></div></section><section name="b770" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="9b6b" id="9b6b" class="graf graf--h4 graf--leading">步驟 1：註冊 Cloudflare 帳戶</h4><p name="e43e" id="e43e" class="graf graf--p graf-after--h4">首先，您需要<a href="https://dash.cloudflare.com/sign-up" data-href="https://dash.cloudflare.com/sign-up" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">註冊</a>一個 Cloudflare 帳戶。註冊過程非常簡單，只需要提供您的電子郵件地址和密碼即可。在完成註冊後，您將進 入Cloudflare 的<a href="https://dash.cloudflare.com/" data-href="https://dash.cloudflare.com/" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Dashboard</a>。</p><figure name="2351" id="2351" class="graf graf--figure graf-after--p graf--trailing"><img class="graf-image" data-image-id="1*C024ztZdr3cYBHcbkeTcSw.png" data-width="1614" data-height="1006" src="https://cdn-images-1.medium.com/max/800/1*C024ztZdr3cYBHcbkeTcSw.png"></figure></div></div></section><section name="5e45" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="9b4d" id="9b4d" class="graf graf--h4 graf--leading">步驟 2：購買網域</h4><p name="99b8" id="99b8" class="graf graf--p graf-after--h4">您可以使用在 GoDaddy 或 Gandi 購買的網域，下一步將 DNS 交給 Cloudflare 代管，或是在 Cloudflare 的網域註冊中購買。</p><figure name="7dd3" id="7dd3" class="graf graf--figure graf-after--p graf--trailing"><img class="graf-image" data-image-id="1*ZQmUYNFzV8HQgLJ9cjk7Gg.png" data-width="2418" data-height="792" src="https://cdn-images-1.medium.com/max/800/1*ZQmUYNFzV8HQgLJ9cjk7Gg.png"></figure></div></div></section><section name="3f30" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="ea6d" id="ea6d" class="graf graf--h4 graf--leading">步驟 3：新增網站</h4><p name="7a77" id="7a77" class="graf graf--p graf-after--h4">接下來，您需要將您的網站新增到 Cloudflare 上。在 Dashboard 中，點擊「新增網站」按鈕，然後輸入您的網域，選擇免費方案。接下來，Cloudflare 會掃描您的網站，確定它是否已經在他們的系統中存在。</p><p name="6103" id="6103" class="graf graf--p graf-after--p">如果網站還沒有在 Cloudflare 系統中註冊，您需要手動設置 DNS 紀錄，請依 Cloudflare 網站上說明設定 NS 紀錄，Cloudflare 會自動掃描現有的 DNS 紀錄，如果有錯誤或遺漏的地方，請更正或新增，所以建議先從舊的 DNS 伺服器匯出紀錄。</p><figure name="7b41" id="7b41" class="graf graf--figure graf-after--p graf--trailing"><img class="graf-image" data-image-id="1*hWkkKhVVCJPB11iLDHZt4Q.png" data-width="1436" data-height="1302" src="https://cdn-images-1.medium.com/max/800/1*hWkkKhVVCJPB11iLDHZt4Q.png"></figure></div></div></section><section name="b8b5" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="fb3d" id="fb3d" class="graf graf--h4 graf--leading">步驟 4：查看儀表板</h4><p name="e98f" id="e98f" class="graf graf--p graf-after--h4">當你的網域 NS 設定到 Cloudflare 後，就會看到網域狀態是使用中，免費方案沒有限制網域數量，可以一直增加。</p><figure name="9f5f" id="9f5f" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*gjfYx-4UTDaTi7P7cloSrA.png" data-width="2774" data-height="728" src="https://cdn-images-1.medium.com/max/800/1*gjfYx-4UTDaTi7P7cloSrA.png"></figure><p name="a79e" id="a79e" class="graf graf--p graf-after--figure graf--trailing">若是不希望整個網域的 DNS 都交給 Cloudflare 管理，也不想修改 NS 紀錄，可以透 過CNAME 方式將網域交給 Cloudflare 管理，需要 Business 以上的授權才能使用，詳見<a href="https://developers.cloudflare.com/dns/zone-setups/partial-setup/" data-href="https://developers.cloudflare.com/dns/zone-setups/partial-setup/" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">官方文件</a>。</p></div></div></section><section name="3e54" class="section section--body section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="b6b2" id="b6b2" class="graf graf--h4 graf--leading">結語</h4><p name="646d" id="646d" class="graf graf--p graf-after--h4">將域名設定到 Cloudflare 上是一個非常簡單的過程，只需要簡單的操作就能完成。使用 Cloudflare 的服務可以為你的網站提供更高的安全性和性能，同時還能節省成本和時間，讓你的網站更加穩定和快速。</p><p name="d966" id="d966" class="graf graf--p graf-after--p">如果你還沒有使用 Cloudflare 的服務，現在就去試試吧！</p><p name="a01a" id="a01a" class="graf graf--p graf-after--p"><strong class="markup--strong markup--p-strong">▶ 閱讀更多本系列文：</strong><a href="https://medium.com/chouhsiang/cloudflare-30-days/home" data-href="https://medium.com/chouhsiang/cloudflare-30-days/home" class="markup--anchor markup--p-anchor" target="_blank"><strong class="markup--strong markup--p-strong">30 天入門 Cloudflare</strong></a></p><p name="7e51" id="7e51" class="graf graf--p graf-after--p graf--trailing"><strong class="markup--strong markup--p-strong">▶ 下一篇：</strong><a href="https://medium.com/chouhsiang/30%E5%A4%A9%E6%90%9E%E6%87%82cloudflare-4-dns-6344ebb70b02?source=collection_category---4------3-----------------------" data-href="https://medium.com/chouhsiang/30%E5%A4%A9%E6%90%9E%E6%87%82cloudflare-4-dns-6344ebb70b02?source=collection_category---4------3-----------------------" class="markup--anchor markup--p-anchor" target="_blank">[Day4] DNS 代管 — 30 天入門 Cloudflare</a></p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@chouhsiang" class="p-author h-card">周詳  Sean Chou</a> on <a href="https://medium.com/p/794d3560caa5"><time class="dt-published" datetime="2023-05-01T03:12:21.060Z">May 1, 2023</time></a>.</p><p><a href="https://medium.com/@chouhsiang/30%E5%A4%A9%E6%90%9E%E6%87%82cloudflare-3-%E7%B6%B2%E5%9F%9F%E8%A8%AD%E5%AE%9A-794d3560caa5" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 29, 2026.</p></footer></article></body></html>

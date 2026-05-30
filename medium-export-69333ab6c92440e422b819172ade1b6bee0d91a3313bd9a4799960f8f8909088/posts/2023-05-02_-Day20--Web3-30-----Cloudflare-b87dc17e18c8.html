@@ -1,0 +1,69 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>[Day20] Web3–30 天入門 Cloudflare</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">[Day20] Web3–30 天入門 Cloudflare</h1>
+</header>
+<section data-field="body" class="e-content">
+<section name="d245" class="section section--body section--first"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="77a9" id="77a9" class="graf graf--h3 graf--leading graf--title">[Day20] Web3 — 30 天入門 Cloudflare</h3><figure name="9324" id="9324" class="graf graf--figure graf-after--h3"><img class="graf-image" data-image-id="1*qPmx3bs5FNdUithRJOyY0g.png" data-width="1920" data-height="1080" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*qPmx3bs5FNdUithRJOyY0g.png"></figure><p name="c4f0" id="c4f0" class="graf graf--p graf-after--figure">Cloudflare Web3 是 Cloudflare 推出的一項功能，旨在為使用區塊鏈技術的應用程序提供更好的安全性和可靠性。該功能為開發人員提供了一個基於 Web3 的開發平台，支援 Ethereum 和 IPFS 等區塊鏈網路。</p><p name="1c8f" id="1c8f" class="graf graf--p graf-after--p">使用 Cloudflare Web3，開發人員可以使用 Web3 的常用工具來開發和部署區塊鏈應用程序，包括 Solidity 和 Truffle 等開發工具。Cloudflare Web3 還提供了一個去中心化的執行環境，使開發人員可以在無需擔心服務器組態和管理的情況下快速啟動應用程序。</p><p name="755b" id="755b" class="graf graf--p graf-after--p graf--trailing">另外，Cloudflare Web3 還提供了一個基於 IPFS 的去中心化內容傳遞網路，該網路使用 IPFS 技術存儲和傳輸數據，使開發人員可以快速構建基於 IPFS 的應用程序，同時提高了可靠性和安全性。</p></div></div></section><section name="19e3" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="113d" id="113d" class="graf graf--h4 graf--leading">Cloudflare IPFS</h4><p name="8872" id="8872" class="graf graf--p graf-after--h4">之前我 有寫過一篇<a href="https://chouhsiang.medium.com/%E5%B0%87%E9%9D%9C%E6%85%8B%E7%B6%B2%E7%AB%99%E9%83%A8%E7%BD%B2%E5%88%B0ipfs%E5%8D%80%E5%A1%8A%E9%8F%88%E4%B8%8A-759a4262a91f" data-href="https://chouhsiang.medium.com/%E5%B0%87%E9%9D%9C%E6%85%8B%E7%B6%B2%E7%AB%99%E9%83%A8%E7%BD%B2%E5%88%B0ipfs%E5%8D%80%E5%A1%8A%E9%8F%88%E4%B8%8A-759a4262a91f" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">文章</a>介紹 IPFS是什麼，可以先看過後會更好理解，除了免費的 Public Gateway 外，Cloudflare 也提供付費的私有 Gateway。</p><p name="8b01" id="8b01" class="graf graf--p graf-after--p">目前 Cloudflare 在付費 IPFS 上提供兩個功能 <a href="https://developers.cloudflare.com/web3/ipfs-gateway/concepts/dnslink/" data-href="https://developers.cloudflare.com/web3/ipfs-gateway/concepts/dnslink/" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">DNSLink gateway</a> 與 <a href="https://developers.cloudflare.com/web3/ipfs-gateway/concepts/universal-gateway/" data-href="https://developers.cloudflare.com/web3/ipfs-gateway/concepts/universal-gateway/" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Universal Path gateway</a>，前者用於將已經上傳到 IPFS 的檔案掛載到網域上，後者為架設一個公用的 gateway，可用於任何網域上。</p><p name="3e21" id="3e21" class="graf graf--p graf-after--p">由於目前 Cloudflare 沒有提供上傳檔案到 IPFS 的功能，他只能從其他節點拉取檔案，因此當我們需要部署網站到 IPFS 的時候需要自行架設 IPFS 節點，或是另外找平台上傳，如 <a href="https://www.pinata.cloud/" data-href="https://www.pinata.cloud/" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Pinata</a>。希望 Cloudflare 未來趕緊推出上傳用的節點。</p><figure name="2888" id="2888" class="graf graf--figure graf-after--p graf--trailing"><img class="graf-image" data-image-id="1*RjhUn00mW2UaGCLjHFi0sg.png" data-width="2588" data-height="1282" src="https://cdn-images-1.medium.com/max/800/1*RjhUn00mW2UaGCLjHFi0sg.png"></figure></div></div></section><section name="84c7" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="fa8a" id="fa8a" class="graf graf--h4 graf--leading">DNSLink Gateway</h4><p name="9574" id="9574" class="graf graf--p graf-after--h4">現在展示如何將上傳到 IPFS 檔案部署到我自己的網域，先到 Cloudflare Dashboard 選擇「Web3」選擇「建立閘道」。</p><p name="ad04" id="ad04" class="graf graf--p graf-after--p">在主機名稱輸入目標網域，閘道類型選擇「IPFS DNSLink」，DNSLink 目標可以輸入 IPFS 的 CID 或 IPNS，如 /ipns/moda.gov.tw、/ipfs/&lt;CID&gt;。這樣就完成了，你會發現 Cloudflare 會協助設定好 CNAME 與 TXT 紀錄。</p><figure name="9da0" id="9da0" class="graf graf--figure graf-after--p graf--trailing"><img class="graf-image" data-image-id="1*pYAM5CZ4nhJu34lP6PrLFA.png" data-width="1258" data-height="884" src="https://cdn-images-1.medium.com/max/800/1*pYAM5CZ4nhJu34lP6PrLFA.png"></figure></div></div></section><section name="ea8d" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="eb3d" id="eb3d" class="graf graf--h4 graf--leading">Universal Path Gateway</h4><p name="290a" id="290a" class="graf graf--p graf-after--h4">Universal Path Gateway 可以建立一個公開用的 IPFS Gateway，允許訪問任何其他 IPFS Domain。先到 Cloudflare Dashboard 選擇「Web3」選擇「建立閘道」。</p><p name="7022" id="7022" class="graf graf--p graf-after--p">在主機名稱輸入目標網域，閘道類型選擇「IPFS 通用路徑」，這樣就完成了。</p><p name="dc87" id="dc87" class="graf graf--p graf-after--p">以下圖為例，使用gateway.example.com，當其他人要訪問 IPFS 就可以訪問 https://gateway.example.com/ipns/&lt;Domain&gt; 或是 https://gateway.example.com/ipfs/&lt;CID&gt;。</p><figure name="8420" id="8420" class="graf graf--figure graf-after--p graf--trailing"><img class="graf-image" data-image-id="1*-bYdMCzvxFJ8RVsdjz3_sg.png" data-width="1284" data-height="640" src="https://cdn-images-1.medium.com/max/800/1*-bYdMCzvxFJ8RVsdjz3_sg.png"></figure></div></div></section><section name="7e33" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="08df" id="08df" class="graf graf--h4 graf--leading">自動化更新</h4><p name="d394" id="d394" class="graf graf--p graf-after--h4">當我們要更新某個 IPFS 網域的內容，需要先將檔案上傳到 IPFS 節點，再來要更新 DNS 紀錄，可以透過 <a href="https://github.com/ipfs-shipyard/ipfs-deploy" data-href="https://github.com/ipfs-shipyard/ipfs-deploy" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">ipfs-deploy</a> 的指令，將檔案上傳到 Pinata 等站台，再自動更新 Cloudflare DNS 紀錄。</p><figure name="0381" id="0381" class="graf graf--figure graf-after--p graf--trailing"><img class="graf-image" data-image-id="1*ZgLqyT7PIo4C_hEU2nmbFg.png" data-width="2702" data-height="1446" src="https://cdn-images-1.medium.com/max/800/1*ZgLqyT7PIo4C_hEU2nmbFg.png"></figure></div></div></section><section name="11cd" class="section section--body section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="c522" id="c522" class="graf graf--h4 graf--leading">結語</h4><p name="5550" id="5550" class="graf graf--p graf-after--h4">Cloudflare Web3 提供了一個完整的開發平台，使開發人員可以快速建立安全、可靠的區塊鏈應用程序，同時降低了開發和部署的複雜度。</p><p name="ec63" id="ec63" class="graf graf--p graf-after--p"><strong class="markup--strong markup--p-strong">▶ 閱讀更多本系列文：</strong><a href="https://medium.com/chouhsiang/cloudflare-30-days/home" data-href="https://medium.com/chouhsiang/cloudflare-30-days/home" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank"><strong class="markup--strong markup--p-strong">30 天入門 Cloudflare</strong></a></p><p name="3a1c" id="3a1c" class="graf graf--p graf-after--p graf--trailing"><strong class="markup--strong markup--p-strong">▶ 下一篇：</strong><a href="https://medium.com/chouhsiang/30%E5%A4%A9%E6%90%9E%E6%87%82cloudflare-21-pages-dd72745fc083" data-href="https://medium.com/chouhsiang/30%E5%A4%A9%E6%90%9E%E6%87%82cloudflare-21-pages-dd72745fc083" class="markup--anchor markup--p-anchor" target="_blank"><strong class="markup--strong markup--p-strong">[Day21] Pages — 30 天入門 Cloudflare</strong></a></p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@chouhsiang" class="p-author h-card">周詳  Sean Chou</a> on <a href="https://medium.com/p/b87dc17e18c8"><time class="dt-published" datetime="2023-05-02T06:31:52.735Z">May 2, 2023</time></a>.</p><p><a href="https://medium.com/@chouhsiang/30%E5%A4%A9%E6%90%9E%E6%87%82cloudflare-20-web3-b87dc17e18c8" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 29, 2026.</p></footer></article></body></html>

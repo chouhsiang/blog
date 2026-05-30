@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>從CEC-IDE事件看看VSCode開源</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">從CEC-IDE事件看看VSCode開源</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+這幾天有個新聞，某強國將VSCode換皮、改Logo，並加上儲值的功能，叫做CEC-IDE，可以看看知乎、Github的討論串，讓我對VSCode開源感到興趣，查了一些資料並整理。
+</section>
+<section data-field="body" class="e-content">
+<section name="d8a5" class="section section--body section--first"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="6344" id="6344" class="graf graf--h3 graf--leading graf--title">從CEC-IDE事件看看VSCode開源</h3><figure name="00fa" id="00fa" class="graf graf--figure graf-after--h3"><img class="graf-image" data-image-id="1*FkBIoQDXMYTaV1Pf9f8L1A.jpeg" data-width="1537" data-height="1148" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*FkBIoQDXMYTaV1Pf9f8L1A.jpeg"></figure><p name="0f41" id="0f41" class="graf graf--p graf-after--figure graf--trailing">這幾天有個新聞，某強國將VSCode換皮、改Logo，並加上儲值的功能，叫做CEC-IDE，可以看看<a href="https://www.zhihu.com/question/619023882" data-href="https://www.zhihu.com/question/619023882" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">知乎</a>、<a href="https://github.com/microsoft/vscode/issues/191229" data-href="https://github.com/microsoft/vscode/issues/191229" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Github</a>的討論串，讓我對VSCode開源感到興趣，查了一些資料並整理。</p></div></div></section><section name="0aee" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><p name="70e2" id="70e2" class="graf graf--p graf--leading">目前VSCode有三個版本分別為：VSCode（Visual Studio Code）、VSCodium 和 Code-OSS ，它們之間有一些差異。以下是它們的主要區別：</p><h4 name="97e2" id="97e2" class="graf graf--h4 graf-after--p">1. <a href="https://code.visualstudio.com/" data-href="https://code.visualstudio.com/" class="markup--anchor markup--h4-anchor" rel="noopener" target="_blank">VSCode</a></h4><p name="5b47" id="5b47" class="graf graf--p graf-after--h4">Visual Studio Code 是由微軟開發的一款免費的IDE，支援多種程式語言和框架。它提供了豐富的功能，像是智慧型程式碼補完、除錯、Git 整合、擴充功能支援等。VSCode 是閉源的，但是使用者可以免費使用。另外還有<a href="https://code.visualstudio.com/docs/editor/vscode-web" data-href="https://code.visualstudio.com/docs/editor/vscode-web" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">線上版</a>可以用。</p><h4 name="afa1" id="afa1" class="graf graf--h4 graf-after--p">2. <a href="https://github.com/VSCodium/vscodium" data-href="https://github.com/VSCodium/vscodium" class="markup--anchor markup--h4-anchor" rel="noopener" target="_blank">VSCodium</a></h4><p name="31da" id="31da" class="graf graf--p graf-after--h4">VSCodium 是 VSCode 的一個克隆專案，由社群維護。不同於 VSCode，VSCodium 是開源的，因此它的程式碼是公開的，任何人都可以查看、修改和散佈。由於 VSCode 本身雖然功能強大，但包含了一些與微軟的服務和追蹤相關的元件，所以一些使用者對於隱私和資料收集問題感到擔憂。VSCodium 解決了這些問題，提供了一個更加注重隱私的版本，保留了 VSCode 的功能並移除了與追蹤相關的部分。</p><h4 name="6444" id="6444" class="graf graf--h4 graf-after--p">3. <a href="https://github.com/microsoft/vscode" data-href="https://github.com/microsoft/vscode" class="markup--anchor markup--h4-anchor" rel="noopener" target="_blank">Code-OSS</a></h4><p name="c32d" id="c32d" class="graf graf--p graf-after--h4 graf--trailing">Code-OSS 是 Visual Studio Code 的開源版本，由微軟開發並維護。它是以 MIT 授權條款發布的，這表示任何人都可以自由查看、使用、修改和散佈它的程式碼。不同於 VSCodium，Code-OSS 與原始的 VSCode 程式碼更為相似，仍然保留了微軟的一些特性和服務。</p></div></div></section><section name="a855" class="section section--body section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><p name="6568" id="6568" class="graf graf--p graf--leading graf--trailing">看起來CEC-IDE應該是用Code-OSS來改的，連Copyright都標記微軟XD</p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@chouhsiang" class="p-author h-card">周詳  Sean Chou</a> on <a href="https://medium.com/p/1f02c509b3d3"><time class="dt-published" datetime="2023-08-28T14:42:32.591Z">August 28, 2023</time></a>.</p><p><a href="https://medium.com/@chouhsiang/%E5%BE%9Ecec-ide%E4%BA%8B%E4%BB%B6%E7%9C%8B%E7%9C%8Bvscode%E9%96%8B%E6%BA%90-1f02c509b3d3" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 29, 2026.</p></footer></article></body></html>

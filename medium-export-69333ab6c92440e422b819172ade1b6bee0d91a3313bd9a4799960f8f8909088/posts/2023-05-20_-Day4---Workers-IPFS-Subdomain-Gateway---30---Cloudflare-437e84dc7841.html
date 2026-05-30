@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>[Day4] 用Workers做IPFS Subdomain Gateway — 30天學會Cloudflare</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">[Day4] 用Workers做IPFS Subdomain Gateway — 30天學會Cloudflare</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+IPFS Gateway有兩種非別為Path gateway、Subdomain gateway，而Cloudflare Web3提供的Universal Path gateway就是Path gateway，但我們也可以透過Workers來建構自己的Subdomain…
+</section>
+<section data-field="body" class="e-content">
+<section name="d965" class="section section--body section--first"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="d989" id="d989" class="graf graf--h3 graf--leading graf--title">[Day4] 用Workers做IPFS Subdomain Gateway — 30天學會Cloudflare</h3><figure name="6d58" id="6d58" class="graf graf--figure graf-after--h3"><img class="graf-image" data-image-id="1*JZ1gdviz4NPHc-4I8UKL9w.png" data-width="2560" data-height="1440" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*JZ1gdviz4NPHc-4I8UKL9w.png"></figure><p name="e6a1" id="e6a1" class="graf graf--p graf-after--figure graf--trailing">IPFS Gateway有兩種非別為<a href="https://docs.ipfs.tech/how-to/address-ipfs-on-web/#path-gateway" data-href="https://docs.ipfs.tech/how-to/address-ipfs-on-web/#path-gateway" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Path gateway</a>、<a href="https://docs.ipfs.tech/how-to/address-ipfs-on-web/#subdomain-gateway" data-href="https://docs.ipfs.tech/how-to/address-ipfs-on-web/#subdomain-gateway" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Subdomain gateway</a>，而Cloudflare Web3提供的<a href="https://developers.cloudflare.com/web3/ipfs-gateway/concepts/universal-gateway/" data-href="https://developers.cloudflare.com/web3/ipfs-gateway/concepts/universal-gateway/" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Universal Path gateway</a>就是Path gateway，但我們也可以透過Workers來建構自己的Subdomain Gateway。</p></div></div></section><section name="912e" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="b940" id="b940" class="graf graf--h4 graf--leading"><strong class="markup--strong markup--h4-strong">Path gateway VS Subdomain gatew</strong>ay</h4><p name="40c5" id="40c5" class="graf graf--p graf-after--h4">IPFS的原理我就不多做介紹，我們要知道每個網站上傳到IPFS上後都會有個CID，我們可以將CID設定到DNS的txt紀錄，就可以綁定到網域上。</p><p name="2493" id="2493" class="graf graf--p graf-after--p">我們可以透過任<a href="https://ipfs.github.io/public-gateway-checker/" data-href="https://ipfs.github.io/public-gateway-checker/" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Public Gateway</a>來訪問網站，下圖中只有Origin有打勾的才是Subdomain gateway，他會自動跳轉到subdomain，使得網站會在獨立的網域上。</p><figure name="2232" id="2232" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*AQEuOLPV7Faa6dfbitB9Xw.png" data-width="2142" data-height="900" src="https://cdn-images-1.medium.com/max/800/1*AQEuOLPV7Faa6dfbitB9Xw.png"></figure><p name="415d" id="415d" class="graf graf--p graf-after--figure">我們舉Cloudflare兩個免費公開的gateway並使用數位部官網為例。可以透過下面這網址進行訪問：</p><ul class="postList"><li name="367f" id="367f" class="graf graf--li graf-after--p">Path Gateway: <a href="https://cloudflare-ipfs.com/ipns/moda.gov.tw/" data-href="https://cloudflare-ipfs.com/ipns/moda.gov.tw/" class="markup--anchor markup--li-anchor" rel="nofollow noopener" target="_blank">https://cloudflare-ipfs.com/ipns/moda.gov.tw</a></li><li name="228e" id="228e" class="graf graf--li graf-after--li">Subdomain Gateway: <a href="https://cf-ipfs.com/ipns/moda.gov.tw" data-href="https://cf-ipfs.com/ipns/moda.gov.tw" class="markup--anchor markup--li-anchor" rel="nofollow noopener" target="_blank">https://cf-ipfs.com/ipns/moda.gov.tw</a> 自動跳轉到 <a href="https://moda-gov-tw.ipns.cf-ipfs.com/" data-href="https://moda-gov-tw.ipns.cf-ipfs.com/" class="markup--anchor markup--li-anchor" rel="nofollow noopener" target="_blank">https://moda-gov-tw.ipns.cf-ipfs.com/</a></li></ul><p name="98c6" id="98c6" class="graf graf--p graf-after--li graf--trailing">第二個網址會自動跳轉到subdomain的方式，好處是可以避免相對路徑設定不全產生無法瀏覽的問題，對於前端的cookie、localstroage安全性也較高。也可以從上面網址觀察到subdomain會用<code class="markup--code markup--p-code"> - </code>取代原本網域的<code class="markup--code markup--p-code"> . </code>。</p></div></div></section><section name="3f00" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="126a" id="126a" class="graf graf--h4 graf--leading">CID</h4><p name="6e02" id="6e02" class="graf graf--p graf-after--h4">我們也可以透過IPFS的CID訪問網站，透過dig _dnslink.moda.gov.tw txt，可以找到moda.gov.tw的CID是QmZzWQrRStXBBb5pEFaWNh5kEMYwQXeDaf1on7rsL5WAK6。</p><figure name="9e6a" id="9e6a" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*FJK3fwka0X8a7Q3_jIuksQ.png" data-width="1582" data-height="524" src="https://cdn-images-1.medium.com/max/800/1*FJK3fwka0X8a7Q3_jIuksQ.png"></figure><p name="af90" id="af90" class="graf graf--p graf-after--figure">這時候也可以CID來訪問網站：</p><ul class="postList"><li name="29d3" id="29d3" class="graf graf--li graf-after--p">Path Gateway: <a href="https://cloudflare-ipfs.com/ipfs/QmZzWQrRStXBBb5pEFaWNh5kEMYwQXeDaf1on7rsL5WAK6/" data-href="https://cloudflare-ipfs.com/ipfs/QmZzWQrRStXBBb5pEFaWNh5kEMYwQXeDaf1on7rsL5WAK6/" class="markup--anchor markup--li-anchor" rel="nofollow noopener" target="_blank">https://cloudflare-ipfs.com/ipfs/QmZzWQrRStXBBb5pEFaWNh5kEMYwQXeDaf1on7rsL5WAK6/</a></li><li name="3eef" id="3eef" class="graf graf--li graf-after--li">Subdomain Gateway: <a href="https://cf-ipfs.com/ipfs/QmZzWQrRStXBBb5pEFaWNh5kEMYwQXeDaf1on7rsL5WAK6/" data-href="https://cf-ipfs.com/ipfs/QmZzWQrRStXBBb5pEFaWNh5kEMYwQXeDaf1on7rsL5WAK6/" class="markup--anchor markup--li-anchor" rel="nofollow noopener" target="_blank">https://cf-ipfs.com/ipfs/QmZzWQrRStXBBb5pEFaWNh5kEMYwQXeDaf1on7rsL5WAK6/</a>自動跳轉到 <a href="https://bafybeifnem7ljtnibmyriwcbl7ft7qpjot2scshiubl3visqztyyo5glau.ipfs.cf-ipfs.com/" data-href="https://bafybeifnem7ljtnibmyriwcbl7ft7qpjot2scshiubl3visqztyyo5glau.ipfs.cf-ipfs.com/" class="markup--anchor markup--li-anchor" rel="nofollow noopener" target="_blank">https://bafybeifnem7ljtnibmyriwcbl7ft7qpjot2scshiubl3visqztyyo5glau.ipfs.cf-ipfs.com/</a></li></ul><p name="f4bb" id="f4bb" class="graf graf--p graf-after--li graf--trailing">你會發現前面出現一個bafy…的東西，那是因為IPFS有規範如果要做成subdomain這串hash有特別算過，可以參考<a href="https://docs.ipfs.tech/concepts/content-addressing/#cid-conversion" data-href="https://docs.ipfs.tech/concepts/content-addressing/#cid-conversion" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">官方文件</a>。由於這部分比較麻煩，我範例就展示如何做IPNS就好。</p></div></div></section><section name="abdf" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="2435" id="2435" class="graf graf--h4 graf--leading">Universal Path Gateway</h4><p name="c882" id="c882" class="graf graf--p graf-after--h4">Cloudflare提供Public gateway功能，我們先從建立一個Universal Path Gateway。透過這個Gateway就可以訪問各種網站，跟其他gateway用法一樣，如https://gateway.twcanhelp.me/ipns/moda.gov.tw。</p><figure name="a1fb" id="a1fb" class="graf graf--figure graf-after--p graf--trailing"><img class="graf-image" data-image-id="1*m60dwVF84hyEOwLv7AvZQA.png" data-width="922" data-height="756" src="https://cdn-images-1.medium.com/max/800/1*m60dwVF84hyEOwLv7AvZQA.png"></figure></div></div></section><section name="706e" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="e324" id="e324" class="graf graf--h4 graf--leading">範例</h4><p name="5b27" id="5b27" class="graf graf--p graf-after--h4">先構思我們服務的目標，我希望moda-gov-tw.gateway.twcanhelp.me可以訪問到IPFS，所以我們需要讀取hostname再來fetch gateway。而不用建立上面自己的Gateway也沒關係，我們用Pinata gateway為例。程式範例如下：</p><pre data-code-block-mode="1" spellcheck="false" data-code-block-lang="javascript" name="2db7" id="2db7" class="graf graf--pre graf-after--p graf--preV2"><span class="pre--content"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {<br />  <span class="hljs-keyword">async</span> <span class="hljs-title function_">fetch</span>(<span class="hljs-params">request, env</span>) {<br />    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Response</span>(<span class="hljs-string">&quot;&quot;</span>);<br />    <span class="hljs-keyword">try</span> {<br />      <span class="hljs-keyword">const</span> { host, pathname, search } = <span class="hljs-keyword">new</span> <span class="hljs-title function_">URL</span>(request.<span class="hljs-property">url</span>);<br />      <span class="hljs-keyword">const</span> dist = host.<span class="hljs-title function_">split</span>(<span class="hljs-string">&quot;.&quot;</span>)[<span class="hljs-number">0</span>].<span class="hljs-title function_">replaceAll</span>(<span class="hljs-string">&quot;-&quot;</span>, <span class="hljs-string">&quot;.&quot;</span>);<br />      <span class="hljs-keyword">const</span> url = <span class="hljs-string">&quot;https://gateway.pinata.cloud/ipns/&quot;</span> + dist + pathname + search;<br />      <span class="hljs-keyword">return</span> <span class="hljs-title function_">fetch</span>(url, request);<br />    } <span class="hljs-keyword">catch</span>(e) {<br />      <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Response</span>(e, { <span class="hljs-attr">status</span>: <span class="hljs-number">500</span> })<br />    }<br />  }<br />}</span></pre><p name="1fa7" id="1fa7" class="graf graf--p graf-after--pre">只要訪問a-b-c.twcanhelp.me就會去fetch gateway.pinata.cloud/ipns/a.b.c，取得IPFS內容。再來設定上路由到*.gateway.twcanhelp.me/*，由於我們是用在subdomain下，還需要在Cloudflare另外購買subdomain的SSL憑證。</p><figure name="b562" id="b562" class="graf graf--figure graf-after--p graf--trailing"><img class="graf-image" data-image-id="1*IkMGqh4oEFYOC5K01eZpZA.png" data-width="2280" data-height="386" src="https://cdn-images-1.medium.com/max/800/1*IkMGqh4oEFYOC5K01eZpZA.png"></figure></div></div></section><section name="060b" class="section section--body section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="60b7" id="60b7" class="graf graf--h4 graf--leading">結語</h4><p name="6c72" id="6c72" class="graf graf--p graf-after--h4 graf--trailing">今天講到透過Workers就可以簡單實作一個Subdomain Gateway範例，外部提供的Gateway很少，就可以自己做一個。</p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@chouhsiang" class="p-author h-card">周詳  Sean Chou</a> on <a href="https://medium.com/p/437e84dc7841"><time class="dt-published" datetime="2023-05-20T07:31:57.448Z">May 20, 2023</time></a>.</p><p><a href="https://medium.com/@chouhsiang/day4-%E7%94%A8workers%E5%81%9Aipfs-subdomain-gateway-30%E5%A4%A9%E5%AD%B8%E6%9C%83cloudflare-437e84dc7841" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 29, 2026.</p></footer></article></body></html>

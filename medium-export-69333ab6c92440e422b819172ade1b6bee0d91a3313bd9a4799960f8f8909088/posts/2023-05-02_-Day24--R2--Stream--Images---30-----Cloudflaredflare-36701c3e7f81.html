@@ -1,0 +1,69 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>[Day24] R2, Stream, Images — 30 天入門 Cloudflaredflare</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">[Day24] R2, Stream, Images — 30 天入門 Cloudflaredflare</h1>
+</header>
+<section data-field="body" class="e-content">
+<section name="8b0e" class="section section--body section--first"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="c3e9" id="c3e9" class="graf graf--h3 graf--leading graf--title"><a href="https://medium.com/chouhsiang/30%E5%A4%A9%E6%90%9E%E6%87%82cloudflare-24-r2-stream-images-36701c3e7f81" data-href="https://medium.com/chouhsiang/30%E5%A4%A9%E6%90%9E%E6%87%82cloudflare-24-r2-stream-images-36701c3e7f81" class="markup--anchor markup--h3-anchor" target="_blank"><strong class="markup--strong markup--h3-strong">[Day24] R2, Stream, Images — 30 天入門 Cloudflare</strong></a></h3><figure name="88fc" id="88fc" class="graf graf--figure graf-after--h3"><img class="graf-image" data-image-id="1*qPmx3bs5FNdUithRJOyY0g.png" data-width="1920" data-height="1080" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*qPmx3bs5FNdUithRJOyY0g.png"></figure><p name="7297" id="7297" class="graf graf--p graf-after--figure graf--trailing">Cloudflare 提供一系列檔案託管服務，如果不想用三大雲的檔案系統，也可以考慮 Cloudflare，包含與 S3 相容的 R2、影片串流的 Stream、圖床的Images。由於這些功能我也沒在 Cloudflare 用過 😀，只能節錄官網資訊跟大家介紹一下。</p></div></div></section><section name="af47" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="af6e" id="af6e" class="graf graf--h4 graf--leading">Cloudflare R2</h4><p name="95c3" id="95c3" class="graf graf--p graf-after--h4">R2 是個零輸出費用的物件儲存空間，可讓您透過與 S3 相容的物件儲存空間，建立心目中的多雲端架構。根據官網說明他有以下特性：全球物件儲存空間、與 Cloudflare Workers 整合實現動態功能、透過我們與 S3 相容的 API 避免廠商鎖定、透過現有雲端儲存提供者輕鬆遷移。</p><figure name="63ef" id="63ef" class="graf graf--figure graf-after--p graf--trailing"><img class="graf-image" data-image-id="1*j6Nh6ato3z2zlLSuBMRHxg.png" data-width="2138" data-height="1430" src="https://cdn-images-1.medium.com/max/800/1*j6Nh6ato3z2zlLSuBMRHxg.png"></figure></div></div></section><section name="2f58" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="1efd" id="1efd" class="graf graf--h4 graf--leading">Cloudflare Stream</h4><p name="34dd" id="34dd" class="graf graf--p graf-after--h4">Cloudflare Stream 無伺服器即時串流和隨需影片串流，上傳、儲存、編碼及傳遞<strong class="markup--strong markup--p-strong">即時和點播視訊</strong>，全都使用一個 API。</p><figure name="4b66" id="4b66" class="graf graf--figure graf-after--p graf--trailing"><img class="graf-image" data-image-id="1*3WGbgZGz_UQR1Dwg3B7z7A.png" data-width="2918" data-height="1478" src="https://cdn-images-1.medium.com/max/800/1*3WGbgZGz_UQR1Dwg3B7z7A.png"></figure></div></div></section><section name="c793" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="3889" id="3889" class="graf graf--h4 graf--leading">Cloudflare Images</h4><p name="3ec8" id="3ec8" class="graf graf--p graf-after--h4">Cloudflare Images 提供簡單直接的端到端解決方案，用於經濟高效地構建和維護您的影像基礎結構。使用單一產品對影像進行大規模存儲、大小調整和優化。</p><figure name="0c2a" id="0c2a" class="graf graf--figure graf-after--p graf--trailing"><img class="graf-image" data-image-id="1*laOh3v0McVeMSCOjdS_8fw.png" data-width="2886" data-height="1464" src="https://cdn-images-1.medium.com/max/800/1*laOh3v0McVeMSCOjdS_8fw.png"></figure></div></div></section><section name="84dc" class="section section--body section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="d28f" id="d28f" class="graf graf--h4 graf--leading">結語</h4><p name="7f36" id="7f36" class="graf graf--p graf-after--h4">透過結合 Cloudflare CDN 網路，將檔案部署在邊緣節點上，可以有效提升使用者體驗，我是沒相關需求用不到，有用過的人歡迎分享一下！</p><p name="be7b" id="be7b" class="graf graf--p graf-after--p"><strong class="markup--strong markup--p-strong">▶ 閱讀更多本系列文：</strong><a href="https://medium.com/chouhsiang/cloudflare-30-days/home" data-href="https://medium.com/chouhsiang/cloudflare-30-days/home" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank"><strong class="markup--strong markup--p-strong">30 天入門 Cloudflare</strong></a></p><p name="a904" id="a904" class="graf graf--p graf-after--p graf--trailing"><strong class="markup--strong markup--p-strong">▶ 下一篇：</strong><a href="https://medium.com/chouhsiang/30%E5%A4%A9%E6%90%9E%E6%87%82cloudflare-25-zero-trust-d28fa1b46a42" data-href="https://medium.com/chouhsiang/30%E5%A4%A9%E6%90%9E%E6%87%82cloudflare-25-zero-trust-d28fa1b46a42" class="markup--anchor markup--p-anchor" target="_blank"><strong class="markup--strong markup--p-strong">[Day25] Zero Trust — 30 天入門 Cloudflare</strong></a></p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@chouhsiang" class="p-author h-card">周詳  Sean Chou</a> on <a href="https://medium.com/p/36701c3e7f81"><time class="dt-published" datetime="2023-05-02T09:29:36.918Z">May 2, 2023</time></a>.</p><p><a href="https://medium.com/@chouhsiang/30%E5%A4%A9%E6%90%9E%E6%87%82cloudflare-24-r2-stream-images-36701c3e7f81" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 29, 2026.</p></footer></article></body></html>

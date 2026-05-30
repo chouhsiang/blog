@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>迷惑的 Cloudflare 零信任設備驗證 Serial Number 與 Device ID</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">迷惑的 Cloudflare 零信任設備驗證 Serial Number 與 Device ID</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+最近在研究如何識別已知的設備，並決定能不能訪問受零信任保護的服務。開始研究如何識別設備編號，才發現這方式太讓人迷惑了。
+</section>
+<section data-field="body" class="e-content">
+<section name="45c6" class="section section--body section--first"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="3291" id="3291" class="graf graf--h3 graf--leading graf--title">迷惑的 Cloudflare 零信任設備驗證 Serial Number 與 Device ID</h3><p name="4876" id="4876" class="graf graf--p graf-after--h3 graf--trailing">最近在研究如何識別已知的設備，並決定能不能訪問受零信任保護的服務。開始研究如何識別設備編號，才發現這方式太讓人迷惑了。</p></div></div></section><section name="7b82" class="section section--body section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="0903" id="0903" class="graf graf--h3 graf--leading">Cloudflare WARP </h3><p name="3de7" id="3de7" class="graf graf--p graf-after--h3">我們可以透過 Cloudflare WARP 來取得設備資訊，並以此在 Cloudflare Access 上設定規則是否能訪問服務。</p><p name="9a6d" id="9a6d" class="graf graf--p graf-after--p">目前支援了以下幾種作業系統：</p><ul class="postList"><li name="54d7" id="54d7" class="graf graf--li graf-after--p">電腦 OS：Windows、macOS、Linux</li><li name="ba90" id="ba90" class="graf graf--li graf-after--li">移動 OS：Android、iOS / iPadOS、ChromeOS</li></ul><p name="8ab0" id="8ab0" class="graf graf--p graf-after--li">設備登入變連線 Cloudflare WARP 後，可以在後台查看到 Serial Number 與 Device ID。</p><figure name="5659" id="5659" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*W6Fo1QAOZ8rBykDH1soKnA.png" data-width="2348" data-height="870" src="https://cdn-images-1.medium.com/max/800/1*W6Fo1QAOZ8rBykDH1soKnA.png"></figure><p name="fd4b" id="fd4b" class="graf graf--p graf-after--figure">可知道的資訊如下：</p><ul class="postList"><li name="1742" id="1742" class="graf graf--li graf-after--p">OS：可以得知使用的作業系統與版本</li><li name="5c63" id="5c63" class="graf graf--li graf-after--li">Serial Number：主機板序號，詳見<a href="https://developers.cloudflare.com/cloudflare-one/identity/devices/warp-client-checks/corp-device/" data-href="https://developers.cloudflare.com/cloudflare-one/identity/devices/warp-client-checks/corp-device/" class="markup--anchor markup--li-anchor" rel="noopener" target="_blank">官方文件</a></li><li name="7622" id="7622" class="graf graf--li graf-after--li">Device ID：Cloudflare 發放的裝置唯一識別 ID</li></ul><p name="e657" id="e657" class="graf graf--p graf--empty graf-after--li graf--trailing"><br></p></div></div></section>
+</section>
+<footer><p><a href="https://medium.com/p/7bd7eae267d6">View original.</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 29, 2026.</p></footer></article></body></html>

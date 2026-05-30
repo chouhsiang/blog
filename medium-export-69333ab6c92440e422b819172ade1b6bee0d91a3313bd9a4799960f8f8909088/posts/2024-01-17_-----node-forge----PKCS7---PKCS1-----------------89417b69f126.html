@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>[範例] node-forge 驗證 PKCS7 內 PKCS1 簽章值 | 自然人憑證開發筆記</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">[範例] node-forge 驗證 PKCS7 內 PKCS1 簽章值 | 自然人憑證開發筆記</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+首頁 &gt; 系列文 &gt; 自然人憑證開發筆記
+</section>
+<section data-field="body" class="e-content">
+<section name="818d" class="section section--body section--first"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="bf71" id="bf71" class="graf graf--h3 graf--leading graf--title">[範例] node-forge 驗證 PKCS7 內 PKCS1 簽章值 | 自然人憑證開發筆記</h3><p name="b470" id="b470" class="graf graf--p graf-after--h3"><a href="https://medium.com/chouhsiang" data-href="https://medium.com/chouhsiang" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank"><strong class="markup--strong markup--p-strong">首頁</strong></a><strong class="markup--strong markup--p-strong"> &gt; </strong><a href="https://medium.com/chouhsiang/series/home" data-href="https://medium.com/chouhsiang/series/home" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank"><strong class="markup--strong markup--p-strong">系列文</strong></a><strong class="markup--strong markup--p-strong"> &gt; </strong><a href="https://medium.com/chouhsiang/%E6%B7%B1%E5%85%A5%E6%B7%BA%E5%87%BA%E8%87%AA%E7%84%B6%E4%BA%BA%E6%86%91%E8%AD%89-5b0c9188419c" data-href="https://medium.com/chouhsiang/%E6%B7%B1%E5%85%A5%E6%B7%BA%E5%87%BA%E8%87%AA%E7%84%B6%E4%BA%BA%E6%86%91%E8%AD%89-5b0c9188419c" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank"><strong class="markup--strong markup--p-strong">自然人憑證開發</strong>筆記</a></p><figure name="dce5" id="dce5" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="0*BAsnIy4T7Rvu_ZSA.png" data-width="1260" data-height="709" src="https://cdn-images-1.medium.com/max/800/0*BAsnIy4T7Rvu_ZSA.png"></figure><p name="5b71" id="5b71" class="graf graf--p graf-after--figure"><a href="https://medium.com/chouhsiang/%E5%BE%8C%E7%AB%AF%E7%AF%84%E4%BE%8B-node-forge-%E8%A7%A3%E6%9E%90-pkcs7-%E7%B0%BD%E7%AB%A0%E5%80%BC-%E6%B7%B1%E5%85%A5%E6%B7%BA%E5%87%BA%E8%87%AA%E7%84%B6%E4%BA%BA%E6%86%91%E8%AD%89-17fd4c94d3c5" data-href="https://medium.com/chouhsiang/%E5%BE%8C%E7%AB%AF%E7%AF%84%E4%BE%8B-node-forge-%E8%A7%A3%E6%9E%90-pkcs7-%E7%B0%BD%E7%AB%A0%E5%80%BC-%E6%B7%B1%E5%85%A5%E6%B7%BA%E5%87%BA%E8%87%AA%E7%84%B6%E4%BA%BA%E6%86%91%E8%AD%89-17fd4c94d3c5" class="markup--anchor markup--p-anchor" target="_blank">前文</a>說明了如何取出 PKCS7 中的資訊，本文說明如何對 PKCS7 進行驗簽。</p><figure name="fff6" id="fff6" class="graf graf--figure graf-after--p graf--trailing"><img class="graf-image" data-image-id="1*rcKaCPp2XHPKhfQZkz6h3w.png" data-width="1194" data-height="596" src="https://cdn-images-1.medium.com/max/800/1*rcKaCPp2XHPKhfQZkz6h3w.png"></figure></div></div></section><section name="567f" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="c227" id="c227" class="graf graf--h3 graf--leading">Demo</h3><ul class="postList"><li name="91fb" id="91fb" class="graf graf--li graf-after--h3"><a href="https://chouhsiang.github.io/gist/#8b4f16c08587f39eb1e9b28137958715" data-href="https://chouhsiang.github.io/gist/#8b4f16c08587f39eb1e9b28137958715" class="markup--anchor markup--li-anchor" rel="noopener" target="_blank">範例網站</a></li><li name="a3d7" id="a3d7" class="graf graf--li graf-after--li"><a href="https://codepen.io/ndoilelg-the-vuer/pen/KKEWNvm" data-href="https://codepen.io/ndoilelg-the-vuer/pen/KKEWNvm" class="markup--anchor markup--li-anchor" rel="noopener" target="_blank">CodePen</a></li><li name="3fa7" id="3fa7" class="graf graf--li graf-after--li"><a href="https://gist.github.com/chouhsiang/8b4f16c08587f39eb1e9b28137958715" data-href="https://gist.github.com/chouhsiang/8b4f16c08587f39eb1e9b28137958715" class="markup--anchor markup--li-anchor" rel="noopener" target="_blank">Github Gist</a></li></ul><figure name="7378" id="7378" class="graf graf--figure graf--iframe graf-after--li graf--trailing"><iframe src="https://codepen.io/ndoilelg-the-vuer/embed/preview/KKEWNvm?default-tabs=html%2Cresult&amp;height=600&amp;host=https%3A%2F%2Fcodepen.io&amp;slug-hash=KKEWNvm" width="700" height="525" frameborder="0" scrolling="no"></iframe></figure></div></div></section><section name="1b48" class="section section--body section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="517c" id="517c" class="graf graf--h3 graf--leading">程式碼</h3><p name="b93c" id="b93c" class="graf graf--p graf-after--h3">驗簽流程如下：</p><ol class="postList"><li name="ea70" id="ea70" class="graf graf--li graf-after--p">從 PKCS7 解析出待簽章資料（含 TBS 的 Hash、時間、Nonce、卡號）、Hash 演算法、簽章值、憑證的公鑰</li><li name="e568" id="e568" class="graf graf--li graf-after--li">將待簽章資料透過 Hash 演算法進行 Hash</li><li name="f58c" id="f58c" class="graf graf--li graf-after--li">以公鑰、Hash 值、簽章值進行驗簽</li></ol><figure name="a5f7" id="a5f7" class="graf graf--figure graf--iframe graf-after--li graf--trailing"><script src="https://gist.github.com/chouhsiang/8b4f16c08587f39eb1e9b28137958715.js"></script></figure></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@chouhsiang" class="p-author h-card">周詳  Sean Chou</a> on <a href="https://medium.com/p/89417b69f126"><time class="dt-published" datetime="2024-01-17T06:17:01.164Z">January 17, 2024</time></a>.</p><p><a href="https://medium.com/@chouhsiang/%E5%BE%8C%E7%AB%AF%E7%AF%84%E4%BE%8B-node-forge-crypto-%E9%A9%97%E7%B0%BD-pkcs7-%E6%B7%B1%E5%85%A5%E6%B7%BA%E5%87%BA%E8%87%AA%E7%84%B6%E4%BA%BA%E6%86%91%E8%AD%89-89417b69f126" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 29, 2026.</p></footer></article></body></html>

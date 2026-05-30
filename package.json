@@ -6,6 +6,8 @@
     "dev": "astro dev",
     "build": "astro build && pagefind --site dist",
     "preview": "astro preview",
+    "import-medium": "node scripts/import-medium.js",
+    "download-post-images": "node scripts/download-post-images.js",
     "new-post": "node scripts/new-post.js"
   },
   "dependencies": {
@@ -61,7 +63,10 @@
     "@types/markdown-it": "^14.1.2",
     "@types/mdast": "^4.0.4",
     "@types/sanitize-html": "^2.16.0",
+    "cheerio": "^1.2.0",
     "postcss-import": "^16.1.1",
-    "postcss-nesting": "^13.0.2"
+    "postcss-nesting": "^13.0.2",
+    "turndown": "^7.2.4",
+    "turndown-plugin-gfm": "^1.0.2"
   }
 }

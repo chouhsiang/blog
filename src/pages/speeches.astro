@@ -1,0 +1,17 @@
+---
+import ArchiveTimeline from "@components/ArchiveTimeline.astro";
+import MainGridLayout from "@layouts/MainGridLayout.astro";
+import { filterArchivePosts } from "@utils/archive-utils";
+import { getSortedPostsList } from "../utils/content-utils";
+
+const speechPosts = filterArchivePosts(await getSortedPostsList(), {
+	categories: ["演講"],
+});
+
+const description =
+	"周詳 Sean Chou 的技術演講與分享紀錄，涵蓋 Kubernetes、DevOps、零信任、Cloudflare 等主題。";
+---
+
+<MainGridLayout title="演講" description={description}>
+	<ArchiveTimeline posts={speechPosts} showTags={false} heading="演講" />
+</MainGridLayout>

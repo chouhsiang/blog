@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>[背景知識] 公鑰憑證 | 自然人憑證開發筆記</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">[背景知識] 公鑰憑證 | 自然人憑證開發筆記</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+首頁 &gt; 系列文 &gt; 自然人憑證開發筆記
+</section>
+<section data-field="body" class="e-content">
+<section name="8a1d" class="section section--body section--first"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="9d10" id="9d10" class="graf graf--h3 graf--leading graf--title">[背景知識] 公鑰憑證 | 自然人憑證開發筆記</h3><p name="ddb5" id="ddb5" class="graf graf--p graf-after--h3"><a href="https://medium.com/chouhsiang" data-href="https://medium.com/chouhsiang" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank"><strong class="markup--strong markup--p-strong">首頁</strong></a><strong class="markup--strong markup--p-strong"> &gt; </strong><a href="https://medium.com/chouhsiang/series/home" data-href="https://medium.com/chouhsiang/series/home" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank"><strong class="markup--strong markup--p-strong">系列文</strong></a><strong class="markup--strong markup--p-strong"> &gt; </strong><a href="https://medium.com/chouhsiang/%E6%B7%B1%E5%85%A5%E6%B7%BA%E5%87%BA%E8%87%AA%E7%84%B6%E4%BA%BA%E6%86%91%E8%AD%89-5b0c9188419c" data-href="https://medium.com/chouhsiang/%E6%B7%B1%E5%85%A5%E6%B7%BA%E5%87%BA%E8%87%AA%E7%84%B6%E4%BA%BA%E6%86%91%E8%AD%89-5b0c9188419c" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank"><strong class="markup--strong markup--p-strong">自然人憑證開發</strong>筆記</a></p><figure name="ca1a" id="ca1a" class="graf graf--figure graf-after--p graf--trailing"><img class="graf-image" data-image-id="0*gEh7yWauoJ3Hq1YM.png" data-width="1260" data-height="709" src="https://cdn-images-1.medium.com/max/800/0*gEh7yWauoJ3Hq1YM.png"></figure></div></div></section><section name="9ceb" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="bc93" id="bc93" class="graf graf--h3 graf--leading">公鑰憑證</h3><p name="6e5d" id="6e5d" class="graf graf--p graf-after--h3">公鑰憑證（Public Key Certificate）是一種用於建立安全通訊的數位憑證。它是一種由第三方機構（通常是憑證授權機構，Certificate Authority，簡稱CA）簽發的數位憑證，用於確保在網際網路上的資訊交換過程中的安全性和可靠性。</p><p name="4c98" id="4c98" class="graf graf--p graf-after--p">以下是公鑰憑證的基本原理和相關概念：</p><ol class="postList"><li name="1e83" id="1e83" class="graf graf--li graf-after--p">公開金鑰加密： 公鑰憑證建立在公開金鑰加密的基礎上。每個憑證都包含一對密鑰：公開金鑰和私有金鑰。公開金鑰可以被分享給任何人，而私有金鑰則僅由擁有憑證的實體保有。</li><li name="6285" id="6285" class="graf graf--li graf-after--li">憑證授權機構（CA）： CA 是一個受信任的第三方機構，負責核發、管理和簽署憑證。CA 通常會使用自己的私有金鑰來簽署憑證，這樣做能夠確保憑證的真實性。</li><li name="1faf" id="1faf" class="graf graf--li graf-after--li">數位簽章： CA使用其私有金鑰對憑證進行數位簽章，這是一種數位簽署的過程，確保憑證的真實性和完整性。憑證的接收者可以使用 CA 的公開金鑰驗證簽名，以確認憑證的有效性。</li><li name="ba8c" id="ba8c" class="graf graf--li graf-after--li">身份驗證： 公鑰憑證用於身份驗證通訊方。通訊方將其公開金鑰包含在憑證中，當其他方收到憑證時，可以使用 CA 的公開金鑰驗證憑證的真實性。這確保通訊方的身份是合法的，並且通訊中的資訊能夠被安全地加密和解密。</li><li name="beda" id="beda" class="graf graf--li graf-after--li">SSL/TLS通訊： 公鑰憑證在網路安全通訊協議（如SSL/TLS）中得到廣泛應用，用於確保網站和用戶之間的安全通訊。當使用者訪問一個使用SSL/TLS協議的網站時，網站會向使用者展示其公鑰憑證，以確保通訊的安全性。</li></ol><p name="42aa" id="42aa" class="graf graf--p graf-after--li graf--trailing">公鑰憑證提供了一種數位機制，確保在網路通訊中的身份驗證、資訊保密性和資訊完整性。</p></div></div></section><section name="e46a" class="section section--body section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="c412" id="c412" class="graf graf--h3 graf--leading">公鑰憑證的欄位</h3><figure name="974e" id="974e" class="graf graf--figure graf-after--h3"><img class="graf-image" data-image-id="0*-_SuQqXyqZQkhmCv.png" data-width="718" data-height="696" src="https://cdn-images-1.medium.com/max/800/0*-_SuQqXyqZQkhmCv.png"><figcaption class="imageCaption">擷取自 <a href="https://zh.wikipedia.org/zh-tw/%E5%85%AC%E9%96%8B%E9%87%91%E9%91%B0%E8%AA%8D%E8%AD%89" data-href="https://zh.wikipedia.org/zh-tw/%E5%85%AC%E9%96%8B%E9%87%91%E9%91%B0%E8%AA%8D%E8%AD%89" class="markup--anchor markup--figure-anchor" rel="nofollow noopener" target="_blank">https://zh.wikipedia.org/zh-tw/%E5%85%AC%E9%96%8B%E9%87%91%E9%91%B0%E8%AA%8D%E8%AD%89</a></figcaption></figure><p name="95cb" id="95cb" class="graf graf--p graf-after--figure">公鑰憑證通常包含以下關鍵資訊：</p><ul class="postList"><li name="2185" id="2185" class="graf graf--li graf-after--p">主體（Subject）： 憑證的主要主體，即憑證所代表的實體的識別資訊。通常是個人、組織或伺服器的名稱。</li><li name="a189" id="a189" class="graf graf--li graf-after--li">公開金鑰（Public Key）： 憑證中包含的公開金鑰，用於加密通訊和驗證數位簽章。任何人都可以存取公開金鑰，但相對應的私有金鑰僅由擁有憑證的實體擁有。</li><li name="7f49" id="7f49" class="graf graf--li graf-after--li">憑證序號： 用於標識和區別不同的憑證。序號是唯一的，由CA生成。</li><li name="bac0" id="bac0" class="graf graf--li graf-after--li">發行者（Issuer）： 簽發憑證的CA的識別資訊。這確保接收者能夠使用CA的公開金鑰來驗證憑證的真實性。</li><li name="5b95" id="5b95" class="graf graf--li graf-after--li">有效期間（Validity Period）： 憑證的生效和失效日期，確定憑證在什麼時候開始生效和什麼時候失效。</li><li name="f4bb" id="f4bb" class="graf graf--li graf-after--li">使用者憑證的用途（Key Usage）： 描述憑證的公開金鑰可以用於什麼目的，例如加密、數位簽章等。</li><li name="a30e" id="a30e" class="graf graf--li graf-after--li">擴展憑證資訊（Extended Key Usage）： 進一步描述憑證公開金鑰的用途，比如是否可以用於網站身份驗證（Web Server Authentication）等。</li><li name="35f9" id="35f9" class="graf graf--li graf-after--li">憑證簽章演算法（Signature Algorithm）： 用於簽署憑證的數位簽章演算法，這是CA使用私有金鑰來對憑證進行數位簽署的方式。</li><li name="1d48" id="1d48" class="graf graf--li graf-after--li">憑證指紋（Thumbprint）： 憑證的數位指紋，一個固定長度的數字串，用於標識憑證的唯一性。</li><li name="ee8e" id="ee8e" class="graf graf--li graf-after--li">識別資訊（Subject Alternative Name，SAN）： 如果憑證用於識別多個實體，這個擴展欄位可以包含其他的名稱，如主機名稱或IP地址。</li><li name="cf40" id="cf40" class="graf graf--li graf-after--li">憑證撤銷資訊（Certificate Revocation Information）： 提供有關憑證是否已被撤銷的資訊，以及如何檢查憑證的撤銷狀態。</li></ul><p name="5e49" id="5e49" class="graf graf--p graf-after--li graf--trailing">這些資訊組成了一個標準的公鑰憑證，使其成為安全通訊和身份驗證的重要工具。</p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@chouhsiang" class="p-author h-card">周詳  Sean Chou</a> on <a href="https://medium.com/p/6eb40b85db66"><time class="dt-published" datetime="2024-01-29T06:16:47.996Z">January 29, 2024</time></a>.</p><p><a href="https://medium.com/@chouhsiang/%E8%83%8C%E6%99%AF%E7%9F%A5%E8%AD%98-%E5%85%AC%E9%91%B0%E6%86%91%E8%AD%89-6eb40b85db66" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 29, 2026.</p></footer></article></body></html>

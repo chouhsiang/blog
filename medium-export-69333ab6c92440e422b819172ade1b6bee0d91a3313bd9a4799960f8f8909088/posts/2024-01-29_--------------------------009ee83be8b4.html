@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>[背景知識] 密碼雜湊函數 | 自然人憑證開發筆記</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">[背景知識] 密碼雜湊函數 | 自然人憑證開發筆記</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+首頁 &gt; 系列文 &gt; 自然人憑證開發筆記
+</section>
+<section data-field="body" class="e-content">
+<section name="0b95" class="section section--body section--first"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="bfe0" id="bfe0" class="graf graf--h3 graf--leading graf--title">[背景知識] 密碼雜湊函數 | 自然人憑證開發筆記</h3><p name="aa92" id="aa92" class="graf graf--p graf-after--h3"><a href="https://medium.com/chouhsiang" data-href="https://medium.com/chouhsiang" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank"><strong class="markup--strong markup--p-strong">首頁</strong></a><strong class="markup--strong markup--p-strong"> &gt; </strong><a href="https://medium.com/chouhsiang/series/home" data-href="https://medium.com/chouhsiang/series/home" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank"><strong class="markup--strong markup--p-strong">系列文</strong></a><strong class="markup--strong markup--p-strong"> &gt; </strong><a href="https://medium.com/chouhsiang/%E6%B7%B1%E5%85%A5%E6%B7%BA%E5%87%BA%E8%87%AA%E7%84%B6%E4%BA%BA%E6%86%91%E8%AD%89-5b0c9188419c" data-href="https://medium.com/chouhsiang/%E6%B7%B1%E5%85%A5%E6%B7%BA%E5%87%BA%E8%87%AA%E7%84%B6%E4%BA%BA%E6%86%91%E8%AD%89-5b0c9188419c" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank"><strong class="markup--strong markup--p-strong">自然人憑證開發</strong>筆記</a></p><figure name="d252" id="d252" class="graf graf--figure graf-after--p graf--trailing"><img class="graf-image" data-image-id="0*1-8HfzX7YOMYKFud.png" data-width="1260" data-height="709" src="https://cdn-images-1.medium.com/max/800/0*1-8HfzX7YOMYKFud.png"></figure></div></div></section><section name="0f54" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><p name="a298" id="a298" class="graf graf--p graf--leading">密碼雜湊函數（Cryptographic Hash Function）是一種特殊的數學函數，它將輸入的任意大小的數據轉換成固定大小的固定長度的雜湊值。通常在做資料加密或簽章前，會先經過雜湊函數運算。</p><p name="de90" id="de90" class="graf graf--p graf-after--p">密碼雜湊函數具有以下特點：</p><ul class="postList"><li name="aac2" id="aac2" class="graf graf--li graf-after--p">固定長度的輸出： 不管輸入的資料大小如何，密碼雜湊函數的輸出都是固定長度的。</li><li name="6363" id="6363" class="graf graf--li graf-after--li">單向性（One-way）： 雜湊函數是單向的，即容易計算給定輸入的雜湊值，但很難從雜湊值反向計算出原始輸入。</li><li name="6970" id="6970" class="graf graf--li graf-after--li">相同輸入產生相同的雜湊值： 對於相同的輸入，密碼雜湊函數始終生成相同的雜湊值。</li><li name="d1e0" id="d1e0" class="graf graf--li graf-after--li">碰撞阻力： 理想的密碼雜湊函數應該是碰撞阻力的，即不同的輸入應該產生不同的雜湊值，並且很難找到兩個不同的輸入產生相同的雜湊值。</li></ul><p name="6229" id="6229" class="graf graf--p graf-after--li">密碼雜湊函數在許多安全應用中都有廣泛的應用，包括存儲用戶密碼、數位簽名、消息驗證碼等。一些常見的密碼雜湊函數包括 SHA-1、SHA-2、SHA-3、MD5等。</p><p name="1535" id="1535" class="graf graf--p graf-after--p">在存儲密碼的情況下，通常會將使用者的密碼進行雜湊，並將雜湊值儲存在資料庫中。當使用者登入時，系統會對輸入的密碼進行雜湊，並將雜湊值與儲存的雜湊值進行比較，而不存儲實際的明文密碼。這有助於保護使用者密碼在資料儲存中的安全。更多資訊參考維基百科：<a href="https://zh.wikipedia.org/wiki/%E5%AF%86%E7%A2%BC%E9%9B%9C%E6%B9%8A%E5%87%BD%E6%95%B8" data-href="https://zh.wikipedia.org/wiki/%E5%AF%86%E7%A2%BC%E9%9B%9C%E6%B9%8A%E5%87%BD%E6%95%B8" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">密碼雜湊函數</a>。</p><figure name="9d7a" id="9d7a" class="graf graf--figure graf-after--p graf--trailing"><img class="graf-image" data-image-id="0*9-6Ta3-EvUptAzGw.png" data-width="2560" data-height="1854" src="https://cdn-images-1.medium.com/max/800/0*9-6Ta3-EvUptAzGw.png"><figcaption class="imageCaption">擷取自 <a href="https://zh.wikipedia.org/wiki/%E5%AF%86%E7%A2%BC%E9%9B%9C%E6%B9%8A%E5%87%BD%E6%95%B8" data-href="https://zh.wikipedia.org/wiki/%E5%AF%86%E7%A2%BC%E9%9B%9C%E6%B9%8A%E5%87%BD%E6%95%B8" class="markup--anchor markup--figure-anchor" rel="nofollow noopener" target="_blank">https://zh.wikipedia.org/wiki/%E5%AF%86%E7%A2%BC%E9%9B%9C%E6%B9%8A%E5%87%BD%E6%95%B8</a></figcaption></figure></div></div></section><section name="23ee" class="section section--body section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="0322" id="0322" class="graf graf--h3 graf--leading">常見的雜湊函數</h3><h4 name="34dd" id="34dd" class="graf graf--h4 graf-after--h3">SHA-1</h4><p name="ccff" id="ccff" class="graf graf--p graf-after--h4">SHA-1（Secure Hash Algorithm 1）是一種設計於1993年的安全雜湊函數。雖然曾經廣泛應用於數字簽名、資料完整性校驗等領域，但由於存在碰撞風險，即不同輸入可能產生相同雜湊值，因此現在不再建議用於安全性要求較高的應用。近年來，許多安全專家和標準機構推薦使用更安全的雜湊函數，如SHA-256或SHA-3。</p><h4 name="e2a4" id="e2a4" class="graf graf--h4 graf-after--p">SHA-2</h4><p name="81ff" id="81ff" class="graf graf--p graf-after--h4">SHA-2（Secure Hash Algorithm 2）是一系列安全雜湊函數，包括SHA-224、SHA-256、SHA-384、SHA-512、SHA-512/224和SHA-512/256。它們分別生成224、256、384、512位的固定長度雜湊值。SHA-2 目前被視為相對安全且不易受到攻擊的雜湊演算法。相較於SHA-1，SHA-2 提供更大的雜湊位元，增強了防碰撞和安全性。</p><h4 name="4f3c" id="4f3c" class="graf graf--h4 graf-after--p">SHA-3</h4><p name="2943" id="2943" class="graf graf--p graf-after--h4">SHA-3（Secure Hash Algorithm 3）是美國國家標準技術研究所（NIST）於2015年發布的新一代安全雜湊函數。它使用搖晃（shake）構造，具有較高的靈活性，可生成不同位元數的雜湊值。SHA-3 的目標是提供一種安全且抗量子計算攻擊的雜湊算法。它包括SHAKE128、SHAKE256，以及固定長度的雜湊函數，如SHA3–224、SHA3–256、SHA3–384、SHA3–512等。SHA-3在各種應用中提供可靠的資料完整性和安全性。</p><h4 name="e721" id="e721" class="graf graf--h4 graf-after--p">MD5</h4><p name="9422" id="9422" class="graf graf--p graf-after--h4">MD5（Message Digest Algorithm 5）是一種常見的數據雜湊函數，產生128位元的固定長度雜湊值。由於MD5容易受到碰撞攻擊，不再建議用於安全應用。</p><h4 name="b82f" id="b82f" class="graf graf--h4 graf-after--p">RIPEMD</h4><p name="4039" id="4039" class="graf graf--p graf-after--h4 graf--trailing">RIPEMD（RACE Integrity Primitives Evaluation Message Digest）是一系列資料雜湊函數，包括 RIPEMD-128、RIPEMD-160、RIPEMD-256、和RIPEMD-320。由歐洲研究實驗室於1996年設計，主要用於資料完整性校驗和安全應用。RIPEMD-160 是最廣泛使用的版本，產生160位的雜湊值。然而，由於安全性考量，一些專家建議在新應用中使用更現代、安全的雜湊函數，如 SHA-256 或 SHA-3。</p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@chouhsiang" class="p-author h-card">周詳  Sean Chou</a> on <a href="https://medium.com/p/009ee83be8b4"><time class="dt-published" datetime="2024-01-29T03:16:32.558Z">January 29, 2024</time></a>.</p><p><a href="https://medium.com/@chouhsiang/%E8%83%8C%E6%99%AF%E7%9F%A5%E8%AD%98-%E5%AF%86%E7%A2%BC%E9%9B%9C%E6%B9%8A%E5%87%BD%E6%95%B8-009ee83be8b4" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 29, 2026.</p></footer></article></body></html>

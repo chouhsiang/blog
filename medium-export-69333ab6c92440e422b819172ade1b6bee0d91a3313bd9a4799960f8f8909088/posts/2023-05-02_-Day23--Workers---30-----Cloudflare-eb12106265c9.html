@@ -1,0 +1,69 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>[Day23] Workers — 30 天入門 Cloudflare</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">[Day23] Workers — 30 天入門 Cloudflare</h1>
+</header>
+<section data-field="body" class="e-content">
+<section name="6f5d" class="section section--body section--first"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="1a5e" id="1a5e" class="graf graf--h3 graf--leading graf--title"><a href="https://medium.com/chouhsiang/30%E5%A4%A9%E6%90%9E%E6%87%82cloudflare-23-workers-eb12106265c9?source=collection_category---4------22-----------------------" data-href="https://medium.com/chouhsiang/30%E5%A4%A9%E6%90%9E%E6%87%82cloudflare-23-workers-eb12106265c9?source=collection_category---4------22-----------------------" class="markup--anchor markup--h3-anchor" target="_blank"><strong class="markup--strong markup--h3-strong">[Day23] Workers — 30 天入門 Cloudflare</strong></a></h3><figure name="e84c" id="e84c" class="graf graf--figure graf-after--h3"><img class="graf-image" data-image-id="1*qPmx3bs5FNdUithRJOyY0g.png" data-width="1920" data-height="1080" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*qPmx3bs5FNdUithRJOyY0g.png"></figure><p name="f5c3" id="f5c3" class="graf graf--p graf-after--figure">Cloudflare Workers 是一個 serverless 運算平台，能讓開發人員使用 V8 引擎的 JavaScript 來撰寫和部署網站的腳本，並且能夠在 Cloudflare 網路中執行這些腳本。</p><p name="a230" id="a230" class="graf graf--p graf-after--p">Workers 具有以下功能：</p><ol class="postList"><li name="7310" id="7310" class="graf graf--li graf-after--p">無伺服器運算：使用 Workers 可以省去搭建伺服器的複雜性，並且僅在需要時使用運算資源，有效地降低了成本。</li><li name="125e" id="125e" class="graf graf--li graf-after--li">全球節點：Cloudflare 在全球設有超過 200 個節點，能夠為使用者提供快速的全球網路連線。</li><li name="f9dc" id="f9dc" class="graf graf--li graf-after--li">簡單易用：Workers 非常容易上手，並且具有豐富的 API 和工具，讓開發人員能夠更加輕鬆地編寫腳本。</li><li name="f2cd" id="f2cd" class="graf graf--li graf-after--li">安全可靠：Workers 執行於 Cloudflare 的安全環境中，提供強大的安全性能和 DDoS 防護，確保您的應用程式在網路上安全可靠。</li></ol><p name="11d4" id="11d4" class="graf graf--p graf-after--li">使用 Workers 可以幫助開發人員實現很多功能，例如：</p><ol class="postList"><li name="ba2d" id="ba2d" class="graf graf--li graf-after--p"><strong class="markup--strong markup--li-strong">CDN 邊緣緩存</strong>：使用 Workers 可以自定義網頁緩存規則，以加速網站的載入速度。</li><li name="2c62" id="2c62" class="graf graf--li graf-after--li"><strong class="markup--strong markup--li-strong">API 閘道器</strong>：使用 Workers 可以輕鬆實現 API 網關和轉換器，以提高 API 的效率和安全性。</li><li name="d0b9" id="d0b9" class="graf graf--li graf-after--li"><strong class="markup--strong markup--li-strong">網路安全</strong>：使用 Workers 可以實現自定義的安全策略，包括濾波、黑名單、IP 防火牆等，以保護您的應用程序免受攻擊。</li><li name="970c" id="970c" class="graf graf--li graf-after--li graf--trailing"><strong class="markup--strong markup--li-strong">動態內容</strong>：使用 Workers 可以動態地生成網頁內容，實現更加靈活的內容交付方式。</li></ol></div></div></section><section name="cdc9" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="8cc9" id="8cc9" class="graf graf--h4 graf--leading">Workers Playground</h4><p name="567f" id="567f" class="graf graf--p graf-after--h4">Cloudflare 提供 <a href="https://cloudflareworkers.com/?&amp;_ga=2.113416773.375518394.1682868071-1311208282.1674225029#36ebe026bf3510a2e5acace89c09829f:about:blank" data-href="https://cloudflareworkers.com/?&amp;_ga=2.113416773.375518394.1682868071-1311208282.1674225029#36ebe026bf3510a2e5acace89c09829f:about:blank" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Workers Playground</a> 可以在線上練習與嘗試 Workers，如這是一個小練習，使用者瀏覽網站的時候都會回傳 Hello World。</p><figure name="7c8d" id="7c8d" class="graf graf--figure graf-after--p graf--trailing"><img class="graf-image" data-image-id="1*w4K7ixxIYvXWqMMI3jbazw.png" data-width="1712" data-height="634" src="https://cdn-images-1.medium.com/max/800/1*w4K7ixxIYvXWqMMI3jbazw.png"></figure></div></div></section><section name="5087" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="5952" id="5952" class="graf graf--h4 graf--leading">語法範例</h4><p name="3e48" id="3e48" class="graf graf--p graf-after--h4"><a href="https://developers.cloudflare.com/workers/examples/" data-href="https://developers.cloudflare.com/workers/examples/" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Cloudflare Workers 文件</a>提供大量的範例，讓我們可以學習如何撰寫 Cloudflare 語法，並可以看看範例可以做到哪些功能，比方說可以用來做反向代理、回傳 JSON、自動跳轉、身份驗證等功能。</p><figure name="dd3e" id="dd3e" class="graf graf--figure graf-after--p graf--trailing"><img class="graf-image" data-image-id="1*azMFoMDEDQij7CaMzROBRQ.png" data-width="2792" data-height="1338" src="https://cdn-images-1.medium.com/max/800/1*azMFoMDEDQij7CaMzROBRQ.png"></figure></div></div></section><section name="4fed" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="ef7c" id="ef7c" class="graf graf--h4 graf--leading">Workers 設定</h4><p name="b03d" id="b03d" class="graf graf--p graf-after--h4">我們到 Cloudflare 後台選擇「Workers」中「建立服務」。</p><figure name="a635" id="a635" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*zKPOEBfCn_tX3IaqFl5S1Q.png" data-width="2076" data-height="1296" src="https://cdn-images-1.medium.com/max/800/1*zKPOEBfCn_tX3IaqFl5S1Q.png"></figure><p name="9d95" id="9d95" class="graf graf--p graf-after--figure">選擇一個服務類型，隨便選一個，因為之後可以再改程式碼就好，這裡只是給一個初始範例。</p><figure name="631b" id="631b" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*ZWM01TKEXe5_buY_77es6A.png" data-width="1770" data-height="1334" src="https://cdn-images-1.medium.com/max/800/1*ZWM01TKEXe5_buY_77es6A.png"></figure><p name="b1bf" id="b1bf" class="graf graf--p graf-after--figure">跟 Cloudflare Pages 一樣，Cloudflare 會提供服務一個網誌 .workers.dev 結尾，我們點選右上角「快速編輯」。</p><figure name="3449" id="3449" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*igUGr2Kvmb4xvJOS6sgysg.png" data-width="2310" data-height="1414" src="https://cdn-images-1.medium.com/max/800/1*igUGr2Kvmb4xvJOS6sgysg.png"></figure><p name="cc19" id="cc19" class="graf graf--p graf-after--figure">接下來就可以撰寫程式碼，並進行線上測試。</p><figure name="f791" id="f791" class="graf graf--figure graf-after--p graf--trailing"><img class="graf-image" data-image-id="1*qzxQFzYyQ7zC1ufJglA9sA.png" data-width="2936" data-height="1488" src="https://cdn-images-1.medium.com/max/800/1*qzxQFzYyQ7zC1ufJglA9sA.png"></figure></div></div></section><section name="7b73" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="fb63" id="fb63" class="graf graf--h4 graf--leading">觸發程序</h4><p name="bd55" id="bd55" class="graf graf--p graf-after--h4">撰寫完成程式碼後，就可以用 Workers 提供的網址進行測試。我們到觸發條件可以自訂網域與設定路由，兩者差異在自訂網域是整個 Domain 綁到 Workers 上；路由則是該網域原本已經有網頁服務，將特定路徑的路由改到 Workers 上。</p><figure name="ca0c" id="ca0c" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*YqjxBbnfbexvXFmmB2S7cQ.png" data-width="2276" data-height="1228" src="https://cdn-images-1.medium.com/max/800/1*YqjxBbnfbexvXFmmB2S7cQ.png"></figure><p name="161f" id="161f" class="graf graf--p graf-after--figure">另外也可以撰寫 Cron 定時觸發與 Email 觸發等功能。</p><figure name="c882" id="c882" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*uuZI7WOxpdJjbTMIiKpXKQ.png" data-width="2262" data-height="1180" src="https://cdn-images-1.medium.com/max/800/1*uuZI7WOxpdJjbTMIiKpXKQ.png"></figure><p name="57e6" id="57e6" class="graf graf--p graf-after--figure">與 Cloudflare Pages 相同可以自訂義變數。</p><figure name="a3f1" id="a3f1" class="graf graf--figure graf-after--p graf--trailing"><img class="graf-image" data-image-id="1*-BNN-ul4wy798IqJvzHjMg.png" data-width="2286" data-height="558" src="https://cdn-images-1.medium.com/max/800/1*-BNN-ul4wy798IqJvzHjMg.png"></figure></div></div></section><section name="56b5" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="fb7e" id="fb7e" class="graf graf--h4 graf--leading">KV</h4><p name="6345" id="6345" class="graf graf--p graf-after--h4">Cloudflare Workers KV 是 Cloudflare Workers 所提供的一項服務，讓使用者可以透過這個 Key-Value 存儲系統來儲存和讀取資料，並且支援標準的 GET, PUT, LIST 和 DELETE 操作。</p><p name="f9c9" id="f9c9" class="graf graf--p graf-after--p">這個服務的優勢在於它能夠快速地讀寫和儲存大量資料。使用者可以透過 Cloudflare Workers KV API 來進行操作，並且可以與 Cloudflare Workers 一起使用，使得開發者可以建立出高效能且即時的網站。</p><figure name="167c" id="167c" class="graf graf--figure graf-after--p graf--trailing"><img class="graf-image" data-image-id="1*HG2U73Fn3KbzlYI-1oSHpw.png" data-width="2108" data-height="998" src="https://cdn-images-1.medium.com/max/800/1*HG2U73Fn3KbzlYI-1oSHpw.png"></figure></div></div></section><section name="1d9e" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="10bf" id="10bf" class="graf graf--h4 graf--leading">D1</h4><p name="2411" id="2411" class="graf graf--p graf-after--h4">Cloudflare Workers D 是基於 SQLite 的關聯式資料庫。通過導入數據或定義表並在 Worker 中或通過我們的 API 編寫查詢，只需幾個快速步驟即可創建整個資料庫。D1 目前在 Open Alpha 中，不建議用於生產資料和流量。</p><figure name="d374" id="d374" class="graf graf--figure graf-after--p graf--trailing"><img class="graf-image" data-image-id="1*ozP13nMLBWU30V37Zjwrxg.png" data-width="2084" data-height="986" src="https://cdn-images-1.medium.com/max/800/1*ozP13nMLBWU30V37Zjwrxg.png"></figure></div></div></section><section name="6269" class="section section--body section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="b62f" id="b62f" class="graf graf--h4 graf--leading">結語</h4><p name="d9b8" id="d9b8" class="graf graf--p graf-after--h4">Cloudflare Workers 是一個強大而靈活的運算平台，能夠幫助開發人員實現很多功能，可以結合 KV、D1 進行開發，並且提供了快速、安全、簡單易用的開發體驗，是一個值得開發人員學習和使用的工具。</p><p name="0049" id="0049" class="graf graf--p graf-after--p"><strong class="markup--strong markup--p-strong">▶ 閱讀更多本系列文：</strong><a href="https://medium.com/chouhsiang/cloudflare-30-days/home" data-href="https://medium.com/chouhsiang/cloudflare-30-days/home" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank"><strong class="markup--strong markup--p-strong">30 天入門 Cloudflare</strong></a></p><p name="1746" id="1746" class="graf graf--p graf-after--p graf--trailing"><strong class="markup--strong markup--p-strong">▶ 下一篇：</strong><a href="https://medium.com/chouhsiang/30%E5%A4%A9%E6%90%9E%E6%87%82cloudflare-24-r2-stream-images-36701c3e7f81" data-href="https://medium.com/chouhsiang/30%E5%A4%A9%E6%90%9E%E6%87%82cloudflare-24-r2-stream-images-36701c3e7f81" class="markup--anchor markup--p-anchor" target="_blank"><strong class="markup--strong markup--p-strong">[Day24] R2, Stream, Images — 30 天入門 Cloudflare</strong></a></p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@chouhsiang" class="p-author h-card">周詳  Sean Chou</a> on <a href="https://medium.com/p/eb12106265c9"><time class="dt-published" datetime="2023-05-02T09:01:07.635Z">May 2, 2023</time></a>.</p><p><a href="https://medium.com/@chouhsiang/30%E5%A4%A9%E6%90%9E%E6%87%82cloudflare-23-workers-eb12106265c9" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 29, 2026.</p></footer></article></body></html>

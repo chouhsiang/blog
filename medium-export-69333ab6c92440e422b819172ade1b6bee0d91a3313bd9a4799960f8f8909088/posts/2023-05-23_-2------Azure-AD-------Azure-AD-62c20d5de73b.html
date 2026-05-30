@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>#2 將網域加入Azure AD — 簡單入門Azure AD</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">#2 將網域加入Azure AD — 簡單入門Azure AD</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+本篇會來說明如何將手上的網域加入Azure AD管理，並會比較Azure AD的免費方案與付費方案有什麼差別。
+</section>
+<section data-field="body" class="e-content">
+<section name="2355" class="section section--body section--first"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="8c0c" id="8c0c" class="graf graf--h3 graf--leading graf--title">#2 將網域加入Azure AD — 簡單入門Azure AD</h3><figure name="c13e" id="c13e" class="graf graf--figure graf-after--h3"><img class="graf-image" data-image-id="1*e2-a5cl9PW1nRly4v-oOYg.png" data-width="2560" data-height="1440" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*e2-a5cl9PW1nRly4v-oOYg.png"></figure><p name="6533" id="6533" class="graf graf--p graf-after--figure graf--trailing">本篇會來說明如何將手上的網域加入Azure AD管理，並會比較Azure AD的免費方案與付費方案有什麼差別。</p></div></div></section><section name="2a8c" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="b1ee" id="b1ee" class="graf graf--h4 graf--leading">個人版與企業版</h4><p name="38bc" id="38bc" class="graf graf--p graf-after--h4">從<a href="https://learn.microsoft.com/zh-tw/azure/active-directory/fundamentals/sign-up-organization" data-href="https://learn.microsoft.com/zh-tw/azure/active-directory/fundamentals/sign-up-organization" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">官方文件</a>中我們得知以下資訊，註冊 Azure Active Directory (Azure AD) 或新的 Microsoft Azure 訂用帳戶：</p><ul class="postList"><li name="ec8c" id="ec8c" class="graf graf--li graf-after--p">Microsoft 帳戶：使用您個人的 Microsoft 帳戶，存取 Azure 及所有消費者使用的 Microsoft 產品與雲端服務，例如 Outlook (Hotmail)、Messenger、OneDrive、MSN、Xbox LIVE 或 Microsoft 365。 註冊 Outlook.com 信箱時會自動建立 Microsoft 帳戶。 如需詳細資訊，請參閱 <a href="https://account.microsoft.com/account" data-href="https://account.microsoft.com/account" class="markup--anchor markup--li-anchor" rel="noopener" target="_blank">Microsoft 帳戶概觀</a>。</li><li name="2704" id="2704" class="graf graf--li graf-after--li">公司或學校帳戶：使用公司或學校相關帳戶，存取 Microsoft 所有的小型、中型和企業雲端服務，例如 Azure、Microsoft Intune 或 Microsoft 365。 當您以組織身分註冊其中一個服務時，會在 Azure AD 中自動佈建雲端式的目錄，以代表您的組織。 如需詳細資訊，請參閱<a href="https://learn.microsoft.com/zh-tw/azure/active-directory/fundamentals/active-directory-whatis" data-href="https://learn.microsoft.com/zh-tw/azure/active-directory/fundamentals/active-directory-whatis" class="markup--anchor markup--li-anchor" rel="noopener" target="_blank">管理 Azure Active Directory 租用戶</a>。</li></ul><p name="a05e" id="a05e" class="graf graf--p graf-after--li graf--trailing">之後的範例也都會盡量以個人Microsoft 帳戶為主來練習。</p></div></div></section><section name="1506" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="5af8" id="5af8" class="graf graf--h4 graf--leading">企業方案</h4><p name="11c0" id="11c0" class="graf graf--p graf-after--h4">Azure AD免費版就已經提供基礎功能，對於身份驗證、組織管理都是沒問題，需要更進階的功能，就需要買的P1、P2，P1以上有個不錯的功能，可以在雲端修改密碼，並同步回地端，P2則增加更多安全性功能可以管控，差別詳見<a href="https://www.microsoft.com/zh-tw/security/business/identity-access/azure-active-directory-pricing" data-href="https://www.microsoft.com/zh-tw/security/business/identity-access/azure-active-directory-pricing" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">微軟文件</a>。</p><figure name="638f" id="638f" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*Xtq4wWasVUkKif1aueWvFw.png" data-width="2696" data-height="1308" src="https://cdn-images-1.medium.com/max/800/1*Xtq4wWasVUkKif1aueWvFw.png"></figure><p name="3ed5" id="3ed5" class="graf graf--p graf-after--figure graf--trailing">不管是365、P1、P2的方案都是算人數計費的，而且需要在Azure後台設定每個人的授權權限，所以企業要使用就必須要買滿人數，否則就會有人沒有授權。</p></div></div></section><section name="3af3" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="3b09" id="3b09" class="graf graf--h4 graf--leading">開通 Azure AD Tanent</h4><p name="bac9" id="bac9" class="graf graf--p graf-after--h4 graf--trailing">新註冊的 outlook.com 帳號，預設不會帶 Azure AD Tanent，需要手動開通，方法為到微軟官網點選<a href="https://azure.microsoft.com/zh-tw/free" data-href="https://azure.microsoft.com/zh-tw/free" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">免費試用 Azure</a>，並完成相關註冊設定，需要綁定信用卡，之後可以解除。</p></div></div></section><section name="2263" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="661f" id="661f" class="graf graf--h4 graf--leading">建立Azure AD</h4><p name="625e" id="625e" class="graf graf--p graf-after--h4">我們就先來用免費版的AAD進行練習，使用個人微軟帳號登入<a href="https://portal.azure.com/" data-href="https://portal.azure.com/" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Azure Portal</a>，並找到Azure Active Directory，畫面會如下，初次當入應該就能進入。</p><figure name="0bb6" id="0bb6" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*6hUVR0UWgOpcHA3zEAEGVA.png" data-width="2248" data-height="1182" src="https://cdn-images-1.medium.com/max/800/1*6hUVR0UWgOpcHA3zEAEGVA.png"></figure><p name="d77a" id="d77a" class="graf graf--p graf-after--figure">你會發現，微軟已經幫你準備好一個網域可以使用，像我的就是chaXX.onmicrosoft.com，前綴會是我的個人email，我們就可以在這個網域上新增使用者，所有Azure AD預設都會有一個以.onmicrosoft.com結尾的網域。</p><p name="05d4" id="05d4" class="graf graf--p graf-after--p">我們可以另外再加入自己的網域到Azure AD，在右邊工具列找到「自訂網域名稱」，並選擇「新增自訂網域」，通過DNS驗證後，就成功將自己的網域加入Azure AD。</p><figure name="2cda" id="2cda" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*fBM1WIgma0X2m7MRmluToQ.png" data-width="1730" data-height="810" src="https://cdn-images-1.medium.com/max/800/1*fBM1WIgma0X2m7MRmluToQ.png"></figure><p name="c7cd" id="c7cd" class="graf graf--p graf-after--figure">再來到「使用者」就可以用網域來新增使用者。這邊產生的帳號就可以在office.com進行登入。這些帳號並不能享有微軟雲端服務，如oneDrive、Outlook等，要使用都需要另外購買M365授權。</p><figure name="debf" id="debf" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*_0SmoUxh6fAbESXyKjVtzg.png" data-width="1638" data-height="686" src="https://cdn-images-1.medium.com/max/800/1*_0SmoUxh6fAbESXyKjVtzg.png"></figure><figure name="cf0b" id="cf0b" class="graf graf--figure graf-after--figure graf--trailing"><img class="graf-image" data-image-id="1*TOREp4xtPRJW_awf9zCsag.png" data-width="1392" data-height="1010" src="https://cdn-images-1.medium.com/max/800/1*TOREp4xtPRJW_awf9zCsag.png"></figure></div></div></section><section name="2c9d" class="section section--body section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="8b92" id="8b92" class="graf graf--h4 graf--leading">結語</h4><p name="4d1f" id="4d1f" class="graf graf--p graf-after--h4 graf--trailing">透過上面的方式，我們就能夠簡單的建立Azure AD，並將自己的網域加入Azure AD，後續就可以整合更多應用。</p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@chouhsiang" class="p-author h-card">周詳  Sean Chou</a> on <a href="https://medium.com/p/62c20d5de73b"><time class="dt-published" datetime="2023-05-23T03:44:13.339Z">May 23, 2023</time></a>.</p><p><a href="https://medium.com/@chouhsiang/2-%E5%B0%87%E7%B6%B2%E5%9F%9F%E5%8A%A0%E5%85%A5azure-ad-%E7%B0%A1%E5%96%AE%E5%85%A5%E9%96%80azure-ad-62c20d5de73b" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 29, 2026.</p></footer></article></body></html>

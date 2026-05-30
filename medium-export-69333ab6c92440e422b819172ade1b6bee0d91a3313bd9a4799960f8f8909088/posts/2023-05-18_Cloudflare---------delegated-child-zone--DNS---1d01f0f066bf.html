@@ -1,0 +1,69 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Cloudflare黑魔法 解決無法在delegated child zone新增DNS紀錄</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Cloudflare黑魔法 解決無法在delegated child zone新增DNS紀錄</h1>
+</header>
+<section data-field="body" class="e-content">
+<section name="b9ea" class="section section--body section--first"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="9de7" id="9de7" class="graf graf--h3 graf--leading graf--title">Cloudflare黑魔法 解決無法在delegated child zone新增DNS紀錄</h3><figure name="1605" id="1605" class="graf graf--figure graf-after--h3"><img class="graf-image" data-image-id="1*JsR3vsi8nccqHRo7H4Rbqg.png" data-width="2560" data-height="1440" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*JsR3vsi8nccqHRo7H4Rbqg.png"></figure><p name="8c5a" id="8c5a" class="graf graf--p graf-after--figure">當我們在Cloudflare設定上去某個網域後，可以將subdomain新增NS紀錄，如我的domain是example.com，可以將a.example.com的NS設定到其他DNS伺服器來管理。</p><p name="4ba6" id="4ba6" class="graf graf--p graf-after--p">這時候如果想嘗試在subdomain下建立DNS紀錄b.a.example.com，就會跳出錯誤Cannot create a non-glue record that is beneath a delegated child zone. (Code: 89018)。原因也很好理解，你都把subdomain的DNS交出去，新增DNS紀錄也沒意義，所以Cloudflare不讓你新增。</p><figure name="a5fe" id="a5fe" class="graf graf--figure graf-after--p graf--trailing"><img class="graf-image" data-image-id="1*2erKvaK7Pq6gE4-aGQdCiw.png" data-width="1344" data-height="82" src="https://cdn-images-1.medium.com/max/800/1*2erKvaK7Pq6gE4-aGQdCiw.png"></figure></div></div></section><section name="91b7" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="f2c5" id="f2c5" class="graf graf--h4 graf--leading">CDN需求</h4><p name="6034" id="6034" class="graf graf--p graf-after--h4">如果你把subdomain的DNS交出去，就沒辦法對subdomain底下的網域進行CDN防護，如果進行防護可以參考以下作法。</p><p name="a2f4" id="a2f4" class="graf graf--p graf-after--p">我發現一個神奇的機制，當沒有設定a.example.com的NS紀錄的時候，是可以新增b.a.example.com的紀錄，但如果新增NS後就會被擋下來。而且我還發現在新增NS之前設定的b.a.example.com，他的Reverse proxy仍然生效，代表CDN即其他功能都是有效的。</p><p name="56ba" id="56ba" class="graf graf--p graf-after--p graf--trailing">這提供一個解方，當我們需要新增subdomain以下的網域時，可以先刪除NS紀錄，加上新的DNS紀錄後，再加上NS紀錄，之後再把subdomain的DNS設定到Cloudflare IP上就完成了。</p></div></div></section><section name="a12f" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="4be2" id="4be2" class="graf graf--h4 graf--leading">Demo</h4><p name="6f30" id="6f30" class="graf graf--p graf-after--h4">我們可以先建立一個DNS紀錄，當作給下級網域使用CDN的入口，由於Cloudflare同個網域以下所有IP都會是相同的，因此我這邊先建立一個cdn.example.com並開啟Proxy處理，CNAME目標可以隨便不重要。</p><figure name="a6ae" id="a6ae" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*fpeknECip5kw5cZ-mVumRg.png" data-width="2060" data-height="80" src="https://cdn-images-1.medium.com/max/800/1*fpeknECip5kw5cZ-mVumRg.png"></figure><p name="76af" id="76af" class="graf graf--p graf-after--figure">再來就是刪掉NS紀錄，新增subdomain下的DNS紀錄，再加回去NS紀錄。或是使用我寫的瀏覽器套件，可以自動化完成這一系列動作，<a href="https://greasyfork.org/zh-TW/scripts/466545-cloudflare-force-add-delegated-domain" data-href="https://greasyfork.org/zh-TW/scripts/466545-cloudflare-force-add-delegated-domain" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">套件在此</a>。安裝後到Cloudflare後台，新增或更新DNS紀錄時，都會看到多一個強制儲存的按鈕。輸入完要新增的紀錄，按下強制儲存，就自動完成新增了。</p><figure name="85a7" id="85a7" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*1XrKs9SGKT3O9aJIjAYZVA.png" data-width="2102" data-height="908" src="https://cdn-images-1.medium.com/max/800/1*1XrKs9SGKT3O9aJIjAYZVA.png"></figure><p name="a70b" id="a70b" class="graf graf--p graf-after--figure">接下來我們只要到b.a.example.com的DNS伺服器設定上CNAME到cdn.example.com，就可以讓流量經過Cloudflare</p><pre data-code-block-mode="2" spellcheck="false" data-code-block-lang="shell" name="96c4" id="96c4" class="graf graf--pre graf-after--p graf--preV2"><span class="pre--content"><span class="hljs-meta prompt_"># </span><span class="language-bash">DNS record</span><br />b.a.example.com   CNAME  cdn.example.com</span></pre><p name="27e4" id="27e4" class="graf graf--p graf-after--pre">本機環境測試可以先取得cdn.example.com IP後，設定到本機的hosts檔案，一樣生效，可以用來測試。</p><pre data-code-block-mode="1" spellcheck="false" data-code-block-lang="shell" name="14ee" id="14ee" class="graf graf--pre graf-after--p graf--preV2"><span class="pre--content"><span class="hljs-meta prompt_"># </span><span class="language-bash"><span class="hljs-built_in">local</span> hosts file</span><br />x.x.x.x b.a.example.com</span></pre><p name="f887" id="f887" class="graf graf--p graf-after--pre graf--trailing">另外由於Cloudflare預設只提供第一層的SSL憑證<code class="markup--code markup--p-code">*.example.com</code>，要在subdomain下用，要另外購買SSL憑證，如<code class="markup--code markup--p-code">*.a.example.com</code>。</p></div></div></section><section name="31c2" class="section section--body section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="6605" id="6605" class="graf graf--h4 graf--leading">結語</h4><p name="d46f" id="d46f" class="graf graf--p graf-after--h4 graf--trailing">我還是建議subdomain如果要用Cloudflare防護，還是要獨立購買網域，但也可以透過以上方法，將delegated child zone也納入CDN防護。</p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@chouhsiang" class="p-author h-card">周詳  Sean Chou</a> on <a href="https://medium.com/p/1d01f0f066bf"><time class="dt-published" datetime="2023-05-18T10:20:46.613Z">May 18, 2023</time></a>.</p><p><a href="https://medium.com/@chouhsiang/cloudflare%E9%BB%91%E9%AD%94%E6%B3%95-%E8%A7%A3%E6%B1%BA%E7%84%A1%E6%B3%95%E5%9C%A8delegated-child-zone%E6%96%B0%E5%A2%9Edns%E7%B4%80%E9%8C%84-1d01f0f066bf" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 29, 2026.</p></footer></article></body></html>

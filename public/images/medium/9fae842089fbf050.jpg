@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-hant" dir="ltr">
+<head>
+  <!-- dataLayer 初始化 -->
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('meta[property="article:tag"]').forEach(function(tag) {
+      window.dataLayer.push({
+        'event': 'channel_view',
+        'channel_name': tag.getAttribute('content')
+      });
+    });
+  });
+  </script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WM8CNCWN');</script>
+<!-- End Google Tag Manager -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="https://www.ithome.com.tw/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="canonical" href="https://www.ithome.com.tw/news/155119%5D%28https%3A//cdn-images-1.medium.com/max/800/0%2AvbccIrZKXRRmaUtU.jpg" />
+<meta property="og:site_name" content="iThome" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.ithome.com.tw/news/155119%5D%28https%3A//cdn-images-1.medium.com/max/800/0%2AvbccIrZKXRRmaUtU.jpg" />
+  <title>| iThome</title>
+  <link type="text/css" rel="stylesheet" href="https://www.ithome.com.tw/sites/default/files/css/css_lQaZfjVpwP_oGNqdtWCSpJT1EMqXdMiU84ekLLxQnc4.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.ithome.com.tw/sites/default/files/css/css_DyKGQQ1ZooWJGZ-VHtjSC6JOIbxxbEHPZMULRR2aAqY.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.ithome.com.tw/sites/default/files/css/css_k2Yr8VNJI0Ydmg9xojUqZx0Sb0TN6AmVo34lzYgLpk0.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.ithome.com.tw/sites/default/files/css/css_dotzjsncHiUeMqMcWCJwxLlJiFh4CRmXCvZnVmBMc0E.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.ithome.com.tw/sites/default/files/css/css_aYIN3mq1DmLT6Di-4-Gd2Se05n7P-awcXq0wcXZEGrI.css" media="all" />
+<link type="text/css" rel="stylesheet" href="//www.ithome.com.tw/sites/all/themes/ithomeStyle/css/font-awesome/css/font-awesome.min.css" media="all" />
+  <!-- HTML5 element support for IE6-8 -->
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script>window.jQuery || document.write("<script src='/sites/all/modules/jquery_update/replace/jquery/1.7/jquery.min.js'>\x3C/script>")</script>
+<script src="https://www.ithome.com.tw/sites/default/files/js/js_Hfha9RCTNm8mqMDLXriIsKGMaghzs4ZaqJPLj2esi7s.js"></script>
+<script src="https://www.ithome.com.tw/sites/default/files/js/js_wLX2SIMnQ4ejGb11IHeDbZH2epX51LQPGgZCWanPeHk.js"></script>
+<script src="https://www.ithome.com.tw/sites/default/files/js/js_yfF6JyCAP90rfOIqxIikFO4o_6C07rlQcJYLALL18eQ.js"></script>
+<script src="https://www.ithome.com.tw/sites/default/files/js/js_PpWj1_0vz25Pp3KJwGcWwKOJWJfOoPE7svepJH4xqZA.js"></script>
+<script>(function($) { $(document).bind("ready", function() { State.init(".ithome.com.tw", "/", "_352ada6d1e201e578ecf132be4214bfc326a7294", 1); }); })(jQuery);</script>
+<script src="https://www.ithome.com.tw/sites/default/files/js/js_q15x_O-9imkRmTs1RyvjELo4uxbnh8J6CSO5egfMvq4.js"></script>
+<script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","setHasJsCookie":0,"ajaxPageState":{"theme":"ithomeStyle","theme_token":"C58bKXi53yEXdcfQxy9tMLJaVx-m62vrC62Nj4fG-_U","js":{"\/\/ajax.googleapis.com\/ajax\/libs\/jquery\/1.7.2\/jquery.min.js":1,"0":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery-html-prefilter-3.5.0-backport.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/libraries\/prettify\/prettify.js":1,"sites\/all\/libraries\/prettify\/lang-css.js":1,"sites\/all\/libraries\/prettify\/lang-sql.js":1,"sites\/all\/libraries\/prettify\/lang-wiki.js":1,"sites\/all\/libraries\/prettify\/lang-yaml.js":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"sites\/all\/modules\/state\/js\/state.min.js":1,"public:\/\/languages\/zh-hant_EynS4tarGHEmr5eaBV3EzbgWhvNJW-hDCo2uqR3SWPQ.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/prettify\/prettify.loader.js":1,"1":1,"sites\/all\/themes\/ithomeStyle\/js\/jquery.featureList.js":1,"sites\/all\/themes\/ithomeStyle\/js\/main.js":1,"sites\/all\/themes\/ithomeStyle\/bootstrap\/js\/bootstrap-affix.js":1,"sites\/all\/themes\/ithomeStyle\/bootstrap\/js\/bootstrap-alert.js":1,"sites\/all\/themes\/ithomeStyle\/bootstrap\/js\/bootstrap-button.js":1,"sites\/all\/themes\/ithomeStyle\/bootstrap\/js\/bootstrap-carousel.js":1,"sites\/all\/themes\/ithomeStyle\/bootstrap\/js\/bootstrap-collapse.js":1,"sites\/all\/themes\/ithomeStyle\/bootstrap\/js\/bootstrap-dropdown.js":1,"sites\/all\/themes\/ithomeStyle\/bootstrap\/js\/bootstrap-modal.js":1,"sites\/all\/themes\/ithomeStyle\/bootstrap\/js\/bootstrap-tooltip.js":1,"sites\/all\/themes\/ithomeStyle\/bootstrap\/js\/bootstrap-popover.js":1,"sites\/all\/themes\/ithomeStyle\/bootstrap\/js\/bootstrap-scrollspy.js":1,"sites\/all\/themes\/ithomeStyle\/bootstrap\/js\/bootstrap-transition.js":1,"sites\/all\/themes\/ithomeStyle\/bootstrap\/js\/bootstrap-typeahead.js":1},"css":{"modules\/system\/system.base.css":1,"sites\/all\/modules\/date\/date_api\/date.css":1,"sites\/all\/modules\/date\/date_popup\/themes\/datepicker.1.7.css":1,"sites\/all\/modules\/date\/date_repeat_field\/date_repeat_field.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/youtube\/css\/youtube.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/ckeditor\/ckeditor.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/panels\/css\/panels.css":1,"sites\/all\/themes\/ithomeStyle\/css\/style.css":1,"sites\/all\/modules\/prettify\/styles\/naspinski.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px"},"jcarousel":{"ajaxPath":"\/jcarousel\/ajax\/views"},"prettify":{"linenums":true,"match":".content","nocode":"no-code","custom":[],"markup":{"code":true,"pre":true,"precode":false}}});</script>
+
+</head>
+<body class="html not-front not-logged-in no-sidebars page-news page-news-155119https page-news-155119https- page-news-155119https--cdn-images-1mediumcom page-news-155119https--cdn-images-1mediumcom-max page-news-155119https--cdn-images-1mediumcom-max- page-news-155119https--cdn-images-1mediumcom-max-800 page-news-155119https--cdn-images-1mediumcom-max-0vbccirzkxrrmautujpg" >
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WM8CNCWN"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v19.0&appId=1109758547106331" nonce="Ntz1BjMD"></script>
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible element-focusable">移至主內容</a>
+  </div>
+    <header id="navbar" role="banner" class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+
+              <a class="logo pull-left" href="/" title="首頁">
+          <img src="https://www.ithome.com.tw/sites/default/files/ithome_logo_0.png" alt="首頁" />
+        </a>
+      
+      
+              <div class="nav-collapse collapse">
+          <nav role="navigation">
+                          <ul class="menu nav"><li class="first leaf active-trail"><a href="/news" class="active-trail active">新聞</a></li>
+<li class="leaf"><a href="/ai">AI</a></li>
+<li class="leaf"><a href="/security">資安</a></li>
+<li class="leaf"><a href="/cloud">Cloud</a></li>
+<li class="leaf"><a href="/cio" title="CIO">CIO</a></li>
+<li class="leaf"><a href="/dgov">政府</a></li>
+<li class="leaf"><a href="/healthit">醫療</a></li>
+<li class="leaf"><a href="/sustainableit">永續</a></li>
+<li class="expanded dropdown"><a href="/seminar" class="dropdown-toggle" data-toggle="dropdown" data-target="#">活動 <span class="caret"></span></a><ul class="dropdown-menu"><li class="first leaf"><a href="https://aienterprise.ithome.com.tw/2026/">AI Enterprise Summit</a></li>
+<li class="leaf"><a href="https://cloudsummit.ithome.com.tw/">臺灣雲端大會</a></li>
+<li class="leaf"><a href="https://cyber.ithome.com.tw/?utm_source=ithome-online&amp;utm_medium=navbar&amp;utm_campaign=navbar" target="_blank">臺灣資安大會</a></li>
+<li class="leaf"><a href="/seminar">研討會訊息</a></li>
+<li class="leaf"><a href="/cfp">議程／講師徵求</a></li>
+<li class="last leaf"><a href="https://ithelp.ithome.com.tw/2026ironman?sc=iThomeNav" title="IT人的知識交流平臺">iThome鐵人賽</a></li>
+</ul></li>
+<li class="leaf"><a href="/tech">技術</a></li>
+<li class="last leaf"><a href="https://webinar.ithome.com.tw/">IT EXPLAINED</a></li>
+</ul>                                      <ul class="menu nav pull-right"><li class="first last leaf"><a href="/search" class="icon-search">搜尋</a></li>
+</ul>                                  </nav>
+        </div>
+          </div>
+  </div>
+</header>
+<div id="skybanner" style="background-color: #122239;text-align: center">
+  <script src="https://itadapi.ithome.com.tw/ads/serve?type=B5&channel=ithome_index"></script>
+</div>
+
+<header id="headerbar" role="banner" class="hidden-phone">
+  <div class="headerbar-wrap">
+        <div class="region region-before-header">
+    <section id="block-block-3" class="block block-block hidden-phone clearfix">
+
+      
+  <style>
+#div_cube3d_pic { width: 100% !important}
+#div_cube3d_exp {left:0 !important; position: relative !important; margin: 0 auto}
+#headerbar .container-fluid {max-width: 1350px !important}
+  </style>
+<div id="mkt-on-top">
+  <div class="mkt-720">  
+<script src="https://itadapi.ithome.com.tw/ads/serve?type=B1&channel=ithome_index"></script>
+
+  </div>
+
+</div>
+
+<div class="container">
+    <div class="mkt-text-top">
+     <div class="text-item">
+      <script src="https://itadapi.ithome.com.tw/ads/serve?type=T2&channel=ithome_index"></script>
+     </div>
+     <div class="text-item">
+       <script src="https://itadapi.ithome.com.tw/ads/serve?type=T3&channel=ithome_index"></script>
+     </div>
+     <div class="text-item">
+        <script src="https://itadapi.ithome.com.tw/ads/serve?type=T4&channel=ithome_index"></script>
+     </div>
+   </div>
+   <br style="clear:both"> 
+</div>
+</div></section> <!-- /.block -->
+  </div>
+    </div>
+</header>
+
+
+<div class="main-container container-fluid">
+
+  
+  <header role="banner" id="page-header">
+    
+    
+                </header> <!-- /#header -->
+
+  <div class="row-fluid">
+      
+    
+      
+    <section class="main-content span9">  
+                                                                      
+<div class="view view-view-news view-id-view_news view-display-id-news view-dom-id-6d0bac6a83fbaf8f05565ed01f165b9c">
+            <div class="view-header">
+      <div class="view view-view-news view-id-view_news view-display-id-channel_headline_news view-dom-id-c9d62ba4fdadcd95fb9b03ee30552bb1">
+        
+  
+  
+      <div class="view-content">
+        <div class="hidden-phone">
+      
+  <span class="views-field views-field-body">        <span class="field-content"><div class="channel-headline">
+  <div class="photo"><img src="https://www.ithome.com.tw/sites/default/files/styles/picture_size_medium/public/field/image/_9wvwskfffq_0.jpg?itok=W4Z35irZ" width="630" height="272" alt="" /></div>
+  <div class="title"><a href="/news/176228">微軟譴責Chaotic Eclipse未經協調逕自公開多項零時差漏洞</a></div>
+  <div class="summary"><p>研究人員Chaotic Eclipse與微軟之間的衝突越來越嚴重，近日微軟發布部落格文章，公開譴責該研究員擅自揭露多個零時差漏洞，已造成不必要的資安風險</p>
+</div> 
+</div></span>  </span>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>    </div>
+  
+  
+  
+      <div class="view-content">
+        <div class="span4 channel-item no-margin-left">
+      
+  <span class="views-field views-field-created">        <span class="field-content"><div class="item">
+  <p class="photo"> <a href="/news/176215"><img src="https://www.ithome.com.tw/sites/default/files/styles/picture_size_small/public/field/image/zi_an_zhou_bao_20260529.jpg?itok=dZ1aGfSy" width="300" height="132" alt="" /></a></p>
+  <p class="category"><a href="/tags/%E6%96%B0%E8%81%9E">新聞</a>  | <a href="/tags/%E8%B3%87%E5%AE%89%E9%80%B1%E5%A0%B1">資安週報</a>  | <a href="/tags/%E8%B3%87%E5%AE%89%E4%B8%80%E5%91%A8">資安一周</a>  | <a href="/tags/%E8%B3%87%E5%AE%89%E5%91%A8%E5%A0%B1">資安周報</a>  | <a href="/tags/it%E5%91%A8%E5%A0%B1">IT周報</a>  | <a href="/tags/%E7%B6%B2%E8%B7%AF%E6%94%BB%E6%93%8A">網路攻擊</a>  | <a href="/tags/%E8%B3%87%E5%AE%89%E9%98%B2%E7%A6%A6">資安防禦</a>  </p>
+  <p class="title"><a href="/news/176215">【資安週報】0525~0529，企業簡訊平臺EVERY8D遭駭引爆國家級供應鏈危機，F-ISAC發布黃燈級資安事件警訊</a> </p>
+  <div class="summary">回顧2026年5月最後一星期的資安動態，臺灣資安事件警報頻傳，尤其是互動資通遭駭引發F-ISAC啟動緊急應變，以及馬偕醫院傳出疑似去年遭駭舊資料被兜售的風波，加上高德地圖遭揭露擷取剪貼簿引發隱私隱憂，上述事件不僅威脅商業與民生運作，更突顯供應鏈與個資保護的嚴峻挑戰
+ </div>
+  <p class="post-at">2026-05-29 </p>
+</div></span>  </span>  </div>
+  <div class="span4 channel-item">
+      
+  <span class="views-field views-field-created">        <span class="field-content"><div class="item">
+  <p class="photo"> <a href="/news/176225"><img src="https://www.ithome.com.tw/sites/default/files/styles/picture_size_small/public/field/image/960-quan_qiu_pqcda_qian_yi_.png?itok=QO8n3ccs" width="300" height="132" alt="" title="池安量子資安共同創辦人暨副執行長陳柏維表示，從國際標準到臺灣政府的法規要求，對於企業已經形成一股法遵與合規的壓力。" /></a></p>
+  <p class="category"><a href="/tags/%E6%96%B0%E8%81%9E">新聞</a>  | <a href="/tags/%E7%B2%BE%E8%AA%A0%E8%B3%87%E8%A8%8A">精誠資訊</a>  | <a href="/tags/%E6%99%BA%E6%85%A7%E8%B3%87%E5%AE%89">智慧資安</a>  | <a href="/tags/%E6%B1%A0%E5%AE%89%E9%87%8F%E5%AD%90%E8%B3%87%E5%AE%89">池安量子資安</a>  | <a href="/tags/%E8%A9%B9%E4%BC%8A%E6%AD%A3">詹伊正</a>  | <a href="/tags/%E6%B1%A0%E6%98%8E%E6%B4%8B">池明洋</a>  | <a href="/tags/%E5%85%88%E7%AB%8A%E5%BE%8C%E7%A0%B4">先竊後破</a>  | <a href="/tags/hndl">HNDL</a>  | <a href="/tags/pqc">PQC</a>  | <a href="/tags/%E5%BE%8C%E9%87%8F%E5%AD%90%E5%AF%86%E7%A2%BC%E9%81%B7%E7%A7%BB">後量子密碼遷移</a>  </p>
+  <p class="title"><a href="/news/176225">智慧資安攜手池安量子，啟動臺灣後量子資安元年</a> </p>
+  <div class="summary">量子電腦破解傳統加密的時程，最快已經提前到2029年，加上駭客對許多加密機敏資料採取先竊後破（HNDL）手法，讓各界後量子密碼遷移的需求大增，從美國NIST等國際標準加上法規要求，臺灣企業也需正視進行內部密碼盤點與重建新的PQC加密防線
+ </div>
+  <p class="post-at">2026-05-29 </p>
+</div></span>  </span>  </div>
+  <div class="span4 channel-item">
+      
+  <span class="views-field views-field-created">        <span class="field-content"><div class="item">
+  <p class="photo"> <a href="/news/176214"><img src="https://www.ithome.com.tw/sites/default/files/styles/picture_size_small/public/field/image/2_2.png?itok=gbQ6hgud" width="300" height="132" alt="" /></a></p>
+  <p class="category"><a href="/tags/%E6%96%B0%E8%81%9E">新聞</a>  | <a href="/tags/%E6%B0%A3%E8%B1%A1%E7%BD%B2">氣象署</a>  | <a href="/tags/ai">AI</a>  | <a href="/tags/%E5%A4%A9%E6%B0%A3%E9%A0%90%E5%A0%B1">天氣預報</a>  | <a href="/tags/%E9%98%B2%E7%81%BD">防災</a>  | <a href="/tags/%E9%9F%8C%E6%80%A7">韌性</a>  </p>
+  <p class="title"><a href="/news/176214">氣象署導入AI預報模型展現初步成果，10分鐘可快速模擬颱風動態，預報精度跨越4年進展</a> </p>
+  <div class="summary">氣象署自2014年開始，導入15套AI全球氣象模式，並用於颱風預報，過去颱風仰賴傳統氣象預報，依靠觀測資料與CPU的物理模式，需要3至4小時才能模擬，而AI模式下，結合資料與GPU運算，只要10分鐘就能預報，提升決策速度。
+ </div>
+  <p class="post-at">2026-05-29 </p>
+</div></span>  </span>  </div>
+  <div class="span4 channel-item no-margin-left">
+      
+  <span class="views-field views-field-created">        <span class="field-content"><div class="item">
+  <p class="photo"> <a href="/news/176218"><img src="https://www.ithome.com.tw/sites/default/files/styles/picture_size_small/public/field/image/0529-dell_poweredge_ai-960.jpg?itok=mdPNK3VN" width="300" height="132" alt="" /></a></p>
+  <p class="category"><a href="/tags/%E6%96%B0%E8%81%9E">新聞</a>  | <a href="/tags/dell">Dell</a>  | <a href="/tags/ai%E4%BC%BA%E6%9C%8D%E5%99%A8">AI伺服器</a>  | <a href="/tags/ai%E5%9F%BA%E7%A4%8E%E6%9E%B6%E6%A7%8B">AI基礎架構</a>  | <a href="/tags/%E8%B3%87%E6%96%99%E4%B8%AD%E5%BF%83">資料中心</a>  | <a href="/tags/%E7%87%9F%E6%94%B6">營收</a>  </p>
+  <p class="title"><a href="/news/176218">AI伺服器需求強勁，Dell首季營收成長88%</a> </p>
+  <div class="summary">AI伺服器需求持續推升Dell業績，單季營收達438億美元、年增88%，其中AI最佳化伺服器營收達161億美元、年增757%
+ </div>
+  <p class="post-at">2026-05-29 </p>
+</div></span>  </span>  </div>
+  <div class="span4 channel-item">
+      
+  <span class="views-field views-field-created">        <span class="field-content"><div class="item">
+  <p class="photo"> <a href="/news/176217"><img src="https://www.ithome.com.tw/sites/default/files/styles/picture_size_small/public/field/image/20260529.jpg?itok=RypGHzVu" width="300" height="132" alt="" /></a></p>
+  <p class="category"><a href="/tags/%E6%96%B0%E8%81%9E">新聞</a>  | <a href="/tags/%E8%B3%87%E5%AE%89%E6%97%A5%E5%A0%B1">資安日報</a>  </p>
+  <p class="title"><a href="/news/176217">【資安日報】5月29日，Linux傳出新的本機權限提升漏洞CIFSwitch</a> </p>
+  <div class="summary">資安研究員Asim Manizada發現Copy Fail的變種CIFSwitch，並指出該漏洞從2007年被引入，與通用網際網路檔案系統（CIFS）的元件有關，影響許多Linux發行版
+ </div>
+  <p class="post-at">2026-05-29 </p>
+</div></span>  </span>  </div>
+  <div class="span4 channel-item">
+      
+  <span class="views-field views-field-created">        <span class="field-content"><div class="item">
+  <p class="photo"> <a href="/news/176207"><img src="https://www.ithome.com.tw/sites/default/files/styles/picture_size_small/public/field/image/fortinet-patch-fig02-156.jpg?itok=mh7vQTon" width="300" height="132" alt="" /></a></p>
+  <p class="category"><a href="/tags/%E6%96%B0%E8%81%9E">新聞</a>  | <a href="/tags/fortinet">Fortinet</a>  | <a href="/tags/forticlient-ems">FortiClient EMS</a>  | <a href="/tags/cve-2026-35616">CVE-2026-35616</a>  | <a href="/tags/%E7%AB%8A%E8%B3%87%E8%BB%9F%E9%AB%94">竊資軟體</a>  | <a href="/tags/ekz-infostealer">EKZ Infostealer</a>  </p>
+  <p class="title"><a href="/news/176207">FortiClient EMS被鎖定，駭客假借提供修補程式散布竊資軟體EKZ Infostealer</a> </p>
+  <div class="summary">一個月前Fortinet修補的端點管理平臺FortiClient EMS重大漏洞CVE-2026-35616，近期再度傳出攻擊行動，駭客藉由漏洞，向受到該平臺管控的端點電腦部署竊資軟體EKZ Infostealer
+ </div>
+  <p class="post-at">2026-05-29 </p>
+</div></span>  </span>  </div>
+  <div class="span4 channel-item no-margin-left">
+      
+  <span class="views-field views-field-created">        <span class="field-content"><div class="item">
+  <p class="photo"> <a href="/news/176213"><img src="https://www.ithome.com.tw/sites/default/files/styles/picture_size_small/public/field/image/0529-anthropic-cash-photo_by_logan_voss_on_unsplash.jpg?itok=oMCWmgRK" width="300" height="132" alt="" title="背景圖片來源／&lt;a href=&quot;https://unsplash.com/@loganvoss?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText&quot;&gt;Logan Voss&lt;/a&gt; on &lt;a href=&quot;https://unsplash.com/photos/stacks-of-hundred-dollar-bills-are-visible-MuY_wpF6aeg?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText&quot;&gt;Unsplash&lt;/a&gt;" /></a></p>
+  <p class="category"><a href="/tags/%E6%96%B0%E8%81%9E">新聞</a>  | <a href="/tags/anthropic">Anthropic</a>  | <a href="/tags/%E8%9E%8D%E8%B3%87">融資</a>  | <a href="/tags/%E4%BC%B0%E5%80%BC">估值</a>  </p>
+  <p class="title"><a href="/news/176213">Anthropic完成650億美元的H輪融資，估值近1兆美元</a> </p>
+  <div class="summary">Anthropic完成新一輪融資，估值達9,650億美元，已超越OpenAI今年3月融資後的8,520億美元估值
+ </div>
+  <p class="post-at">2026-05-29 </p>
+</div></span>  </span>  </div>
+  <div class="span4 channel-item">
+      
+  <span class="views-field views-field-created">        <span class="field-content"><div class="item">
+  <p class="photo"> <a href="/news/176212"><img src="https://www.ithome.com.tw/sites/default/files/styles/picture_size_small/public/field/image/0529-itbench-aa-960.jpg?itok=iqJb3hHi" width="300" height="132" alt="" /></a></p>
+  <p class="category"><a href="/tags/%E6%96%B0%E8%81%9E">新聞</a>  | <a href="/tags/artificial-analysis">Artificial Analysis</a>  | <a href="/tags/ibm">IBM</a>  | <a href="/tags/itbenchaa">ITBenchAA</a>  | <a href="/tags/ai%E4%BB%A3%E7%90%86">AI代理</a>  | <a href="/tags/%E4%BC%81%E6%A5%ADit">企業IT</a>  | <a href="/tags/sre">SRE</a>  | <a href="/tags/kubernetes">Kubernetes</a>  | <a href="/tags/ai%E8%A9%95%E6%B8%AC">AI評測</a>  | <a href="/tags/it%E7%B6%AD%E9%81%8B">IT維運</a>  </p>
+  <p class="title"><a href="/news/176212">Artificial Analysis與IBM推出ITBench-AA，先進AI模型企業IT維運任務得分仍不到5成</a> </p>
+  <div class="summary">Artificial Analysis與IBM推出ITBench-AA評測，結果顯示，即使是Claude Opus 4.7、GPT-5.5等先進AI模型，在Kubernetes事件根因判斷任務的最高得分仍低於50%
+ </div>
+  <p class="post-at">2026-05-29 </p>
+</div></span>  </span>  </div>
+  <div class="span4 channel-item">
+      
+  <span class="views-field views-field-created">        <span class="field-content"><div class="item">
+  <p class="photo"> <a href="/news/176211"><img src="https://www.ithome.com.tw/sites/default/files/styles/picture_size_small/public/field/image/0529-india-cyber-960.jpg?itok=wac-jDcW" width="300" height="132" alt="" /></a></p>
+  <p class="category"><a href="/tags/%E6%96%B0%E8%81%9E">新聞</a>  | <a href="/tags/certin">CERTIn</a>  | <a href="/tags/%E5%8D%B0%E5%BA%A6">印度</a>  | <a href="/tags/ai%E8%B3%87%E5%AE%89">AI資安</a>  | <a href="/tags/%E6%BC%8F%E6%B4%9E%E7%AE%A1%E7%90%86">漏洞管理</a>  | <a href="/tags/%E8%B3%87%E5%AE%89%E9%98%B2%E7%A6%A6">資安防禦</a>  | <a href="/tags/%E9%9B%B6%E4%BF%A1%E4%BB%BB">零信任</a>  </p>
+  <p class="title"><a href="/news/176211">因應AI加速網路攻擊，印度要求企業組織在漏洞公布12小時內完成修補</a> </p>
+  <div class="summary">印度網路安全主管機關CERT-In發布新指導方針，建議組織面對已知遭利用、且影響網際網路暴露或核心關鍵資產的漏洞時，在可行情況下於12小時內修補、緩解或移除暴露面
+ </div>
+  <p class="post-at">2026-05-29 </p>
+</div></span>  </span>  </div>
+  <div class="span4 channel-item no-margin-left">
+      
+  <span class="views-field views-field-created">        <span class="field-content"><div class="item">
+  <p class="photo"> <a href="/news/176210"><img src="https://www.ithome.com.tw/sites/default/files/styles/picture_size_small/public/field/image/0529-hadriansecurity_openhack-github.jpg?itok=YDx-wP8-" width="300" height="132" alt="" /></a></p>
+  <p class="category"><a href="/tags/%E6%96%B0%E8%81%9E">新聞</a>  | <a href="/tags/hadrian">Hadrian</a>  | <a href="/tags/openhack">OpenHack</a>  | <a href="/tags/%E6%BC%8F%E6%B4%9E%E7%A0%94%E7%A9%B6">漏洞研究</a>  | <a href="/tags/%E8%B3%87%E5%AE%89">資安</a>  </p>
+  <p class="title"><a href="/news/176210">Hadrian開源AI漏洞研究框架OpenHack，可搭配Claude Code與Cursor執行白箱安全審查</a> </p>
+  <div class="summary">OpenHack讓研究人員可將白箱安全審查拆成多個步驟，先找出可能的攻擊面，再建立測試情境，交由不同專家代理驗證漏洞，最後透過獨立複核確認結果
+ </div>
+  <p class="post-at">2026-05-29 </p>
+</div></span>  </span>  </div>
+  <div class="span4 channel-item">
+      
+  <span class="views-field views-field-created">        <span class="field-content"><div class="item">
+  <p class="photo"> <a href="/news/176209"><img src="https://www.ithome.com.tw/sites/default/files/styles/picture_size_small/public/field/image/_m8khiisoht.jpg?itok=8a8L5YRc" width="300" height="132" alt="" /></a></p>
+  <p class="category"><a href="/tags/%E6%96%B0%E8%81%9E">新聞</a>  | <a href="/tags/linux">Linux</a>  | <a href="/tags/linux-kernel">Linux Kernel</a>  | <a href="/tags/cifswitch">CIFSwitch</a>  | <a href="/tags/lpe">LPE</a>  </p>
+  <p class="title"><a href="/news/176209">Linux核心存在本機權限提升漏洞CIFSwitch</a> </p>
+  <div class="summary">研究人員Asim Manizada揭露Linux系統核心本機權限提升（LPE）CIFSwitch，並指出該漏洞影響許多Linux發行版，涵蓋Linux Mint、CentOS Stream、Rocky Linux、Kali Linux等
+ </div>
+  <p class="post-at">2026-05-29 </p>
+</div></span>  </span>  </div>
+  <div class="span4 channel-item">
+      
+  <span class="views-field views-field-created">        <span class="field-content"><div class="item">
+  <p class="photo"> <a href="/news/176202"><img src="https://www.ithome.com.tw/sites/default/files/styles/picture_size_small/public/field/image/_5eer9edyif.jpg?itok=UgsPfPSF" width="300" height="132" alt="" /></a></p>
+  <p class="category"><a href="/tags/%E6%96%B0%E8%81%9E">新聞</a>  | <a href="/tags/gogs">Gogs</a>  | <a href="/tags/%E9%9B%B6%E6%99%82%E5%B7%AE%E6%BC%8F%E6%B4%9E">零時差漏洞</a>  | <a href="/tags/%E9%9B%B6%E6%97%A5%E6%BC%8F%E6%B4%9E">零日漏洞</a>  </p>
+  <p class="title"><a href="/news/176202">Gogs存在尚未修補的零時差漏洞，攻擊者可用於遠端執行任意程式碼</a> </p>
+  <div class="summary">Rapid7提出警告，他們找到自建程式碼版本管理系統Gogs的重大漏洞，通報至今已過兩個月開發團隊仍未修補，對此他們公布細節，呼籲用戶採取行動因應
+ </div>
+  <p class="post-at">2026-05-29 </p>
+</div></span>  </span>  </div>
+    </div>
+  
+      <div class="pagination pagination-centered"><ul><li class="active first"><a href="#">1</a></li>
+<li><a title="到第 2 頁" href="/news/155119%5D%28https%3A//cdn-images-1.medium.com/max/800/0%2AvbccIrZKXRRmaUtU.jpg?page=1">2</a></li>
+<li><a title="到第 3 頁" href="/news/155119%5D%28https%3A//cdn-images-1.medium.com/max/800/0%2AvbccIrZKXRRmaUtU.jpg?page=2">3</a></li>
+<li><a title="到第 4 頁" href="/news/155119%5D%28https%3A//cdn-images-1.medium.com/max/800/0%2AvbccIrZKXRRmaUtU.jpg?page=3">4</a></li>
+<li><a title="到第 5 頁" href="/news/155119%5D%28https%3A//cdn-images-1.medium.com/max/800/0%2AvbccIrZKXRRmaUtU.jpg?page=4">5</a></li>
+<li><a title="到第 6 頁" href="/news/155119%5D%28https%3A//cdn-images-1.medium.com/max/800/0%2AvbccIrZKXRRmaUtU.jpg?page=5">6</a></li>
+<li><a title="到第 7 頁" href="/news/155119%5D%28https%3A//cdn-images-1.medium.com/max/800/0%2AvbccIrZKXRRmaUtU.jpg?page=6">7</a></li>
+<li><a title="到第 8 頁" href="/news/155119%5D%28https%3A//cdn-images-1.medium.com/max/800/0%2AvbccIrZKXRRmaUtU.jpg?page=7">8</a></li>
+<li><a title="到第 9 頁" href="/news/155119%5D%28https%3A//cdn-images-1.medium.com/max/800/0%2AvbccIrZKXRRmaUtU.jpg?page=8">9</a></li>
+<li class="pager-ellipsis disabled"><span>…</span></li>
+<li class="next last"><a title="到下一頁" href="/news/155119%5D%28https%3A//cdn-images-1.medium.com/max/800/0%2AvbccIrZKXRRmaUtU.jpg?page=1">下一頁 ›</a></li>
+</ul></div>  
+  
+  
+  
+  
+</div>    </section>
+
+    
+  </div>
+</div>
+
+<footer class="footer">
+      <div class="region region-footer">
+    <section id="block-block-7" class="block block-block clearfix">
+
+      
+  <div id="mkt-on-top">
+  <div class="mkt-720">  
+ <script src="https://itadapi.ithome.com.tw/ads/serve?type=B1&channel=ithome_index"></script>
+
+  </div>
+</div></section> <!-- /.block -->
+<section id="block-block-2" class="block block-block clearfix">
+
+      
+  <ul class="copyright inline"><li>電週文化事業版權所有、轉載必究  | Copyright &copy; iThome</li><li><a href="/aboutus/">刊登廣告</a></li><li><a href="/aboutus/">授權服務</a></li><li><a href="/aboutus/">服務信箱</a></li><li><a href="/terms">隱私權聲明與會員使用條款</a></li><li><a href="/security-policy">資訊安全政策</a></li><li><a href="/aboutus/">關於iThome</a></li><li><a href="/rss">RSS</a></li> <li><a href="/jobs">徵才</a> </li></ul>
+<!--  2014.2.21 改版上線 -->
+
+</section> <!-- /.block -->
+<section id="block-block-24" class="block block-block clearfix">
+
+      
+  <!-- old ga code remove -->
+</section> <!-- /.block -->
+  </div>
+</footer>
+  </body>
+</html>

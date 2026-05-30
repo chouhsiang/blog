@@ -1,0 +1,363 @@
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="zh-TW" xmlns="http://www.w3.org/1999/xhtml">
+	<!-- InstanceBegin template="/Templates/temp0.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Hisecure程式開發套件-最新消息</title>
+		<link href="/hisecure/image/logo.ico" rel="icon" />
+		<link href="/hisecure/css/global.css?version=1715559561046" rel="stylesheet" type="text/css" />
+		<link href="/hisecure/css/in.css?version=1715559561046" rel="stylesheet" type="text/css" />
+		<link href="/hisecure/css/jquery-ui-1.8.1.custom.css" rel="stylesheet" type="text/css" />
+		
+	</head>
+	<body>
+		<div id="pagesize">
+			<!--HeaderArea Start-->
+			
+
+
+
+
+<!--[if IE 6]>
+<style type="text/css">img{ behavior: url(css/iepngfix.htc);}
+</style>
+<![endif]-->
+<style>
+.error{color: red;}
+</style>
+<script type="text/javascript" src="/hisecure/js/jquery-1.4.2.min.js" ></script>
+<script type="text/javascript" src="/hisecure/js/jquery-ui-1.8.1.custom.min.js" ></script>
+<script type="text/javascript">
+  function MM_swapImgRestore() { //v3.0
+    var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+  }
+  function MM_preloadImages() { //v3.0
+    var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+      var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+      if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+  }
+
+  function MM_findObj(n, d) { //v4.01
+    var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+      d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+    if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+    for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+    if(!x && d.getElementById) x=d.getElementById(n); return x;
+  }
+
+  function MM_swapImage() { //v3.0
+    var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+    if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+  }
+</script>
+<noscript>
+  <div class="not-support-javascript">
+    <p>您目前的瀏覽方式不支援JavaScript，將有部分功能無法正常使用。 <br/>建議您使用支援JavaScript的方式瀏覽，以提升使用體驗。</p>
+  </div>
+</noscript>
+<div id="header">
+  <a href="#keyC" class="sr-only" title="跳到主要內容區塊" tabindex="1">跳到主要內容區塊</a>
+	<h1 class="logo"><a href="/hisecure/index.do" title="前往首頁" style="color: transparent;">首頁</a></h1>
+    <!-- InstanceBeginEditable name="EditRegion3" -->
+  <ul>
+      <a href="#keyN" name="keyN" id="navigator" accesskey="N" title="上方導覽列">:::</a>
+      <li><a class="nav-items" href="/hisecure/sitemap.do" title="前往網站導覽">網站導覽</a></li>
+      <li><a class="nav-items" href="/hisecure/news/news.do?type=1" title="前往訊息公告">訊息公告</a></li>
+      <li><a class="nav-items" href="/hisecure/product/no1.do" title="前往產品介紹">產品介紹</a></li>
+      <li><a class="nav-items" href="/hisecure/download/list.do" title="前往下載專區">下載專區</a></li>
+      <!-- <li><a class="nav-items" href="/hisecure/fault/edit.do" title="前往我要申告">我要申告</a></li> -->
+      <li><a class="nav-items" href="/hisecure/error/error.do" title="前往錯誤代碼">錯誤代碼</a></li>
+      <li><a class="nav-items" href="/hisecure/teachingFile/list.do" title="前往教學專區">教學專區</a></li>
+      
+      <li><a class="nav-items" href="/hisecure/join/add.do" title="前往申請註冊">申請註冊</a></li>
+      
+      <li><a class="nav-items" href="/hisecure/question/list.do" title="前往問與答">問與答</a></li>
+	</ul><!-- InstanceEndEditable -->
+</div>
+			<!--HeaderArea End-->
+			<!--CenterArea Start-->
+			<!-- InstanceBeginEditable name="EditRegion3" -->
+			
+
+
+
+
+
+<div id="content">
+	<div class="LeftSet">
+		<a href="#keyL" name="keyL" id="aside-function" accesskey="L" title="側邊功能選單">:::</a>
+		<!-- InstanceBeginEditable name="EditRegion4" -->
+		<h2><img src="/hisecure/image/info_01.jpg" alt="訊息公告" /></h2>
+		<ul>			
+			<li class="on"><a href="/hisecure/news/news.do?type=1" role="button" title="前往最新消息">最新消息</a></li>
+			<li ><a href="/hisecure/news/news.do?type=2" role="button" title="前往教育訓練消息">教育訓練消息</a></li>
+		</ul>
+		<div class="down"><img src="/hisecure/image/left_04.jpg" alt=""/></div>
+		<!-- InstanceEndEditable -->
+	</div>
+	<div class="RightSet">
+		<!-- InstanceBeginEditable name="EditRegion5" -->
+		<div class="path">
+			<span>‧</span><a href="/hisecure/index.do" title="前往首頁">首頁</a> > <a href="/hisecure/news/news.do?type=" title="前往訊息公告">訊息公告</a> > 最新消息
+		</div>
+		<a href="#keyC" name="keyC" id="brick-center" accesskey="C" title="主要內容">:::</a>
+		<h2>
+			
+				
+				<img src="/hisecure/image/messagetag.jpg" alt="最新消息"/>
+			
+		</h2>
+		<!-- InstanceEndEditable -->
+		<div class="in">
+			<div class="up"><img src="/hisecure/image/in_01.jpg" alt=""/></div>
+			<div class="mid">
+				<form id="command" name="command" action="/hisecure/news/news.do;jsessionid=C503C1EF2A0C37C2CCF5A2BA37633B9F" method="post">
+					<div class="search">
+						<div class="fL"><label for="keyword-search">關鍵字</label><input id="keyword-search" name="title" class="sty01" type="text" value="" size="20"/>
+						</div>
+						<div class="fR">
+							刊登時間
+							<input type="text" name="start_date" id="start_date" placeholder="YYYY-MM-DD" title="選擇開始時間" class="sty01" size="12" value="" />
+							~
+							<input type="text" name="end_date" id="end_date" placeholder="YYYY-MM-DD" class="sty01" size="12" title="選擇結束時間" value="" />
+							<a href="#" onclick="sendForm()" role="button" title="送出查詢"><span class="functionBtn">立即查詢</span></a>
+						</div>
+						<div class="clr"></div>
+					</div>
+				</form>
+				
+					
+						<ul>
+							
+								
+									
+								
+								
+								<li class="deep">
+									<span class="fR">2022/08/24</span>
+									<a href="newsin.do?id=182cd6272d3000002701947a1ca8e25b&type=1" title="前往自然人憑證NFC讀卡元件停止更新">自然人憑證NFC讀卡元件停止更新</a>
+								</li>
+							
+								
+								
+									
+								
+								<li class="">
+									<span class="fR">2022/01/03</span>
+									<a href="newsin.do?id=17e32568a2f00000b2ea7783fbddf029&type=1" title="前往自然人行動NFC讀卡PKCS11(停止更新)">自然人行動NFC讀卡PKCS11(停止更新)</a>
+								</li>
+							
+								
+									
+								
+								
+								<li class="deep">
+									<span class="fR">2026/05/13</span>
+									<a href="newsin.do?id=19e247b47f8000009d0ee8232e3b7ee8&type=1" title="前往提供新版跨平台ChtICToken.js">提供新版跨平台ChtICToken.js</a>
+								</li>
+							
+								
+								
+									
+								
+								<li class="">
+									<span class="fR">2022/12/30</span>
+									<a href="newsin.do?id=185611334c900000a103ed7bda04c2cb&type=1" title="前往提供新版跨平台ChtICToken.js">提供新版跨平台ChtICToken.js</a>
+								</li>
+							
+								
+									
+								
+								
+								<li class="deep">
+									<span class="fR">2022/01/27</span>
+									<a href="newsin.do?id=17e9adb367f00000e5d191308daf1653&type=1" title="前往更新ICS API身分認證服務函式庫">更新ICS API身分認證服務函式庫</a>
+								</li>
+							
+								
+								
+									
+								
+								<li class="">
+									<span class="fR">2022/01/27</span>
+									<a href="newsin.do?id=17e9ad413590000015be16109cc222c7&type=1" title="前往更新身分確認服務系統C語言程式庫">更新身分確認服務系統C語言程式庫</a>
+								</li>
+							
+								
+									
+								
+								
+								<li class="deep">
+									<span class="fR">2020/12/30</span>
+									<a href="newsin.do?id=176cca7ae610000061ca6c70ab1e6622&type=1" title="前往加密區無法無法讀取">加密區無法無法讀取</a>
+								</li>
+							
+								
+								
+									
+								
+								<li class="">
+									<span class="fR">2020/12/30</span>
+									<a href="newsin.do?id=176b30af1e80000091c368c96077b3b6&type=1" title="前往國民身分證晶片資料清單測試網站上線">國民身分證晶片資料清單測試網站上線</a>
+								</li>
+							
+								
+									
+								
+								
+								<li class="deep">
+									<span class="fR">2020/08/25</span>
+									<a href="newsin.do?id=17545725da600000aafd2ca8bd341d88&type=1" title="前往本站只接受GCA、XCA、MOEACA卡註冊">本站只接受GCA、XCA、MOEACA卡註冊</a>
+								</li>
+							
+								
+								
+									
+								
+								<li class="">
+									<span class="fR">2020/08/25</span>
+									<a href="newsin.do?id=174239f996b000006539aeadaddb45af&type=1" title="前往GCA網站檢測排除說明">GCA網站檢測排除說明</a>
+								</li>
+												
+						</ul>
+						
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="pageArea" style="padding: 10px 0;">
+	
+	<ul>
+	
+		
+			
+			
+				<li class="current"><a>1</a></li>
+			
+		
+	
+		
+			
+				<li><a href="#" role="button" title="前往2頁" onclick="javascript:doPaging('2');return false;">2</a></li>
+			
+			
+		
+	
+		
+			
+				<li><a href="#" role="button" title="前往3頁" onclick="javascript:doPaging('3');return false;">3</a></li>
+			
+			
+		
+	
+	
+		<div class="next"><a href="#" role="button" title="前往下一頁" onclick="javascript:doPaging('2');return false;">下一頁</a></div>
+	
+</div>
+<form name="form4paging" id="form4paging" method="post">	
+	
+		<input type="hidden" name="page" id="page" value="1" />
+	
+	
+</form>
+
+<script type="text/javascript">
+	function doPaging(page_no) {
+		var path = top.location.pathname;
+		var f = document.getElementById("form4paging");	 
+		f.page.value = page_no;
+		f.action = path;
+		f.submit();
+	}
+</script>	
+					
+					
+				
+			</div>
+			<div class="down">
+				<img src="/hisecure/image/in_03.jpg" alt=""/>
+			</div>
+		</div>
+	</div>
+	<div class="clr"></div>
+</div>
+<script>
+	function sendForm(){
+		$('#command').submit();			
+	}
+
+    // $(document).ready(function(){
+    // 	$('#start_date').datepicker({
+    // 		changeMonth: true,
+    // 		changeYear: true,
+    // 		buttonImage: '../images/datepicker.gif',
+    // 		dateFormat: "yy-mm-dd",
+    // 	});
+    // 	$('#end_date').datepicker({
+    // 		changeMonth: true,
+    // 		changeYear: true,
+    // 		buttonImage: '../images/datepicker.gif',
+    // 		dateFormat: "yy-mm-dd"
+    // 	});
+	// });
+</script>
+			<!-- InstanceEndEditable -->
+			<!--CenterArea end-->
+			<!--FooterArea start-->
+			
+
+
+
+
+<div id="footer">
+  <div class="top-zone">
+    <div class="logo">
+      <a href="#keyZ" name="keyZ" id="footer-accesskey" accesskey="Z" title="網頁底部區">:::</a>
+      <a href="/hisecure/index.do" title="前往首頁">
+        <img src="/hisecure/image/logo.png" alt="logo" id="logo">
+      </a>
+      <a href="https://accessibility.moda.gov.tw/Applications/Detail?category=20240508145326" target="_blank" title="(另開新視窗)前往無障礙網站">
+        <img src="/hisecure/image/accessibility_badge_A.png" style="vertical-align: middle;" border="0" width="88" height="31" alt="通過A無障礙網頁檢測" />
+      </a>
+    </div>
+    <div class="contact">
+      <div class="list">
+        <span class="title">API技術客服中心</span>
+        <ul>
+          <li>服務時間：09:00 - 18:00 (週一至週五 國定例假日除外)</li>
+          <li>服務信箱：<a href="mailto: hisecure6@cht.com.tw" title="開啟郵件服務聯繫客服">hisecure6@cht.com.tw</a></li>
+          <li>服務專線：02-2192-2918</li>
+        </ul>
+      </div>
+    </div>				
+  </div>
+  <div class="bottom-zone">
+    <span>中華電信資訊技術分公司版權所有 © 2010 HiNet Internet Service by Chunghwa Telecom All Right Reserved</span>
+  </div>
+</div>
+			<!--FooterArea end-->		
+		</div>
+	</body>
+	<script type="text/javascript">
+		
+			alert('查無資料！');
+		
+	</script>
+	</body>
+	<!-- InstanceEnd -->
+</html>

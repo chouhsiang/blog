@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Mail2000 &amp; Mailgates必開防護設定</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Mail2000 &amp; Mailgates必開防護設定</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+我們公司是用Mail2000作為主要信箱，但也發現預設很多防護設定是沒開的，這邊講一下幾個一定要開的設定，不開後果嚴重！
+</section>
+<section data-field="body" class="e-content">
+<section name="a7cf" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="5e44" id="5e44" class="graf graf--h3 graf--leading graf--title">Mail2000 &amp; Mailgates必開防護設定</h3><p name="01e7" id="01e7" class="graf graf--p graf-after--h3">我們公司是用Mail2000作為主要信箱，但也發現預設很多防護設定是沒開的，這邊講一下幾個一定要開的設定，不開後果嚴重！</p><p name="cb4f" id="cb4f" class="graf graf--p graf-after--p">先簡單講一下Mail2000與Mailgate的關係，Mail2000主要有Webmail、SMTP、IMAP、POP與使用者交互的功能都在這邊。而Mailgates則是MX伺服器，負責管理進出口的信件安全。彼此關係如下圖。</p><figure name="28e3" id="28e3" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*vuiuTSb01mTlIjotC7KpFA.png" data-width="1942" data-height="904" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*vuiuTSb01mTlIjotC7KpFA.png"></figure><h4 name="ee67" id="ee67" class="graf graf--h4 graf-after--figure">一、使用者寄信時強制驗證</h4><p name="5daf" id="5daf" class="graf graf--p graf-after--h4">使用者透過SMTP寄信的時候，預設是不會強制驗證的，不用登入就可以寄信給內部任何使用者，但未驗證是無法寄到外部的，請開始強制驗證。</p><p name="4756" id="4756" class="graf graf--p graf-after--p">設定路徑：Mail2000後台 / 郵件 / 收信程式管理 / 收信程式設定 / 開啟驗證 &amp; 強制驗證 -&gt; 開啟</p><figure name="196b" id="196b" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*D79jUsFTESfDIAeAO87IuQ.png" data-width="1816" data-height="1386" src="https://cdn-images-1.medium.com/max/800/1*D79jUsFTESfDIAeAO87IuQ.png"></figure><h4 name="f8d6" id="f8d6" class="graf graf--h4 graf-after--figure">二、使用者寄信時核對寄件者</h4><p name="7f32" id="7f32" class="graf graf--p graf-after--h4">這個設定也超重要，這個沒開就可以讓所有使用者，以任何寄件者寄信。開啟之後，就會核對寄件者與登入的帳號是否一致。</p><p name="a7a0" id="a7a0" class="graf graf--p graf-after--p">設定路徑：Mail2000後台 / 系統 / 環境設定 / 安全性功能設定 / 未認證的外寄郵件處置方式 -&gt; 記錄log並且退信</p><figure name="8aff" id="8aff" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*RqV_L-8Mh6Rz02_zn5dALw.png" data-width="2110" data-height="1226" src="https://cdn-images-1.medium.com/max/800/1*RqV_L-8Mh6Rz02_zn5dALw.png"></figure><h4 name="750f" id="750f" class="graf graf--h4 graf-after--figure">三、Webmail Session綁IP</h4><p name="23d7" id="23d7" class="graf graf--p graf-after--h4">之前跟Mail2000回報過一個漏洞，在某些路徑會導致cookie的session外洩，而用此Cookie就可取得使用者登入後的權限，直接繞過登入機制，建議開啟Session綁定IP，但會導致使用者體驗下降，因為當設備更換IP時就會被登出</p><p name="5f47" id="5f47" class="graf graf--p graf-after--p">設定路徑：Mail2000後台 / 系統 / 環境設定 / 安全性功能設定 / Session檢查IP -&gt; 開啟</p><figure name="cad6" id="cad6" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*mP0Kon6foZb27dASq5OxJw.png" data-width="2110" data-height="1226" src="https://cdn-images-1.medium.com/max/800/1*mP0Kon6foZb27dASq5OxJw.png"></figure><h4 name="118f" id="118f" class="graf graf--h4 graf-after--figure">四、SPF驗證機制</h4><p name="b670" id="b670" class="graf graf--p graf-after--h4">預設有幾個設定我覺得不太OK，Neutral如果開接受信件，會導致有些SPF設定<em class="markup--em markup--p-em">~all</em>就會直接放行，例如偽造yahoo.com就會通過，我建議開標記為垃圾信。None的話則是SPF不存在的話就放行，那其實找個沒有SPF紀錄的網域寄信就行，例如www.yahoo.com，我也建議開標記為垃圾信。</p><p name="498f" id="498f" class="graf graf--p graf-after--p">設定路徑：Mailgates後台 / 管理員模式 / 郵件安全 / 網域驗證認證 / SPF驗證</p><figure name="3ab4" id="3ab4" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*GwULT8R7BdC6HGp7a-AzUg.png" data-width="2870" data-height="1236" src="https://cdn-images-1.medium.com/max/800/1*GwULT8R7BdC6HGp7a-AzUg.png"></figure><h4 name="5861" id="5861" class="graf graf--h4 graf-after--figure">五、驗證Mail from</h4><p name="1ac8" id="1ac8" class="graf graf--p graf-after--h4">滿多偽造信都是偽造mail from的body，而在mail2000收件夾是不易觀察到寄件者被偽造的，因此建議打開mail from的檢查，設定如下圖。</p><p name="8c55" id="8c55" class="graf graf--p graf-after--p">設定路徑：Mailgates後台 / 管理員模式 / 郵件安全 / 進階威脅防護 / BEC郵件詐騙防護政策 / 郵件標頭安全政策</p><figure name="6c5f" id="6c5f" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*heenkUwyI6-8-oPgOTSuWQ.png" data-width="2474" data-height="1224" src="https://cdn-images-1.medium.com/max/800/1*heenkUwyI6-8-oPgOTSuWQ.png"></figure><h4 name="9371" id="9371" class="graf graf--h4 graf-after--figure">總計</h4><p name="89fc" id="89fc" class="graf graf--p graf-after--h4 graf--trailing">以上是建議要開啟的防護機制，有其他建議的可以補充討論。</p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@chouhsiang" class="p-author h-card">周詳  Sean Chou</a> on <a href="https://medium.com/p/78cdbf6f1222"><time class="dt-published" datetime="2022-12-20T16:35:31.756Z">December 20, 2022</time></a>.</p><p><a href="https://medium.com/@chouhsiang/mail2000-mailgates%E5%BF%85%E9%96%8B%E9%98%B2%E8%AD%B7%E8%A8%AD%E5%AE%9A-78cdbf6f1222" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 29, 2026.</p></footer></article></body></html>

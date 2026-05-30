@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>臺北城市儀表板開發指南 — 1. 建立環境</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">臺北城市儀表板開發指南 — 1. 建立環境</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+最近參加 2025 雙北程式設計節，題目是要為「臺北城市儀表板」來做發想，並擴充原有儀表板，建立新的功能與組件。
+</section>
+<section data-field="body" class="e-content">
+<section name="a762" class="section section--body section--first"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="a649" id="a649" class="graf graf--h3 graf--leading graf--title">臺北城市儀表板開發筆記— 1. 建立環境</h3><figure name="9bc5" id="9bc5" class="graf graf--figure graf-after--h3"><img class="graf-image" data-image-id="1*xvn8qNHD0NfJDa5thgQs3w.png" data-width="2926" data-height="1588" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*xvn8qNHD0NfJDa5thgQs3w.png"><figcaption class="imageCaption"><a href="https://citydashboard.taipei/dashboard?index=metro&amp;city=taipei" data-href="https://citydashboard.taipei/dashboard?index=metro&amp;city=taipei" class="markup--anchor markup--figure-anchor" rel="noopener" target="_blank">臺北城市儀表板</a></figcaption></figure><p name="6141" id="6141" class="graf graf--p graf-after--figure">最近參加 2025 雙北程式設計節，題目是要為「臺北城市儀表板」來做發想，並擴充原有儀表板，建立新的功能與組件。</p><p name="5092" id="5092" class="graf graf--p graf-after--p">什麼是臺北城市儀表板？臺北城市儀表板是一個整合多元城市數據的開源公開平台，透過視覺化圖表與互動介面，讓市民、研究人員與政策制定者能即時掌握台北市在人口、交通、環境、建設、經濟等各面向的發展現況與趨勢。它不僅提升政府施政透明度，也促進資料驅動的城市治理與公民參與，是智慧城市推動的重要基礎建設之一。</p><p name="e7e9" id="e7e9" class="graf graf--p graf-after--p graf--trailing">本篇將說明如何利用開源的台北城市儀表板，在「<strong class="markup--strong markup--p-strong">不修改原始碼」</strong>下，自行架設、新增組件、匯入資料，來建立自己的儀表板。</p></div></div></section><section name="8f42" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="ea5f" id="ea5f" class="graf graf--h3 graf--leading">官方資料</h3><ul class="postList"><li name="2f89" id="2f89" class="graf graf--li graf-after--h3"><a href="https://citydashboard.taipei/dashboard?index=metro&amp;city=taipei" data-href="https://citydashboard.taipei/dashboard?index=metro&amp;city=taipei" class="markup--anchor markup--li-anchor" rel="noopener" target="_blank">臺北城市儀表板 官網</a></li><li name="effb" id="effb" class="graf graf--li graf-after--li"><a href="https://citydashboard.taipei/dashboard?index=metro&amp;city=taipei" data-href="https://citydashboard.taipei/dashboard?index=metro&amp;city=taipei" class="markup--anchor markup--li-anchor" rel="noopener" target="_blank">臺北城市儀表板</a><a href="https://github.com/taipei-doit/Taipei-City-Dashboard" data-href="https://github.com/taipei-doit/Taipei-City-Dashboard" class="markup--anchor markup--li-anchor" rel="noopener" target="_blank"> Github</a></li><li name="0d3a" id="0d3a" class="graf graf--li graf-after--li"><a href="https://tuic.gov.taipei/documentation/" data-href="https://tuic.gov.taipei/documentation/" class="markup--anchor markup--li-anchor" rel="noopener" target="_blank">臺北城市儀表板 開發文件</a></li><li name="d404" id="d404" class="graf graf--li graf-after--li"><a href="https://www.youtube.com/playlist?list=PLjFJpK3DdjVzzlmvcbloB1HlmyrxFxFqQ" data-href="https://www.youtube.com/playlist?list=PLjFJpK3DdjVzzlmvcbloB1HlmyrxFxFqQ" class="markup--anchor markup--li-anchor" rel="noopener" target="_blank">臺北城市儀表板 開發建置指南影片</a></li><li name="1de5" id="1de5" class="graf graf--li graf-after--li"><a href="https://www.youtube.com/playlist?list=PLjFJpK3DdjVzKSHmnWZBtDVIlcobbOQpE" data-href="https://www.youtube.com/playlist?list=PLjFJpK3DdjVzKSHmnWZBtDVIlcobbOQpE" class="markup--anchor markup--li-anchor" rel="noopener" target="_blank">臺北城市儀表板 3.0 開發建置指南影片</a></li><li name="912e" id="912e" class="graf graf--li graf-after--li"><a href="https://codefest.taipei/2025-spring/" data-href="https://codefest.taipei/2025-spring/" class="markup--anchor markup--li-anchor" rel="noopener" target="_blank">2025 雙北程式設計節</a></li><li name="cee8" id="cee8" class="graf graf--li graf-after--li"><a href="https://drive.google.com/file/d/1Kq7zU2uzfJzyyTF3mVBk4Yif5i2WeH_j/view?usp=sharing" data-href="https://drive.google.com/file/d/1Kq7zU2uzfJzyyTF3mVBk4Yif5i2WeH_j/view?usp=sharing" class="markup--anchor markup--li-anchor" rel="noopener" target="_blank">2025 雙北程式設計節 競賽規則</a></li><li name="4dd9" id="4dd9" class="graf graf--li graf-after--li"><a href="https://drive.google.com/file/d/1a4xKVgzrXVfSugBJsRJZpVRG1UCJLvYf/view?usp=sharing" data-href="https://drive.google.com/file/d/1a4xKVgzrXVfSugBJsRJZpVRG1UCJLvYf/view?usp=sharing" class="markup--anchor markup--li-anchor" rel="noopener" target="_blank">2025 雙北程式設計節 技術說明</a></li></ul><p name="0784" id="0784" class="graf graf--p graf-after--li graf--trailing">Github 開源的臺北城市儀表板不像官網有大量的資料，只有一些提供開發者測試用的資料。</p></div></div></section><section name="729b" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="e77b" id="e77b" class="graf graf--h3 graf--leading">儀表板前台介紹</h3><p name="0ea4" id="0ea4" class="graf graf--p graf-after--h3">儀表板分為前台與後台，前台為呈現給市民查看的資料，後台則讓管理員進行管理用。</p><figure name="b485" id="b485" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*NdGQScTMgD9DIU70eHUjoA.gif" data-width="1270" data-height="715" src="https://cdn-images-1.medium.com/max/800/1*NdGQScTMgD9DIU70eHUjoA.gif"><figcaption class="imageCaption">台北城市儀表板操作介面</figcaption></figure><p name="fdee" id="fdee" class="graf graf--p graf-after--figure">從上圖前台操作可以看出，架構分為三層「儀表板大項」&gt;「儀表板分類」&gt; 「組件 / 地圖」。</p><h4 name="32c3" id="32c3" class="graf graf--h4 graf-after--p">儀表板大項</h4><p name="60f4" id="60f4" class="graf graf--p graf-after--h4">左側工具列分為「台北儀表板」、「雙北儀表板」，雙北儀表板是在版本 3.0 後才加入的功能，裡面可以切換看雙北的資訊或是台北市的資訊。</p><h4 name="45a2" id="45a2" class="graf graf--h4 graf-after--p">儀表板分類</h4><p name="05a7" id="05a7" class="graf graf--p graf-after--h4">左側工具列的分類，管理員於後台可以建立各種類別，如上圖所示包含「捷運系統」、「道路交通」等，可以把各種組件加入其中。</p><h4 name="1757" id="1757" class="graf graf--h4 graf-after--p">組件 / 地圖</h4><p name="eb6c" id="eb6c" class="graf graf--p graf-after--h4">儀表板的核心功能，如上圖的「Youbike 使用狀況」，每個組件可以包含一個或多個圖表，包含長條圖、折線圖、行政區圖等。組件資訊可另外呈現在地圖上，但不是每個組件都會有。</p><figure name="0272" id="0272" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*yV94RjrHQGGkMt2roGpm-Q.gif" data-width="1269" data-height="714" src="https://cdn-images-1.medium.com/max/800/1*yV94RjrHQGGkMt2roGpm-Q.gif"></figure><p name="d7ae" id="d7ae" class="graf graf--p graf-after--figure graf--trailing">當民眾於右上角使用台北通登入後，如上圖所示，民眾可以建立個人儀表板，將想看的組件進行勾選，呈現在同一個畫面上。</p></div></div></section><section name="f5b4" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="1209" id="1209" class="graf graf--h3 graf--leading">儀表板後台介紹</h3><figure name="6cd3" id="6cd3" class="graf graf--figure graf-after--h3"><img class="graf-image" data-image-id="1*KIzMje8pP4X6Bnf75Z4T3g.gif" data-width="1269" data-height="714" src="https://cdn-images-1.medium.com/max/800/1*KIzMje8pP4X6Bnf75Z4T3g.gif"></figure><p name="859b" id="859b" class="graf graf--p graf-after--figure">登入後，管理員可切換到後台，後台功能包含設定儀表板、設定組件、問體回報、管理使用者等功能。</p><h4 name="cf03" id="cf03" class="graf graf--h4 graf-after--p">儀表板設定</h4><p name="c7f8" id="c7f8" class="graf graf--p graf-after--h4">為儀表板分類進行設定名稱、圖標、挑選組件</p><h4 name="8f1a" id="8f1a" class="graf graf--h4 graf-after--p">組件設定</h4><p name="4d30" id="4d30" class="graf graf--p graf-after--h4 graf--trailing">設定組件的名稱、文字資訊、圖表種類、顏色、地圖等資訊</p></div></div></section><section name="368d" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="b853" id="b853" class="graf graf--h3 graf--leading">架構介紹</h3><figure name="9d2b" id="9d2b" class="graf graf--figure graf-after--h3"><img class="graf-image" data-image-id="1*7balsnHmNpLWUB_9DkC_ng.png" data-width="1680" data-height="724" src="https://cdn-images-1.medium.com/max/800/1*7balsnHmNpLWUB_9DkC_ng.png"><figcaption class="imageCaption">台北城市儀表板架構圖</figcaption></figure><p name="be33" id="be33" class="graf graf--p graf-after--figure">系統設計上為前後端分離，依上圖架構進行說明：</p><ul class="postList"><li name="e98b" id="e98b" class="graf graf--li graf-after--p">前端：使用 Vue 3 開發，圖表使用 ApexCharts，地圖使用 Mapbox</li><li name="9b16" id="9b16" class="graf graf--li graf-after--li">後端：使用 Go 開發</li><li name="f901" id="f901" class="graf graf--li graf-after--li">資料庫 1 (manager)：使用 PostgreSQL，儲存用戶資訊、設定</li><li name="d8b5" id="d8b5" class="graf graf--li graf-after--li">資料庫 2 (data)：使用 PostgreSQL，儲存組件資料</li><li name="97a9" id="97a9" class="graf graf--li graf-after--li graf--trailing">暫存資料庫：使用 Redis，儲存暫存資料</li></ul></div></div></section><section name="f01f" class="section section--body section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="246a" id="246a" class="graf graf--h3 graf--leading">建立環境</h3><p name="bffc" id="bffc" class="graf graf--p graf-after--h3">參考<a href="https://tuic.gov.taipei/documentation/front-end/project-setup" data-href="https://tuic.gov.taipei/documentation/front-end/project-setup" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">官方文件</a>即可完成架設，官方將服務容器化，使用 docker compose 管理。</p><p name="ca00" id="ca00" class="graf graf--p graf-after--p">依官方文件設定好 .env 環境變數，首次運行時，要執行 init，進行資料庫的初始化。</p><pre data-code-block-mode="2" spellcheck="false" data-code-block-lang="bash" name="7595" id="7595" class="graf graf--pre graf-after--p graf--preV2"><span class="pre--content"><span class="hljs-comment"># 完整流程請看官方文件</span><br /><span class="hljs-comment"># 第一步</span><br />docker-compose -f docker-compose-db.yaml up -d<br /><span class="hljs-comment"># 第二步</span><br />docker-compose -f docker-compose-init.yaml up -d<br /><span class="hljs-comment"># 第三步</span><br />docker-compose up -d</span></pre><p name="aa01" id="aa01" class="graf graf--p graf-after--pre">第一步 docker compose 會建立四個容器，包含 Redis、兩個 Postgres、Postgres 管理工具 pgAdmin。</p><p name="7995" id="7995" class="graf graf--p graf-after--p">第二步 docker compose 會建立三個容器，用於前端初始化、兩個資料庫的建置與匯入資料，跑完容器就會關閉。執行一次就好，之後重開容器，不需要經過此步。</p><p name="421c" id="421c" class="graf graf--p graf-after--p">第三步 docker compose 會建立三個容器，包含前端、後端、NGINX 反向代理。</p><figure name="c514" id="c514" class="graf graf--figure graf-after--p graf--trailing"><img class="graf-image" data-image-id="1*QSxWshQVc3_ELx2mqyznug.png" data-width="1390" data-height="786" src="https://cdn-images-1.medium.com/max/800/1*QSxWshQVc3_ELx2mqyznug.png"></figure></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@chouhsiang" class="p-author h-card">周詳  Sean Chou</a> on <a href="https://medium.com/p/35ec05f753af"><time class="dt-published" datetime="2025-05-28T04:34:18.099Z">May 28, 2025</time></a>.</p><p><a href="https://medium.com/@chouhsiang/%E8%87%BA%E5%8C%97%E5%9F%8E%E5%B8%82%E5%84%80%E8%A1%A8%E6%9D%BF%E9%96%8B%E7%99%BC%E6%8C%87%E5%8D%97-1-%E5%BB%BA%E7%AB%8B%E7%92%B0%E5%A2%83-35ec05f753af" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 29, 2026.</p></footer></article></body></html>

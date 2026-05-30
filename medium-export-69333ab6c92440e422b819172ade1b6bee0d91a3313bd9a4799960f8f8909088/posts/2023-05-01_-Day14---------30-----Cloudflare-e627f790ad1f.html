@@ -1,0 +1,69 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>[Day14] 負載平衡 — 30 天入門 Cloudflare</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">[Day14] 負載平衡 — 30 天入門 Cloudflare</h1>
+</header>
+<section data-field="body" class="e-content">
+<section name="bfea" class="section section--body section--first"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="9a04" id="9a04" class="graf graf--h3 graf--leading graf--title">[Day14] 負載平衡 — 30 天入門 Cloudflare</h3><figure name="0c02" id="0c02" class="graf graf--figure graf-after--h3"><img class="graf-image" data-image-id="1*qPmx3bs5FNdUithRJOyY0g.png" data-width="1920" data-height="1080" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*qPmx3bs5FNdUithRJOyY0g.png"></figure><p name="dac8" id="dac8" class="graf graf--p graf-after--figure">當今網路上的應用程式需要處理越來越多的流量，這就需要高效的負載平衡器，來保證應用程序的高可用性和性能。Cloudflare 負載平衡使用全球分佈的節點，根據使用者的地理位置和網路拓撲來最佳化流量路由，以降低延遲和故障率。</p><p name="57d4" id="57d4" class="graf graf--p graf-after--p">Cloudflare 負載平衡可以與多種應用程式和服務整合，例如 Web 服務、應用程式服務、資料庫和存儲系統等，以提供高可用性和高性能的服務。它支援多種協議，例如 HTTP、HTTPS、TCP 和 UDP 等，可以為不同的應用程序提供定製化的路由策略和健康檢查設置。</p><p name="b618" id="b618" class="graf graf--p graf-after--p graf--trailing">Cloudflare 負載平衡還提供了實時監視和故障轉移功能，這意味著它可以自動檢測和避免應用程序和伺服器的單點故障，以確保您的應用程序始終保持可用狀態。當故障發生時，它可以自動切換到其他可用的伺服器上，以確保您的應用程序不會受到中斷。</p></div></div></section><section name="52bc" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="8e38" id="8e38" class="graf graf--h4 graf--leading">設定</h4><p name="2867" id="2867" class="graf graf--p graf-after--h4">在 Cloudflare 後台選擇 Traffic 中的負載平衡，並建立負載平衡。</p><figure name="3818" id="3818" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*r7O5KcEchQcxOK3SlUgAoA.png" data-width="2748" data-height="906" src="https://cdn-images-1.medium.com/max/800/1*r7O5KcEchQcxOK3SlUgAoA.png"></figure><p name="502d" id="502d" class="graf graf--p graf-after--figure">輸入目標的網域。</p><figure name="e500" id="e500" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*Hh4ZmHQK5v4fxwktxSghKg.png" data-width="2154" data-height="1094" src="https://cdn-images-1.medium.com/max/800/1*Hh4ZmHQK5v4fxwktxSghKg.png"></figure><p name="e6b5" id="e6b5" class="graf graf--p graf-after--figure">再來新增一個原點集區，在原點集區中可以設定目標 IP。</p><figure name="f916" id="f916" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*VhEA_gIA-FMVSrLakma7LQ.png" data-width="2174" data-height="798" src="https://cdn-images-1.medium.com/max/800/1*VhEA_gIA-FMVSrLakma7LQ.png"></figure><figure name="f044" id="f044" class="graf graf--figure graf-after--figure"><img class="graf-image" data-image-id="1*UG2mlK0jaPMdeyUOWKurTg.png" data-width="2506" data-height="1186" src="https://cdn-images-1.medium.com/max/800/1*UG2mlK0jaPMdeyUOWKurTg.png"></figure><p name="39ea" id="39ea" class="graf graf--p graf-after--figure">再來可以設定流量轉送的規則，這樣就完成了。</p><figure name="dcbd" id="dcbd" class="graf graf--figure graf-after--p graf--trailing"><img class="graf-image" data-image-id="1*ex-XCFJGvB4WKts5fOqbLQ.png" data-width="2036" data-height="676" src="https://cdn-images-1.medium.com/max/800/1*ex-XCFJGvB4WKts5fOqbLQ.png"></figure></div></div></section><section name="e63e" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="f655" id="f655" class="graf graf--h4 graf--leading">Load Balancing Analytics</h4><p name="d94d" id="d94d" class="graf graf--p graf-after--h4">我們可到 Traffic中Load Balancing Analytics 查看使用狀況。</p><figure name="e8c9" id="e8c9" class="graf graf--figure graf-after--p graf--trailing"><img class="graf-image" data-image-id="1*PxIUD3nEKOfVcdpYhi2uOg.png" data-width="2154" data-height="1066" src="https://cdn-images-1.medium.com/max/800/1*PxIUD3nEKOfVcdpYhi2uOg.png"></figure></div></div></section><section name="0d45" class="section section--body section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="eac8" id="eac8" class="graf graf--h4 graf--leading">結語</h4><p name="f3a0" id="f3a0" class="graf graf--p graf-after--h4">Cloudflare 負載平衡是一種非常強大的負載平衡器，可以提高應用程序的可用性和性能，同時提供了豐富的功能和定製化選項，能滿足不同應用程序和服務的需求。</p><p name="f4c0" id="f4c0" class="graf graf--p graf-after--p"><strong class="markup--strong markup--p-strong">▶ 閱讀更多本系列文：</strong><a href="https://medium.com/chouhsiang/cloudflare-30-days/home" data-href="https://medium.com/chouhsiang/cloudflare-30-days/home" class="markup--anchor markup--p-anchor" target="_blank"><strong class="markup--strong markup--p-strong">30 天入門 Cloudflare</strong></a></p><p name="d73d" id="d73d" class="graf graf--p graf-after--p graf--trailing"><strong class="markup--strong markup--p-strong">▶ 下一篇：</strong><a href="https://medium.com/chouhsiang/30%E5%A4%A9%E6%90%9E%E6%87%82cloudflare-15-apps-6bb872866089" data-href="https://medium.com/chouhsiang/30%E5%A4%A9%E6%90%9E%E6%87%82cloudflare-15-apps-6bb872866089" class="markup--anchor markup--p-anchor" target="_blank"><strong class="markup--strong markup--p-strong">[Day15] Apps — 30 天入門 Cloudflare</strong></a></p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@chouhsiang" class="p-author h-card">周詳  Sean Chou</a> on <a href="https://medium.com/p/e627f790ad1f"><time class="dt-published" datetime="2023-05-01T10:36:36.339Z">May 1, 2023</time></a>.</p><p><a href="https://medium.com/@chouhsiang/30%E5%A4%A9%E6%90%9E%E6%87%82cloudflare-14-%E8%B2%A0%E8%BC%89%E5%B9%B3%E8%A1%A1-e627f790ad1f" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 29, 2026.</p></footer></article></body></html>

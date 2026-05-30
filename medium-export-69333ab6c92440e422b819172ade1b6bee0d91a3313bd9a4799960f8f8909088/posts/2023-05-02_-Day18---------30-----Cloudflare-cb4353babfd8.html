@@ -1,0 +1,69 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>[Day18] 電子郵件 — 30 天入門 Cloudflare</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">[Day18] 電子郵件 — 30 天入門 Cloudflare</h1>
+</header>
+<section data-field="body" class="e-content">
+<section name="c2c3" class="section section--body section--first"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="8078" id="8078" class="graf graf--h3 graf--leading graf--title">[Day18] 電子郵件 — 30 天入門 Cloudflare</h3><figure name="2801" id="2801" class="graf graf--figure graf-after--h3"><img class="graf-image" data-image-id="1*qPmx3bs5FNdUithRJOyY0g.png" data-width="1920" data-height="1080" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*qPmx3bs5FNdUithRJOyY0g.png"></figure><p name="fe71" id="fe71" class="graf graf--p graf-after--figure graf--trailing">Cloudflare 有提供電子郵件相關功能，但可能跟你想像的不太一樣，由於 Cloudflare 上並沒有使用者 Email 管理與儲存空間，Cloudflare 僅提供電子郵件路由，幫你轉信到你的信箱。另外還有 DMARC 管理的功能，本篇會來介紹一下。</p></div></div></section><section name="27b3" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="7157" id="7157" class="graf graf--h4 graf--leading">電子郵件路由</h4><p name="ebca" id="ebca" class="graf graf--p graf-after--h4">Cloudflare 電子郵件路由是 Cloudflare 提供的一項服務，可以通過組態電子郵件 DNS 記錄，將您的電子郵件流量路由到由您選擇的第三方電子郵件提供商。它有 Cloudflare 的優點，如高速網路，內容傳遞網路 (CDN)，防止阻斷服務攻擊 (DDoS)，以及可靠的安全性，來保護您的電子郵件。</p><p name="2cf1" id="2cf1" class="graf graf--p graf-after--p">使用 Cloudflare 電子郵件路由需要新增 DNS 記錄，其中包括 MX 紀錄，以便將電子郵件流量路由到選擇的電子郵件提供商。</p><p name="8b22" id="8b22" class="graf graf--p graf-after--p">雖然使用 Cloudflare 電子郵件路由可以提高電子郵件的安全性和可靠性，但它並不能完全取代傳統的電子郵件服務提供商。它僅用於路由電子郵件流量，而您仍然需要使用電子郵件提供商來管理您的電子郵件帳戶和電子郵件內容。</p><p name="9b54" id="9b54" class="graf graf--p graf-after--p">在「電子郵件」中選擇「電子郵件路由」就能夠設定轉信的目標。</p><figure name="606c" id="606c" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*VwlAiYEg_lmkFCogb6BWqg.png" data-width="2268" data-height="1308" src="https://cdn-images-1.medium.com/max/800/1*VwlAiYEg_lmkFCogb6BWqg.png"></figure><p name="23aa" id="23aa" class="graf graf--p graf-after--figure graf--trailing">如果想要使用電子郵件路由的 Email 寄信，可以參考我之前文章：<a href="https://chouhsiang.medium.com/%E6%95%99%E4%BD%A0%E7%94%A8cloudflare%E9%9B%BB%E5%AD%90%E9%83%B5%E4%BB%B6%E8%B7%AF%E7%94%B1-c076b7f2157a" data-href="https://chouhsiang.medium.com/%E6%95%99%E4%BD%A0%E7%94%A8cloudflare%E9%9B%BB%E5%AD%90%E9%83%B5%E4%BB%B6%E8%B7%AF%E7%94%B1-c076b7f2157a" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">以 Gmail、Outlook.com 來收發 Cloudflare 電子郵件路由的信件</a>。</p></div></div></section><section name="efa6" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="eda1" id="eda1" class="graf graf--h4 graf--leading">DMARC 管理</h4><p name="e434" id="e434" class="graf graf--p graf-after--h4">為了提升 Email 安全性，管理員都會設定好 DKIM、SPF、DMARC，這三個防護都是透過 DNS 來設定。DMARC 用途在於當有人偽造你寄信時候，會通知系統管理員，但系統管理員並不一定會認真的看並分析這些信件，就可以透過「電子郵件」的「DMARC 管理」來檢視狀況。</p><figure name="1537" id="1537" class="graf graf--figure graf-after--p graf--trailing"><img class="graf-image" data-image-id="1*7gZVvZ27R8otMrg1lhRCFw.png" data-width="2200" data-height="1370" src="https://cdn-images-1.medium.com/max/800/1*7gZVvZ27R8otMrg1lhRCFw.png"></figure></div></div></section><section name="1e18" class="section section--body section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="c9ab" id="c9ab" class="graf graf--h4 graf--leading">結語</h4><p name="74df" id="74df" class="graf graf--p graf-after--h4">Cloudflare 免費的電子郵件工具還是滿好用的，提供了路由與 DMARC 管理的功能。</p><p name="1abe" id="1abe" class="graf graf--p graf-after--p"><strong class="markup--strong markup--p-strong">▶ 閱讀更多本系列文：</strong><a href="https://medium.com/chouhsiang/cloudflare-30-days/home" data-href="https://medium.com/chouhsiang/cloudflare-30-days/home" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank"><strong class="markup--strong markup--p-strong">30 天入門 Cloudflare</strong></a></p><p name="72de" id="72de" class="graf graf--p graf-after--p graf--trailing"><strong class="markup--strong markup--p-strong">▶ 下一篇：</strong><a href="https://medium.com/chouhsiang/30%E5%A4%A9%E6%90%9E%E6%87%82cloudflare-19-area-1-4123523b6273" data-href="https://medium.com/chouhsiang/30%E5%A4%A9%E6%90%9E%E6%87%82cloudflare-19-area-1-4123523b6273" class="markup--anchor markup--p-anchor" target="_blank"><strong class="markup--strong markup--p-strong">[Day19] Area 1 — 30 天入門 Cloudflare</strong></a></p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@chouhsiang" class="p-author h-card">周詳  Sean Chou</a> on <a href="https://medium.com/p/cb4353babfd8"><time class="dt-published" datetime="2023-05-02T04:07:47.614Z">May 2, 2023</time></a>.</p><p><a href="https://medium.com/@chouhsiang/30%E5%A4%A9%E6%90%9E%E6%87%82cloudflare-18-%E9%9B%BB%E5%AD%90%E9%83%B5%E4%BB%B6-cb4353babfd8" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on May 29, 2026.</p></footer></article></body></html>
