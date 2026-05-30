@@ -23,6 +23,8 @@ npm run dev:tina
 - 部落格：`http://localhost:4321/`
 - Tina 後台：`http://localhost:4321/admin/index.html`
 - 演講：`#/collections/speech`
+- 證照：`#/collections/certificate`
+- CVE：`#/collections/cve`
 - 一般文章：`#/collections/post`
 
 Local mode 直接寫入 `src/content/`，不需 Tina Cloud。`/admin` 僅本機開發可用，不會部署到正式站。

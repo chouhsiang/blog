@@ -22,13 +22,24 @@ const fakeResult: SearchResult[] = [
 			"Because the search cannot work in the <mark>dev</mark> environment.",
 	},
 	{
-		url: url("/"),
+		url: url("/archive/"),
 		meta: {
 			title: "If You Want to Test the Search",
 		},
 		excerpt: "Try running <mark>npm build && npm preview</mark> instead.",
 	},
 ];
+
+function dedupeSearchResults(items: SearchResult[]): SearchResult[] {
+	const seen = new Set<string>();
+	return items.filter((item) => {
+		if (seen.has(item.url)) {
+			return false;
+		}
+		seen.add(item.url);
+		return true;
+	});
+}
 
 const togglePanel = () => {
 	const panel = document.getElementById("search-panel");
@@ -72,7 +83,7 @@ const search = async (keyword: string, isDesktop: boolean): Promise<void> => {
 			console.error("Pagefind is not available in production environment.");
 		}
 
-		result = searchResults;
+		result = dedupeSearchResults(searchResults);
 		setPanelVisibility(result.length > 0, isDesktop);
 	} catch (error) {
 		console.error("Search error:", error);
@@ -163,7 +174,7 @@ top-20 left-4 md:left-[unset] right-4 shadow-2xl rounded-2xl p-2">
     </div>
 
     <!-- search results -->
-    {#each result as item (item.url)}
+    {#each result as item (`${item.url}::${item.meta.title}`)}
         <a href={item.url}
            class="transition first-of-type:mt-2 lg:first-of-type:mt-0 group block
        rounded-xl text-lg px-3 py-2 hover:bg-[var(--btn-plain-bg-hover)] active:bg-[var(--btn-plain-bg-active)]">

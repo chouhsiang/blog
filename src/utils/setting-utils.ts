@@ -57,5 +57,14 @@ export function setTheme(theme: LIGHT_DARK_MODE): void {
 }
 
 export function getStoredTheme(): LIGHT_DARK_MODE {
-	return (localStorage.getItem("theme") as LIGHT_DARK_MODE) || DEFAULT_THEME;
+	const stored = localStorage.getItem("theme") as LIGHT_DARK_MODE | null;
+	if (stored === AUTO_MODE) {
+		return window.matchMedia("(prefers-color-scheme: dark)").matches
+			? DARK_MODE
+			: LIGHT_MODE;
+	}
+	if (stored === DARK_MODE || stored === LIGHT_MODE) {
+		return stored;
+	}
+	return DEFAULT_THEME;
 }

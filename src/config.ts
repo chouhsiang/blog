@@ -38,14 +38,17 @@ export const navBarConfig: NavBarConfig = {
 		LinkPreset.Archive,
 		{
 			name: "演講",
-			url: "/speeches/",
+			url: "/speech/",
+		},
+		{
+			name: "證照",
+			url: "/certificate/",
+		},
+		{
+			name: "CVE",
+			url: "/cve/",
 		},
 		LinkPreset.About,
-		{
-			name: "GitHub",
-			url: "https://github.com/chouhsiang",
-			external: true,
-		},
 	],
 };
 
@@ -63,11 +66,6 @@ export const profileConfig: ProfileConfig = {
 			name: "Facebook",
 			icon: "fa6-brands:facebook",
 			url: "https://www.facebook.com/chouhsiang.tw",
-		},
-		{
-			name: "Email",
-			icon: "fa6-solid:envelope",
-			url: "mailto:hchou@zeroflare.tw",
 		},
 	],
 };

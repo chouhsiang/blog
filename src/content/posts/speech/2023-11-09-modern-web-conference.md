@@ -3,7 +3,7 @@ title: "Modern Web Conference (MWC)：數位發展部導入自然人憑證無密
 published: 2023-11-09
 description: "議程"
 image: "/images/medium/6801dbf5a800912b.png"
-tags: [speech]
+tags: [speech, moda, zerotrust]
 category: "演講"
 draft: false
 ---

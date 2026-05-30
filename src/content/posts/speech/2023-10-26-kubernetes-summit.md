@@ -3,7 +3,7 @@ title: "Kubernetes Summit：數位發展部如何導入 Kubernetes 與維運經�
 published: 2023-10-26
 description: "議程"
 image: "/images/medium/af7331804b7753ba.png"
-tags: [speech]
+tags: [speech, kubernetes, moda]
 category: "演講"
 draft: false
 ---

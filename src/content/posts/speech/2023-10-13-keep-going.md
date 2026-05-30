@@ -3,7 +3,7 @@ title: "Keep Going！零信任導入經驗分享與供應鏈資安探討"
 published: 2023-10-13
 description: "Keep Going！零信任導入經驗分享與供應鏈資安探討"
 image: "/images/medium/eb222387ff473432.png"
-tags: [speech]
+tags: [speech, zerotrust, moda]
 category: "演講"
 draft: false
 ---

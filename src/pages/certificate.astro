@@ -1,0 +1,16 @@
+---
+import ArchiveTimeline from "@components/ArchiveTimeline.astro";
+import MainGridLayout from "@layouts/MainGridLayout.astro";
+import { filterArchivePosts } from "@utils/archive-utils";
+import { getSortedPostsList } from "../utils/content-utils";
+
+const certificatePosts = filterArchivePosts(await getSortedPostsList(), {
+	categories: ["證照"],
+});
+
+const description = "專業證照考取心得與準備紀錄。";
+---
+
+<MainGridLayout title="證照" description={description}>
+	<ArchiveTimeline posts={certificatePosts} showTags={false} heading="證照" />
+</MainGridLayout>

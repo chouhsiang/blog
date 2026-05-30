@@ -3,7 +3,7 @@ title: "Kubernetes Community Days Taiwan：數位發展部 Kubernetes 使用經�
 published: 2023-07-29
 description: "議程"
 image: "/images/medium/d661d83c0e29a8c5.png"
-tags: [speech]
+tags: [speech, kubernetes, moda]
 category: "演講"
 draft: false
 ---
