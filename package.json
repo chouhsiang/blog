@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
+    "dev:tina": "tinacms dev -c \"astro dev\"",
     "build": "astro build && pagefind --site dist",
     "preview": "astro preview",
     "import-medium": "node scripts/import-medium.js",
@@ -67,6 +68,8 @@
     "postcss-import": "^16.1.1",
     "postcss-nesting": "^13.0.2",
     "turndown": "^7.2.4",
-    "turndown-plugin-gfm": "^1.0.2"
+    "turndown-plugin-gfm": "^1.0.2",
+    "@tinacms/cli": "^2.0.0",
+    "tinacms": "^2.0.0"
   }
 }

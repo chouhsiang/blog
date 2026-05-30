@@ -9,9 +9,23 @@
 ```bash
 npm install
 npm run dev      # http://localhost:4321/
+npm run dev:tina # 含 TinaCMS 後台，編輯 Markdown 用
 npm run build
 npm run preview
 ```
+
+## 用 TinaCMS 編輯文章（本機）
+
+```bash
+npm run dev:tina
+```
+
+- 部落格：`http://localhost:4321/`
+- Tina 後台：`http://localhost:4321/admin/index.html`
+- 演講：`#/collections/speech`
+- 一般文章：`#/collections/post`
+
+Local mode 直接寫入 `src/content/`，不需 Tina Cloud。`/admin` 僅本機開發可用，不會部署到正式站。
 
 ## 設定
 

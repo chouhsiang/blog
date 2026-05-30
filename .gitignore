@@ -5,3 +5,7 @@ node_modules/
 .env
 .env.production
 *.log
+admin/
+public/admin/
+tina/__generated__/
+.tina/
