@@ -30,8 +30,11 @@ function formatDate(date: Date | string) {
 	return formatArchiveDate(date);
 }
 
-function formatTag(tagList: string[]) {
-	return tagList.map((t) => `#${t}`).join(" ");
+function formatCategory(category: string | null | undefined) {
+	if (!category || category.trim() === "") {
+		return "";
+	}
+	return category.trim();
 }
 
 onMount(() => {
@@ -145,7 +148,7 @@ onMount(() => {
                                 class="hidden md:block md:w-[15%] text-left text-sm transition
                      whitespace-nowrap overflow-ellipsis overflow-hidden text-30"
                         >
-                            {formatTag(post.data.tags)}
+                            {formatCategory(post.data.category)}
                         </div>
                     </div>
                 </a>

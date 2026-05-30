@@ -17,6 +17,7 @@ CVE: "/cve/",
 演講: "/speech/",
 證照: "/certificate/",
 "NIST 零信任文件": "/nist-zerotrust/",
+	"Cloudflare 入門": "/cloudflare-basic/",
 };
 
 export function getCategoryPageUrl(category: string): string | null {

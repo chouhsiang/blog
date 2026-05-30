@@ -40,8 +40,12 @@ export const navBarConfig: NavBarConfig = {
 			name: "系列文章",
 			children: [
 				{
-					name: "NIST 零信任",
+					name: "NIST 零信任文件",
 					url: "/nist-zerotrust/",
+				},
+				{
+					name: "Cloudflare 入門",
+					url: "/cloudflare-basic/",
 				},
 			],
 		},

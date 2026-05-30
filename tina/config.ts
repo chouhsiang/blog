@@ -92,7 +92,7 @@ export default defineConfig({
 				path: "src/content/posts",
 				format: "md",
 				match: {
-					exclude: "**/{speech,certificate,cve,nist-zerotrust}/**",
+					exclude: "**/{speech,certificate,cve,nist-zerotrust,cloudflare-basic}/**",
 				},
 				fields: postFields,
 			},
@@ -121,6 +121,13 @@ export default defineConfig({
 				name: "nistZerotrust",
 				label: "NIST 零信任",
 				path: "src/content/posts/nist-zerotrust",
+				format: "md",
+				fields: postFields,
+			},
+			{
+				name: "cloudflareBasic",
+				label: "Cloudflare 入門",
+				path: "src/content/posts/cloudflare-basic",
 				format: "md",
 				fields: postFields,
 			},
