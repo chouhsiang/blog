@@ -10,8 +10,10 @@ const speechPosts = filterArchivePosts(await getSortedPostsList(), {
 
 const description =
 	"周詳 Sean Chou 的技術演講與分享紀錄，涵蓋 Kubernetes、DevOps、零信任、Cloudflare 等主題。";
+
+const intro = "以下是周詳的演講紀錄。";
 ---
 
 <MainGridLayout title="演講" description={description}>
-	<ArchiveTimelinePanel posts={speechPosts} showTags={false} heading="演講" client:load />
+	<ArchiveTimelinePanel posts={speechPosts} showTags={false} heading="演講" intro={intro} client:load />
 </MainGridLayout>

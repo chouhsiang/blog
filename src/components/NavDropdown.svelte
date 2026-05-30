@@ -76,7 +76,7 @@ $effect(() => {
 	</button>
 
 	<div
-		class="absolute left-0 top-[calc(100%+0.25rem)] min-w-[10rem] rounded-[var(--radius-large)] bg-[var(--float-panel-bg)] shadow-xl dark:shadow-none py-2 z-50 transition-all duration-200"
+		class="absolute left-0 top-[calc(100%+0.25rem)] w-max min-w-[11rem] whitespace-nowrap rounded-[var(--radius-large)] bg-[var(--float-panel-bg)] shadow-xl dark:shadow-none py-2 z-50 transition-all duration-200"
 		class:opacity-0={!open}
 		class:pointer-events-none={!open}
 		class:-translate-y-1={!open}
@@ -89,11 +89,11 @@ $effect(() => {
 				href={link.external ? link.url : url(link.url ?? "/")}
 				target={link.external ? "_blank" : undefined}
 				rel={link.external ? "noopener noreferrer" : undefined}
-				class="group flex items-center justify-between gap-8 py-2 pl-4 pr-3 mx-1 rounded-lg font-bold text-black/75 dark:text-white/75 hover:bg-[var(--btn-plain-bg-hover)] active:bg-[var(--btn-plain-bg-active)] hover:text-[var(--primary)]"
+				class="group flex items-center justify-between gap-4 py-2 pl-4 pr-3 mx-1 rounded-lg font-bold whitespace-nowrap text-black/75 dark:text-white/75 hover:bg-[var(--btn-plain-bg-hover)] active:bg-[var(--btn-plain-bg-active)] hover:text-[var(--primary)]"
 				class:text-[var(--primary)]={isNavLinkActive(link, currentPath)}
 				onclick={close}
 			>
-				<span>{link.name}</span>
+				<span class="whitespace-nowrap">{link.name}</span>
 				{#if link.external}
 					<Icon
 						icon="fa6-solid:arrow-up-right-from-square"

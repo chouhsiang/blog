@@ -14,11 +14,19 @@ interface Props {
 	posts?: ArchivePost[];
 	showTags?: boolean;
 	heading?: string;
+	intro?: string;
+	defaultSortOrder?: ArchiveSortOrder;
 }
 
-let { posts = [], showTags = true, heading = "" }: Props = $props();
+let {
+	posts = [],
+	showTags = true,
+	heading = "",
+	intro = "",
+	defaultSortOrder = "desc",
+}: Props = $props();
 
-let sortOrder = $state<ArchiveSortOrder>("desc");
+let sortOrder = $state<ArchiveSortOrder>(defaultSortOrder);
 
 const groups = $derived(groupPostsByYear(posts, sortOrder));
 
@@ -58,6 +66,12 @@ function setSortOrder(order: ArchiveSortOrder) {
 			</button>
 		</div>
 	</div>
+
+	{#if intro}
+		<p class="text-75 text-[0.9375rem] leading-relaxed mb-6 ml-3">
+			{intro}
+		</p>
+	{/if}
 
 	{#each groups as group (group.year)}
 		<div>

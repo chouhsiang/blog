@@ -4,11 +4,33 @@ import I18nKey from "@i18n/i18nKey";
 import { i18n } from "@i18n/translation";
 import MainGridLayout from "@layouts/MainGridLayout.astro";
 import { getSortedPostsList } from "../utils/content-utils";
+import { getArchiveCategoryRedirects } from "../utils/url-utils";
 
 const sortedPostsList = await getSortedPostsList();
+const categoryRedirects = JSON.stringify(getArchiveCategoryRedirects());
 ---
 
 <MainGridLayout title={i18n(I18nKey.archive)}>
     <ArchivePanel sortedPosts={sortedPostsList} client:only="svelte"></ArchivePanel>
 </MainGridLayout>
+
+<script is:inline define:vars={{ categoryRedirects }}>
+(function () {
+    const redirects = JSON.parse(categoryRedirects);
+    const params = new URLSearchParams(window.location.search);
+    if (params.has("tag") || params.has("uncategorized")) {
+        return;
+    }
+
+    const categories = params.getAll("category");
+    if (categories.length !== 1) {
+        return;
+    }
+
+    const redirectUrl = redirects[categories[0]];
+    if (redirectUrl) {
+        window.location.replace(redirectUrl);
+    }
+})();
+</script>
 

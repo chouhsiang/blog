@@ -13,7 +13,7 @@ interface Props {
 
 const { links, currentPath } = Astro.props;
 ---
-<div id="nav-menu-panel" class:list={["float-panel float-panel-closed absolute transition-all fixed right-4 px-2 py-2"]}>
+<div id="nav-menu-panel" class:list={["float-panel float-panel-closed absolute transition-all fixed right-4 px-2 py-2 w-max min-w-[11rem] whitespace-nowrap"]}>
     {links.map((link) => {
         if (link.children?.length) {
             return (
@@ -24,11 +24,11 @@ const { links, currentPath } = Astro.props;
                     {link.children.map((child) => (
                         <a
                             href={child.external ? child.url : url(child.url ?? "/")}
-                            class="group flex justify-between items-center py-2 pl-5 pr-1 rounded-lg gap-8 hover:bg-[var(--btn-plain-bg-hover)] active:bg-[var(--btn-plain-bg-active)] transition"
+                            class="group flex justify-between items-center py-2 pl-5 pr-1 rounded-lg gap-4 hover:bg-[var(--btn-plain-bg-hover)] active:bg-[var(--btn-plain-bg-active)] transition whitespace-nowrap"
                             target={child.external ? "_blank" : null}
                             class:text-[var(--primary)]={isNavLinkActive(child, currentPath)}
                         >
-                            <div class="transition text-black/75 dark:text-white/75 font-bold group-hover:text-[var(--primary)] group-active:text-[var(--primary)]">
+                            <div class="transition text-black/75 dark:text-white/75 font-bold whitespace-nowrap group-hover:text-[var(--primary)] group-active:text-[var(--primary)]">
                                 {child.name}
                             </div>
                             {!child.external && (
@@ -52,11 +52,11 @@ const { links, currentPath } = Astro.props;
         return (
             <a
                 href={link.external ? link.url : url(link.url ?? "/")}
-                class="group flex justify-between items-center py-2 pl-3 pr-1 rounded-lg gap-8 hover:bg-[var(--btn-plain-bg-hover)] active:bg-[var(--btn-plain-bg-active)] transition"
+                class="group flex justify-between items-center py-2 pl-3 pr-1 rounded-lg gap-4 hover:bg-[var(--btn-plain-bg-hover)] active:bg-[var(--btn-plain-bg-active)] transition whitespace-nowrap"
                 target={link.external ? "_blank" : null}
                 class:text-[var(--primary)]={isNavLinkActive(link, currentPath)}
             >
-                <div class="transition text-black/75 dark:text-white/75 font-bold group-hover:text-[var(--primary)] group-active:text-[var(--primary)]">
+                <div class="transition text-black/75 dark:text-white/75 font-bold whitespace-nowrap group-hover:text-[var(--primary)] group-active:text-[var(--primary)]">
                     {link.name}
                 </div>
                 {!link.external && (

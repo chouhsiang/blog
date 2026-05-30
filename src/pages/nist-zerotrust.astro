@@ -1,0 +1,27 @@
+---
+import ArchiveTimelinePanel from "@components/ArchiveTimelinePanel.svelte";
+import MainGridLayout from "@layouts/MainGridLayout.astro";
+import { filterArchivePosts } from "@utils/archive-utils";
+import { getSortedPostsList } from "../utils/content-utils";
+
+const nistPosts = filterArchivePosts(await getSortedPostsList(), {
+	categories: ["NIST 零信任文件"],
+});
+
+const description =
+	"NIST 零信任相關文件中文版，包含 SP 800-207 零信任架構與 SP 800-63 數位身份指南系列。";
+
+const intro =
+	"以下為 NIST 官方 Special Publication 的中文翻譯，原文請以 NIST 網站公布版本為準。";
+---
+
+<MainGridLayout title="NIST 零信任文件" description={description}>
+	<ArchiveTimelinePanel
+		posts={nistPosts}
+		showTags={false}
+		heading="NIST 零信任文件"
+		intro={intro}
+		defaultSortOrder="asc"
+		client:load
+	/>
+</MainGridLayout>

@@ -92,7 +92,7 @@ export default defineConfig({
 				path: "src/content/posts",
 				format: "md",
 				match: {
-					exclude: "**/{speech,certificate,cve}/**",
+					exclude: "**/{speech,certificate,cve,nist-zerotrust}/**",
 				},
 				fields: postFields,
 			},
@@ -114,6 +114,13 @@ export default defineConfig({
 				name: "cve",
 				label: "CVE",
 				path: "src/content/posts/cve",
+				format: "md",
+				fields: postFields,
+			},
+			{
+				name: "nistZerotrust",
+				label: "NIST 零信任",
+				path: "src/content/posts/nist-zerotrust",
 				format: "md",
 				fields: postFields,
 			},

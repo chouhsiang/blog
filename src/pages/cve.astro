@@ -10,8 +10,10 @@ const cvePosts = filterArchivePosts(await getSortedPostsList(), {
 
 const description =
 	"周詳 Sean Chou 向 TWCERT/CC 通報並取得 CVE 編號的漏洞公告整理。";
+
+const intro = "以下是周詳發佈過的 CVE。";
 ---
 
 <MainGridLayout title="CVE" description={description}>
-	<ArchiveTimelinePanel posts={cvePosts} showTags={false} heading="CVE" client:load />
+	<ArchiveTimelinePanel posts={cvePosts} showTags={false} heading="CVE" intro={intro} client:load />
 </MainGridLayout>

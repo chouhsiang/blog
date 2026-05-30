@@ -3,7 +3,7 @@ import { onMount } from "svelte";
 
 import I18nKey from "../i18n/i18nKey";
 import { i18n } from "../i18n/translation";
-import { formatArchiveDate, getPublishedYear } from "@utils/archive-utils";
+import { formatArchiveDate, formatArchiveTags, getPublishedYear } from "@utils/archive-utils";
 import { getPostUrlBySlug } from "../utils/url-utils";
 
 interface Post {
@@ -24,6 +24,7 @@ interface Group {
 let { sortedPosts = [] }: { sortedPosts?: Post[] } = $props();
 
 let groups = $state<Group[]>([]);
+let activeTags = $state<string[]>([]);
 
 function formatDate(date: Date | string) {
 	return formatArchiveDate(date);
@@ -38,6 +39,8 @@ onMount(() => {
 	const tags = params.getAll("tag");
 	const categories = params.getAll("category");
 	const uncategorized = params.has("uncategorized");
+
+	activeTags = tags;
 
 	let filteredPosts = sortedPosts;
 
@@ -81,6 +84,16 @@ onMount(() => {
 </script>
 
 <div class="card-base px-8 py-6">
+	{#if activeTags.length > 0}
+		<h1
+			class="font-bold text-3xl text-90 relative ml-3 mb-6
+        before:w-1 before:h-5 before:rounded-md before:bg-[var(--primary)]
+        before:absolute before:-left-3 before:top-[0.4rem]"
+		>
+			{formatArchiveTags(activeTags)}
+		</h1>
+	{/if}
+
     {#each groups as group (group.year)}
         <div>
             <div class="flex flex-row w-full items-center h-[3.75rem]">

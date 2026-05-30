@@ -12,6 +12,41 @@ function joinUrl(...parts: string[]): string {
 	return joined.replace(/\/+/g, "/");
 }
 
+const CATEGORY_PAGE_PATHS: Record<string, string> = {
+CVE: "/cve/",
+演講: "/speech/",
+證照: "/certificate/",
+"NIST 零信任文件": "/nist-zerotrust/",
+};
+
+export function getCategoryPageUrl(category: string): string | null {
+	const path = CATEGORY_PAGE_PATHS[category.trim()];
+	return path ? url(path) : null;
+}
+
+export function getArchiveCategoryRedirects(): Record<string, string> {
+	return Object.fromEntries(
+		Object.entries(CATEGORY_PAGE_PATHS).map(([category, path]) => [
+			category,
+			url(path),
+		]),
+	);
+}
+
+export function getArchiveRedirectUrl(search: string): string | null {
+	const params = new URLSearchParams(search);
+	if (params.has("tag") || params.has("uncategorized")) {
+		return null;
+	}
+
+	const categories = params.getAll("category");
+	if (categories.length !== 1) {
+		return null;
+	}
+
+	return getCategoryPageUrl(categories[0] ?? "");
+}
+
 export function getPostUrlBySlug(slug: string): string {
 	return url(`/posts/${slug}/`);
 }
@@ -28,7 +63,14 @@ export function getCategoryUrl(category: string | null): string {
 		category.trim().toLowerCase() === i18n(I18nKey.uncategorized).toLowerCase()
 	)
 		return url("/archive/?uncategorized=true");
-	return url(`/archive/?category=${encodeURIComponent(category.trim())}`);
+
+	const trimmed = category.trim();
+	const categoryPageUrl = getCategoryPageUrl(trimmed);
+	if (categoryPageUrl) {
+		return categoryPageUrl;
+	}
+
+	return url(`/archive/?category=${encodeURIComponent(trimmed)}`);
 }
 
 export function getDir(path: string): string {

@@ -25,6 +25,7 @@ npm run dev:tina
 - 演講：`#/collections/speech`
 - 證照：`#/collections/certificate`
 - CVE：`#/collections/cve`
+- NIST 零信任：`#/collections/nistZerotrust`
 - 一般文章：`#/collections/post`
 
 Local mode 直接寫入 `src/content/`，不需 Tina Cloud。`/admin` 僅本機開發可用，不會部署到正式站。

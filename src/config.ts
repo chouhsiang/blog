@@ -37,10 +37,19 @@ export const navBarConfig: NavBarConfig = {
 		LinkPreset.Home,
 		LinkPreset.Archive,
 		{
-			name: "關於",
+			name: "系列文章",
 			children: [
 				{
-					name: "關於我",
+					name: "NIST 零信任",
+					url: "/nist-zerotrust/",
+				},
+			],
+		},
+		{
+			name: "關於作者",
+			children: [
+				{
+					name: "關於",
 					url: "/about/",
 				},
 				{
