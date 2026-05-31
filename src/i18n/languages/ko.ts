@@ -25,6 +25,10 @@ export const ko: Translation = {
 	[Key.postsCount]: "게시물",
 	[Key.sortNewestFirst]: "Newest first",
 	[Key.sortOldestFirst]: "Oldest first",
+	[Key.sortAscending]: "Ascending",
+	[Key.sortDescending]: "Descending",
+	[Key.sortByTitle]: "Title",
+	[Key.sortByTime]: "Time",
 
 	[Key.themeColor]: "테마 색상",
 

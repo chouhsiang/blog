@@ -1,0 +1,19 @@
+---
+import ArchiveTimelinePanel from "@components/ArchiveTimelinePanel.svelte";
+import MainGridLayout from "@layouts/MainGridLayout.astro";
+import { filterArchivePosts } from "@utils/archive-utils";
+import { getSortedPostsList } from "../utils/content-utils";
+
+const speechPosts = filterArchivePosts(await getSortedPostsList(), {
+	categories: ["我的演講"],
+});
+
+const description =
+	"周詳 Sean Chou 的技術演講與分享紀錄，涵蓋 Kubernetes、DevOps、零信任、Cloudflare 等主題。";
+
+const intro = "以下是周詳的演講紀錄。";
+---
+
+<MainGridLayout title="我的演講" description={description}>
+	<ArchiveTimelinePanel posts={speechPosts} showTags={false} heading="我的演講" intro={intro} client:load />
+</MainGridLayout>

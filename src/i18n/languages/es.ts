@@ -25,6 +25,10 @@ export const es: Translation = {
 	[Key.postsCount]: "publicaciones",
 	[Key.sortNewestFirst]: "Newest first",
 	[Key.sortOldestFirst]: "Oldest first",
+	[Key.sortAscending]: "Ascending",
+	[Key.sortDescending]: "Descending",
+	[Key.sortByTitle]: "Title",
+	[Key.sortByTime]: "Time",
 
 	[Key.themeColor]: "Color del tema",
 

@@ -25,6 +25,10 @@ export const zh_TW: Translation = {
 	[Key.postsCount]: "篇文章",
 	[Key.sortNewestFirst]: "由新到舊",
 	[Key.sortOldestFirst]: "由舊到新",
+	[Key.sortAscending]: "正序",
+	[Key.sortDescending]: "反序",
+	[Key.sortByTitle]: "標題",
+	[Key.sortByTime]: "時間",
 
 	[Key.themeColor]: "主題色",
 

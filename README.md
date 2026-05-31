@@ -22,12 +22,13 @@ npm run dev:tina
 
 - 部落格：`http://localhost:4321/`
 - Tina 後台：`http://localhost:4321/admin/index.html`
-- 演講：`#/collections/speech`
-- 證照：`#/collections/certificate`
-- CVE：`#/collections/cve`
+- 我的演講：`#/collections/mySpeech`
+- 我的證照：`#/collections/myCertificate`
+- 我的 CVE：`#/collections/myCve`
 - NIST 零信任：`#/collections/nistZerotrust`
-- Cloudflare 入門：`#/collections/cloudflareBasic`
-- Azure AD 入門：`#/collections/azureadBasic`
+- Cloudflare：`#/collections/cloudflare`
+- Entra ID：`#/collections/entraId`
+- Azure DevOps：`#/collections/azureDevops`
 - 一般文章：`#/collections/post`
 
 Local mode 直接寫入 `src/content/`，不需 Tina Cloud。`/admin` 僅本機開發可用，不會部署到正式站。

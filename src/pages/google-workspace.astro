@@ -1,0 +1,28 @@
+---
+import ArchiveTimelinePanel from "@components/ArchiveTimelinePanel.svelte";
+import MainGridLayout from "@layouts/MainGridLayout.astro";
+import { filterArchivePosts } from "@utils/archive-utils";
+import { getSortedPostsList } from "../utils/content-utils";
+
+const googleWorkspacePosts = filterArchivePosts(await getSortedPostsList(), {
+	categories: ["Google Workspace"],
+});
+
+const description =
+	"Google Workspace 系列，含 Gmail、Google Groups、郵件路由、身份整合與 Apps Script 的實戰筆記。";
+
+const intro =
+	"以下為 Google Workspace 系列文章，依序排列：Gmail 寄信、Google Groups、混合郵件路由、AD/Entra ID 整合與 Apps Script API，共 5 篇。";
+---
+
+<MainGridLayout title="Google Workspace" description={description}>
+	<ArchiveTimelinePanel
+		posts={googleWorkspacePosts}
+		showTags={false}
+		heading="Google Workspace"
+		intro={intro}
+		sortBy="title"
+		defaultSortOrder="asc"
+		client:load
+	/>
+</MainGridLayout>

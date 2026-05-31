@@ -1,0 +1,28 @@
+---
+import ArchiveTimelinePanel from "@components/ArchiveTimelinePanel.svelte";
+import MainGridLayout from "@layouts/MainGridLayout.astro";
+import { filterArchivePosts } from "@utils/archive-utils";
+import { getSortedPostsList } from "../utils/content-utils";
+
+const entraIdPosts = filterArchivePosts(await getSortedPostsList(), {
+	categories: ["Entra ID"],
+});
+
+const description =
+	"Entra ID 系列，從 Azure AD 簡介、網域管理到 OAuth、SAML 自建驗證與 Directory Extensions。";
+
+const intro =
+	"以下為 Entra ID 系列文章，依 #1 至 #13 排列，介紹 Microsoft Entra ID（前身 Azure AD）的基礎、進階應用與擴充欄位。";
+---
+
+<MainGridLayout title="Entra ID" description={description}>
+	<ArchiveTimelinePanel
+		posts={entraIdPosts}
+		showTags={false}
+		heading="Entra ID"
+		intro={intro}
+		sortBy="title"
+		defaultSortOrder="asc"
+		client:load
+	/>
+</MainGridLayout>

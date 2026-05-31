@@ -1,0 +1,28 @@
+---
+import ArchiveTimelinePanel from "@components/ArchiveTimelinePanel.svelte";
+import MainGridLayout from "@layouts/MainGridLayout.astro";
+import { filterArchivePosts } from "@utils/archive-utils";
+import { getSortedPostsList } from "../utils/content-utils";
+
+const googleCloudPosts = filterArchivePosts(await getSortedPostsList(), {
+	categories: ["Google Cloud"],
+});
+
+const description =
+	"Google Cloud 系列，含 GKE 儲存、GCS FUSE CSI 與 Cloud Run 整合 Cloudflare 的實戰筆記。";
+
+const intro =
+	"以下為 Google Cloud 系列文章，依序排列：GKE 儲存空間、GCS FUSE CSI 與 Cloud Run 整合 Cloudflare，共 3 篇。";
+---
+
+<MainGridLayout title="Google Cloud" description={description}>
+	<ArchiveTimelinePanel
+		posts={googleCloudPosts}
+		showTags={false}
+		heading="Google Cloud"
+		intro={intro}
+		sortBy="title"
+		defaultSortOrder="asc"
+		client:load
+	/>
+</MainGridLayout>

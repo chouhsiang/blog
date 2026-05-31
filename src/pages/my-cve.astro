@@ -1,0 +1,19 @@
+---
+import ArchiveTimelinePanel from "@components/ArchiveTimelinePanel.svelte";
+import MainGridLayout from "@layouts/MainGridLayout.astro";
+import { filterArchivePosts } from "@utils/archive-utils";
+import { getSortedPostsList } from "../utils/content-utils";
+
+const cvePosts = filterArchivePosts(await getSortedPostsList(), {
+	categories: ["我的 CVE"],
+});
+
+const description =
+	"周詳 Sean Chou 向 TWCERT/CC 通報並取得 CVE 編號的漏洞公告整理。";
+
+const intro = "以下是周詳發佈過的 CVE。";
+---
+
+<MainGridLayout title="我的 CVE" description={description}>
+	<ArchiveTimelinePanel posts={cvePosts} showTags={false} heading="我的 CVE" intro={intro} client:load />
+</MainGridLayout>

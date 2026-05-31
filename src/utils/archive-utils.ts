@@ -30,6 +30,14 @@ export function formatArchiveDate(date: Date | string): string {
 	return `${month}-${day}`;
 }
 
+export function formatArchiveDateWithYear(date: Date | string): string {
+	const value = parsePublishedDate(date);
+	const year = value.getUTCFullYear();
+	const month = (value.getUTCMonth() + 1).toString().padStart(2, "0");
+	const day = value.getUTCDate().toString().padStart(2, "0");
+	return `${year}-${month}-${day}`;
+}
+
 export function getPublishedYear(date: Date | string): number {
 	return parsePublishedDate(date).getUTCFullYear();
 }
@@ -68,6 +76,45 @@ export function filterArchivePosts(
 }
 
 export type ArchiveSortOrder = "desc" | "asc";
+export type ArchiveSortBy = "date" | "title";
+
+function getTitleSortKey(title: string): number | null {
+	const match = title.match(/^#(\d+)|^\[Day(\d+)\]/);
+	if (match) {
+		return Number.parseInt(match[1] ?? match[2], 10);
+	}
+
+	const nistPatterns = [
+		/800[–-]207/,
+		/800[–-]63[–-]3/,
+		/800[–-]63A/i,
+		/800[–-]63B/i,
+		/800[–-]63C/i,
+	];
+	const nistIndex = nistPatterns.findIndex((pattern) => pattern.test(title));
+	if (nistIndex >= 0) {
+		return 1000 + nistIndex;
+	}
+
+	return null;
+}
+
+export function sortArchivePostsByTitle(
+	posts: ArchivePost[],
+	order: ArchiveSortOrder = "asc",
+): ArchivePost[] {
+	return [...posts].sort((a, b) => {
+		const numA = a.data.seriesOrder ?? getTitleSortKey(a.data.title);
+		const numB = b.data.seriesOrder ?? getTitleSortKey(b.data.title);
+
+		if (numA !== null && numB !== null) {
+			return order === "asc" ? numA - numB : numB - numA;
+		}
+
+		const cmp = a.data.title.localeCompare(b.data.title, "zh-TW");
+		return order === "asc" ? cmp : -cmp;
+	});
+}
 
 export function sortArchivePosts(
 	posts: ArchivePost[],
@@ -84,7 +131,9 @@ export function groupPostsByYear(
 	posts: ArchivePost[],
 	order: ArchiveSortOrder = "desc",
 ): ArchiveGroup[] {
-	const grouped = sortArchivePosts(posts, order).reduce(
+	const sorted = sortArchivePosts(posts, order);
+
+	const grouped = sorted.reduce(
 		(acc, post) => {
 			const year = getPublishedYear(post.data.published);
 			if (!acc[year]) {

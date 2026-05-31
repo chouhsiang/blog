@@ -1,0 +1,18 @@
+---
+import ArchiveTimelinePanel from "@components/ArchiveTimelinePanel.svelte";
+import MainGridLayout from "@layouts/MainGridLayout.astro";
+import { filterArchivePosts } from "@utils/archive-utils";
+import { getSortedPostsList } from "../utils/content-utils";
+
+const certificatePosts = filterArchivePosts(await getSortedPostsList(), {
+	categories: ["我的證照"],
+});
+
+const description = "專業證照考取心得與準備紀錄。";
+
+const intro = "以下是周詳的證照紀錄。";
+---
+
+<MainGridLayout title="我的證照" description={description}>
+	<ArchiveTimelinePanel posts={certificatePosts} showTags={false} heading="我的證照" intro={intro} client:load />
+</MainGridLayout>

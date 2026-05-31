@@ -25,6 +25,10 @@ export const id: Translation = {
 	[Key.postsCount]: "postingan",
 	[Key.sortNewestFirst]: "Newest first",
 	[Key.sortOldestFirst]: "Oldest first",
+	[Key.sortAscending]: "Ascending",
+	[Key.sortDescending]: "Descending",
+	[Key.sortByTitle]: "Title",
+	[Key.sortByTime]: "Time",
 
 	[Key.themeColor]: "Warna Tema",
 

@@ -1,0 +1,28 @@
+---
+import ArchiveTimelinePanel from "@components/ArchiveTimelinePanel.svelte";
+import MainGridLayout from "@layouts/MainGridLayout.astro";
+import { filterArchivePosts } from "@utils/archive-utils";
+import { getSortedPostsList } from "../utils/content-utils";
+
+const azureDevOpsPosts = filterArchivePosts(await getSortedPostsList(), {
+	categories: ["Azure DevOps"],
+});
+
+const description =
+	"Azure DevOps 系列，從 GKE 叢集建立、CI/CD 到 VM 部署的實戰筆記。";
+
+const intro =
+	"以下為 Azure DevOps 系列文章，依序排列：GKE 部署（1–9）、VM 部署（1–4）與 Default Agent 系統資訊，共 14 篇。";
+---
+
+<MainGridLayout title="Azure DevOps" description={description}>
+	<ArchiveTimelinePanel
+		posts={azureDevOpsPosts}
+		showTags={false}
+		heading="Azure DevOps"
+		intro={intro}
+		sortBy="title"
+		defaultSortOrder="asc"
+		client:load
+	/>
+</MainGridLayout>

@@ -22,6 +22,10 @@ enum I18nKey {
 	postsCount = "postsCount",
 	sortNewestFirst = "sortNewestFirst",
 	sortOldestFirst = "sortOldestFirst",
+	sortAscending = "sortAscending",
+	sortDescending = "sortDescending",
+	sortByTitle = "sortByTitle",
+	sortByTime = "sortByTime",
 
 	themeColor = "themeColor",
 

@@ -6,6 +6,9 @@ import { pluginLineNumbers } from "@expressive-code/plugin-line-numbers";
 import swup from "@swup/astro";
 import expressiveCode from "astro-expressive-code";
 import icon from "astro-icon";
+import { readdirSync } from "node:fs";
+import { join, relative } from "node:path";
+import { fileURLToPath } from "node:url";
 import { defineConfig } from "astro/config";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeComponents from "rehype-components"; /* Render the custom directive content */
@@ -25,9 +28,66 @@ import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
 import { pluginCustomCopyButton } from "./src/plugins/expressive-code/custom-copy-button.js";
 
 // https://astro.build/config
+const postsDir = fileURLToPath(new URL("./src/content/posts", import.meta.url));
+
+function walkMarkdownFiles(dir, base = dir) {
+	const files = [];
+	for (const entry of readdirSync(dir, { withFileTypes: true })) {
+		const full = join(dir, entry.name);
+		if (entry.isDirectory()) {
+			files.push(...walkMarkdownFiles(full, base));
+		} else if (entry.name.endsWith(".md")) {
+			files.push(relative(base, full));
+		}
+	}
+	return files;
+}
+
+function generateNestedPostRedirects(dir) {
+	const redirects = {};
+	for (const file of walkMarkdownFiles(dir)) {
+		const posixPath = file.split("\\").join("/");
+		if (!posixPath.includes("/")) continue;
+		const slug = posixPath.replace(/\.md$/, "");
+		const flat = slug.slice(slug.lastIndexOf("/") + 1);
+		redirects[`/posts/${slug}/`] = `/posts/${flat}/`;
+		if (posixPath.startsWith("citizen-digital-certificate/")) {
+			redirects[`/posts/cdc/${flat}/`] = `/posts/${flat}/`;
+		}
+		if (posixPath.startsWith("cloudflare/")) {
+			redirects[`/posts/cloudflare-basic/${flat}/`] = `/posts/${flat}/`;
+		}
+		if (posixPath.startsWith("my-speech/")) {
+			redirects[`/posts/speech/${flat}/`] = `/posts/${flat}/`;
+		}
+		if (posixPath.startsWith("my-certificate/")) {
+			redirects[`/posts/certificate/${flat}/`] = `/posts/${flat}/`;
+		}
+		if (posixPath.startsWith("my-cve/")) {
+			redirects[`/posts/cve/${flat}/`] = `/posts/${flat}/`;
+		}
+	}
+	return redirects;
+}
+
 export default defineConfig({
 	site: "https://blog.chouhsiang.tw",
 	trailingSlash: "always",
+	redirects: {
+		"/azuread-basic": "/entra-id/",
+		"/azuread-basic/": "/entra-id/",
+		"/cdc": "/citizen-digital-certificate/",
+		"/cdc/": "/citizen-digital-certificate/",
+		"/cloudflare-basic": "/cloudflare/",
+		"/cloudflare-basic/": "/cloudflare/",
+		"/speech": "/my-speech/",
+		"/speech/": "/my-speech/",
+		"/certificate": "/my-certificate/",
+		"/certificate/": "/my-certificate/",
+		"/cve": "/my-cve/",
+		"/cve/": "/my-cve/",
+		...generateNestedPostRedirects(postsDir),
+	},
 	integrations: [
 		tailwind({
 			nesting: true,

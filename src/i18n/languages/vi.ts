@@ -25,6 +25,10 @@ export const vi: Translation = {
 	[Key.postsCount]: "bài viết",
 	[Key.sortNewestFirst]: "Newest first",
 	[Key.sortOldestFirst]: "Oldest first",
+	[Key.sortAscending]: "Ascending",
+	[Key.sortDescending]: "Descending",
+	[Key.sortByTitle]: "Title",
+	[Key.sortByTime]: "Time",
 
 	[Key.themeColor]: "Màu giao diện",
 

@@ -1,0 +1,28 @@
+---
+import ArchiveTimelinePanel from "@components/ArchiveTimelinePanel.svelte";
+import MainGridLayout from "@layouts/MainGridLayout.astro";
+import { filterArchivePosts } from "@utils/archive-utils";
+import { getSortedPostsList } from "../utils/content-utils";
+
+const cdcPosts = filterArchivePosts(await getSortedPostsList(), {
+	categories: ["自然人憑證"],
+});
+
+const description =
+	"自然人憑證，從 HiPKI Local Server、popupForm、ChtICToken.js 介接到 PKCS 數位簽章與驗簽。";
+
+const intro =
+	"以下為自然人憑證系列，依索引順序排列，涵蓋介紹篇、HiPKI Local Server API、資安、背景知識、範例與各介接方式。";
+---
+
+<MainGridLayout title="自然人憑證" description={description}>
+	<ArchiveTimelinePanel
+		posts={cdcPosts}
+		showTags={false}
+		heading="自然人憑證"
+		intro={intro}
+		sortBy="title"
+		defaultSortOrder="asc"
+		client:load
+	/>
+</MainGridLayout>

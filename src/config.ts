@@ -44,12 +44,20 @@ export const navBarConfig: NavBarConfig = {
 					url: "/nist-zerotrust/",
 				},
 				{
-					name: "Cloudflare 入門",
-					url: "/cloudflare-basic/",
+					name: "Cloudflare",
+					url: "/cloudflare/",
 				},
 				{
-					name: "Azure AD 入門",
-					url: "/azuread-basic/",
+					name: "Entra ID",
+					url: "/entra-id/",
+				},
+				{
+					name: "Azure DevOps",
+					url: "/azure-devops/",
+				},
+				{
+					name: "自然人憑證",
+					url: "/citizen-digital-certificate/",
 				},
 			],
 		},
@@ -57,20 +65,20 @@ export const navBarConfig: NavBarConfig = {
 			name: "關於作者",
 			children: [
 				{
-					name: "關於",
+					name: "關於我",
 					url: "/about/",
 				},
 				{
-					name: "演講",
-					url: "/speech/",
+					name: "我的演講",
+					url: "/my-speech/",
 				},
 				{
-					name: "證照",
-					url: "/certificate/",
+					name: "我的證照",
+					url: "/my-certificate/",
 				},
 				{
-					name: "CVE",
-					url: "/cve/",
+					name: "我的 CVE",
+					url: "/my-cve/",
 				},
 			],
 		},

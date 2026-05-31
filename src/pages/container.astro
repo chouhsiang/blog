@@ -1,0 +1,28 @@
+---
+import ArchiveTimelinePanel from "@components/ArchiveTimelinePanel.svelte";
+import MainGridLayout from "@layouts/MainGridLayout.astro";
+import { filterArchivePosts } from "@utils/archive-utils";
+import { getSortedPostsList } from "../utils/content-utils";
+
+const containerPosts = filterArchivePosts(await getSortedPostsList(), {
+	categories: ["Container"],
+});
+
+const description =
+	"Container 系列，含 Docker 跨架構打包與 Apple Container 開箱實戰筆記。";
+
+const intro =
+	"以下為 Container 系列文章，依序排列：ARM macOS 打包 amd64 Docker image 與 Apple Container 開箱，共 2 篇。";
+---
+
+<MainGridLayout title="Container" description={description}>
+	<ArchiveTimelinePanel
+		posts={containerPosts}
+		showTags={false}
+		heading="Container"
+		intro={intro}
+		sortBy="title"
+		defaultSortOrder="asc"
+		client:load
+	/>
+</MainGridLayout>

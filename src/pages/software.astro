@@ -1,0 +1,28 @@
+---
+import ArchiveTimelinePanel from "@components/ArchiveTimelinePanel.svelte";
+import MainGridLayout from "@layouts/MainGridLayout.astro";
+import { filterArchivePosts } from "@utils/archive-utils";
+import { getSortedPostsList } from "../utils/content-utils";
+
+const softwarePosts = filterArchivePosts(await getSortedPostsList(), {
+	categories: ["軟體"],
+});
+
+const description =
+	"軟體系列，含 VSCode 開源、Backbone One 與 AI 瀏覽器 Dia 的使用心得。";
+
+const intro =
+	"以下為軟體系列文章，依序排列：CEC-IDE 與 VSCode 開源、Backbone One 跨平台使用與 AI 瀏覽器 Dia，共 3 篇。";
+---
+
+<MainGridLayout title="軟體" description={description}>
+	<ArchiveTimelinePanel
+		posts={softwarePosts}
+		showTags={false}
+		heading="軟體"
+		intro={intro}
+		sortBy="title"
+		defaultSortOrder="asc"
+		client:load
+	/>
+</MainGridLayout>
